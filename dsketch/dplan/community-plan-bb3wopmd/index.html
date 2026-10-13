@@ -26,126 +26,116 @@ h1{font-size:28px;margin:6px 0 8px;color:var(--navy);line-height:1.4;text-wrap:b
 section{margin:56px 0}
 h2{font-size:20px;color:var(--navy);margin:0 0 20px;display:flex;align-items:baseline;gap:12px;line-height:1.5;text-wrap:balance}
 h2 .num{font-size:13px;color:var(--teal);font-weight:700;letter-spacing:.08em;flex:none}
-h3{font-size:16px;color:var(--navy);margin:28px 0 12px;padding-left:10px;border-left:3px solid var(--teal);line-height:1.5}
-h4{font-size:15px;color:var(--navy);margin:0 0 6px;line-height:1.5}
+h3{font-size:16px;color:var(--navy);margin:36px 0 12px;padding-left:10px;border-left:3px solid var(--teal);line-height:1.5}
+h4{font-size:15px;color:var(--navy);margin:0 0 4px;line-height:1.5}
 p{margin:0 0 12px}
-.lead{margin-bottom:20px}
-.card{border:1px solid var(--line);border-radius:8px;padding:20px 22px;background:#fff;min-width:0}
-.card p:last-child{margin-bottom:0}
-.grid{display:grid;gap:16px}
+.card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;background:#fff;min-width:0}
+.card p{margin:0;font-size:14px}
+.grid{display:grid;gap:14px}
 .g2{grid-template-columns:repeat(2,1fr)}
 .g3{grid-template-columns:repeat(3,1fr)}
-.label{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.06em;margin-bottom:6px}
+.label{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.06em;margin-bottom:4px}
 .small{font-size:13px;color:var(--sub)}
-ul.clean{margin:0;padding-left:1.2em}
-ul.clean li{margin-bottom:6px}
-.band{background:var(--navy);color:#fff;border-radius:8px;padding:18px 24px;margin-top:20px;font-size:15px}
-.band b{color:#fff}
+.quote{font-size:13px;color:var(--sub);margin-top:6px;padding-top:6px;border-top:1px dashed var(--line)}
+ul.clean{margin:0;padding-left:1.2em;font-size:14px}
+ul.clean li{margin-bottom:4px}
+.band{background:var(--navy);color:#fff;border-radius:8px;padding:16px 22px;margin-top:16px;font-size:15px}
 .band.t{background:var(--teal)}
-.red{color:var(--accent)}
+.band .bl{display:block;font-size:12px;letter-spacing:.1em;opacity:.85;margin-bottom:2px}
+.band b{font-size:18px}
 
-/* 関係が深まる4段階 */
+/* 現状の数字 */
+.facts{display:flex;flex-wrap:wrap;gap:8px 28px;font-size:14px;margin-top:16px;padding:12px 18px;background:var(--soft);border-radius:8px}
+.facts b{color:var(--navy)}
+
+/* ゴールまでの段階 */
 .steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line);border-radius:8px;overflow:hidden}
-.step{padding:18px 18px 20px;border-right:1px solid var(--line)}
+.step{padding:14px 16px;border-right:1px solid var(--line)}
 .step:last-child{border-right:none}
-.step .no{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.08em}
-.step h4{margin:4px 0 6px;font-size:17px}
-.step p{font-size:14px;margin:0}
+.step .no{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.06em}
+.step h4{font-size:16px;margin:2px 0 4px}
+.step p{font-size:13.5px;margin:0}
 .step.now{background:var(--soft)}
 .step.goal{background:var(--teal-lt)}
 
 /* 表 */
 .tblwrap{overflow-x:auto;border:1px solid var(--line);border-radius:8px}
-table{width:100%;border-collapse:collapse;font-size:14px;min-width:720px}
-th,td{border-bottom:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+table{width:100%;border-collapse:collapse;font-size:14px;min-width:560px}
+th,td{border-bottom:1px solid var(--line);padding:9px 12px;text-align:left;vertical-align:top}
 th{color:var(--sub);font-weight:500;font-size:13px;background:var(--soft)}
 tbody tr:last-child td{border-bottom:none}
-.tblwrap th:first-child,.tblwrap td:first-child{padding-left:16px;white-space:nowrap;font-weight:700;color:var(--navy)}
+td.c,th.c{text-align:center;width:6.5em;font-weight:700;color:var(--navy)}
+.tblwrap td:first-child{padding-left:16px;white-space:nowrap;font-weight:700;color:var(--navy)}
 tr.pick td{background:var(--teal-lt)}
 .rec{display:inline-block;font-size:11px;font-weight:700;color:#fff;background:var(--navy);border-radius:3px;padding:0 6px;margin-left:6px;vertical-align:middle}
 
 /* Discord構成 */
-.server{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:16px;align-items:start}
-.cat{font-size:12px;letter-spacing:.08em;color:var(--teal);font-weight:700;margin:16px 0 4px}
-.cat:first-child{margin-top:0}
-.ch{display:grid;grid-template-columns:1.2em 11em 1fr;gap:8px;padding:5px 0;border-bottom:1px dashed var(--line);font-size:14px}
+.ch{display:grid;grid-template-columns:5.5em 1fr;gap:10px;padding:6px 0;border-bottom:1px dashed var(--line);font-size:14px}
 .ch:last-child{border-bottom:none}
-.ch .h{color:var(--sub);font-family:ui-monospace,Menlo,monospace}
-.ch .nm{font-weight:700;color:var(--navy)}
-.lock{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:4px;padding:0 6px;font-size:12px;margin-left:4px;font-weight:500}
-.role{display:grid;grid-template-columns:7.5em 1fr;gap:12px;padding:12px 0;border-bottom:1px solid var(--line);font-size:14px}
+.ch .cat{font-weight:700;color:var(--teal);font-size:13px}
+.lock{display:inline-block;border:1px solid var(--accent);color:var(--accent);border-radius:4px;padding:0 6px;font-size:12px;margin-left:4px}
+.role{display:grid;grid-template-columns:7em 1fr;gap:10px;padding:7px 0;border-bottom:1px dashed var(--line);font-size:14px}
 .role:last-child{border-bottom:none}
-.role .r{font-weight:700;text-align:center;border-radius:4px;padding:2px 0;align-self:start;font-size:13px}
+.r{font-weight:700;text-align:center;border-radius:4px;padding:1px 0;align-self:start;font-size:13px}
 .r.g{border:1px solid var(--line);color:var(--sub)}
 .r.m{background:var(--teal);color:#fff}
 .r.p{border:1px solid var(--accent);color:var(--accent)}
 .r.o{background:var(--navy);color:#fff}
 
-/* アンケートの棒グラフ */
-.bar-row{display:grid;grid-template-columns:10em 1fr 3em;gap:14px;align-items:center;font-size:14px;padding:6px 0}
-.track{height:20px;background:var(--soft);border-radius:3px;overflow:hidden}
+/* アンケート */
+.bar-row{display:grid;grid-template-columns:9.5em 1fr 2.8em;gap:12px;align-items:center;font-size:14px;padding:4px 0}
+.track{height:16px;background:var(--soft);border-radius:3px;overflow:hidden}
 .fill{height:100%;background:var(--teal)}
 .fill.top{background:var(--navy)}
-.val{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy);font-size:16px}
-.val small{font-size:12px;font-weight:500;color:var(--sub)}
-.note{border:1px solid var(--accent);border-radius:8px;padding:14px 18px;margin-top:16px;font-size:14px}
-.note b{color:var(--accent)}
+.val{text-align:right;font-variant-numeric:tabular-nums;font-weight:700;color:var(--navy)}
+.val small{font-size:11px;font-weight:500;color:var(--sub)}
+.insight{display:flex;flex-direction:column;gap:10px}
+.insight .card{border-left:3px solid var(--accent)}
 
-.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
-.chip{border:1px solid var(--teal);color:var(--teal);border-radius:4px;padding:2px 10px;font-size:13.5px;font-weight:500;background:#fff}
-.card .who{font-size:13px;color:var(--sub);margin-bottom:8px;display:block}
-.card.first{border:2px solid var(--teal)}
+.card.pick{border:2px solid var(--teal)}
+.chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.chip{border:1px solid var(--teal);color:var(--teal);border-radius:4px;padding:1px 10px;font-size:13px;font-weight:500;background:#fff}
 
 /* 案件化の流れ */
-.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:0 10px}
-.fl{border:1px solid var(--line);border-top:3px solid var(--teal);border-radius:8px;padding:14px;position:relative;background:#fff}
-.fl .no{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.08em}
-.fl h4{margin:2px 0 6px}
-.fl p{font-size:13.5px;margin:0}
-.fl::after{content:"▶";position:absolute;right:-10px;top:50%;transform:translateY(-50%);color:#b9c1cc;font-size:10px}
-.fl:last-child::after{display:none}
-.fl.key{border-top-color:var(--navy);background:var(--soft)}
+.flow{display:flex;flex-wrap:wrap;align-items:center;gap:6px;font-size:14px}
+.flow span{border:1px solid var(--line);border-radius:4px;padding:4px 10px;background:#fff}
+.flow span.key{border-color:var(--navy);color:var(--navy);font-weight:700}
+.flow i{font-style:normal;color:var(--sub)}
 
 /* 進め方 */
-.phase{border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:8px;padding:16px 18px;background:#fff}
+.phase{border:1px solid var(--line);border-top:3px solid var(--navy);border-radius:8px;padding:14px 16px;background:#fff}
 .phase.last{border-top-color:var(--teal)}
-.phase .when{font-size:12px;font-weight:700;color:var(--teal);letter-spacing:.06em}
-.phase h4{font-size:16px;margin:2px 0 8px}
-.phase ul{font-size:14px}
+.phase .when{font-size:12px;font-weight:700;color:var(--teal)}
+.phase h4{font-size:16px;margin:2px 0 6px}
+.g4{grid-template-columns:repeat(4,1fr)}
 
-/* ご相談ポイント */
 ol.q{counter-reset:q;list-style:none;padding:0;margin:0;border:1px solid var(--line);border-radius:8px}
-ol.q li{counter-increment:q;position:relative;padding:14px 16px 14px 52px;border-bottom:1px solid var(--line)}
+ol.q li{counter-increment:q;position:relative;padding:12px 16px 12px 52px;border-bottom:1px solid var(--line);font-size:14px}
 ol.q li:last-child{border-bottom:none}
-ol.q li::before{content:counter(q);position:absolute;left:16px;top:15px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
+ol.q li::before{content:counter(q);position:absolute;left:16px;top:13px;width:24px;height:24px;border-radius:50%;background:var(--navy);color:#fff;font-size:12px;display:flex;align-items:center;justify-content:center;font-weight:700}
 ol.q b{color:var(--navy)}
 
 footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--line);font-size:12px;color:var(--sub)}
 
 @media(max-width:860px){
   .g2,.g3{grid-template-columns:1fr}
-  .server{grid-template-columns:1fr}
+  .g4{grid-template-columns:1fr 1fr}
   .steps{grid-template-columns:1fr 1fr}
   .step:nth-child(2){border-right:none}
   .step:nth-child(-n+2){border-bottom:1px solid var(--line)}
-  .flow{grid-template-columns:1fr;gap:10px}
-  .fl::after{content:"▼";right:auto;left:50%;top:auto;bottom:-14px;transform:translateX(-50%)}
 }
 @media(max-width:560px){
   body{padding-inline:16px}
   .wrap{padding-block:32px 64px}
   h1{font-size:23px}
-  .steps{grid-template-columns:1fr}
+  .g4,.steps{grid-template-columns:1fr}
   .step{border-right:none;border-bottom:1px solid var(--line)}
   .step:last-child{border-bottom:none}
-  .ch{grid-template-columns:1.2em 1fr}
-  .ch > span:last-child{grid-column:2}
-  .bar-row{grid-template-columns:8em 1fr 2.6em;gap:10px;font-size:13px}
+  .bar-row{grid-template-columns:8em 1fr 2.6em;gap:8px;font-size:13px}
 }
 </style>
 </head>
 <body>
-
 <div class="wrap">
 
 <header>
@@ -154,147 +144,111 @@ footer{margin-top:64px;padding-top:16px;border-top:1px solid var(--line);font-si
   <div class="meta"><span class="badge">株式会社ディースケッチ様</span><span class="badge">岩切様</span>作成日 2026-10-13</div>
 </header>
 
-<p>dPlanに登録してくださっている皆さんが、自己紹介の先へ進んで「話せる」「相談できる」「頼み合える」関係になるための全体像をまとめました。進め方は岩切さんと相談しながら決めていきたいので、判断材料としてご覧ください。</p>
-
-<section id="goal">
-  <h2><span class="num">01</span>目指すところ：長くフリーランスを続けられる仲間づくり</h2>
-  <div class="grid g3">
-    <div class="card"><div class="label">つながる</div><h4>顔の見える関係</h4><p>テキストの自己紹介だけでなく、声で話して人柄が分かる関係に。</p></div>
-    <div class="card"><div class="label">分かち合う</div><h4>情報と知恵の共有</h4><p>単価・ツール・確定申告など、一人だと聞きにくい話を気軽に相談できる場に。</p></div>
-    <div class="card"><div class="label">頼み合う</div><h4>案件の受発注</h4><p>得意分野を知っている仲間同士で、自然に仕事を回し合える流れに。</p></div>
+<section>
+  <h2><span class="num">01</span>岩切さんが描いているdPlanの未来</h2>
+  <p>初めてお話しした際に伺った構想とご依頼を整理しました。</p>
+  <div class="grid g2">
+    <div class="card"><div class="label">構想</div><h4>エリアごとにまとめ役を置く</h4><p>人数が増えても一人で抱えず、地域ごとにメンバーをまとめる人をつくる。</p><div class="quote">「作った時からの夢というか構想」</div></div>
+    <div class="card"><div class="label">構想</div><h4>動ける仲間を集める</h4><p>AIに詳しい方など、優秀なメンバーが力を合わせられるチームに。</p><div class="quote">「一人でやろうと考えなくて、動かせる方々を集めたい」</div></div>
+    <div class="card"><div class="label">ご依頼</div><h4>交流会・作業会をdPlanでも</h4><p>オンライン交流会や、集まって作業する会を開いてほしい。関西のメンバーでの開催も歓迎。</p></div>
+    <div class="card"><div class="label">スタンス</div><h4>メンバー同士は自由に</h4><p>個人事業主の集まりなので、岩切さんを通さず直接やり取りしてOK。それぞれが責任を持って。</p></div>
   </div>
-  <div class="band">この取り組みは<b>協業ベース</b>で進めます。費用が発生するのは、仲良くなったメンバー同士で案件が動き始める段階からのイメージです。</div>
+  <div class="facts"><span>メンバー <b>約100名</b>（関東中心・関西にも）</span><span>連絡の場 <b>Chatwork</b></span><span>現状 <b>自己紹介どまり</b>の方が多い</span></div>
 </section>
 
-<section id="steps">
-  <h2><span class="num">02</span>自己紹介から、依頼し合える関係へ</h2>
-  <p class="lead">いきなり案件の話をするより、一段ずつ距離を縮めていく方が長続きします。いまはChatworkでの自己紹介（1段目）が中心なので、まずは2段目の「話す」機会を増やすところから始めます。</p>
+<section>
+  <h2><span class="num">02</span>ゴール</h2>
+  <div class="band"><span class="bl">目指す状態</span><b>メンバー同士が顔見知りになり、気軽に相談・依頼し合えるコミュニティ</b></div>
+  <p style="margin-top:20px">そのために、関係を一段ずつ深めていきます。まずは「話す」機会をつくるところからです。</p>
   <div class="steps">
-    <div class="step now"><div class="no">STEP 1 ／ いまここ</div><h4>知る</h4><p>Chatworkで自己紹介。お互いの名前と職種が分かる。</p></div>
-    <div class="step"><div class="no">STEP 2 ／ まず目指す</div><h4>話す</h4><p>テーマ別の雑談会で声を交わし、人柄が分かる。</p></div>
-    <div class="step"><div class="no">STEP 3</div><h4>相談する</h4><p>困りごとや情報を気軽に投げ合える。</p></div>
-    <div class="step goal"><div class="no">STEP 4 ／ ゆくゆく</div><h4>依頼し合う</h4><p>得意を知っている仲間に案件を回し合う。</p></div>
+    <div class="step now"><div class="no">いまここ</div><h4>知る</h4><p>Chatworkで自己紹介</p></div>
+    <div class="step"><div class="no">まず目指す</div><h4>話す</h4><p>交流会・作業会で声を交わす</p></div>
+    <div class="step"><div class="no">次に</div><h4>相談する</h4><p>困りごとや情報を投げ合う</p></div>
+    <div class="step goal"><div class="no">ゆくゆく</div><h4>依頼し合う</h4><p>得意を知る仲間に仕事を回す</p></div>
   </div>
 </section>
 
-<section id="tool">
-  <h2><span class="num">03</span>交流の場はDiscordをご提案します</h2>
-  <p class="lead">これまでの運営経験から、Discordが一番使いやすいと考えています。ほかの選択肢も並べておきますので、比べたうえでご判断ください。</p>
+<section>
+  <h2><span class="num">03</span>そのためにやること</h2>
+
+  <h3>① 交流の場はDiscordに</h3>
   <div class="tblwrap">
     <table>
-      <thead><tr><th>ツール</th><th>通話のしやすさ</th><th>メンバー同士のやり取り</th><th>見せる範囲の調整</th><th>気になる点</th></tr></thead>
+      <thead><tr><th>ツール</th><th class="c">気軽な通話</th><th class="c">誰とでも<br>やり取り</th><th class="c">見える範囲<br>の調整</th><th>ひとこと</th></tr></thead>
       <tbody>
-        <tr class="pick"><td>Discord<span class="rec">おすすめ</span></td><td>常設の通話部屋に入るだけ。画面オフで声だけ参加もできる</td><td>参加者なら誰とでも会話・DMができる</td><td>役割（ロール）ごとに見えるチャンネルを分けられる</td><td>初めての方は操作に慣れるまで少し案内が必要</td></tr>
-        <tr><td>Chatwork（現状）</td><td>通話は個別に発信する形で、気軽な雑談には向きにくい</td><td>グループ単位のやり取りが中心</td><td>グループを分けて対応</td><td>連絡用としては引き続き便利</td></tr>
-        <tr><td>Slack</td><td>ハドルで通話可。無料版は履歴が90日まで</td><td>チャンネル・DMとも使いやすい</td><td>チャンネル単位で調整</td><td>無料版の制限がコミュニティ運営では気になりやすい</td></tr>
-        <tr><td>LINEオープンチャット</td><td>通話機能はあるが大人数向き</td><td>匿名性が高く、関係が深まりにくい</td><td>細かい分け方は難しい</td><td>仕事の受発注には向きにくい</td></tr>
-        <tr><td>Zoom / Google Meet</td><td>通話品質は安定。毎回URLの発行が必要</td><td>通話以外のやり取りはできない</td><td>なし</td><td>交流会の「当日だけ」の場になりやすい</td></tr>
+        <tr class="pick"><td>Discord<span class="rec">おすすめ</span></td><td class="c">◎</td><td class="c">◎</td><td class="c">◎</td><td>画面オフで声だけ参加できる。慣れるまで少し案内が必要</td></tr>
+        <tr><td>Chatwork（現状）</td><td class="c">△</td><td class="c">○</td><td class="c">○</td><td>お知らせ・連絡用として引き続き便利</td></tr>
+        <tr><td>Slack</td><td class="c">○</td><td class="c">◎</td><td class="c">○</td><td>無料版は履歴が90日まで</td></tr>
+        <tr><td>LINEオープンチャット</td><td class="c">△</td><td class="c">△</td><td class="c">△</td><td>匿名性が高く、仕事のやり取りには不向き</td></tr>
+        <tr><td>Zoom / Meet</td><td class="c">○</td><td class="c">×</td><td class="c">×</td><td>当日だけの場になりやすい</td></tr>
       </tbody>
     </table>
   </div>
-  <div class="band t">Chatworkは「お知らせ・連絡」、Discordは「交流・相談・案件のやり取り」と役割を分けると、今のメンバーさんも戸惑いにくいと思います。</div>
-</section>
-
-<section id="discord">
-  <h2><span class="num">04</span>Discordのサーバー構成イメージ</h2>
-  <p class="lead">入った直後は見える範囲を絞り、ルールに同意したり案件に参加したりするごとに、見えるチャンネルが増える仕組みにします。</p>
-  <div class="server">
+  <div class="grid g2" style="margin-top:14px">
     <div class="card">
-      <div class="cat">はじめに</div>
-      <div class="ch"><span class="h">#</span><span class="nm">ようこそ・ルール</span><span>参加したら最初に読む場所</span></div>
-      <div class="ch"><span class="h">#</span><span class="nm">お知らせ</span><span>交流会の日程・運営からの連絡</span></div>
-      <div class="ch"><span class="h">#</span><span class="nm">自己紹介</span><span>テンプレートに沿って一言ずつ</span></div>
-      <div class="cat">交流</div>
-      <div class="ch"><span class="h">#</span><span class="nm">雑談</span><span>なんでも気軽に</span></div>
-      <div class="ch"><span class="h">#</span><span class="nm">お役立ち情報</span><span>ツール・制度・勉強会など</span></div>
-      <div class="ch"><span class="h">#</span><span class="nm">相談・質問</span><span>困りごとを投げられる場所</span></div>
-      <div class="ch"><span class="h">♪</span><span class="nm">ラウンジ（通話）</span><span>いつでも入れる常設の通話部屋</span></div>
-      <div class="ch"><span class="h">♪</span><span class="nm">交流会ルーム（通話）</span><span>テーマ別の会で使う部屋</span></div>
-      <div class="cat">お仕事</div>
-      <div class="ch"><span class="h">#</span><span class="nm">お仕事募集・紹介</span><span>手伝ってほしい・手が空いています</span></div>
-      <div class="ch"><span class="h">#</span><span class="nm">案件-〇〇様</span><span>案件ごとに作成<span class="lock">参加者のみ</span></span></div>
-      <div class="cat">運営</div>
-      <div class="ch"><span class="h">#</span><span class="nm">運営メモ</span><span>運営の打ち合わせ用<span class="lock">運営のみ</span></span></div>
+      <div class="label">チャンネル構成</div>
+      <div class="ch"><span class="cat">はじめに</span><span>ルール／お知らせ／自己紹介</span></div>
+      <div class="ch"><span class="cat">交流</span><span>雑談／お役立ち情報／相談・質問／通話ラウンジ</span></div>
+      <div class="ch"><span class="cat">関西</span><span>関西メンバーの雑談・オフ会の連絡</span></div>
+      <div class="ch"><span class="cat">お仕事</span><span>募集・紹介／案件ごとの部屋<span class="lock">参加者のみ</span></span></div>
     </div>
     <div class="card">
-      <div class="label">ロール（役割）で見える範囲を分ける</div>
-      <div class="role"><span class="r g">ゲスト</span><span>参加した直後。「はじめに」だけ見える状態。</span></div>
-      <div class="role"><span class="r m">メンバー</span><span>ルールに同意して自己紹介を書いたら付与。交流・お仕事のチャンネルが見えるように。</span></div>
-      <div class="role"><span class="r p">案件メンバー</span><span>案件ごとに付与。その案件のチャンネルだけが見えるように。</span></div>
-      <div class="role"><span class="r o">運営</span><span>岩切さん・運営サポート。すべてのチャンネルを見られる。</span></div>
+      <div class="label">ロールで見える範囲を分ける</div>
+      <div class="role"><span class="r g">ゲスト</span><span>入った直後。「はじめに」だけ</span></div>
+      <div class="role"><span class="r m">メンバー</span><span>自己紹介後。交流・お仕事が見える</span></div>
+      <div class="role"><span class="r p">案件メンバー</span><span>その案件の部屋だけ見える</span></div>
+      <div class="role"><span class="r o">運営</span><span>すべて見える</span></div>
     </div>
   </div>
-</section>
+  <div class="band t">Chatworkは「お知らせ」、Discordは「交流・相談」と使い分けると、今のメンバーさんも戸惑いにくくなります。</div>
 
-<section id="time">
-  <h2><span class="num">05</span>日時は候補を複数出して、来られる回に来てもらう</h2>
-  <p class="lead">以前Chatworkでとった「開催してほしい時間帯」アンケートでは、<b>平日の3つの時間帯に希望が分かれ、休日の希望はありませんでした</b>。1つの日時に絞ると来られない方が出るため、平日の各時間帯に候補を出して募る形をおすすめします。</p>
-  <div class="card" role="img" aria-label="開催希望時間帯アンケート結果。平日午前6、平日午後7、平日夜8、休日午前0、休日午後0">
-    <div class="label">開催してほしい時間帯（リアクション数・複数回答）</div>
-    <div class="bar-row"><span>平日午前 10〜12時</span><div class="track"><div class="fill" style="width:75%"></div></div><span class="val">6<small>人</small></span></div>
-    <div class="bar-row"><span>平日午後 13〜18時</span><div class="track"><div class="fill" style="width:87.5%"></div></div><span class="val">7<small>人</small></span></div>
-    <div class="bar-row"><span>平日夜 18〜20時</span><div class="track"><div class="fill top" style="width:100%"></div></div><span class="val">8<small>人</small></span></div>
-    <div class="bar-row"><span>休日午前 10〜12時</span><div class="track"></div><span class="val">0<small>人</small></span></div>
-    <div class="bar-row"><span>休日午後 13〜18時</span><div class="track"></div><span class="val">0<small>人</small></span></div>
-    <p class="small" style="margin:10px 0 0">出典：dPlan実行委員会「オンライン交流会」アンケート（2025年3月3日 Chatwork投稿）</p>
-  </div>
-  <div class="note"><b>確認中：</b>時間帯ごとに参加希望の男女比に差があるかを確認しています。分かり次第、テーマと時間帯の組み合わせ（例：子育て中の方が多い時間帯に「ママ大集合」を置くなど）に反映します。</div>
-</section>
-
-<section id="theme">
-  <h2><span class="num">06</span>テーマを決めて、少人数から</h2>
-  <p class="lead">大人数の場は入りにくい方も多いので、まずは「どんな人が来るか分かる」テーマ付きの会で、参加のハードルを下げることを一番大事にします。</p>
-  <div class="grid g3">
-    <div class="card first"><div class="label">最初の一回におすすめ</div><h4>初めましての方向け雑談</h4><span class="who">まだ誰とも話したことがない方</span><p>自己紹介＋最近の仕事の話。運営が進行役をします。</p></div>
-    <div class="card"><div class="label">同じ立場どうし</div><h4>ママ大集合</h4><span class="who">子育てしながら働く方</span><p>時間のやりくりや働き方の工夫を共有。</p></div>
-    <div class="card"><div class="label">同じ職種どうし</div><h4>職種別のおしゃべり会</h4><span class="who">デザイナー・ライター・エンジニアなど</span><p>同じ職種ならではの悩みや単価の話。</p></div>
-    <div class="card"><div class="label">話すのが苦手でも</div><h4>もくもく作業会</h4><span class="who">話すのはまだ緊張する方</span><p>通話をつないで各自作業。始めと終わりだけ一言。</p></div>
-    <div class="card"><div class="label">学び合う</div><h4>ちょこっと勉強会</h4><span class="who">情報を集めたい方</span><p>メンバーが10分ほど得意分野を紹介。</p></div>
-    <div class="card"><div class="label">関係ができてから</div><h4>お仕事相談会</h4><span class="who">ある程度顔なじみになった方</span><p>「こんな案件どう進める？」を気軽に相談。</p></div>
-  </div>
-  <h3>毎回お伝えする参加ルール</h3>
-  <div class="chips">
-    <span class="chip">画面オフ・声だけでOK</span><span class="chip">聞くだけ参加OK</span><span class="chip">途中参加・途中退出OK</span><span class="chip">1回 30分〜1時間</span><span class="chip">はじめは数名から</span>
-  </div>
-</section>
-
-<section id="project">
-  <h2><span class="num">07</span>ゆくゆくは、案件ごとにDiscordへ専用チャンネルを</h2>
-  <p class="lead">メンバー間で案件が動き始めたら、個人間だけで進めるのではなく、Discord内に案件チャンネルを立てる運用をご提案します。岩切さんがどの案件が動いているかを把握でき、dPlanへの還元にもつながる形です。</p>
-  <div class="flow">
-    <div class="fl"><div class="no">1</div><h4>依頼・相談が生まれる</h4><p>「お仕事募集・紹介」や交流会での会話から。</p></div>
-    <div class="fl"><div class="no">2</div><h4>案件チャンネルを作る</h4><p>運営が作成し、関わるメンバーに案件メンバーのロールを付与。</p></div>
-    <div class="fl key"><div class="no">3</div><h4>岩切さんが状況を把握</h4><p>運営は全チャンネルを見られるので、動いている案件が分かる。</p></div>
-    <div class="fl"><div class="no">4</div><h4>チャンネル内で進行</h4><p>やり取り・ファイルがまとまり、引き継ぎや振り返りもしやすい。</p></div>
-    <div class="fl key"><div class="no">5</div><h4>完了報告・dPlanへ還元</h4><p>還元（キャッシュバック）の割合や方法は、岩切さんと相談して決めます。</p></div>
-  </div>
-</section>
-
-<section id="roadmap">
-  <h2><span class="num">08</span>進め方：4つの段階で少しずつ</h2>
-  <p class="lead">時期は目安です。参加してくださる方の反応を見ながら調整します。</p>
+  <h3>② 開催日時は平日の複数枠から選べるように</h3>
   <div class="grid g2">
-    <div class="phase"><div class="when">段階1 ／ 約2週間</div><h4>場をつくる</h4><ul class="clean"><li>Discordサーバー作成</li><li>チャンネル・ロール設定</li><li>ルールと自己紹介テンプレート</li><li>参加方法の案内資料</li></ul></div>
-    <div class="phase"><div class="when">段階2 ／ 1か月目</div><h4>試しに集まる</h4><ul class="clean"><li>Chatworkで参加者を募集</li><li>「初めまして雑談」を平日の複数枠で開催</li><li>参加者の感想を聞く</li></ul></div>
-    <div class="phase"><div class="when">段階3 ／ 2〜3か月目</div><h4>習慣にする</h4><ul class="clean"><li>テーマ別の会を定期開催</li><li>ラウンジ・雑談チャンネルを盛り上げる</li><li>進行役をメンバーにもお願いしていく</li></ul></div>
-    <div class="phase last"><div class="when">段階4 ／ 関係ができてから</div><h4>頼み合う</h4><ul class="clean"><li>お仕事募集・紹介の運用開始</li><li>案件チャンネルの運用</li><li>還元の仕組みを開始</li></ul></div>
+    <div class="card" role="img" aria-label="開催希望時間帯。平日午前6、平日午後7、平日夜8、休日0">
+      <div class="label">開催してほしい時間帯（2025年3月 Chatworkアンケート）</div>
+      <div class="bar-row"><span>平日午前 10〜12時</span><div class="track"><div class="fill" style="width:75%"></div></div><span class="val">6<small>人</small></span></div>
+      <div class="bar-row"><span>平日午後 13〜18時</span><div class="track"><div class="fill" style="width:87.5%"></div></div><span class="val">7<small>人</small></span></div>
+      <div class="bar-row"><span>平日夜 18〜20時</span><div class="track"><div class="fill top" style="width:100%"></div></div><span class="val">8<small>人</small></span></div>
+      <div class="bar-row"><span>休日 午前・午後</span><div class="track"></div><span class="val">0<small>人</small></span></div>
+    </div>
+    <div class="insight">
+      <div class="card"><h4>希望は平日3枠に分散</h4><p>1つに絞らず、平日の各時間帯に候補を出して参加者を募ります。</p></div>
+      <div class="card"><h4>どの時間帯も男性が多め</h4><p>実行委員会メンバー中心の回答だったため。女性が参加しやすい「女子会」を設けます。</p></div>
+    </div>
   </div>
 
-  <h3>役割分担</h3>
+  <h3>③ テーマを決めて、少人数から</h3>
   <div class="grid g3">
-    <div class="card"><div class="label">岩切さん</div><ul class="clean"><li>Chatworkでの参加呼びかけ</li><li>dPlanとしての方針・ルールの確認</li><li>還元の考え方の決定</li><li>交流会への顔出し（できる範囲で）</li></ul></div>
-    <div class="card"><div class="label">運営サポート</div><ul class="clean"><li>Discordの構築・設定</li><li>交流会の企画・日程調整・進行</li><li>参加方法の案内・質問対応</li><li>案件チャンネルの作成・管理</li></ul></div>
-    <div class="card"><div class="label">メンバーの皆さん</div><ul class="clean"><li>来られる回に気軽に参加</li><li>自己紹介・雑談への投稿</li><li>慣れてきたら会の進行や話題提供</li></ul></div>
+    <div class="card pick"><div class="label">最初におすすめ</div><h4>初めましての方向け雑談</h4><p>まだ誰とも話したことがない方向け。運営が進行します。</p></div>
+    <div class="card pick"><div class="label">岩切さんのご希望</div><h4>女子会</h4><p>女性メンバーが気軽に話せる場。働き方や子育てとの両立なども。</p></div>
+    <div class="card pick"><div class="label">岩切さんのご希望</div><h4>オンライン作業会</h4><p>通話をつないで各自作業。始めと終わりだけ一言。話すのが苦手でもOK。</p></div>
+    <div class="card"><div class="label">関西エリア</div><h4>大阪での作業会</h4><p>高寺が月1回開いている対面の作業会に、関西のメンバーをお誘いします。</p></div>
+    <div class="card"><div class="label">同じ職種どうし</div><h4>職種別おしゃべり会</h4><p>デザイナー・ライター・エンジニアなど、職種ならではの話を。</p></div>
+    <div class="card"><div class="label">関係ができてから</div><h4>お仕事相談会</h4><p>「この案件どう進める？」を気軽に相談。</p></div>
+  </div>
+  <div class="chips"><span class="chip">画面オフOK</span><span class="chip">聞くだけOK</span><span class="chip">途中参加・退出OK</span><span class="chip">30分〜1時間</span><span class="chip">数名から</span></div>
+
+  <h3>④ 案件が生まれたらDiscordに専用の部屋を</h3>
+  <div class="flow"><span>依頼・相談が生まれる</span><i>→</i><span>案件の部屋を作る</span><i>→</i><span class="key">岩切さんも状況が見える</span><i>→</i><span>部屋の中で進行</span><i>→</i><span class="key">完了報告・dPlanへ還元</span></div>
+  <p class="small" style="margin-top:10px">メンバー同士の自由なやり取りはそのままに、使うと便利な場所として用意します。還元の有無や割合は、岩切さんとご相談して決めたいです。</p>
+</section>
+
+<section>
+  <h2><span class="num">04</span>進め方の目安</h2>
+  <div class="grid g4">
+    <div class="phase"><div class="when">約2週間</div><h4>場をつくる</h4><ul class="clean"><li>Discord構築</li><li>ルール・案内づくり</li></ul></div>
+    <div class="phase"><div class="when">1か月目</div><h4>試しに集まる</h4><ul class="clean"><li>初めまして雑談</li><li>女子会</li></ul></div>
+    <div class="phase"><div class="when">2〜3か月目</div><h4>習慣にする</h4><ul class="clean"><li>作業会を定期開催</li><li>関西の対面会</li></ul></div>
+    <div class="phase last"><div class="when">関係ができてから</div><h4>頼み合う</h4><ul class="clean"><li>案件の部屋の運用</li><li>エリアのまとめ役</li></ul></div>
   </div>
 </section>
 
-<section id="ask">
-  <h2><span class="num">09</span>一緒に決めていきたいポイント</h2>
+<section>
+  <h2><span class="num">05</span>一緒に決めたいこと</h2>
   <ol class="q">
-    <li><b>Chatworkとの使い分け</b><br>Chatworkはお知らせ用に残すか、徐々にDiscordへ移すか。</li>
-    <li><b>最初の交流会のテーマと候補日時</b><br>「初めまして雑談」から始めるか。男女比の確認結果も踏まえて決めたいです。</li>
-    <li><b>案件化したときの還元の考え方</b><br>割合・タイミング・対象案件の範囲など。急がず、関係ができてから決める形でも大丈夫です。</li>
-    <li><b>参加ルールの範囲</b><br>営業目的の勧誘や、メンバー外への情報共有など、最低限決めておきたいこと。</li>
+    <li><b>Chatworkとの使い分け</b>　お知らせ用に残すか、徐々にDiscordへ移すか</li>
+    <li><b>最初の会のテーマと候補日時</b>　初めまして雑談・女子会のどちらから始めるか</li>
+    <li><b>案件の部屋と還元の考え方</b>　急がず、関係ができてから決める形でも大丈夫です</li>
   </ol>
 </section>
 
