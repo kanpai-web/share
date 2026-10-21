@@ -30,11 +30,6 @@ body{background:#e8eaf0;color:var(--ink);
 .doc-sec{margin-bottom:14px;display:flex;align-items:baseline;gap:12px;flex-wrap:wrap}
 .doc-sec h2{font-size:19px;font-weight:800;color:var(--navy)}
 .doc-sec span{font-size:12px;color:var(--ink-sub)}
-.bar{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-bottom:14px}
-.btn-toggle{appearance:none;border:1.5px solid var(--navy);background:#fff;color:var(--navy);
-  font:inherit;font-size:12.5px;font-weight:700;padding:7px 16px;border-radius:100px;cursor:pointer}
-.btn-toggle[aria-pressed="true"]{background:var(--navy);color:#fff}
-.hint{font-size:11.5px;color:var(--ink-sub)}
 .browser{background:#fff;border:1px solid var(--line2);border-radius:10px;overflow:hidden;
   box-shadow:0 5px 22px rgba(20,20,60,.12);margin-bottom:34px}
 .browser-bar{background:#eceef3;border-bottom:1px solid var(--line2);padding:9px 14px;display:flex;align-items:center;gap:8px}
@@ -128,120 +123,120 @@ body{background:#e8eaf0;color:var(--ink);
 .dhero .dlead{font-size:14px;color:rgba(255,255,255,.8);margin-top:16px;max-width:720px;line-height:1.95}
 
 /* 2カラム */
-.dbody{max-width:1020px;margin:0 auto;padding:0 28px 10px;display:grid;
+.ow{max-width:1020px;margin:0 auto;padding:0 28px 10px;display:grid;
   grid-template-columns:286px 1fr;gap:44px;align-items:start}
-.dcol-main{min-width:0;padding-top:52px}
+.ow-main{min-width:0;padding-top:52px}
 
 /* サイド：概要カード（ヒーローに重ねる） */
-.aside{margin-top:52px;position:sticky;top:20px}
-.sumcard{background:#fff;border-radius:8px;box-shadow:0 8px 26px rgba(10,10,60,.15);overflow:hidden}
-.sumcard .sc-hd{background:var(--navy-dp);color:#fff;font-size:12px;font-weight:700;letter-spacing:.16em;padding:13px 20px}
-.sumcard .sc-b{padding:6px 20px 18px}
-.sumcard dl{padding:13px 0;border-bottom:1px dashed var(--line)}
-.sumcard dl:last-child{border-bottom:0}
-.sumcard dt{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:5px}
-.sumcard dd{font-size:13px;line-height:1.75;color:var(--ink)}
-.sumcard .pill{display:inline-block;background:var(--tint);color:var(--navy);font-size:11.5px;
+.ow-side{margin-top:52px;position:sticky;top:20px}
+.ow-sum{background:#fff;border-radius:8px;box-shadow:0 8px 26px rgba(10,10,60,.15);overflow:hidden}
+.ow-sum .ow-sum__hd{background:var(--navy-dp);color:#fff;font-size:12px;font-weight:700;letter-spacing:.16em;padding:13px 20px}
+.ow-sum .ow-sum__b{padding:6px 20px 18px}
+.ow-sum dl{padding:13px 0;border-bottom:1px dashed var(--line)}
+.ow-sum dl:last-child{border-bottom:0}
+.ow-sum dt{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:5px}
+.ow-sum dd{font-size:13px;line-height:1.75;color:var(--ink)}
+.ow-sum .ow-pill{display:inline-block;background:var(--tint);color:var(--navy);font-size:11.5px;
   font-weight:700;border-radius:3px;padding:3px 9px;margin:2px 3px 2px 0}
-.side-cta{margin-top:16px;background:var(--tint);border-radius:8px;padding:18px 20px;text-align:center}
-.side-cta p{font-size:12.5px;color:var(--ink-sub);line-height:1.8;margin-bottom:11px}
-.side-cta a{display:block;background:var(--navy);color:#fff;font-size:13.5px;font-weight:700;
+.ow-sidecta{margin-top:16px;background:var(--tint);border-radius:8px;padding:18px 20px;text-align:center}
+.ow-sidecta p{font-size:12.5px;color:var(--ink-sub);line-height:1.8;margin-bottom:11px}
+.ow-sidecta a{display:block;background:var(--navy);color:#fff;font-size:13.5px;font-weight:700;
   border-radius:100px;padding:11px 0;text-decoration:none}
 
 /* 本文セクション */
-.sec{margin-bottom:46px;position:relative}
-.sec-hd{position:relative;margin-bottom:26px;padding-bottom:17px}
-.sec-hd .en{display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+.ow-sec{margin-bottom:46px;position:relative}
+.ow-hd{position:relative;margin-bottom:26px;padding-bottom:17px}
+.ow-hd .ow-en{display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size:46px;font-weight:900;color:var(--navy);letter-spacing:-.012em;line-height:.98;margin-bottom:11px}
-.sec-hd .ja{display:block;font-size:16px;font-weight:700;color:var(--ink-sub);letter-spacing:.09em}
-.sec-hd .num{position:absolute;right:0;top:9px;font-family:'Helvetica Neue',Arial,sans-serif;
+.ow-hd .ow-ja{display:block;font-size:16px;font-weight:700;color:var(--ink-sub);letter-spacing:.09em}
+.ow-hd .ow-num{position:absolute;right:0;top:9px;font-family:'Helvetica Neue',Arial,sans-serif;
   font-size:13px;font-weight:800;color:var(--navy);opacity:.34;letter-spacing:.14em}
-.sec-hd::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--line)}
-.sec-hd::before{content:"";position:absolute;left:0;bottom:0;width:84px;height:3px;background:var(--navy);z-index:1}
-.sec > *{position:relative;z-index:1}
-.ptext{font-size:14.5px;line-height:2.05;margin-bottom:16px}
-.ptext:last-child{margin-bottom:0}
-.ptext b{font-weight:700;background:linear-gradient(transparent 62%,#dfeaff 62%)}
+.ow-hd::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--line)}
+.ow-hd::before{content:"";position:absolute;left:0;bottom:0;width:84px;height:3px;background:var(--navy);z-index:1}
+.ow-sec > *{position:relative;z-index:1}
+.ow-text{font-size:14.5px;line-height:2.05;margin-bottom:16px}
+.ow-text:last-child{margin-bottom:0}
+.ow-text b{font-weight:700;background:linear-gradient(transparent 62%,#dfeaff 62%)}
 
 /* チェックつき箇条書き */
-.clist{list-style:none}
-.clist li{font-size:14.5px;line-height:1.85;padding:13px 16px 13px 46px;position:relative;
+.ow-check{list-style:none}
+.ow-check li{font-size:14.5px;line-height:1.85;padding:13px 16px 13px 46px;position:relative;
   background:var(--grey2);border-radius:5px;margin-bottom:9px}
-.clist li::before{content:"";position:absolute;left:17px;top:19px;width:14px;height:8px;
+.ow-check li::before{content:"";position:absolute;left:17px;top:19px;width:14px;height:8px;
   border-left:2.5px solid var(--navy);border-bottom:2.5px solid var(--navy);transform:rotate(-45deg)}
-.clist li:last-child{margin-bottom:0}
-.before{background:#fff;border:1px solid var(--line);border-left:3px solid var(--navy-lt);
+.ow-check li:last-child{margin-bottom:0}
+.ow-before{background:#fff;border:1px solid var(--line);border-left:3px solid var(--navy-lt);
   border-radius:0 5px 5px 0;padding:14px 18px;margin-top:15px;font-size:13px;color:var(--ink-sub);line-height:1.9}
-.before b{color:var(--navy);font-weight:700}
+.ow-before b{color:var(--navy);font-weight:700}
 
 /* フェーズ */
-.phase{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:20px}
-.ph{background:#fff;border:1px solid var(--line);border-radius:6px;padding:15px;position:relative}
-.ph::before{content:"";position:absolute;left:15px;right:15px;top:0;height:3px;background:var(--navy);border-radius:0 0 2px 2px}
-.ph .p-t{font-size:11.5px;font-weight:800;color:var(--navy);margin:5px 0 6px;letter-spacing:.04em}
-.ph p{font-size:12.5px;line-height:1.8;color:var(--ink-sub)}
+.ow-phase{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:20px}
+.ow-phase__item{background:#fff;border:1px solid var(--line);border-radius:6px;padding:15px;position:relative}
+.ow-phase__item::before{content:"";position:absolute;left:15px;right:15px;top:0;height:3px;background:var(--navy);border-radius:0 0 2px 2px}
+.ow-phase__item .ow-phase__t{font-size:11.5px;font-weight:800;color:var(--navy);margin:5px 0 6px;letter-spacing:.04em}
+.ow-phase__item p{font-size:12.5px;line-height:1.8;color:var(--ink-sub)}
 
 /* 成果（ハイライト） */
-.sec.hl{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dp) 100%);color:#fff;
+.ow-sec.ow-sec--hl{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dp) 100%);color:#fff;
   border-radius:10px;padding:34px 34px 32px;margin-left:-34px;margin-right:-34px;overflow:hidden}
-.sec.hl::after{content:"";position:absolute;right:-70px;top:-70px;width:230px;height:230px;
+.ow-sec.ow-sec--hl::after{content:"";position:absolute;right:-70px;top:-70px;width:230px;height:230px;
   border:1px solid rgba(255,255,255,.13);border-radius:50%}
-.sec.hl .sec-hd::before{background:#fff}
-.sec.hl .sec-hd::after{background:rgba(255,255,255,.26)}
-.sec.hl .sec-hd .en{color:#fff}
-.sec.hl .sec-hd .ja{color:rgba(255,255,255,.85)}
-.sec.hl .sec-hd .num{color:#fff;opacity:.45}
-.results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.rcard{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:20px 16px;text-align:center}
-.rcard .r-k{font-size:11.5px;opacity:.85;margin-bottom:13px;line-height:1.5;min-height:2.6em}
-.rcard .r-ba{display:flex;align-items:baseline;justify-content:center;gap:9px;margin-bottom:10px}
-.rcard .r-b{font-size:13px;opacity:.6}
-.rcard .r-ar{font-size:11px;opacity:.5}
-.rcard .r-a{font-size:36px;font-weight:800;line-height:1;letter-spacing:-.01em}
-.rcard .r-a small{font-size:15px;font-weight:700;margin-left:2px}
-.rcard .r-note{font-size:11px;opacity:.7;border-top:1px solid rgba(255,255,255,.22);padding-top:9px}
-.rsum{margin-top:18px;font-size:16px;font-weight:700;line-height:1.85;text-align:center}
+.ow-sec.ow-sec--hl .ow-hd::before{background:#fff}
+.ow-sec.ow-sec--hl .ow-hd::after{background:rgba(255,255,255,.26)}
+.ow-sec.ow-sec--hl .ow-hd .ow-en{color:#fff}
+.ow-sec.ow-sec--hl .ow-hd .ow-ja{color:rgba(255,255,255,.85)}
+.ow-sec.ow-sec--hl .ow-hd .ow-num{color:#fff;opacity:.45}
+.ow-results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.ow-rcard{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:20px 16px;text-align:center}
+.ow-rcard .ow-rcard__k{font-size:11.5px;opacity:.85;margin-bottom:13px;line-height:1.5;min-height:2.6em}
+.ow-rcard .ow-rcard__ba{display:flex;align-items:baseline;justify-content:center;gap:9px;margin-bottom:10px}
+.ow-rcard .ow-rcard__b{font-size:13px;opacity:.6}
+.ow-rcard .ow-rcard__ar{font-size:11px;opacity:.5}
+.ow-rcard .ow-rcard__a{font-size:36px;font-weight:800;line-height:1;letter-spacing:-.01em}
+.ow-rcard .ow-rcard__a small{font-size:15px;font-weight:700;margin-left:2px}
+.ow-rcard .ow-rcard__note{font-size:11px;opacity:.7;border-top:1px solid rgba(255,255,255,.22);padding-top:9px}
+.ow-rsum{margin-top:18px;font-size:16px;font-weight:700;line-height:1.85;text-align:center}
 
 /* お客様の声 */
 .voice{background:#fff;border:1px solid var(--line);border-radius:8px;padding:30px 34px;position:relative}
 .voice::before{content:"“";position:absolute;left:18px;top:-6px;font-size:66px;color:var(--tint);
   font-family:Georgia,serif;line-height:1;z-index:0}
 .voice p{font-size:15px;line-height:2.05;margin-bottom:14px;position:relative;z-index:1}
-.voice .who{font-size:12.5px;color:var(--ink-sub);text-align:right;padding-top:12px;border-top:1px solid var(--line)}
+.voice .ow-voice__who{font-size:12.5px;color:var(--ink-sub);text-align:right;padding-top:12px;border-top:1px solid var(--line)}
 
-.cats{display:flex;flex-wrap:wrap;gap:8px}
-.cat{font-size:12.5px;border:1px solid var(--navy);color:var(--navy);border-radius:100px;padding:6px 16px;text-decoration:none}
-.nextbox{background:var(--tint2);border-radius:8px;padding:22px 26px}
-.nextbox p{font-size:14.5px;line-height:2}
+.ow-cats{display:flex;flex-wrap:wrap;gap:8px}
+.ow-cat{font-size:12.5px;border:1px solid var(--navy);color:var(--navy);border-radius:100px;padding:6px 16px;text-decoration:none}
+.ow-next{background:var(--tint2);border-radius:8px;padding:22px 26px}
+.ow-next p{font-size:14.5px;line-height:2}
 
 /* ── 選ばれた理由（最後に特出し） ── */
-.reason{background:var(--tint2);border-top:1px solid #dde6f7;padding:58px 0 54px;position:relative;overflow:hidden}
-.reason::after{content:"";position:absolute;left:-110px;top:-110px;width:300px;height:300px;
+.ow-reason{background:var(--tint2);border-top:1px solid #dde6f7;padding:58px 0 54px;position:relative;overflow:hidden}
+.ow-reason::after{content:"";position:absolute;left:-110px;top:-110px;width:300px;height:300px;
   border:1.5px solid rgba(0,0,128,.07);border-radius:50%}
-.reason .wrap{position:relative;z-index:1;max-width:880px}
-.reason .r-hd{text-align:center;margin-bottom:34px}
-.reason .r-hd .en{display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
+.ow-reason__inner{position:relative;z-index:1;max-width:880px}
+.ow-reason .ow-reason__hd{text-align:center;margin-bottom:34px}
+.ow-reason .ow-reason__hd .ow-en{display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif;
   font-size:52px;font-weight:900;color:var(--navy);letter-spacing:-.012em;line-height:1;margin-bottom:12px}
-.reason .r-hd .ja{display:block;font-size:16px;font-weight:700;color:var(--ink-sub);letter-spacing:.09em;margin-bottom:16px}
-.reason .r-hd .rule{display:inline-block;width:84px;height:3px;background:var(--navy)}
+.ow-reason .ow-reason__hd .ow-ja{display:block;font-size:16px;font-weight:700;color:var(--ink-sub);letter-spacing:.09em;margin-bottom:16px}
+.ow-reason .ow-reason__hd .ow-rule{display:inline-block;width:84px;height:3px;background:var(--navy)}
 /* 決め手を1行で大きく */
-.decide{background:var(--navy);color:#fff;border-radius:10px;padding:30px 36px;text-align:center;
+.ow-decide{background:var(--navy);color:#fff;border-radius:10px;padding:30px 36px;text-align:center;
   box-shadow:0 10px 30px rgba(0,0,128,.18);position:relative;margin-bottom:26px}
-.decide .d-l{font-size:11.5px;font-weight:800;letter-spacing:.2em;opacity:.72;margin-bottom:12px}
-.decide .d-t{font-size:27px;font-weight:700;line-height:1.6;letter-spacing:.01em}
-.decide .d-t em{font-style:normal;background:linear-gradient(transparent 58%,rgba(255,255,255,.26) 58%);padding:0 3px}
+.ow-decide .ow-decide__l{font-size:11.5px;font-weight:800;letter-spacing:.2em;opacity:.72;margin-bottom:12px}
+.ow-decide .ow-decide__t{font-size:27px;font-weight:700;line-height:1.6;letter-spacing:.01em}
+.ow-decide .ow-decide__t em{font-style:normal;background:linear-gradient(transparent 58%,rgba(255,255,255,.26) 58%);padding:0 3px}
 /* コメント全文 */
-.rvoice{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 36px 26px;position:relative}
-.rvoice::before{content:"“";position:absolute;left:20px;top:-4px;font-size:72px;color:var(--tint);
+.ow-voice{background:#fff;border:1px solid var(--line);border-radius:10px;padding:30px 36px 26px;position:relative}
+.ow-voice::before{content:"“";position:absolute;left:20px;top:-4px;font-size:72px;color:var(--tint);
   font-family:Georgia,serif;line-height:1;z-index:0}
-.rvoice p{font-size:15px;line-height:2.1;position:relative;z-index:1}
-.rvoice .who{font-size:12.5px;color:var(--ink-sub);text-align:right;padding-top:14px;margin-top:16px;border-top:1px solid var(--line)}
+.ow-voice p{font-size:15px;line-height:2.1;position:relative;z-index:1}
+.ow-voice .ow-voice__who{font-size:12.5px;color:var(--ink-sub);text-align:right;padding-top:14px;margin-top:16px;border-top:1px solid var(--line)}
 /* CTAへの橋渡し */
-.bridge{text-align:center;margin-top:30px}
-.bridge p{font-size:15px;font-weight:700;color:var(--navy);line-height:1.9;margin-bottom:16px}
-.bridge a{display:inline-block;background:var(--navy);color:#fff;font-size:15px;font-weight:700;
+.ow-bridge{text-align:center;margin-top:30px}
+.ow-bridge p{font-size:15px;font-weight:700;color:var(--navy);line-height:1.9;margin-bottom:16px}
+.ow-bridge a{display:inline-block;background:var(--navy);color:#fff;font-size:15px;font-weight:700;
   border-radius:100px;padding:15px 52px;text-decoration:none}
-@media (max-width:980px){ .decide .d-t{font-size:21px} .reason .r-hd .en{font-size:38px} }
+@media (max-width:980px){ .ow-decide .ow-decide__t{font-size:21px} .ow-reason .ow-reason__hd .ow-en{font-size:38px} }
 
 .cta{background:var(--navy);color:#fff;text-align:center;padding:44px 0;margin-top:44px;position:relative;overflow:hidden}
 .cta::after{content:"";position:absolute;left:-70px;bottom:-110px;width:270px;height:270px;
@@ -252,28 +247,12 @@ body{background:#e8eaf0;color:var(--ink);
 .cta a{display:inline-block;background:#fff;color:var(--navy);font-size:14.5px;font-weight:700;
   border-radius:100px;padding:13px 44px;text-decoration:none;position:relative;z-index:1}
 
-/* ── 注釈 ── */
-.anno{position:absolute;z-index:6;background:var(--note);color:#fff;font-size:11px;font-weight:800;
-  width:22px;height:22px;border-radius:50%;display:flex;align-items:center;justify-content:center;
-  box-shadow:0 2px 7px rgba(0,0,0,.26)}
-.annobox{position:relative;outline:2px dashed var(--note);outline-offset:5px;border-radius:3px}
-body.noanno .anno{display:none}
-body.noanno .annobox{outline:none}
-.legend{background:var(--note-bg);border:1px solid #E8D4A8;border-radius:9px;padding:18px 22px;margin-bottom:34px}
-.legend h3{font-size:14px;font-weight:800;color:#8A6A1C;margin-bottom:11px}
-.legend ol{list-style:none;counter-reset:n}
-.legend li{counter-increment:n;font-size:12.5px;line-height:1.85;color:#6B5316;padding-left:30px;position:relative;margin-bottom:7px}
-.legend li::before{content:counter(n);position:absolute;left:0;top:3px;background:var(--note);color:#fff;
-  width:20px;height:20px;border-radius:50%;font-size:10.5px;font-weight:800;display:flex;align-items:center;justify-content:center}
-.legend li b{color:#4F3D0E;font-weight:800}
-body.noanno .legend{display:none}
-
 @media (max-width:980px){
-  .dbody{grid-template-columns:1fr;gap:0}
-  .aside{margin-top:28px;position:static}
-  .dcol-main{padding-top:34px}
-  .sec.hl{margin-left:0;margin-right:0}
-  .cards,.results,.phase{grid-template-columns:1fr}
+  .ow{grid-template-columns:1fr;gap:0}
+  .ow-side{margin-top:28px;position:static}
+  .ow-main{padding-top:34px}
+  .ow-sec.ow-sec--hl{margin-left:0;margin-right:0}
+  .cards,.ow-results,.ow-phase{grid-template-columns:1fr}
 }
 </style>
 </head>
@@ -284,31 +263,11 @@ body.noanno .legend{display:none}
     <div class="eyebrow">MOCKUP ／ opus-plan.net</div>
     <h1>実績詳細ページ</h1>
     <p>実績改善シートで整理した「掲載内容」と「区切り方」を、実際のサイトのデザインに当てはめたものです。構成はアイロバ社の導入事例（irob.co.jp/case/waf/）を参考に、左に概要を固定して右に本文を流す形にしています。<br>
-    配色・ボタン・見出しの形は現在の opus-plan.net から取っています（ネイビー #000080／本文 #363636／角丸ピルのボタン）。
-    <b>オレンジの番号は、いま無くて新しく作る必要があるパーツ</b>です。下のボタンで表示を切り替えられます。</p>
+    配色・ボタン・見出しの形は現在の opus-plan.net から取っています（ネイビー #000080／本文 #363636／角丸ピルのボタン）。</p>
   </div>
 </div>
 
 <div class="doc">
-
-  <div class="bar">
-    <button class="btn-toggle" id="tg" aria-pressed="true">注釈を表示中（クリックで消す）</button>
-    <span class="hint">注釈を消すと、実際の見え方だけを確認できます</span>
-  </div>
-
-  <div class="legend">
-    <h3>新しく作る必要があるパーツ</h3>
-    <ol>
-      <li><b>一覧の絞り込み（タブ式）</b>　業種・エリア・サービス・成果の4軸をタブで切り替え。全部を一度に出すと選ぶ気が失せるので、<b>1軸ずつ見せる</b></li>
-      <li><b>カードの成果バッジ</b>　一覧の時点で「何がどれだけ変わったか」が見える状態に</li>
-      <li><b>概要カード（サイド固定）</b>　業種・規模・支援内容・成果を左に固定。スクロールしても常に見える</li>
-      <li><b>セクション見出し（英＋日＋番号）</b>　サイトのナビと同じ英語＋日本語の型。背景の大きな番号で区切りを強調</li>
-      <li><b>チェックつき箇条書き</b>　課題・ご要望・施策で共通して使うパーツ</li>
-      <li><b>Result（成果）★最重要</b>　ネイビー背景で囲んだ数値カード3つ。<b>いま「何倍になった」をテキストでしか書けないのは、このパーツが無いためです</b></li>
-      <li><b>REASON（選ばれた理由）★</b>　本文の流れから出して<b>最後に全幅で特出し</b>。読み飛ばしを防ぎつつ、決め手を1行で大きく見せて「自分も同じ悩みだ」と思った方をそのまま相談へつなげます</li>
-      <li><b>Next（今後の展開）</b>　継続中であることが伝わると、継続前提の提案につながります</li>
-    </ol>
-  </div>
 
   <!-- ══════════ 一覧 ══════════ -->
   <div class="doc-sec"><h2>② 実績詳細ページ</h2><span>opus-plan.net/works/◯◯/　左に概要固定＋右に本文</span></div>
@@ -329,101 +288,96 @@ body.noanno .legend{display:none}
         </div>
       </div>
 
-      <div class="dbody">
+      <div class="ow">
         <!-- サイド -->
-        <aside class="aside annobox">
-          <div class="anno" style="top:-11px;right:-11px">3</div>
-          <div class="sumcard">
-            <div class="sc-hd">SUMMARY</div>
-            <div class="sc-b">
+        <aside class="ow-side">
+          <div class="ow-sum">
+            <div class="ow-sum__hd">SUMMARY</div>
+            <div class="ow-sum__b">
               <dl><dt>お客様の業種・規模</dt><dd>葬儀、家族葬<br>従業員15名・年商3億円規模</dd></dl>
               <dl><dt>エリア</dt><dd>大阪府堺市（堺区・北区・中区）</dd></dl>
-              <dl><dt>ご支援した内容</dt><dd><span class="pill">SEO対策</span><span class="pill">サイト構成の見直し</span><span class="pill">記事作成の運用代行</span></dd></dl>
+              <dl><dt>ご支援した内容</dt><dd><span class="ow-pill">SEO対策</span><span class="ow-pill">サイト構成の見直し</span><span class="ow-pill">記事作成の運用代行</span></dd></dl>
               <dl><dt>効果</dt><dd>地域検索からの問い合わせ増加</dd></dl>
             </div>
           </div>
-          <div class="side-cta">
+          <div class="ow-sidecta">
             <p>同じようなお悩みは<br>ありませんか？</p>
             <a href="#">無料で相談する</a>
           </div>
         </aside>
 
         <!-- 本文 -->
-        <div class="dcol-main">
+        <div class="ow-main">
 
-          <div class="sec annobox">
-            <div class="anno" style="top:-11px;right:-11px">4</div>
-            <div class="sec-hd"><span class="num">01</span><span class="en">PROBLEM</span><span class="ja">ご相談時の課題</span></div>
-            <ul class="clist annobox" style="outline-offset:3px">
-              <div class="anno" style="top:-11px;left:-11px">5</div>
+          <div class="ow-sec">
+            <div class="ow-hd"><span class="ow-num">01</span><span class="ow-en">PROBLEM</span><span class="ow-ja">ご相談時の課題</span></div>
+            <ul class="ow-check">
               <li>問い合わせが月1件以下で、営業に頼りきりになっていた</li>
               <li>「地域名＋業種」で検索しても3ページ目以降にしか出てこない</li>
               <li>自社でブログを書いていたが、何から手をつけるべきか社内で判断できなかった</li>
             </ul>
-            <div class="before"><b>ご相談時の数値</b>　月間セッション 420／問い合わせ 月0〜1件／「堺市 家族葬」は圏外</div>
+            <div class="ow-before"><b>ご相談時の数値</b>　月間セッション 420／問い合わせ 月0〜1件／「堺市 家族葬」は圏外</div>
           </div>
 
-          <div class="sec">
-            <div class="sec-hd"><span class="num">02</span><span class="en">REQUEST</span><span class="ja">ご要望</span></div>
-            <ul class="clist">
+          <div class="ow-sec">
+            <div class="ow-hd"><span class="ow-num">02</span><span class="ow-en">REQUEST</span><span class="ow-ja">ご要望</span></div>
+            <ul class="ow-check">
               <li>地域からの集客を強化したい</li>
               <li>電話とフォームの両方へ迷わず進める導線にしたい</li>
               <li>社内でも続けられる形にしてほしい</li>
             </ul>
           </div>
 
-          <div class="sec">
-            <div class="sec-hd"><span class="num">03</span><span class="en">APPROACH</span><span class="ja">ご提案・実施した施策</span></div>
-            <p class="ptext">記事の本数ではなく、<b>サイトの構成そのものが検索と噛み合っていない</b>ことが原因と考え、サービスと地域を掛け合わせたページ設計に作り替える方針をご提案しました。</p>
-            <ul class="clist">
+          <div class="ow-sec">
+            <div class="ow-hd"><span class="ow-num">03</span><span class="ow-en">APPROACH</span><span class="ow-ja">ご提案・実施した施策</span></div>
+            <p class="ow-text">記事の本数ではなく、<b>サイトの構成そのものが検索と噛み合っていない</b>ことが原因と考え、サービスと地域を掛け合わせたページ設計に作り替える方針をご提案しました。</p>
+            <ul class="ow-check">
               <li>サービス配下にエリアページを新設し、「地域 × サービス」で狙える構成へ</li>
               <li>記事を月4本のペースで継続投入</li>
               <li>プラン別の総額目安とよくあるご質問を追加し、費用の不安を解消</li>
               <li>スマートフォンの画面下部に固定のお問い合わせボタンを設置</li>
             </ul>
-            <div class="phase">
-              <div class="ph"><div class="p-t">1〜3ヶ月目</div><p>現状分析と構成設計。キーワードの洗い出しまで</p></div>
-              <div class="ph"><div class="p-t">4〜6ヶ月目</div><p>記事投入とエリアページの公開。導線の調整</p></div>
-              <div class="ph"><div class="p-t">7ヶ月目〜</div><p>数値を見ながら改善と追加施策</p></div>
+            <div class="ow-phase">
+              <div class="ow-phase__item"><div class="ow-phase__t">1〜3ヶ月目</div><p>現状分析と構成設計。キーワードの洗い出しまで</p></div>
+              <div class="ow-phase__item"><div class="ow-phase__t">4〜6ヶ月目</div><p>記事投入とエリアページの公開。導線の調整</p></div>
+              <div class="ow-phase__item"><div class="ow-phase__t">7ヶ月目〜</div><p>数値を見ながら改善と追加施策</p></div>
             </div>
           </div>
 
-          <div class="sec hl annobox">
-            <div class="anno" style="top:-11px;right:-11px">6</div>
-            <div class="sec-hd"><span class="num">04</span><span class="en">RESULT</span><span class="ja">導入による効果</span></div>
-            <div class="results">
-              <div class="rcard">
-                <div class="r-k">お問い合わせ件数</div>
-                <div class="r-ba"><span class="r-b">月1件</span><span class="r-ar">▶</span><span class="r-a">8<small>件</small></span></div>
-                <div class="r-note">6ヶ月で8倍</div>
+          <div class="ow-sec ow-sec--hl">
+            <div class="ow-hd"><span class="ow-num">04</span><span class="ow-en">RESULT</span><span class="ow-ja">導入による効果</span></div>
+            <div class="ow-results">
+              <div class="ow-rcard">
+                <div class="ow-rcard__k">お問い合わせ件数</div>
+                <div class="ow-rcard__ba"><span class="ow-rcard__b">月1件</span><span class="ow-rcard__ar">▶</span><span class="ow-rcard__a">8<small>件</small></span></div>
+                <div class="ow-rcard__note">6ヶ月で8倍</div>
               </div>
-              <div class="rcard">
-                <div class="r-k">「堺市 家族葬」<br>検索順位</div>
-                <div class="r-ba"><span class="r-b">圏外</span><span class="r-ar">▶</span><span class="r-a">2<small>位</small></span></div>
-                <div class="r-note">4ヶ月で到達</div>
+              <div class="ow-rcard">
+                <div class="ow-rcard__k">「堺市 家族葬」<br>検索順位</div>
+                <div class="ow-rcard__ba"><span class="ow-rcard__b">圏外</span><span class="ow-rcard__ar">▶</span><span class="ow-rcard__a">2<small>位</small></span></div>
+                <div class="ow-rcard__note">4ヶ月で到達</div>
               </div>
-              <div class="rcard">
-                <div class="r-k">月間セッション</div>
-                <div class="r-ba"><span class="r-b">420</span><span class="r-ar">▶</span><span class="r-a">1,850</span></div>
-                <div class="r-note">6ヶ月で4.4倍</div>
+              <div class="ow-rcard">
+                <div class="ow-rcard__k">月間セッション</div>
+                <div class="ow-rcard__ba"><span class="ow-rcard__b">420</span><span class="ow-rcard__ar">▶</span><span class="ow-rcard__a">1,850</span></div>
+                <div class="ow-rcard__note">6ヶ月で4.4倍</div>
               </div>
             </div>
-            <div class="rsum">6ヶ月で問い合わせが月1件から月8件に増えました。</div>
+            <div class="ow-rsum">6ヶ月で問い合わせが月1件から月8件に増えました。</div>
           </div>
 
-          <div class="sec annobox">
-            <div class="anno" style="top:-11px;right:-11px">8</div>
-            <div class="sec-hd"><span class="num">05</span><span class="en">NEXT</span><span class="ja">今後の展開</span></div>
-            <div class="nextbox">
+          <div class="ow-sec">
+            <div class="ow-hd"><span class="ow-num">05</span><span class="ow-en">NEXT</span><span class="ow-ja">今後の展開</span></div>
+            <div class="ow-next">
               <p>現在も月4本の記事投入と、エリアページの追加を続けています。次は「大阪市」エリアでの上位表示と、問い合わせ月15件を目標にしています。</p>
             </div>
           </div>
 
-          <div class="sec" style="margin-bottom:10px">
-            <div class="sec-hd"><span class="en">CATEGORY</span><span class="ja">カテゴリー</span></div>
-            <div class="cats">
-              <a class="cat" href="#">葬儀・終活</a><a class="cat" href="#">堺市</a>
-              <a class="cat" href="#">SEO対策</a><a class="cat" href="#">問い合わせが増えた</a>
+          <div class="ow-sec" style="margin-bottom:10px">
+            <div class="ow-hd"><span class="ow-en">CATEGORY</span><span class="ow-ja">カテゴリー</span></div>
+            <div class="ow-cats">
+              <a class="ow-cat" href="#">葬儀・終活</a><a class="ow-cat" href="#">堺市</a>
+              <a class="ow-cat" href="#">SEO対策</a><a class="ow-cat" href="#">問い合わせが増えた</a>
             </div>
           </div>
 
@@ -431,23 +385,22 @@ body.noanno .legend{display:none}
       </div>
 
       <!-- 選ばれた理由（本文から出して最後に特出し） -->
-      <div class="reason annobox">
-        <div class="anno" style="top:14px;right:14px">7</div>
-        <div class="wrap">
-          <div class="r-hd">
-            <span class="en">REASON</span>
-            <span class="ja">オーパスプランを選んだ理由</span>
-            <span class="rule"></span>
+      <div class="ow-reason">
+        <div class="ow-reason__inner">
+          <div class="ow-reason__hd">
+            <span class="ow-en">REASON</span>
+            <span class="ow-ja">オーパスプランを選んだ理由</span>
+            <span class="ow-rule"></span>
           </div>
-          <div class="decide">
-            <div class="d-l">DECISIVE POINT ／ 決め手</div>
-            <div class="d-t">毎月の定例で<em>優先順位を整理してもらえる</em>こと。<br>そして、対面でも相談できること。</div>
+          <div class="ow-decide">
+            <div class="ow-decide__l">DECISIVE POINT ／ 決め手</div>
+            <div class="ow-decide__t">毎月の定例で<em>優先順位を整理してもらえる</em>こと。<br>そして、対面でも相談できること。</div>
           </div>
-          <div class="rvoice">
+          <div class="ow-voice">
             <p>何から手をつければいいか分からない状態でしたが、毎月の定例で優先順位を整理してもらえたので迷わず進められました。知識がない分、専門用語ばかりで説明されると判断できなくなってしまうのですが、そこを噛み砕いて話してもらえたのが大きかったです。対面でも相談できる点も決め手になりました。いまは問い合わせの質も変わり、最初から前向きな方が増えています。</p>
-            <div class="who">代表取締役 ◯◯ 様</div>
+            <div class="ow-voice__who">代表取締役 ◯◯ 様</div>
           </div>
-          <div class="bridge">
+          <div class="ow-bridge">
             <p>「何から手をつければいいか分からない」<br>その状態からのご相談を、いちばん多くいただいています。</p>
             <a href="#">無料で相談してみる</a>
           </div>
