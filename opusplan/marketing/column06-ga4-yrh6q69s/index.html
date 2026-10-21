@@ -25,10 +25,10 @@
 	<meta property="og:description" content="Googleアナリティクス4（GA4）で最初に見るべきレポートと、お問い合わせを「成果」として数えるキーイベントの設定方法を解説。サーチコンソールとの使い分けも紹介します。" />
 	<meta property="og:url" content="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/" />
 	<meta property="og:site_name" content="ウェブマーケティングのオーパスプラン｜“やりたい”を“できる”に変える" />
-	<meta property="og:image" content="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/images/eyecatch.jpg" />
+	<meta property="og:image" content="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/images/col06-eyecatch.jpg" />
 <meta property="og:image:width" content="658" />
 <meta property="og:image:height" content="388" />
-<meta name="twitter:image" content="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/images/eyecatch.jpg" />
+<meta name="twitter:image" content="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/images/col06-eyecatch.jpg" />
 <meta name="twitter:card" content="summary_large_image" />
 	<meta name="twitter:label1" content="推定読み取り時間" />
 	<meta name="twitter:data1" content="10分" />
@@ -373,6 +373,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .p-blog__content-dec .op-matrix li{font-size:12px;padding:2px 8px;border-radius:10px}
 }
 
+/* 記事上部のアイキャッチ（本番はテンプレートが出力。プレビューでは<img>を直接置いています） */
+.p-blog__content-eyecatch{display:block;width:100%;height:auto;aspect-ratio:329/194;object-fit:cover;border-radius:6px;margin:4px 0 34px}
 </style>
 </head>
 
@@ -475,6 +477,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         <p class="p-blog__content-last">
           <time datetime="the_modified_date( 'Y-m-d' )">2026/10/21</time>
         </p>
+        <img src="images/col06-eyecatch.jpg" alt="GA4の使い方｜最初に見る3つのレポートと、お問い合わせを数える設定" class="img p-blog__content-eyecatch">
         <div class="p-blog__content-dec">
 
 <p>GA4（Googleアナリティクス4）は、<strong>サイトに来た人がどう動いたか</strong>を記録する道具です。画面が複雑で「入れてはいるが開いていない」という方も多いのですが、実際に使うのは全体のごく一部です。</p>
