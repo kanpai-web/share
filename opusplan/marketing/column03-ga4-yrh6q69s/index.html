@@ -145,7 +145,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-shot__title{display:block;font-weight:bold;color:var(--op-navy);margin-bottom:5px}
 .p-blog__content-dec .op-shot figcaption>*{margin:0}
 .p-blog__content-dec .op-shot__item{display:block;position:relative;padding-left:26px;margin:3px 0 0}
-.p-blog__content-dec .op-shot__zoom{display:block;margin-top:8px!important;font-size:12px;color:#8A8A8A}
+.p-blog__content-dec .op-shot__note{display:block;margin-top:11px!important;padding-top:10px;border-top:1px dashed #D8DCE3;color:#6B7280}
 .p-blog__content-dec .op-shot__item i{position:absolute;left:0;top:.2em;width:18px;height:18px;border-radius:50%;
   background:#E8720C;color:#fff;font-style:normal;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center}
 /* 図解（自動生成） */
@@ -555,48 +555,49 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 
 <h3>設定の手順</h3>
+<p>管理画面の中を順に見ていきます。まずは入口の確認からです。</p>
+
 <figure class="op-shot op-newbox">
-  <a href="images/ga4-admin.png" target="_blank" rel="noopener"><img src="images/ga4-admin.png" alt="GA4の管理画面。データ ストリームとデータの表示＞イベントの位置"></a>
+  <img src="images/ga4-admin.png" alt="GA4の管理画面。データ ストリームとデータの表示＞イベントの位置">
   <figcaption>
-    <span class="op-shot__title">図1　管理画面（手順1と手順3の入口）</span>
-    <span class="op-shot__item"><i>1</i>データの収集と修正 ＞ データ ストリーム（手順1で開く）</span>
-    <span class="op-shot__item"><i>2</i>「データの表示」をクリックして開くと「イベント」が現れる（手順3）</span>
-    <span class="op-shot__zoom">画像をクリックすると原寸で開きます</span>
+    <span class="op-shot__title">図1　管理画面（画面左下の歯車アイコンから開きます）</span>
+    <span class="op-shot__item"><i>1</i><strong>データの収集と修正 ＞ データ ストリーム</strong>。拡張計測機能の確認はここから（図2へ）</span>
+    <span class="op-shot__item"><i>2</i><strong>「データの表示」をクリックして開く</strong>と、その下に「イベント」が現れます。キーイベントの設定はここから（図3へ）</span>
+    <span class="op-shot__note">左メニューは折りたたまれているため、「データの表示」を開かないと<strong>「イベント」という項目自体が画面に出てきません</strong>。見つからないときは、まずここを疑ってください。</span>
   </figcaption>
 </figure>
 
 <figure class="op-shot op-newbox">
-  <a href="images/ga4-stream.png" target="_blank" rel="noopener"><img src="images/ga4-stream.png" alt="ウェブ ストリームの詳細。拡張計測機能のスイッチと「＋ 他 4 個」の位置"></a>
+  <img src="images/ga4-stream.png" alt="ウェブ ストリームの詳細。拡張計測機能のスイッチと「＋ 他 4 個」の位置">
   <figcaption>
-    <span class="op-shot__title">図2　ウェブ ストリームの詳細（手順1）</span>
-    <span class="op-shot__item"><i>1</i>拡張計測機能のスイッチ。オンになっていればOK</span>
-    <span class="op-shot__item"><i>2</i>「＋ 他 ◯ 個」。ここを押すと「フォームの操作」が出てくる</span>
-    <span class="op-shot__zoom">画像をクリックすると原寸で開きます</span>
+    <span class="op-shot__title">図2　ウェブ ストリームの詳細　― 拡張計測機能を確認する</span>
+    <span class="op-shot__item"><i>1</i>拡張計測機能のスイッチ。オンになっていれば、基本の自動計測は動いています</span>
+    <span class="op-shot__item"><i>2</i><strong>「＋ 他 ◯ 個」</strong>。「測定中：」に並ぶのは一部だけなので、ここを押して開き、<strong>「フォームの操作」</strong>がオンになっているか確認します</span>
+    <span class="op-shot__note">スイッチ全体はオンでも、「フォームの操作」だけ個別にオフになっていることがあります。見当たらない場合は、さらに右端の歯車アイコンから切り替えられます。</span>
   </figcaption>
 </figure>
+
+<div class="op-note">
+  <p class="op-note__title">図2のあとに　― イベントが記録されているか見る</p>
+  <p>レポート ＞ エンゲージメント ＞ イベント を開き、<strong>form_submit</strong> という行があるか確認します。フォーム送信があれば、ここに件数が入っています。</p>
+  <p>お使いのフォームの作り（JavaScriptで送信するタイプなど）によっては、拡張計測機能でform_submitが拾えないことがあります。実際に自分でテスト送信してみて、<strong>翌日この行の数字が増えているか</strong>で判断するのが確実です。</p>
+</div>
 
 <figure class="op-shot op-newbox">
-  <a href="images/ga4-events.png" target="_blank" rel="noopener"><img src="images/ga4-events.png" alt="GA4のイベント一覧。イベントを作成・最近のイベントタブ・星マークの位置"></a>
+  <img src="images/ga4-events.png" alt="GA4のイベント一覧。イベントを作成・最近のイベントタブ・星マークの位置">
   <figcaption>
-    <span class="op-shot__title">図3　イベントの一覧（手順3・手順4）</span>
-    <span class="op-shot__item"><i>1</i>「＋ イベントを作成」（手順4）</span>
-    <span class="op-shot__item"><i>2</i>「最近のイベント」タブ。実際に届いているイベントを確認できる（手順4）</span>
-    <span class="op-shot__item"><i>3</i>星マーク。クリックするとキーイベントになる（手順3）</span>
-    <span class="op-shot__zoom">画像をクリックすると原寸で開きます</span>
+    <span class="op-shot__title">図3　イベントの一覧　― キーイベントの印を付ける</span>
+    <span class="op-shot__item"><i>1</i><strong>「＋ イベントを作成」</strong>。目的のイベントが無いときは、ここから作ります</span>
+    <span class="op-shot__item"><i>2</i><strong>「最近のイベント」タブ</strong>。実際に届いているイベント名を確認できます</span>
+    <span class="op-shot__item"><i>3</i><strong>星マーク</strong>。クリックすると、そのイベントがキーイベントになります</span>
+    <span class="op-shot__note">「キーイベント」タブに <strong>purchase</strong> だけが並んでいるのはGA4の初期状態です。まず②で届いているイベントを確認し、目的のものがあれば③で星を付けます。無ければ①から「page_view のうち page_location に /thanks/ を含むもの」のような条件で作成し、一覧に出てきたら星を付けてください。</span>
   </figcaption>
 </figure>
 
-<ol class="op-howto">
-  <li><strong>拡張計測機能を確認する</strong>管理（左下の歯車）＞ データの収集と修正 ＞ <strong>データ ストリーム</strong>＞ 自社のストリーム を開くと、中ほどに<strong>拡張計測機能</strong>があります。<br>
-  「測定中：」に並ぶのは一部だけなので、右の<strong>「＋ 他 ◯ 個」</strong>をクリックして開き、<strong>「フォームの操作」</strong>がオンになっているか確認してください。</li>
-  <li><strong>イベントが記録されているか見る</strong>レポート ＞ エンゲージメント ＞ イベントを開き、<strong>form_submit</strong>という行があるか確認します。フォーム送信があれば、ここに件数が入っています。<br>
-  なお、お使いのフォームの作り（JavaScriptで送信するタイプなど）によっては、拡張計測機能ではform_submitが拾えないことがあります。実際に自分でテスト送信してみて、翌日この行に数字が増えているかで判断するのが確実です。</li>
-  <li><strong>キーイベントの印を付ける</strong>管理 ＞ プロパティ設定 ＞ <strong>「データの表示」をクリックして開く</strong>と、その下に<strong>「イベント」</strong>が現れます（閉じたままだと項目自体が出てきません）。<br>
-  一覧が開いたら、<strong>イベント名の左にある星マーク</strong>をクリックすれば完了です。</li>
-  <li><strong>目的のイベントが無い場合は作成する</strong><strong>purchase</strong> だけが並んでいるのは、まだキーイベントが用意されていない状態です。隣の<strong>「最近のイベント」タブ</strong>で実際に届いているイベント名を確認し、目的のものがあれば星を付けます。<br>
-  無ければ<strong>「＋ イベントを作成」</strong>から作ります。例：「page_view のうち page_location に /thanks/ を含むもの」でお問い合わせ完了ページの表示を数えられます。作成後、一覧に出てきたら星を付けてください。</li>
-  <li><strong>反映を待つ</strong>設定した時点以降のデータが対象です。過去にさかのぼって集計されるわけではありません。</li>
-</ol>
+<div class="op-note">
+  <p class="op-note__title">設定したあとは</p>
+  <p>集計されるのは<strong>設定した時点以降</strong>のデータです。過去にさかのぼって集計されるわけではないので、早めに入れておくほど、あとで比べやすくなります。</p>
+</div>
 
 <div class="op-note">
   <p class="op-note__title">完了ページがある場合</p>
