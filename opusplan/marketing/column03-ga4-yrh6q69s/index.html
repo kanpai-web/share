@@ -135,9 +135,6 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /* 黄色マーカー */
 .p-blog__content-dec .op-marker{background:linear-gradient(transparent 58%,#FFF1A8 58%);font-weight:bold}
 
-/* ===== 今回の更新箇所（確認用・公開前に外す） ===== */
-.p-blog__content-dec .op-newbox{outline:2px solid #C8102E;outline-offset:4px;border-radius:3px}
-
 /* ===== 操作画面のスクリーンショット ===== */
 .p-blog__content-dec .op-shot{margin:22px 0 28px;border:1px solid var(--op-line);border-radius:6px;background:#fff;overflow:hidden}
 .p-blog__content-dec .op-shot img{display:block;width:100%;height:auto;margin:0;border:0;border-radius:0}
@@ -559,7 +556,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <h3>設定の手順</h3>
 <p>管理画面の中を順に見ていきます。まずは入口の確認からです。</p>
 
-<figure class="op-shot op-newbox">
+<figure class="op-shot">
   <img src="images/ga4-admin.png" alt="GA4の管理画面。データ ストリームとデータの表示＞イベントの位置">
   <figcaption>
     <span class="op-shot__title"><i class="op-step">STEP 1</i>設定画面の入口を確認する</span>
@@ -569,7 +566,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   </figcaption>
 </figure>
 
-<figure class="op-shot op-newbox">
+<figure class="op-shot">
   <img src="images/ga4-stream.png" alt="ウェブ ストリームの詳細。拡張計測機能のスイッチと「＋ 他 4 個」の位置">
   <figcaption>
     <span class="op-shot__title"><i class="op-step">STEP 2</i>自動計測がオンになっているか確認する</span>
@@ -585,7 +582,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <p>お使いのフォームの作り（JavaScriptで送信するタイプなど）によっては、拡張計測機能でform_submitが拾えないことがあります。実際に自分でテスト送信してみて、<strong>翌日この行の数字が増えているか</strong>で判断するのが確実です。</p>
 </div>
 
-<figure class="op-shot op-newbox">
+<figure class="op-shot">
   <img src="images/ga4-events.png" alt="GA4のイベント一覧。イベントを作成・最近のイベントタブ・星マークの位置">
   <figcaption>
     <span class="op-shot__title"><i class="op-step">STEP 4</i>お問い合わせに「成果」の印を付ける</span>
