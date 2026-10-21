@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>記事内の導線ボタン 3案くらべ</title>
+<style>
+:root{--navy:#000080;--navy-dp:#1B1464;--ink:#363636;--ink-sub:#6b6b6b;--line:#E3E6ED;--tint:#EEF4FF}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+body{background:#EDEFF4;color:var(--ink);line-height:1.9;
+  font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Noto Sans JP',sans-serif;
+  -webkit-font-smoothing:antialiased}
+.head{background:var(--navy);color:#fff;padding:30px 28px 26px}
+.head .inner{max-width:1120px;margin:0 auto}
+.head .eye{font-size:11px;font-weight:800;letter-spacing:.26em;color:#9FB0E4;margin-bottom:10px}
+.head h1{font-size:23px;font-weight:800;line-height:1.5;margin-bottom:10px}
+.head p{font-size:13px;color:#D4DCF2;line-height:1.9;max-width:780px}
+.wrap{max-width:1120px;margin:0 auto;padding:26px 16px 70px}
+
+.opt{background:#fff;border:1px solid #DDE1E8;border-radius:10px;margin-bottom:24px;overflow:hidden}
+.opt__hd{display:flex;align-items:center;gap:12px;padding:14px 22px;border-bottom:1px solid var(--line);background:#F8F9FC;flex-wrap:wrap}
+.opt__no{background:var(--navy);color:#fff;font-size:12px;font-weight:800;border-radius:4px;padding:3px 11px;letter-spacing:.08em}
+.opt__t{font-size:15px;font-weight:800;color:var(--navy)}
+.opt__d{font-size:12px;color:var(--ink-sub);margin-left:auto}
+.opt__body{display:grid;grid-template-columns:1fr 374px;gap:0}
+.pane{padding:24px 26px 28px}
+.pane--pc{border-right:1px dashed var(--line)}
+.pane__lbl{font-size:10.5px;font-weight:800;color:#9299A6;letter-spacing:.14em;margin-bottom:14px}
+.sp{container-type:inline-size;width:322px;margin:0 auto;border:9px solid #2B2F3A;border-radius:22px;padding:16px 14px;background:#fff}
+.demo p{font-size:14.5px;line-height:2;margin-bottom:14px;color:#444}
+.sp .demo p{font-size:13.5px;line-height:1.95}
+.sp .a1 .t,.sp .c1 .t{font-size:14px}
+.sp .b1{gap:13px;padding:13px 13px 13px 17px}
+.sp .b1 .t{font-size:13.5px}
+.sp .b1 .ar{width:28px;height:28px}
+@media (max-width:900px){.opt__body{grid-template-columns:1fr}.pane--pc{border-right:0;border-bottom:1px dashed var(--line)}}
+
+/* ══════ 案A｜罫線のみ（エディトリアル） ══════ */
+.a1{display:block;text-decoration:none;border-top:1px solid var(--line);border-bottom:1px solid var(--line);
+  padding:15px 2px 15px 0;margin:6px 0 26px;text-align:right}
+.a1 .l{display:block;font-size:10.5px;font-weight:700;color:#9299A6;letter-spacing:.16em;margin-bottom:5px}
+.a1 .t{display:inline;font-size:15.5px;font-weight:700;color:var(--navy);line-height:1.65}
+.a1 .t::after{content:"";display:inline-block;width:7px;height:7px;vertical-align:2px;margin-left:12px;
+  border-top:1.6px solid var(--navy);border-right:1.6px solid var(--navy);transform:rotate(45deg)}
+.a1:hover .t{opacity:.68}
+
+/* ══════ 案B｜右端に丸矢印（淡い地色） ══════ */
+.b1{display:flex;align-items:center;gap:18px;width:fit-content;max-width:100%;
+  margin:6px 0 26px auto;text-decoration:none;background:var(--tint);border-radius:8px;
+  padding:14px 16px 14px 24px;transition:background-color .15s}
+.b1:hover{background:#E4ECFC}
+.b1 .tx{text-align:right}
+.b1 .l{display:block;font-size:10.5px;font-weight:700;color:#7C86A0;letter-spacing:.14em;margin-bottom:3px}
+.b1 .t{display:block;font-size:15px;font-weight:700;color:var(--navy);line-height:1.5}
+.b1 .ar{flex:none;width:32px;height:32px;border-radius:50%;background:var(--navy);position:relative}
+.b1 .ar::before{content:"";position:absolute;left:calc(50% - 3px);top:calc(50% - 4px);width:7px;height:7px;
+  border-top:1.6px solid #fff;border-right:1.6px solid #fff;transform:rotate(45deg)}
+
+/* スマートフォン */
+@media screen and (max-width:600px){
+  .a1 .t,.c1 .t{font-size:14px}
+  .b1{gap:13px;padding:13px 13px 13px 17px}
+  .b1 .t{font-size:13.5px}
+  .b1 .ar{width:28px;height:28px}
+}
+
+/* ══════ 案C｜下線強調（箱なし） ══════ */
+.c1{display:block;width:fit-content;max-width:100%;margin:6px 0 26px auto;
+  text-decoration:none;text-align:right;padding-bottom:3px}
+.c1 .l{display:block;font-size:10.5px;font-weight:700;color:#9299A6;letter-spacing:.14em;margin-bottom:4px}
+.c1 .t{display:inline;font-size:15.5px;font-weight:700;color:var(--navy);line-height:1.9;
+  border-bottom:2px solid var(--navy);padding-bottom:4px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+.c1 .t::after{content:"";display:inline-block;width:7px;height:7px;vertical-align:2px;margin-left:12px;
+  border-top:1.8px solid var(--navy);border-right:1.8px solid var(--navy);transform:rotate(45deg)}
+.c1:hover .t{opacity:.7}
+
+.note{background:#FBF3E2;border:1px solid #E8D4A8;border-radius:9px;padding:17px 22px;margin-top:4px}
+.note h3{font-size:13.5px;font-weight:800;color:#8A6A1C;margin-bottom:8px}
+.note p{font-size:12.5px;color:#6B5316;line-height:1.9}
+.note b{color:#4F3D0E}
+</style>
+</head>
+<body>
+
+<div class="head">
+  <div class="inner">
+    <div class="eye">DESIGN OPTIONS</div>
+    <h1>記事内の導線ボタン　3案くらべ</h1>
+    <p>ラベル（あわせて読みたい／ご相談）とメインテキストを<b>縦並び</b>にした3案です。
+    左がパソコン、右がスマートフォンでの見え方。実際の本文の中に置いた状態で比べられます。<br>
+    どの案も「関連記事」と「ご相談」で同じ部品を使い、ラベルの文字だけを変えています。</p>
+  </div>
+</div>
+
+<div class="wrap">
+
+<!-- ═══════════ 案A ═══════════ -->
+<div class="opt">
+  <div class="opt__hd">
+    <span class="opt__no">案A</span>
+    <span class="opt__t">罫線のみ</span>
+    <span class="opt__d">箱を使わず、上下の細い罫線だけで区切る。いちばん記事になじむ</span>
+  </div>
+  <div class="opt__body">
+    <div class="pane pane--pc">
+      <div class="pane__lbl">PC</div>
+      <div class="demo">
+        <p>表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。この場合は、検索結果に表示されるタイトルや説明文の見直しが効果的です。</p>
+        <a class="a1" href="#"><span class="l">あわせて読みたい</span><span class="t">サーチコンソールの使い方はこちら</span></a>
+        <p>どれか1つが正解というわけではなく、業種や目的、予算によって最適な組み合わせは変わります。</p>
+        <a class="a1" href="#"><span class="l">ご相談</span><span class="t">向いている対策を相談する（無料）</span></a>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="pane__lbl">スマートフォン</div>
+      <div class="sp"><div class="demo">
+        <p>表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。</p>
+        <a class="a1" href="#"><span class="l">あわせて読みたい</span><span class="t">サーチコンソールの使い方はこちら</span></a>
+        <p>業種や目的、予算によって最適な組み合わせは変わります。</p>
+        <a class="a1" href="#"><span class="l">ご相談</span><span class="t">向いている対策を相談する（無料）</span></a>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 案B ═══════════ -->
+<div class="opt">
+  <div class="opt__hd">
+    <span class="opt__no">案B</span>
+    <span class="opt__t">淡い地色＋丸矢印</span>
+    <span class="opt__d">薄いブルーの地に、右端へネイビーの丸い矢印。3案のうちいちばん気づきやすい</span>
+  </div>
+  <div class="opt__body">
+    <div class="pane pane--pc">
+      <div class="pane__lbl">PC</div>
+      <div class="demo">
+        <p>表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。この場合は、検索結果に表示されるタイトルや説明文の見直しが効果的です。</p>
+        <a class="b1" href="#"><span class="tx"><span class="l">あわせて読みたい</span><span class="t">サーチコンソールの使い方はこちら</span></span><span class="ar"></span></a>
+        <p>どれか1つが正解というわけではなく、業種や目的、予算によって最適な組み合わせは変わります。</p>
+        <a class="b1" href="#"><span class="tx"><span class="l">ご相談</span><span class="t">向いている対策を相談する（無料）</span></span><span class="ar"></span></a>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="pane__lbl">スマートフォン</div>
+      <div class="sp"><div class="demo">
+        <p>表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。</p>
+        <a class="b1" href="#"><span class="tx"><span class="l">あわせて読みたい</span><span class="t">サーチコンソールの使い方はこちら</span></span><span class="ar"></span></a>
+        <p>業種や目的、予算によって最適な組み合わせは変わります。</p>
+        <a class="b1" href="#"><span class="tx"><span class="l">ご相談</span><span class="t">向いている対策を相談する（無料）</span></span><span class="ar"></span></a>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<!-- ═══════════ 案C ═══════════ -->
+<div class="opt">
+  <div class="opt__hd">
+    <span class="opt__no">案C</span>
+    <span class="opt__t">下線強調</span>
+    <span class="opt__d">箱も地色も使わず、ネイビーの下線だけ。文章の流れを切らない</span>
+  </div>
+  <div class="opt__body">
+    <div class="pane pane--pc">
+      <div class="pane__lbl">PC</div>
+      <div class="demo">
+        <p>表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。この場合は、検索結果に表示されるタイトルや説明文の見直しが効果的です。</p>
+        <a class="c1" href="#"><span class="l">あわせて読みたい</span><span class="t">サーチコンソールの使い方はこちら</span></a>
+        <p>どれか1つが正解というわけではなく、業種や目的、予算によって最適な組み合わせは変わります。</p>
+        <a class="c1" href="#"><span class="l">ご相談</span><span class="t">向いている対策を相談する（無料）</span></a>
+      </div>
+    </div>
+    <div class="pane">
+      <div class="pane__lbl">スマートフォン</div>
+      <div class="sp"><div class="demo">
+        <p>表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。</p>
+        <a class="c1" href="#"><span class="l">あわせて読みたい</span><span class="t">サーチコンソールの使い方はこちら</span></a>
+        <p>業種や目的、予算によって最適な組み合わせは変わります。</p>
+        <a class="c1" href="#"><span class="l">ご相談</span><span class="t">向いている対策を相談する（無料）</span></a>
+      </div></div>
+    </div>
+  </div>
+</div>
+
+<div class="note">
+  <h3>3案の違い</h3>
+  <p><b>案A（罫線のみ）</b>　箱がないぶん記事の一部として読まれます。気づかれにくい反面、広告っぽさはいちばん出ません。<br>
+  <b>案B（淡い地色＋丸矢印）</b>　押せることがひと目で分かります。困っている人がすぐ移動できる反面、やや存在感があります。<br>
+  <b>案C（下線強調）</b>　AとBの中間。文章の流れを切らずに、リンクであることは伝わります。</p>
+</div>
+
+</div>
+</body>
+</html>
