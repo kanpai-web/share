@@ -1,0 +1,2075 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>WordPress入稿ガイド｜オーパスプラン コラム</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B1464;--teal:#0F7C8C;--orange:#E8720C;--text:#25282F;--grey:#5A6273;
+  --line:#E3E6EC;--bg:#F7F8FA;--pale:#F4F7FD;--paleT:#EDF6F7;--paleO:#FDF3E8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 90px}
+header.hd{background:#fff;border-bottom:1px solid var(--line);padding:44px 0 36px;margin-bottom:38px}
+header.hd .wrap{padding-bottom:0}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--teal);font-weight:700;margin:0 0 10px}
+h1{font-size:30px;line-height:1.45;margin:0 0 14px;color:var(--navy);font-weight:700}
+.hd p.sub{margin:0;color:var(--grey);font-size:14.5px}
+.hd .meta{margin-top:18px;font-size:12.5px;color:var(--grey);border-top:1px solid var(--line);padding-top:14px}
+.sec{background:#fff;border:1px solid var(--line);border-radius:10px;padding:34px 36px;margin:0 0 22px}
+.sec__head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.sec__no{flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;
+  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec h2{font-size:20px;margin:0;color:var(--navy);font-weight:700;line-height:1.5}
+.sec h3{font-size:15.5px;margin:30px 0 10px;color:var(--navy);font-weight:700;
+  border-left:3px solid var(--teal);padding-left:10px}
+p{margin:0 0 14px}
+.lead{color:var(--grey);font-size:14px;margin-bottom:20px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:5px 0}
+b,strong{font-weight:700}
+a{color:var(--teal)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.nw{white-space:nowrap}
+
+table{width:100%;border-collapse:collapse;margin:6px 0 16px;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--pale);color:var(--navy);font-weight:700;white-space:nowrap}
+
+.note{border:1px solid var(--line);border-left:3px solid var(--teal);background:#FBFCFD;
+  border-radius:4px;padding:16px 18px;margin:14px 0}
+.note__t{font-weight:700;color:var(--teal);margin:0 0 6px;font-size:14px}
+.warn{border:1px solid #F0C9A0;background:var(--paleO);border-radius:4px;padding:16px 18px;margin:14px 0}
+.warn__t{font-weight:700;color:var(--orange);margin:0 0 6px;font-size:14px}
+.note p:last-child,.warn p:last-child,.note ul:last-child,.warn ul:last-child{margin-bottom:0}
+
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 4px}
+.who--2{grid-template-columns:repeat(2,1fr)}
+.who__c{border:1px solid var(--line);border-radius:8px;padding:18px}
+.who__c h4{margin:0 0 4px;font-size:14.5px;color:var(--navy)}
+.who__c .role{font-size:11.5px;color:var(--teal);font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.who__c ul{margin:0;padding-left:18px;font-size:13px;color:var(--grey)}
+
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:10px 0 4px}
+.flow__s{border:1px solid var(--line);border-radius:8px;padding:16px 14px;position:relative;background:#fff}
+.flow__s.is-coder{border-color:#C9D4F0;background:var(--pale)}
+.flow__n{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:#fff;background:var(--navy);border-radius:3px;padding:2px 8px;margin-bottom:8px}
+.flow__s.is-coder .flow__n{background:var(--teal)}
+.flow__t{font-size:13.5px;font-weight:700;margin:0 0 5px;line-height:1.5}
+.flow__d{font-size:11.5px;color:var(--grey);margin:0;line-height:1.65}
+.flow__who{font-size:11px;color:var(--teal);font-weight:700;margin:8px 0 0}
+
+.card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:0 0 12px}
+.card__top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.card__no{font-size:11.5px;color:var(--teal);font-weight:700;margin:0 0 3px;letter-spacing:.06em}
+.card__title{font-size:15px;font-weight:700;margin:0;line-height:1.55;color:var(--navy)}
+.card__meta{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:18px;
+  font-size:12.5px;color:var(--grey);border-top:1px dashed var(--line);padding-top:10px}
+.card__meta li{margin:0}
+
+.btn{flex:none;border:0;background:var(--navy);color:#fff;font-family:inherit;font-size:13px;
+  font-weight:700;border-radius:6px;padding:9px 18px;cursor:pointer;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn.is-done{background:var(--teal)}
+.btn--s{font-size:11.5px;padding:5px 12px}
+.btn--out{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+
+.dbox{border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:0 0 8px;background:#FBFCFD}
+.dbox__h{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.dbox__h span{font-size:12px;font-weight:700;color:var(--navy)}
+.dbox__t{margin:0;font-size:12.5px;color:var(--grey);line-height:1.75}
+
+pre.code{background:#1C1F27;color:#E8EAF0;border-radius:6px;padding:16px 18px;overflow-x:auto;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.75;margin:10px 0 14px}
+.codehead{display:flex;justify-content:space-between;align-items:center;margin:16px 0 0}
+.codehead span{font-size:12.5px;font-weight:700;color:var(--navy)}
+
+.chk{list-style:none;padding:0;margin:4px 0 0}
+.chk li{position:relative;padding-left:28px;margin:9px 0;font-size:14px}
+.chk li::before{content:"";position:absolute;left:2px;top:.42em;width:13px;height:8px;
+  border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+
+.parts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.parts div{border:1px solid var(--line);border-radius:6px;padding:11px 14px;font-size:13px}
+.parts b{color:var(--navy)}
+.parts span{display:block;color:var(--grey);font-size:12px;margin-top:2px}
+
+footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
+@media (max-width:860px){
+  .who,.who--2,.flow,.parts{grid-template-columns:1fr}
+  .sec{padding:26px 20px}
+  h1{font-size:23px}
+  .card__top{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap">
+  <p class="eyebrow">OPUS PLAN ─ COLUMN</p>
+  <h1>WordPress入稿ガイド<br>コラム記事を公開するまでの手順</h1>
+  <p class="sub">書き上がった5本のコラムを、間違いなく本番サイトへ載せるための手順書です。<br>
+  コーダーさんにお願いする部分と、管理画面で高寺が行う部分を分けて整理しました。</p>
+  <p class="meta">作成：2026年10月21日　／　高寺　／　対象：opus-plan.net コラム（カスタム投稿タイプ blog）</p>
+</div></header>
+
+<div class="wrap">
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">1</span><h2>いまの状況と、調べて分かったこと</h2></div>
+  <p class="lead">記事のHTMLは完成しています。足りないのは「見た目を整えるCSS」だけです。</p>
+  <p>今回のコラムでは、手順リスト・Q&amp;Aボックス・表・図解・関連記事ボタンなど、<b>既存のコラムには使われていない見せ方</b>を取り入れています。これらのCSSは本番サイトにまだ存在しません。いま本文だけを貼ると、文字と枠のない箇条書きが並ぶだけの状態になります。</p>
+<h3>本番サイトを調べて分かったこと</h3>
+<table>
+ <tr><th style="width:240px">調べたこと</th><th>分かったこと</th></tr>
+ <tr><td>コラムの投稿場所</td><td>通常の「投稿」ではなく、<b>カスタム投稿タイプ「コラム」</b>（内部名 blog）です</td></tr>
+ <tr><td>本文のHTML</td><td>既存記事は <span class="mono">p / h2 / h3 / ul / ol / a</span> だけのシンプルなHTMLで、<b>ブロックエディタのマークアップは使われていません</b>。今回のHTMLも同じ流儀で作ってあります</td></tr>
+ <tr><td>既存記事の画像</td><td>確認した範囲では、<b>コラムに画像を使っている記事はありません</b>。今回が初めてになります</td></tr>
+ <tr><td>「関連サービス」欄</td><td>テンプレートではなく<b>本文の一部</b>でした。お渡しする本文にも最後に含めてあります</td></tr>
+ <tr><td>メディアのURL</td><td><span class="mono">/wp-content/uploads/年/月/ファイル名</span> の規則どおりでした。この規則性を使って、画像の作業を簡単にします（STEP 2）</td></tr>
+ <tr><td>カテゴリ</td><td>SEO対策・webマーケティング・アクセス分析など21個。<b>記事のURLは「/blog/カテゴリ名/スラッグ/」</b>になります</td></tr>
+</table>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">2</span><h2>だれが、何をするか</h2></div>
+  
+  <div class="who who--2">
+  <div class="who__c">
+    <p class="role">1回だけ</p>
+    <h4>コーダーさん</h4>
+    <ul><li>CSSファイルを1つ、テーマに追加</li><li>コラム詳細ページで読み込む設定</li></ul>
+  </div>
+  <div class="who__c">
+    <p class="role">記事ごと</p>
+    <h4>高寺</h4>
+    <ul><li>画像のアップロード</li><li>本文の貼り付け</li><li>タイトル・カテゴリ等の設定</li><li>プレビュー確認 → 公開</li></ul>
+  </div>
+</div>
+<p style="font-size:13px;color:var(--grey);margin:14px 0 0">※ 本文HTML・追加CSS・画像は用意済みです（<span class="mono">_入稿用/</span> フォルダ）。</p>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">3</span><h2>公開までの5ステップ</h2></div>
+  
+  <div class="flow">
+  <div class="flow__s is-coder">
+    <span class="flow__n">STEP 1</span>
+    <p class="flow__t">CSSを入れてもらう</p>
+    <p class="flow__d">ファイルを1つ渡して、読み込んでもらう</p>
+    <p class="flow__who">コーダーさん・1回だけ</p>
+  </div>
+  <div class="flow__s">
+    <span class="flow__n">STEP 2</span>
+    <p class="flow__t">画像をアップロード</p>
+    <p class="flow__d">メディアにドラッグ&amp;ドロップ。URLのコピーは不要</p>
+    <p class="flow__who">高寺</p>
+  </div>
+  <div class="flow__s">
+    <span class="flow__n">STEP 3</span>
+    <p class="flow__t">本文を貼る</p>
+    <p class="flow__d">テキストタブにコピペ。編集は不要</p>
+    <p class="flow__who">高寺</p>
+  </div>
+  <div class="flow__s">
+    <span class="flow__n">STEP 4</span>
+    <p class="flow__t">設定を入れる</p>
+    <p class="flow__d">タイトル・ディスクリプション・カテゴリ・URL</p>
+    <p class="flow__who">高寺</p>
+  </div>
+  <div class="flow__s">
+    <span class="flow__n">STEP 5</span>
+    <p class="flow__t">確認して公開</p>
+    <p class="flow__d">プレビューでチェックリストを確認</p>
+    <p class="flow__who">高寺</p>
+  </div>
+</div>
+<div class="note">
+  <p class="note__t">STEP 1 が終わるまでは</p>
+  <p>CSSが入る前に下書き保存まで進めておくことはできます。ただし<b>プレビューの見た目は崩れたまま</b>です。見た目の確認はSTEP 1の完了後に行ってください。</p>
+</div>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">4</span><h2>STEP 1　コーダーさんへの依頼（1回だけ）</h2></div>
+  <p class="lead">CSSファイル1つと、テンプレートの小さな追記が2か所です。すべて最初の1回だけで、記事が増えても再依頼は要りません。</p>
+  <h3>お願いする3つのこと</h3>
+<table>
+ <tr><th style="width:60px"></th><th style="width:300px">内容</th><th>補足</th></tr>
+ <tr><td><b>1</b></td><td>追加CSS <span class="mono">opus-column.css</span> を読み込む</td><td>記事の見た目（枠・手順リスト・表・図解）がこれで整います</td></tr>
+ <tr><td><b>2</b></td><td>記事の上部にアイキャッチを出す</td><td>詳細テンプレートに3行追加するだけ。未設定の記事では何も出ません</td></tr>
+ <tr><td><b>3</b></td><td>一覧カードのアイキャッチを確認</td><td>いまは全記事がテーマの仮画像。反映されない場合は出し分けの追加をお願いします</td></tr>
+</table>
+
+<h3>渡すもの</h3>
+<table>
+ <tr><th style="width:200px">ファイル</th><td class="mono">_入稿用/opus-column.css</td></tr>
+ <tr><th>サイズ</th><td>約20KB（ルール212件ほど）</td></tr>
+ <tr><th>影響範囲</th><td>すべて <span class="mono">.p-blog__content-dec</span> 配下にスコープ済み。<b>コラム本文以外のページ、既存のコラム記事には影響しません</b></td></tr>
+ <tr><th>既存ファイルの変更</th><td>なし（style.css / reset.css は触っていません）</td></tr>
+</table>
+
+<h3>置き場所は2案あります</h3>
+<table>
+ <tr><th style="width:90px"></th><th style="width:220px">方法</th><th>補足</th></tr>
+ <tr><td><b>案A</b><br>推奨</td><td>テーマに <span class="mono">opus-column.css</span> を追加し、コラム詳細のテンプレートで読み込む</td><td>他ページに読み込まれないので無駄がなく、修正も1か所で済みます</td></tr>
+ <tr><td><b>案B</b></td><td><span class="mono">style.css</span> の末尾に貼り付ける</td><td>手早いですが、サイト全体で読み込まれます。コーダーさんのやりやすい方で構いません</td></tr>
+</table>
+
+<div class="codehead"><span>依頼文のテンプレート</span><button class="btn btn--s btn--out" data-copy="req">コピー</button></div>
+<pre class="code" id="req">お世話になっております。オーパスプランのコラム記事について、3点ご対応をお願いできますでしょうか。
+
+■ 1. 追加CSSの読み込み
+opus-column.css（約20KB）をお渡しします。
+コラム（カスタム投稿タイプ blog）の詳細ページで読み込まれるようにしてください。
+themes/opusplan_theme/src/css/ 配下に置いて詳細テンプレートで読み込む形を想定していますが、
+style.css の末尾に追記でも構いません。やりやすい方法でお願いします。
+
+・セレクタはすべて .p-blog__content-dec 配下にスコープしてあります。
+　コラム本文以外のページ、および既存のコラム記事の表示には影響しません。
+・既存の style.css / reset.css は変更していません。
+・今後コラムを追加しても、このCSSの再対応は不要です。
+
+■ 2. 記事上部へのアイキャッチ表示
+コラム詳細テンプレートの p-blog__content-last の直後、p-blog__content-dec の直前に
+下記を追加してください。アイキャッチ未設定の記事では何も出ません。
+
+&lt;?php if ( has_post_thumbnail() ) : ?&gt;
+  &lt;?php the_post_thumbnail( &#x27;large&#x27;, array( &#x27;class&#x27; =&gt; &#x27;img p-blog__content-eyecatch&#x27; ) ); ?&gt;
+&lt;?php endif; ?&gt;
+
+・p-blog__content-eyecatch のCSSは 1. のファイルに含めてあります。
+
+■ 3. コラム一覧カードのアイキャッチ（要確認）
+現在、コラム一覧のサムネイルは全記事がテーマの dummy1.png で出ています。
+アイキャッチを設定したときに一覧カードへ反映されるかをご確認いただき、
+反映されない場合は、アイキャッチがあればそれを、無ければ従来どおり dummy1.png を出す形に
+変更をお願いできますでしょうか。
+表示サイズが小さいため、medium_large など軽いサイズでの出力が望ましいです。
+
+よろしくお願いいたします。</pre>
+
+<div class="codehead"><span>CSSの中身（ファイルで渡す場合は不要）</span><button class="btn btn--s btn--out" data-copy="css">CSSをコピー</button></div>
+<script type="text/plain" id="css">@charset "UTF-8";
+/* ============================================================
+   オーパスプラン コラム用 追加スタイル
+   対象：コラム（カスタム投稿タイプ blog）の本文
+   作成：2026-10-21 ／ 高寺
+   ------------------------------------------------------------
+   ・すべて .p-blog__content-dec 配下にスコープしています。
+     コラム本文以外のページには影響しません。
+   ・既存の style.css は変更していません。このファイルを
+     追加で読み込むか、style.css の末尾に貼り付けてください。
+   ・色は下の :root で一括変更できます。
+   ============================================================ */
+
+
+/* ===== コラム用追加スタイル（.p-blog__content-dec 内のみ） ===== */
+.p-blog__content-dec{--op-navy:#1B1464;--op-sky:#EEFAFF;--op-line:#D6DCE4;--op-text:#333;--op-accent:#0F7C8C;--op-accent-bg:#EAF6F7;line-height:1.9}
+.p-blog__content-dec h2{scroll-margin-top:110px}
+.p-blog__content-dec strong{font-weight:bold;background:linear-gradient(transparent 62%,#FFF1A8 62%)}
+.p-blog__content-dec figure{margin:28px 0}
+.p-blog__content-dec figcaption{font-size:13px;color:#666;text-align:center;margin-top:10px}
+
+/* この記事でわかること */
+.op-point{border:1px solid var(--op-line);border-top:4px solid var(--op-navy);padding:20px 24px;margin:28px 0;background:#fff}
+.op-point__label{font-weight:bold;color:var(--op-navy);margin-bottom:8px!important}
+.p-blog__content-dec ul.op-check{margin:0;padding:0}
+.p-blog__content-dec ul.op-check li{list-style:none;position:relative;padding-left:28px;margin:6px 0}
+.p-blog__content-dec ul.op-check li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:7px;border-left:2px solid var(--op-accent);border-bottom:2px solid var(--op-accent);transform:rotate(-45deg);background:none;border-radius:0}
+
+/* ===== 操作画面のスクリーンショット ===== */
+.p-blog__content-dec .op-shot{margin:22px 0 28px;border:1px solid var(--op-line);border-radius:6px;background:#fff;overflow:hidden}
+.p-blog__content-dec .op-shot img{display:block;width:100%;height:auto;margin:0;border:0;border-radius:0}
+.p-blog__content-dec .op-shot figcaption{padding:13px 16px;background:#F7F8FA;border-top:1px solid var(--op-line);font-size:13px;line-height:1.7;color:#555;text-align:left}
+.p-blog__content-dec .op-shot__title{display:block;font-weight:bold;color:var(--op-navy);margin-bottom:7px;font-size:14px}
+.p-blog__content-dec .op-step{display:inline-block;background:var(--op-navy);color:#fff;font-size:11px;font-weight:bold;
+  border-radius:3px;padding:2px 8px;margin-right:9px;font-style:normal;letter-spacing:.06em;vertical-align:1px}
+.p-blog__content-dec .op-shot figcaption>*{margin:0}
+.p-blog__content-dec .op-shot__item{display:block;position:relative;padding-left:26px;margin:3px 0 0}
+.p-blog__content-dec .op-shot__note{display:block;margin-top:11px!important;padding-top:10px;border-top:1px dashed #D8DCE3;color:#6B7280}
+.p-blog__content-dec .op-shot__item i{position:absolute;left:0;top:.2em;width:18px;height:18px;border-radius:50%;
+  background:#E8720C;color:#fff;font-style:normal;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center}
+
+/* 関連記事・ご相談への導線（案B／ラベルは文頭・本文は右揃え） */
+.p-blog__content-dec .op-more{display:flex;align-items:center;gap:18px;width:fit-content;max-width:100%;
+  margin:4px 0 28px auto;text-decoration:none;background:#EEF4FF;border-radius:8px;
+  padding:14px 16px 14px 24px;transition:background-color .15s}
+.p-blog__content-dec .op-more:hover{background:#E4ECFC}
+.p-blog__content-dec .op-more__tx{text-align:right;margin:0}
+.p-blog__content-dec .op-more__tx>*, .p-blog__content-dec .op-more__ar{margin:0}
+.p-blog__content-dec .op-more .op-more__label{display:block;text-align:left;
+  font-size:10.5px;font-weight:700;color:#7C86A0;letter-spacing:.14em;margin:0 0 3px}
+.p-blog__content-dec .op-more .op-more__text{display:block;font-size:15px;font-weight:700;
+  color:var(--op-navy);line-height:1.5}
+.p-blog__content-dec .op-more__ar{flex:none;width:32px;height:32px;border-radius:50%;
+  background:var(--op-navy);position:relative}
+.p-blog__content-dec .op-more__ar::before{content:"";position:absolute;left:calc(50% - 3px);top:calc(50% - 4px);
+  width:7px;height:7px;border-top:1.6px solid #fff;border-right:1.6px solid #fff;transform:rotate(45deg)}
+
+@media screen and (max-width:600px){
+  .p-blog__content-dec .op-more{gap:13px;padding:13px 13px 13px 17px}
+  .p-blog__content-dec .op-more .op-more__text{font-size:13.5px}
+  .p-blog__content-dec .op-more .op-more__label{font-size:10px}
+  .p-blog__content-dec .op-more__ar{width:28px;height:28px}
+}
+
+/* 黄色マーカー */
+.p-blog__content-dec .op-marker{background:linear-gradient(transparent 58%,#FFF1A8 58%);font-weight:bold}
+
+/* 目次 */
+.op-toc{background:#F7F8FA;border:1px solid var(--op-line);padding:20px 24px;margin:28px 0 40px}
+.op-toc__title{font-weight:bold;margin-bottom:6px!important;letter-spacing:.1em}
+.p-blog__content-dec .op-toc ol{padding-left:22px;margin:0}
+.p-blog__content-dec .op-toc li{margin:4px 0;font-size:15px}
+.p-blog__content-dec .op-toc a{color:var(--op-navy);text-decoration:none}
+.p-blog__content-dec .op-toc a:hover{text-decoration:underline}
+
+/* 見出し直後の結論 */
+.op-answer{border-left:4px solid var(--op-accent);background:var(--op-accent-bg);padding:14px 18px;margin:18px 0 28px}
+.op-answer p{margin:0!important}
+.op-answer__q{display:block;font-weight:bold;color:var(--op-accent);margin-bottom:4px}
+
+/* 計算式 */
+.op-formula{border:1px solid var(--op-line);padding:24px 16px}
+.op-formula__row{display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:nowrap}
+.op-formula__box{border:2px solid var(--op-navy);padding:12px 14px;text-align:center;flex:1 1 0;min-width:0;background:#fff}
+.op-formula__box span{display:block;font-weight:bold;font-size:18px;color:var(--op-navy)}
+.op-formula__box small{display:block;font-size:12px;color:#666;line-height:1.5;margin-top:4px}
+.op-formula__box--result{background:var(--op-navy)}
+.op-formula__box--result span{color:#fff}
+.op-formula__op{font-size:26px;font-weight:bold;color:var(--op-navy)}
+
+/* 2段階の比較 */
+.op-split{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+.op-split__col{border:1px solid var(--op-line);border-top:4px solid var(--op-navy);padding:18px 20px;background:#fff}
+.op-split__col--b{border-top-color:var(--op-accent)}
+.op-split__head{font-weight:bold;font-size:17px;color:var(--op-navy);margin:0!important}
+.op-split__col--b .op-split__head{color:var(--op-accent)}
+.op-split__sub{font-size:13px;color:#666;margin:2px 0 10px!important}
+.p-blog__content-dec .op-split ul{margin:0 0 12px;padding-left:20px}
+.p-blog__content-dec .op-split li{list-style:disc;font-size:15px;margin:3px 0}
+.p-blog__content-dec .op-split li::before{display:none}
+.op-split__fix{background:var(--op-sky);padding:10px 12px;font-size:14px;font-weight:bold;margin:0!important;line-height:1.6}
+
+/* 吹き出し */
+.op-talk{display:flex;gap:16px;align-items:flex-start;margin:32px 0}
+.op-talk__icon{flex:0 0 72px;text-align:center}
+.op-talk__icon img{width:72px;height:72px;object-fit:contain;border:1px solid var(--op-line);border-radius:50%;background:#fff;padding:10px;box-sizing:border-box}
+.op-talk__icon span{display:block;font-size:12px;color:#666;margin-top:4px}
+.op-talk__bubble{position:relative;flex:1;border:1px solid var(--op-line);background:#F7F8FA;padding:14px 18px;border-radius:6px}
+.op-talk__bubble::before{content:"";position:absolute;left:-9px;top:24px;width:16px;height:16px;background:#F7F8FA;border-left:1px solid var(--op-line);border-bottom:1px solid var(--op-line);transform:rotate(45deg)}
+.op-talk__bubble p{margin:0!important;font-size:15px}
+
+/* 表 */
+.op-table-wrap{overflow-x:auto;margin:20px 0}
+.op-table{width:100%;border-collapse:collapse;font-size:15px;line-height:1.7;min-width:520px}
+.op-table th{background:var(--op-navy);color:#fff;padding:10px 12px;text-align:left;font-weight:bold;white-space:nowrap}
+.op-table td{border:1px solid var(--op-line);padding:10px 12px;vertical-align:top}
+.op-table tbody tr:nth-child(even) td{background:#FAFBFC}
+.op-table td:first-child{white-space:nowrap}
+.op-table--compare td a{font-size:13px}
+
+/* 事例ボックス */
+.op-case{border:1px solid var(--op-navy);padding:20px 22px 8px;margin:24px 0;position:relative;background:#fff}
+.op-case__label{display:inline-block;background:var(--op-navy);color:#fff;font-size:13px;font-weight:bold;padding:2px 12px;margin:0 0 10px!important;letter-spacing:.05em}
+
+/* 補足 */
+.op-note{background:#F7F8FA;padding:16px 20px;margin:24px 0;border:1px dashed #B8C0CC}
+.op-note__title{font-weight:bold;margin-bottom:4px!important}
+.op-note__title::before{content:"i";display:inline-block;width:20px;height:20px;line-height:20px;text-align:center;border-radius:50%;background:var(--op-navy);color:#fff;font-size:12px;margin-right:8px;font-family:serif;font-style:italic}
+
+/* 訪問者の疑問 */
+.op-journey{border:1px solid var(--op-line);padding:20px}
+.p-blog__content-dec .op-journey ol{margin:0;padding:0;counter-reset:j}
+.p-blog__content-dec .op-journey li{list-style:none;display:grid;grid-template-columns:1fr 24px 1fr;align-items:center;gap:8px;margin:8px 0;counter-increment:j}
+.p-blog__content-dec .op-journey li::before{display:none}
+.op-journey__q{background:var(--op-sky);border-radius:20px;padding:8px 14px 8px 40px;font-weight:bold;color:var(--op-navy);position:relative}
+.op-journey__q::before{content:counter(j);position:absolute;left:10px;top:50%;transform:translateY(-50%);width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:var(--op-navy);color:#fff;font-size:12px}
+.p-blog__content-dec .op-journey li::after{content:"→";grid-column:2;grid-row:1;text-align:center;color:#999}
+.op-journey__a{grid-column:3;border:1px solid var(--op-line);padding:8px 14px;font-size:14px}
+
+/* ビフォーアフター */
+.op-before-after{display:grid;grid-template-columns:1fr 32px 1fr;gap:8px;align-items:stretch;margin:20px 0}
+.op-before-after__item{border:1px solid var(--op-line);padding:14px 16px;background:#FAFAFA}
+.op-before-after__item p{margin:0!important;font-size:15px}
+.op-before-after__item--after{border:2px solid var(--op-accent);background:#fff}
+.op-before-after__label{font-size:12px!important;font-weight:bold;color:#888;margin-bottom:6px!important}
+.op-before-after__item--after .op-before-after__label{color:var(--op-accent)}
+.op-before-after__arrow{align-self:center;text-align:center;font-size:22px;color:var(--op-accent);font-weight:bold}
+
+/* 5項目 */
+.op-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;margin:20px 0}
+.op-steps__item{border:1px solid var(--op-line);padding:14px 10px;text-align:center;background:#fff}
+.op-steps__num{display:inline-block;width:28px;height:28px;line-height:28px;border-radius:50%;background:var(--op-navy);color:#fff;font-weight:bold;font-size:14px}
+.op-steps__item p{margin:8px 0 0!important;font-size:13px;line-height:1.6;color:#555}
+.op-steps__item strong{display:block;font-size:15px;color:var(--op-navy);background:none}
+
+/* ワイヤー */
+.op-wire{display:grid;grid-template-columns:240px 1fr;gap:28px;align-items:center;border:1px solid var(--op-line);padding:24px}
+.op-wire figcaption{grid-column:1/-1}
+.op-wire__page{border:2px solid #9AA3AF;border-radius:6px;padding:8px;background:#fff}
+.op-wire__block{background:#EEF0F3;color:#6B7280;font-size:12px;padding:10px 8px;margin:5px 0;text-align:center}
+.op-wire__block--hd{display:flex;justify-content:space-between;align-items:center;text-align:left;background:#E2E6EC}
+.op-wire__btn{background:var(--op-navy);color:#fff;font-size:10px;padding:3px 6px;border-radius:3px}
+.op-wire__cta{background:var(--op-accent);color:#fff;font-size:12px;font-weight:bold;text-align:center;padding:8px;margin:5px 14px;border-radius:20px}
+.p-blog__content-dec ul.op-wire__notes{margin:0;padding:0}
+.p-blog__content-dec ul.op-wire__notes li{list-style:none;border-left:3px solid var(--op-accent);padding:4px 0 4px 12px;margin:10px 0;font-size:15px}
+.p-blog__content-dec ul.op-wire__notes li::before{display:none}
+.op-wire__notes strong{background:none;color:var(--op-accent)}
+
+/* チェックリスト */
+.op-checklist{border:1px solid var(--op-line);padding:8px 20px;margin:20px 0}
+.p-blog__content-dec .op-checklist ul{margin:0;padding:0}
+.p-blog__content-dec .op-checklist li{list-style:none;position:relative;padding:12px 0 12px 36px;border-bottom:1px dashed var(--op-line);font-size:14px;color:#555;line-height:1.7}
+.p-blog__content-dec .op-checklist li:last-child{border-bottom:0}
+.p-blog__content-dec .op-checklist li::before{content:"";position:absolute;left:4px;top:15px;width:18px;height:18px;border:2px solid var(--op-navy);border-radius:3px;background:#fff;display:block}
+.op-checklist li span{display:block;font-weight:bold;font-size:16px;color:var(--op-text)}
+
+/* タイムライン */
+.op-timeline{margin:20px 0;border-left:2px solid var(--op-line);padding-left:22px}
+.op-timeline__item{position:relative;padding:4px 0 14px}
+.op-timeline__item::before{content:"";position:absolute;left:-29px;top:10px;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--op-navy)}
+.op-timeline__item:first-child::before{background:var(--op-navy)}
+.op-timeline__item p{margin:0!important;font-size:15px}
+.op-timeline__when{font-weight:bold;color:var(--op-navy)}
+
+/* まとめ */
+.op-summary{border:1px solid var(--op-line);border-top:4px solid var(--op-navy);padding:18px 24px;margin:20px 0}
+.p-blog__content-dec .op-summary ol{margin:0;padding-left:22px}
+.p-blog__content-dec .op-summary li{margin:8px 0;font-size:15px;line-height:1.7}
+.op-summary strong{background:none;color:var(--op-navy)}
+
+/* CTA */
+.op-cta{background:var(--op-navy);color:#fff;padding:28px 28px 24px;margin:36px 0;text-align:center}
+.op-cta p{color:#fff}
+.op-cta__lead{font-size:19px;font-weight:bold;margin-bottom:10px!important;line-height:1.6}
+.op-cta p:not(.op-cta__lead){font-size:14px;text-align:left;max-width:600px;margin:0 auto 18px!important;opacity:.92}
+.op-cta__btns{display:flex;gap:12px;justify-content:center;flex-wrap:wrap}
+.p-blog__content-dec .op-cta__btn{display:inline-block;min-width:220px;padding:12px 20px;border:1px solid #fff;color:#fff;text-decoration:none;font-weight:bold;border-radius:30px}
+.p-blog__content-dec .op-cta__btn--main{background:#fff;color:var(--op-navy)}
+.p-blog__content-dec .op-cta__btn:hover{opacity:.85}
+
+@media (max-width:767px){
+  .op-split{grid-template-columns:1fr}
+  .op-formula__row{flex-direction:column;gap:2px}
+  .op-formula__box{width:100%;box-sizing:border-box;padding:10px}
+  .op-formula__op{font-size:20px;line-height:1.2}
+  .op-before-after{grid-template-columns:1fr}
+  .op-before-after__arrow{transform:rotate(90deg)}
+  .op-steps{grid-auto-flow:row;grid-template-columns:1fr 1fr}
+  .op-steps__item:last-child{grid-column:1/-1}
+  .op-wire{grid-template-columns:1fr;padding:16px}
+  .op-wire__page{max-width:260px;margin:0 auto}
+  .op-matrix__grid{grid-template-columns:1fr}
+  .p-blog__content-dec .op-journey li{grid-template-columns:1fr;gap:4px}
+  .p-blog__content-dec .op-journey li::after{display:none}
+  .op-journey__a{grid-column:1;margin-left:24px;border-left:3px solid var(--op-accent)}
+  .op-talk__icon{flex-basis:56px}
+  .op-talk__icon img{width:56px;height:56px}
+  .op-cta{padding:22px 16px}
+  .op-flow{padding:14px 12px}
+  .op-flow__svg--pc{display:none}
+  .op-flow__svg--sp{display:block}
+  .op-flow__fix{grid-template-columns:1fr;gap:10px}
+  .op-flow__fix-item{padding:12px 14px}
+  .op-matrix{padding:12px 10px}
+  .op-matrix__chart{grid-template-columns:22px 1fr}
+  .op-matrix__q{padding:10px 8px}
+  .op-matrix__tag{font-size:13px}
+  .p-blog__content-dec .op-matrix li{font-size:12px;padding:2px 8px;border-radius:10px}
+}
+.op-table strong,.op-checklist strong{background:none}
+
+/* 結論ボックス：左線をやめ四辺の細フチに */
+
+/* 流れの図解 */
+.op-flow{border:1px solid var(--op-line);padding:20px 20px 16px;background:#fff}
+.op-flow__svg{display:block;width:100%;height:auto;font-family:inherit}
+.op-flow__svg--sp{display:none;max-width:340px;margin:0 auto}
+.op-flow__fix{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:8px;position:relative;padding-top:30px}
+.op-flow__fix::before{content:"それぞれの対策";position:absolute;top:0;left:50%;transform:translateX(-50%);background:#fff;padding:0 12px;font-size:12px;font-weight:bold;color:#777;letter-spacing:.1em;z-index:1}
+.op-flow__fix::after{content:"";position:absolute;top:9px;left:0;right:0;border-top:1px solid var(--op-line)}
+.op-flow__fix-item{border:0;background:#EEEDF7;padding:12px 16px;border-radius:4px}
+.op-flow__fix-item--b{background:var(--op-accent-bg)}
+.op-flow__fix-item p{margin:0!important;font-size:14px;line-height:1.7}
+.op-flow__fix-head{font-weight:bold;color:var(--op-navy)}
+.op-flow__fix-item--b .op-flow__fix-head{color:var(--op-accent)}
+.op-flow__fix-item strong{background:none;color:var(--op-text)}
+
+/* 優先順位マトリクス（軸つき） */
+.op-matrix{border:1px solid var(--op-line);padding:20px;background:#fff}
+.op-matrix__chart{display:grid;grid-template-columns:28px 1fr;grid-template-rows:auto 28px;gap:6px}
+.op-matrix__yaxis{grid-row:1;display:flex;flex-direction:column;align-items:center;justify-content:space-between;font-size:12px;font-weight:bold;color:var(--op-navy)}
+.op-matrix__yaxis span{writing-mode:vertical-rl;letter-spacing:.1em}
+.op-matrix__yaxis i{flex:1;width:2px;background:var(--op-navy);margin:6px 0;position:relative}
+.op-matrix__yaxis i::before{content:"";position:absolute;top:-2px;left:50%;transform:translateX(-50%);border:6px solid transparent;border-bottom:8px solid var(--op-navy);border-top:0}
+.op-matrix__xaxis{grid-column:2;display:flex;align-items:center;gap:8px;font-size:12px;font-weight:bold;color:var(--op-navy);white-space:nowrap}
+.op-matrix__xaxis i{flex:1;height:2px;background:var(--op-navy);position:relative}
+.op-matrix__xaxis i::after{content:"";position:absolute;right:-2px;top:50%;transform:translateY(-50%);border:6px solid transparent;border-left:8px solid var(--op-navy);border-right:0}
+.op-matrix__plane{display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;border:2px solid var(--op-navy);position:relative;background:#fff}
+.op-matrix__plane::before,.op-matrix__plane::after{content:"";position:absolute;background:var(--op-line)}
+.op-matrix__plane::before{left:50%;top:0;bottom:0;width:0;border-left:1px dashed #AEB6C2}
+.op-matrix__plane::after{top:50%;left:0;right:0;height:0;border-top:1px dashed #AEB6C2}
+.op-matrix__q{padding:14px 16px;margin:0!important}
+.op-matrix__q--1{background:var(--op-accent-bg)}
+.op-matrix__q--2{background:#F3F2FA}
+.op-matrix__q--3,.op-matrix__q--4{background:#FAFAFA}
+.op-matrix__tag{font-weight:bold;font-size:15px;color:var(--op-navy);margin:0 0 8px!important;display:flex;align-items:center;gap:6px}
+.op-matrix__q--1 .op-matrix__tag{color:var(--op-accent)}
+.op-matrix__no{display:inline-block;width:22px;height:22px;line-height:22px;text-align:center;border-radius:50%;background:var(--op-navy);color:#fff;font-size:12px;flex:0 0 22px}
+.op-matrix__q--1 .op-matrix__no{background:var(--op-accent)}
+.op-matrix__q--3 .op-matrix__no,.op-matrix__q--4 .op-matrix__no{background:#8C94A3}
+.p-blog__content-dec .op-matrix ul{margin:0;padding:0}
+.p-blog__content-dec .op-matrix li{list-style:none;display:inline-block;background:#fff;border:1px solid var(--op-line);border-radius:14px;padding:2px 10px;margin:0 4px 6px 0;font-size:13px;line-height:1.6}
+.p-blog__content-dec .op-matrix li::before{display:none}
+
+/* 図解（自動生成） */
+.p-blog__content-dec .op-ui{border:1px solid var(--op-line);border-radius:4px;overflow:hidden;margin:0}
+.p-blog__content-dec .op-ui svg{display:block;width:100%;height:auto}
+
+/* 手順ステップ */
+.p-blog__content-dec h2[id],.p-blog__content-dec h3[id]{scroll-margin-top:100px}
+.p-blog__content-dec .op-howto{counter-reset:ht;margin:24px 0}
+.p-blog__content-dec .op-howto>li{counter-increment:ht;list-style:none;position:relative;padding:14px 18px 14px 56px;background:#F7F8FA;border:1px solid var(--op-line);border-radius:4px;margin:0 0 10px}
+.p-blog__content-dec .op-howto>li::before{content:counter(ht);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--op-navy);color:#fff;font-size:13px;font-weight:bold;display:flex;align-items:center;justify-content:center}
+.p-blog__content-dec .op-howto>li>strong:first-child{display:block;margin-bottom:3px;width:fit-content;max-width:100%}
+.p-blog__content-dec .op-toolurl{font-size:13px;margin:-6px 0 14px!important;word-break:break-all}
+.p-blog__content-dec .op-toolurl a{color:var(--op-accent)}
+
+
+/* ============================================================
+   記事上部のアイキャッチ
+   ※ コラム詳細テンプレートに下記を追加した場合に効きます
+     <?php if ( has_post_thumbnail() ) : ?>
+       <?php the_post_thumbnail( 'large', array( 'class' => 'img p-blog__content-eyecatch' ) ); ?>
+     <?php endif; ?>
+   ============================================================ */
+.p-blog__content-eyecatch{display:block;width:100%;height:auto;aspect-ratio:329/194;
+  object-fit:cover;border-radius:6px;margin:4px 0 34px}
+@media (max-width:767px){
+  .p-blog__content-eyecatch{border-radius:4px;margin:0 0 24px}
+}
+</script>
+<p style="font-size:12.5px;color:var(--grey);margin-top:8px">※ 基本はファイルをそのままお渡しください。チャットに貼る必要があるときだけ、上のボタンをお使いください。</p>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">5</span><h2>STEP 2　画像のアップロード（アイキャッチ＋本文の画像）</h2></div>
+  <p class="lead">ここがいちばん間違いやすいところです。URLのコピー&ペーストは不要にしてあります。</p>
+  <p>WordPressのメディアURLは <span class="mono">/wp-content/uploads/年/月/ファイル名</span> という規則で決まります。つまり<b>アップロードする前から、画像の最終URLが分かります</b>。そこで、本文には最初からそのURLを入れてあります。</p>
+<p>やることは<b>画像をアップロードするだけ</b>です。URLをコピーして本文に貼る作業はありません。</p>
+
+<h3>手順</h3>
+<ol>
+  <li><b>メディア ＞ 新規追加</b> を開く</li>
+  <li><span class="mono">_入稿用/画像/</span> の中の<b>10枚をまとめてドラッグ&amp;ドロップ</b></li>
+  <li>アップロードされた1枚をクリックして、URLが
+    <span class="mono">https://opus-plan.net/wp-content/uploads/2026/10/col05-sc-performance.png</span>
+    になっているか確認する</li>
+  <li>合っていれば完了。STEP 3 へ進む</li>
+</ol>
+
+<h3>画像とファイル名</h3>
+<p>全10枚です。<b>アイキャッチは5記事すべて</b>、本文の画像はコラム05・06だけです。まとめてアップロードしてください。</p>
+<table>
+ <tr><th style="width:90px">記事</th><th style="width:250px">ファイル名</th><th style="width:110px">使う場所</th><th>サイズ</th></tr>
+ <tr><td>コラム01</td><td class="mono">col01-eyecatch.jpg</td><td>アイキャッチ</td><td>1200×708</td></tr>
+ <tr><td>コラム05</td><td class="mono">col05-eyecatch.jpg</td><td>アイキャッチ</td><td>658×388</td></tr>
+ <tr><td>コラム05</td><td class="mono">col05-sc-performance.png</td><td>本文</td><td>サーチコンソール 検索パフォーマンス画面</td></tr>
+ <tr><td>コラム05</td><td class="mono">col05-sc-query.png</td><td>本文</td><td>サーチコンソール クエリ一覧</td></tr>
+ <tr><td>コラム06</td><td class="mono">col06-eyecatch.jpg</td><td>アイキャッチ</td><td>658×388</td></tr>
+ <tr><td>コラム06</td><td class="mono">col06-ga4-admin.png</td><td>本文</td><td>GA4 管理画面</td></tr>
+ <tr><td>コラム06</td><td class="mono">col06-ga4-stream.png</td><td>本文</td><td>GA4 ウェブ ストリームの詳細</td></tr>
+ <tr><td>コラム06</td><td class="mono">col06-ga4-events.png</td><td>本文</td><td>GA4 イベント一覧</td></tr>
+ <tr><td>コラム07</td><td class="mono">col07-eyecatch.jpg</td><td>アイキャッチ</td><td>1200×708</td></tr>
+ <tr><td>コラム08</td><td class="mono">col08-eyecatch.jpg</td><td>アイキャッチ</td><td>1200×708</td></tr>
+</table>
+<div class="note">
+  <p class="note__t">アイキャッチの仕様</p>
+  <p>既存のコラムにはアイキャッチが1枚も設定されておらず、一覧ページでは全記事が仮画像のままでした。今回から設定していきます。</p>
+  <p><b>比率は 329:194</b> に固定してください。ずれると一覧カードで上下または左右が切り落とされます。</p>
+  <p>幅は <b>1200px</b> が理想です。リンクを共有したときの画像（OGP）に使われるため、これより小さいとSNSやチャットでの見え方が粗くなります。コラム05・06は元データが658pxのため、引き伸ばすと文字がぼけるのでそのままにしています。作り直す機会があれば1200px以上で書き出してください。</p>
+  <p><b>設定場所：</b>投稿編集画面の右側「アイキャッチ画像」から選びます（STEP 4）。本文に貼り付ける必要はありません。</p>
+</div>
+<p style="font-size:13px;color:var(--grey)">※ コラム01に使っている吹き出しのロゴは、すでに本番にある画像（2023/03/logo-opus.png）です。アップロードは不要です。<br>
+※ 本文の画像は社名・測定ID・URL・数値をぼかし済みです。</p>
+
+<div class="warn">
+  <p class="warn__t">2つだけ注意してください</p>
+  <ul>
+    <li><b>ファイル名は変えないでください。</b>同じ名前の画像がすでにあると、WordPressが自動で「-1」を付け、本文のURLと一致しなくなります</li>
+    <li><b>月をまたぐ場合。</b>11月にアップロードすると保存先が <span class="mono">2026/11/</span> になります。その場合は本文の <span class="mono">2026/10/</span> を <span class="mono">2026/11/</span> に置換してください（コラム05で2か所、コラム06で3か所。アイキャッチは本文に書いていないので影響しません）</li>
+  </ul>
+</div>
+
+<h3>この方法を選んだ理由（ほかの方法との比較）</h3>
+<table>
+ <tr><th style="width:230px">方法</th><th style="width:70px">判定</th><th>理由</th></tr>
+ <tr><td><b>先にアップロード → URL入りの本文を貼る</b></td><td><b style="color:var(--teal)">採用</b></td><td>コピペは本文の1回だけ。URLの貼り間違いが起きない</td></tr>
+ <tr><td>ビジュアルタブで1枚ずつ挿入する</td><td>見送り</td><td>図の番号と説明文の対応が崩れる。キャプションのHTMLも壊れます</td></tr>
+ <tr><td>画像をHTMLに直接埋め込む（Base64）</td><td>見送り</td><td>本文が数百KBになり、編集画面が重くなります。メディアにも残りません</td></tr>
+ <tr><td>共有ページ（GitHub）のURLをそのまま使う</td><td>見送り</td><td>あの共有ページは確認用です。消したら本番の画像も消えます</td></tr>
+</table>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">6</span><h2>STEP 3　本文を貼る</h2></div>
+  <p class="lead">編集は不要です。コピーして、そのまま貼ってください。</p>
+  <div class="warn">
+  <p class="warn__t">貼る前に必ず確認してください</p>
+  <ul>
+    <li>必ず<b>「テキスト」タブ（コードエディター）</b>で貼ってください</li>
+    <li>貼ったあと<b>「ビジュアル」タブに切り替えないでください</b>。図のSVGやレイアウト用のタグが削除・変形されます</li>
+    <li>保存・プレビューはテキストタブのまま行えます</li>
+  </ul>
+</div>
+<p>本文には、記事末尾の<b>「関連サービス」まで含まれています</b>（既存記事と同じ形）。先頭から末尾まで、そのまま1回で貼ってください。</p>
+<div class="card">
+  <div class="card__top">
+    <div>
+      <p class="card__no">コラム01</p>
+      <p class="card__title">ホームページにお問い合わせが来ない原因とは？確認すべきポイントと改善方法</p>
+    </div>
+    <button class="btn" data-copy="body01">本文をコピー</button>
+  </div>
+  <ul class="card__meta">
+    <li>本文 <b>24,889</b> 文字</li>
+    <li>画像なし（そのまま貼れます）</li>
+    <li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column01-inquiry-gxb9qfm9/" target="_blank" rel="noopener">完成イメージを見る</a></li>
+  </ul>
+  <script type="text/plain" id="body01"><p>「ホームページを作ったのに、お問い合わせがほとんど来ない」「アクセスはあるはずなのに、相談につながらない」――ホームページを運用している企業の担当者さまから、とても多くいただくご相談です。</p>
+<p>お問い合わせが来ない原因は、大きく<strong>「そもそも見込み客が訪れていない（アクセス不足）」</strong>か<strong>「訪れているのにお問い合わせまで進まない（つながりにくさ）」</strong>のどちらかに分けられます。どちらでつまずいているかによって、打つべき対策はまったく変わります。</p>
+<p>本コラムでは、ウェブマーケティング支援を行うオーパスプランが、原因の切り分け方から改善方法、優先順位の付け方までを順を追って解説します。</p>
+
+<div class="op-point">
+  <p class="op-point__label">この記事でわかること</p>
+  <ul class="op-check">
+    <li>お問い合わせが来ない原因を「2つの段階」に分けて考える方法</li>
+    <li>最初に確認したい3つの数字と、その見方</li>
+    <li>アクセス不足／つながりにくさ、それぞれの原因と改善方法</li>
+    <li>サービス・実績・料金・フォームの具体的な整え方</li>
+    <li>改善の優先順位の決め方と、効果の確かめ方</li>
+  </ul>
+</div>
+
+<div class="op-toc">
+  <p class="op-toc__title">目次</p>
+  <ol>
+    <li><a href="#sec1">お問い合わせが来ない原因は「アクセス不足」と「お問い合わせへのつながりにくさ」に分けて考える</a></li>
+    <li><a href="#sec2">まず確認したいアクセス数・流入経路・お問い合わせ数</a></li>
+    <li><a href="#sec3">見込み客のアクセスが少ない場合の原因と改善方法</a></li>
+    <li><a href="#sec4">アクセスはあるのにお問い合わせが来ない場合の原因と改善方法</a></li>
+    <li><a href="#sec5">お問い合わせにつながるサービス・実績・料金情報の整え方</a></li>
+    <li><a href="#sec6">お問い合わせ導線と入力フォームの改善ポイント</a></li>
+    <li><a href="#sec7">改善の優先順位を決め、お問い合わせ数の変化を確認する</a></li>
+    <li><a href="#sec8">まとめ</a></li>
+  </ol>
+</div>
+
+<!-- ============ H2-1 ============ -->
+<h2 id="sec1">お問い合わせが来ない原因は「アクセス不足」と「お問い合わせへのつながりにくさ」に分けて考える</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. なぜお問い合わせが来ないの？</span>原因は「見込み客の訪問が少ない」か「訪問はあるのにお問い合わせまで進まない」かの、どちらか（または両方）です。まず自社がどちらに当てはまるかを確かめることが、改善のいちばんの近道です。</p>
+</div>
+
+<h3>お問い合わせ数は「アクセス数 × お問い合わせ率」で決まる</h3>
+<p>ホームページからのお問い合わせ数は、次のシンプルな式で表せます。</p>
+
+<figure class="op-formula">
+  <div class="op-formula__row">
+    <div class="op-formula__box op-formula__box--result"><span>お問い合わせ数</span></div>
+    <div class="op-formula__op">＝</div>
+    <div class="op-formula__box"><span>アクセス数</span><small>どれだけの人が訪れたか</small></div>
+    <div class="op-formula__op">×</div>
+    <div class="op-formula__box"><span>お問い合わせ率</span><small>訪れた人のうち何％がお問い合わせたか</small></div>
+  </div>
+  <figcaption>どちらか一方が小さいと、もう一方をいくら増やしてもお問い合わせは伸びにくくなります</figcaption>
+</figure>
+
+<p>たとえば月1,000アクセスのサイトでも、お問い合わせ率が0.1％ならお問い合わせは月1件、0.5％になれば月5件です。反対に、お問い合わせ率が十分でもアクセスが月100件しかなければ、お問い合わせはほとんど生まれません。</p>
+
+<h3>どちらでつまずいているかで、打つべき施策は変わる</h3>
+<p>原因の段階が違えば、効く施策も変わります。デザインの一新やリニューアルを先に考えがちですが、アクセス不足が原因の場合、見た目を整えてもお問い合わせはあまり増えません。</p>
+
+<figure class="op-flow">
+  <svg class="op-flow__svg op-flow__svg--pc" viewBox="0 0 680 250" role="img" aria-label="見込み客がホームページを訪れ、問い合わせに至るまでの流れ。①アクセス不足は入口が細い状態、②つながりにくさは途中で離れてしまう状態">
+    <defs>
+      <symbol id="opP" viewBox="0 0 24 34"><circle cx="12" cy="7" r="6"/><path d="M1 34v-9a11 11 0 0 1 22 0v9z"/></symbol>
+      <marker id="opArT" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0F7C8C"/></marker>
+      <marker id="opArG" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0L10 5L0 10z" fill="#B5BCC6"/></marker>
+    </defs>
+    <!-- 見込み客 -->
+    <g fill="#1B1464"><use href="#opP" x="44" y="88" width="20" height="28"/><use href="#opP" x="72" y="80" width="20" height="28"/><use href="#opP" x="100" y="88" width="20" height="28"/><use href="#opP" x="58" y="120" width="20" height="28"/><use href="#opP" x="86" y="120" width="20" height="28"/></g>
+    <text x="82" y="176" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B1464">見込み客</text>
+    <text x="82" y="195" text-anchor="middle" font-size="11" fill="#777">検索・広告・地図・SNS</text>
+    <!-- ① 入口（細い漏斗） -->
+    <path d="M140 92 L248 117 L248 133 L140 158 Z" fill="#E4E2F2"/>
+    <path d="M140 92 L248 117 M140 158 L248 133" stroke="#1B1464" stroke-width="1.5" fill="none"/>
+    <rect x="148" y="28" width="104" height="28" rx="14" fill="#1B1464"/>
+    <text x="200" y="47" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">① アクセス不足</text>
+    <text x="196" y="210" text-anchor="middle" font-size="12" fill="#C8102E">入口が少ない・細い</text>
+    <!-- ホームページ -->
+    <rect x="258" y="70" width="160" height="112" rx="6" fill="#fff" stroke="#1B1464" stroke-width="2"/>
+    <path d="M258 90 H418" stroke="#1B1464" stroke-width="2"/>
+    <circle cx="270" cy="80" r="3" fill="#1B1464"/><circle cx="280" cy="80" r="3" fill="#1B1464"/><circle cx="290" cy="80" r="3" fill="#1B1464"/>
+    <rect x="272" y="102" width="70" height="8" rx="2" fill="#C9D1DC"/><rect x="272" y="118" width="132" height="6" rx="2" fill="#E3E7ED"/><rect x="272" y="130" width="120" height="6" rx="2" fill="#E3E7ED"/><rect x="272" y="142" width="128" height="6" rx="2" fill="#E3E7ED"/>
+    <rect x="352" y="158" width="52" height="14" rx="7" fill="#0F7C8C"/>
+    <text x="338" y="202" text-anchor="middle" font-size="15" font-weight="bold" fill="#1B1464">ホームページ</text>
+    <!-- ② つながりにくさ -->
+    <path d="M426 126 H520" stroke="#0F7C8C" stroke-width="3" marker-end="url(#opArT)"/>
+    <path d="M462 128 C462 150 468 170 476 188" stroke="#B5BCC6" stroke-width="2" stroke-dasharray="4 4" fill="none" marker-end="url(#opArG)"/>
+    <g fill="#C9CED6"><use href="#opP" x="470" y="196" width="16" height="22"/><use href="#opP" x="490" y="204" width="16" height="22"/><use href="#opP" x="450" y="204" width="16" height="22"/></g>
+    <rect x="420" y="28" width="112" height="28" rx="14" fill="#0F7C8C"/>
+    <text x="476" y="47" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">② つながりにくさ</text>
+    <text x="476" y="108" text-anchor="middle" font-size="12" fill="#0F7C8C">途中で離れてしまう</text>
+    <!-- お問い合わせ -->
+    <rect x="534" y="94" width="112" height="72" rx="6" fill="#EAF6F7" stroke="#0F7C8C" stroke-width="2"/>
+    <path d="M534 98 L590 136 L646 98" stroke="#0F7C8C" stroke-width="2" fill="none"/>
+    <text x="590" y="190" text-anchor="middle" font-size="15" font-weight="bold" fill="#0F7C8C">お問い合わせ</text>
+  </svg>
+  <svg class="op-flow__svg op-flow__svg--sp" viewBox="0 0 340 520" role="img" aria-label="見込み客がホームページを訪れ、問い合わせに至るまでの流れ">
+    <g fill="#1B1464"><use href="#opP" x="112" y="14" width="20" height="28"/><use href="#opP" x="140" y="8" width="20" height="28"/><use href="#opP" x="168" y="14" width="20" height="28"/><use href="#opP" x="126" y="44" width="20" height="28"/><use href="#opP" x="154" y="44" width="20" height="28"/></g>
+    <text x="204" y="40" font-size="15" font-weight="bold" fill="#1B1464">見込み客</text>
+    <text x="204" y="58" font-size="11" fill="#777">検索・広告・地図・SNS</text>
+    <path d="M104 84 L142 172 L158 172 L196 84 Z" fill="#E4E2F2"/>
+    <path d="M104 84 L142 172 M196 84 L158 172" stroke="#1B1464" stroke-width="1.5" fill="none"/>
+    <rect x="206" y="104" width="114" height="28" rx="14" fill="#1B1464"/>
+    <text x="263" y="123" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">① アクセス不足</text>
+    <text x="263" y="152" text-anchor="middle" font-size="12" fill="#C8102E">入口が少ない・細い</text>
+    <rect x="80" y="182" width="140" height="104" rx="6" fill="#fff" stroke="#1B1464" stroke-width="2"/>
+    <path d="M80 202 H220" stroke="#1B1464" stroke-width="2"/>
+    <circle cx="92" cy="192" r="3" fill="#1B1464"/><circle cx="102" cy="192" r="3" fill="#1B1464"/><circle cx="112" cy="192" r="3" fill="#1B1464"/>
+    <rect x="94" y="214" width="62" height="8" rx="2" fill="#C9D1DC"/><rect x="94" y="230" width="112" height="6" rx="2" fill="#E3E7ED"/><rect x="94" y="242" width="100" height="6" rx="2" fill="#E3E7ED"/><rect x="94" y="254" width="108" height="6" rx="2" fill="#E3E7ED"/>
+    <rect x="160" y="266" width="46" height="12" rx="6" fill="#0F7C8C"/>
+    <text x="236" y="240" font-size="14" font-weight="bold" fill="#1B1464">ホームページ</text>
+    <path d="M150 292 V396" stroke="#0F7C8C" stroke-width="3" marker-end="url(#opArT)"/>
+    <path d="M152 320 C170 322 196 330 214 344" stroke="#B5BCC6" stroke-width="2" stroke-dasharray="4 4" fill="none" marker-end="url(#opArG)"/>
+    <g fill="#C9CED6"><use href="#opP" x="222" y="336" width="16" height="22"/><use href="#opP" x="242" y="344" width="16" height="22"/><use href="#opP" x="262" y="336" width="16" height="22"/></g>
+    <rect x="206" y="294" width="122" height="28" rx="14" fill="#0F7C8C"/>
+    <text x="267" y="313" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">② つながりにくさ</text>
+    <text x="267" y="378" text-anchor="middle" font-size="12" fill="#0F7C8C">途中で離れてしまう</text>
+    <rect x="94" y="402" width="112" height="72" rx="6" fill="#EAF6F7" stroke="#0F7C8C" stroke-width="2"/>
+    <path d="M94 406 L150 444 L206 406" stroke="#0F7C8C" stroke-width="2" fill="none"/>
+    <text x="150" y="500" text-anchor="middle" font-size="15" font-weight="bold" fill="#0F7C8C">お問い合わせ</text>
+  </svg>
+  <div class="op-flow__fix">
+    <div class="op-flow__fix-item"><p class="op-flow__fix-head">① アクセス不足なら</p><p>SEO・Web広告・MEO・SNSなどで<strong>「入口」を増やす</strong></p></div>
+    <div class="op-flow__fix-item op-flow__fix-item--b"><p class="op-flow__fix-head">② つながりにくさなら</p><p>内容・導線・フォームを整えて<strong>「出口」を通りやすくする</strong></p></div>
+  </div>
+  <figcaption>どこで人が減っているかによって、打つべき対策が変わります</figcaption>
+</figure>
+
+<div class="op-talk">
+  <div class="op-talk__icon"><img src="https://opus-plan.net/wp-content/uploads/2023/03/logo-opus.png" alt=""><span>編集部</span></div>
+  <div class="op-talk__bubble"><p>ご相談の場で「リニューアルしたい」と伺っても、数字を一緒に見ていくと、実は原因が入口側にあった、ということは少なくありません。まずは「どちらの段階か」から確かめてみましょう。</p></div>
+</div>
+
+<!-- ============ H2-2 ============ -->
+<h2 id="sec2">まず確認したいアクセス数・流入経路・お問い合わせ数</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. 最初に何を見ればいい？</span>「アクセス数」「流入経路」「お問い合わせ数」の3つです。Googleアナリティクス（GA4）とGoogleサーチコンソールがあれば、無料で確認できます。</p>
+</div>
+
+<h3>確認したい3つの数字と見る場所</h3>
+<div class="op-table-wrap">
+<table class="op-table">
+  <thead>
+    <tr><th>確認する数字</th><th>見る場所</th><th>ここで分かること</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>アクセス数</strong></td><td>GA4「レポート」＞「集客」のセッション数</td><td>月に何人がサイトを訪れているか。前年や前月と比べて増えているか減っているか</td></tr>
+    <tr><td><strong>流入経路</strong></td><td>GA4「トラフィック獲得」のチャネル（Organic Search／Direct／Referral など）</td><td>検索・広告・SNS・他サイトのどこから来ているか。偏りや、まったく機能していない入口がないか</td></tr>
+    <tr><td><strong>お問い合わせ数</strong></td><td>GA4のキーイベント＋実際に届いたメールの件数</td><td>月に何件のお問い合わせがあり、そのうち何件が「本当のご相談」か</td></tr>
+  </tbody>
+</table>
+</div>
+<p>3つがそろったら、「お問い合わせ数 ÷ アクセス数」でお問い合わせ率を出してみましょう。アクセス数が少ないのか、お問い合わせ率が低いのか、どちらに課題があるかの見当がつきます。</p>
+
+<h3>サーチコンソールの「表示回数」はアクセス数ではない</h3>
+<p>サーチコンソールには「表示回数」と「クリック数」があります。<strong>表示回数は、検索結果に自社ページが並んだ回数</strong>で、実際に訪問された回数ではありません。表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。この場合は、検索結果に表示されるタイトルや説明文の見直しが効果的です。</p>
+<a class="op-more" href="https://opus-plan.net/blog/analytics/search-console-basics/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">サーチコンソールの使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h3>「お問い合わせ数」に営業メールが含まれていないか</h3>
+<p>見落としがちなのが、お問い合わせ数の<strong>中身</strong>です。お問い合わせフォームには、営業目的の連絡も多く届きます。フォームの送信件数だけを見ていると、「お問い合わせは来ている」と判断してしまい、本当の課題に気づけません。</p>
+
+<div class="op-case">
+  <p class="op-case__label">当社での確認例</p>
+  <p>当社のサイトでフォームの送信件数を調べたところ、1日あたり3〜5件のペースで送信がありました。一見すると十分な数ですが、受信したメールと照らし合わせると、その多くが営業目的のご連絡でした。<br>このように、<strong>送信件数と「ご相談の件数」は別物</strong>として数え直すことで、はじめて正しいお問い合わせ率が見えてきます。</p>
+</div>
+
+<div class="op-note">
+  <p class="op-note__title">GA4でお問い合わせ数を正しく数える準備</p>
+  <p>GA4では、フォーム送信などの行動に「キーイベント（成果）」の印を付けておくと、どの流入経路・どのページを経由した人がお問い合わせたかを追えるようになります。まだ設定していない場合は、改善を始める前に設定しておくと、施策の効果を比べやすくなります。</p>
+</div>
+<a class="op-more" href="https://opus-plan.net/blog/analytics/ga4-basics/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">GA4の使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<!-- ============ H2-3 ============ -->
+<h2 id="sec3">見込み客のアクセスが少ない場合の原因と改善方法</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. アクセスが少ないときは？</span>「検索で見つけてもらえていない」「訪問者が見込み客ではない」「検索以外の入口がない」の3つを疑います。原因に合わせて、SEO・Web広告・MEO・SNSなどから入口を選んで増やしていきます。</p>
+</div>
+
+<h3>原因1：見込み客が検索する言葉で見つけてもらえていない</h3>
+<p>社内で使っているサービス名と、お客さまが検索する言葉は別物です。自社が「Webコンサルティング」と呼んでいるサービスを、お客さまは「ホームページ 集客 相談」のように、<strong>いま困っている状態そのものの言葉</strong>で探します。お客さまが実際に使う言葉がページ内にないかぎり、検索結果には表示されません。まずはサーチコンソールで「どんな言葉で表示されているか」を確認し、狙いたい言葉とのずれを見つけてください。</p>
+<a class="op-more" href="https://opus-plan.net/blog/seo/keyword-research/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">検索ワードの確認方法はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h3>原因2：アクセスはあっても、見込み客ではない人が中心になっている</h3>
+<p>アクセス数そのものは多くても、その大半が「調べものをしに来た人」で、サービスを検討している人ではないケースがあります。<span>特にブログで集客をされている場合は、記事の役割を「アクセスを集めるもの」と「相談につなげるもの」に切り分けて考えることが重要です。当社の事例でも、もっとも読まれている記事が相談にはつながっていない、という状態がよく見つかります。</span></p>
+<div class="op-case">
+  <p class="op-case__label">当社での確認例</p>
+  <p>当社サイトでは、ある技術解説の記事が検索から多くの訪問を集めていました。ただし、その記事から他のページへ進んだ人は約1％。トップページから入った人の6〜7割が次のページへ進むのと比べると、大きな差がありました。</p>
+  <p>技術記事には、サイト全体の評価を高めたり、会社を知ってもらうきっかけをつくったりする大切な役割があります。そのうえで、<strong>「サービスを検討している人」が読む記事も別に用意する</strong>ことで、アクセスをお問い合わせにつなげやすくなります。</p>
+</div>
+
+<h3>原因3：検索以外の入口が用意されていない</h3>
+<p>SEOは効果が出るまでに時間がかかります。すぐに見込み客を増やしたい場合や、地域のお客さまが中心の場合は、検索以外の入口を組み合わせるのが効果的です。主な方法と向いているケースは次のとおりです。</p>
+
+<div class="op-table-wrap">
+<table class="op-table op-table--compare">
+  <thead>
+    <tr><th>方法</th><th>向いているケース</th><th>効果が出るまで</th><th>費用の考え方</th></tr>
+  </thead>
+  <tbody>
+    <tr><td><strong>SEO対策</strong><br><a href="https://opus-plan.net/seo">詳しく見る</a></td><td>長く安定して見込み客を集めたい</td><td>数か月〜</td><td>主に制作・運用の人件費。広告費はかからない</td></tr>
+    <tr><td><strong>Web広告</strong><br><a href="https://opus-plan.net/ads">詳しく見る</a></td><td>すぐに見込み客を集めたい・効果を早く試したい</td><td>配信開始から数日〜</td><td>クリック数などに応じた広告費。止めると集客も止まる</td></tr>
+    <tr><td><strong>MEO対策</strong><br><a href="https://opus-plan.net/meo">詳しく見る</a></td><td>地域のお客さまが中心・店舗や事務所がある</td><td>数週間〜数か月</td><td>Googleマップへの登録は無料。運用の手間がかかる</td></tr>
+    <tr><td><strong>SNS</strong><br><a href="https://opus-plan.net/sns-consulting">詳しく見る</a></td><td>人柄や雰囲気も伝えたい・ファンを増やしたい</td><td>継続運用で少しずつ</td><td>投稿・運用の手間が中心。広告を使う場合は別途費用</td></tr>
+    <tr><td><strong>外部サイト掲載</strong></td><td>比較サイト・業界ポータルで探す人が多い業種</td><td>掲載後すぐ〜</td><td>掲載料がかかるものが多い</td></tr>
+  </tbody>
+</table>
+</div>
+<p>どれか1つが正解というわけではなく、業種や目的、予算によって最適な組み合わせは変わります。</p>
+<a class="op-more" href="https://opus-plan.net/contact/">
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">向いている対策を相談する（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<!-- ============ H2-4 ============ -->
+<h2 id="sec4">アクセスはあるのにお問い合わせが来ない場合の原因と改善方法</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. アクセスはあるのにお問い合わせが来ないのは？</span>訪問者が「何をしてくれる会社か」「自分に合うか」「頼んで大丈夫か」を判断できないまま、ページを閉じている可能性が高いです。訪問者の疑問に、ページの中で先回りして答えていきましょう。</p>
+</div>
+
+<h3>お問い合わせ前に、訪問者は5つの疑問を確かめている</h3>
+<p>お問い合わせをする前に、訪問者は頭の中でいくつもの疑問を確かめています。どれか1つでも答えが見つからないと、お問い合わせをためらってしまいます。</p>
+
+<figure class="op-journey">
+  <ol>
+    <li><span class="op-journey__q">何をしてくれる会社？</span><span class="op-journey__a">サービス紹介・トップページ</span></li>
+    <li><span class="op-journey__q">うちでも頼める？</span><span class="op-journey__a">対象のお客さま・対応業種</span></li>
+    <li><span class="op-journey__q">いくらかかる？</span><span class="op-journey__a">料金・費用の目安</span></li>
+    <li><span class="op-journey__q">この会社で大丈夫？</span><span class="op-journey__a">実績・お客さまの声・担当者</span></li>
+    <li><span class="op-journey__q">どう連絡すればいい？</span><span class="op-journey__a">お問い合わせボタン・フォーム</span></li>
+  </ol>
+  <figcaption>訪問者の疑問と、その答えを置くページの対応です</figcaption>
+</figure>
+<a class="op-more" href="https://opus-plan.net/blog/web-marketing/website-pages/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">ホームページに必要なページはこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h3>原因1：訪問者がサービスページまでたどり着いていない</h3>
+<p>ブログ記事やトップページから入った人が、サービス紹介のページへ進めていないケースです。記事の途中や最後に関連サービスへのリンクがない、メニューの名前が分かりにくい、といったことが原因になります。<strong>入口になっているページから、次に読んでほしいページへの道</strong>をつくりましょう。</p>
+
+<h3>原因2：読んでも「自分に合うか」「頼んで大丈夫か」が判断できない</h3>
+<p>サービスの説明はあっても、対象となるお客さまや実績、料金が分からないと、訪問者は判断できません。特に法人のお客さまは、社内で検討・説明する必要があるため、<strong>判断材料がそろっているか</strong>がとても重要です。具体的な整え方は次の章で紹介します。</p>
+
+<h3>原因3：お問い合わせの心理的なハードルが高い</h3>
+<p>「お問い合わせたら、強く営業されるのでは」「まだ検討段階なのに連絡していいのか」と感じると、人はなかなかお問い合わせません。お問い合わせ以外にも、資料ダウンロードや無料相談など、<strong>気軽に一歩目を踏み出せる入口</strong>があると、ハードルが下がります。</p>
+
+<div class="op-talk">
+  <div class="op-talk__icon"><img src="https://opus-plan.net/wp-content/uploads/2023/03/logo-opus.png" alt=""><span>編集部</span></div>
+  <div class="op-talk__bubble"><p>当社のサイトでも、トップページから入った方の多くが、次に「会社概要」を見ていました。「どんな会社か」「どんな人がいるか」を確かめてからお問い合わせる方が多いのだと感じています。</p></div>
+</div>
+
+<!-- ============ H2-5 ============ -->
+<h2 id="sec5">お問い合わせにつながるサービス・実績・料金情報の整え方</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. どんな情報を載せればいい？</span>「誰の・どんな悩みを・どう解決するか」が伝わるサービス紹介、条件と成果が分かる実績、費用の目安です。この3つと担当者の顔が見える情報がそろうと、訪問者は安心してお問い合わせできます。</p>
+</div>
+
+<h3>サービス：「誰の・どんな悩みを・どう解決するか」を最初に伝える</h3>
+<p>サービスページの冒頭で、対象のお客さまとお悩み、解決方法をひとことで伝えましょう。専門用語だけの説明より、お客さまの言葉で書くほうが伝わります。</p>
+<div class="op-before-after">
+  <div class="op-before-after__item">
+    <p class="op-before-after__label">見直す前</p>
+    <p>最新のSEOノウハウで、検索エンジン最適化を総合的にサポートします。</p>
+  </div>
+  <div class="op-before-after__arrow" aria-hidden="true">→</div>
+  <div class="op-before-after__item op-before-after__item--after">
+    <p class="op-before-after__label">見直した後</p>
+    <p>「ホームページはあるのに、検索で見つけてもらえない」中小企業さまへ。お客さまが検索する言葉を調べ、ページの内容から整えます。</p>
+  </div>
+</div>
+
+<h3>実績：5つの項目をそろえて掲載する</h3>
+<p>実績は、ロゴや会社名を並べるだけでは「自分と同じような会社でも成果が出るか」が伝わりません。次の5項目をそろえると、訪問者が自社に置き換えて読めるようになります。</p>
+<div class="op-steps">
+  <div class="op-steps__item"><span class="op-steps__num">1</span><p><strong>業種・規模</strong>どんなお客さまか</p></div>
+  <div class="op-steps__item"><span class="op-steps__num">2</span><p><strong>ご相談内容</strong>どんな悩みがあったか</p></div>
+  <div class="op-steps__item"><span class="op-steps__num">3</span><p><strong>取り組み</strong>何をしたか</p></div>
+  <div class="op-steps__item"><span class="op-steps__num">4</span><p><strong>期間</strong>どれくらいかかったか</p></div>
+  <div class="op-steps__item"><span class="op-steps__num">5</span><p><strong>成果・お客さまの声</strong>どう変わったか</p></div>
+</div>
+<p><span class="op-marker">数字の掲載が難しい場合は、お客さまのコメントだけでも十分な判断材料になります。</span></p>
+
+<h3>料金：目安だけでも載せておく</h3>
+<p>料金は内容によって変わるため、掲載をためらう会社も多い情報です。ただ、訪問者にとっては「予算内で頼めるか」が分からないことが、お問い合わせをためらう大きな理由になります。次のような形なら、正確な金額を出さなくても目安を伝えられます。</p>
+<ul class="op-check">
+  <li>「月額○万円〜」のように、最低価格だけを載せる</li>
+  <li>「小規模サイトの場合」「中規模サイトの場合」など、よくあるケースごとの目安を載せる</li>
+  <li>費用が決まるまでの流れ（ヒアリング → お見積り）を説明する</li>
+</ul>
+
+<h3>担当者や会社の情報で「人」が見えるようにする</h3>
+<p>代表者のメッセージや担当メンバーの写真・経歴があると、「どんな人が対応してくれるのか」が分かり、お問い合わせの不安が和らぎます。会社概要のページは、お問い合わせ前によく見られるページのひとつです。会社の基本情報に加えて、人となりが伝わる情報も添えましょう。</p>
+
+<!-- ============ H2-6 ============ -->
+<h2 id="sec6">お問い合わせ導線と入力フォームの改善ポイント</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. 導線とフォームはどう直す？</span>お問い合わせボタンを「読み終わった場所」に置くこと、フォームの入力項目を必要なものに絞ることが基本です。あわせて、お問い合わせ以外の入口も用意しておくと、検討段階のお客さまも取りこぼしにくくなります。</p>
+</div>
+
+<h3>お問い合わせボタンは「読み終わった場所」に置く</h3>
+<p>お問い合わせボタンがページの一番下やメニューの中にしかないと、気になった瞬間に行動できません。訪問者が「もっと知りたい」と感じやすい場所に、ボタンを置きましょう。</p>
+
+<figure class="op-wire">
+  <div class="op-wire__page">
+    <div class="op-wire__block op-wire__block--hd">ヘッダー<span class="op-wire__btn">お問い合わせ</span></div>
+    <div class="op-wire__block">サービスの概要</div>
+    <div class="op-wire__block">選ばれる理由・特徴</div>
+    <div class="op-wire__cta">相談ボタン</div>
+    <div class="op-wire__block">実績・お客さまの声</div>
+    <div class="op-wire__block">料金の目安</div>
+    <div class="op-wire__cta">相談ボタン</div>
+    <div class="op-wire__block">よくある質問</div>
+    <div class="op-wire__cta">相談ボタン＋資料ダウンロード</div>
+  </div>
+  <ul class="op-wire__notes">
+    <li><strong>ヘッダー</strong>：いつでもお問い合わせできる常設のボタン</li>
+    <li><strong>特徴を読んだ後</strong>：興味が高まったタイミング</li>
+    <li><strong>料金を見た後</strong>：「この予算なら」と判断できたタイミング</li>
+    <li><strong>ページの最後</strong>：まだ迷っている人向けに資料ダウンロードも</li>
+  </ul>
+  <figcaption>サービスページでのボタン配置の例</figcaption>
+</figure>
+
+<h3>入力フォームのチェックポイント</h3>
+<p>フォームは、お問い合わせの直前にある最後の関門です。入力が面倒だと感じると、ここで離れてしまう人も少なくありません。次の項目を確認してみましょう。</p>
+<div class="op-checklist">
+  <ul>
+    <li><span>入力項目は必要最小限か</span>はじめの連絡に不要な項目（住所・FAX番号など）は削る</li>
+    <li><span>必須項目は絞られているか</span>電話番号は任意にするなど、必須を減らす</li>
+    <li><span>何を書けばいいか分かるか</span>「ご相談内容」の記入例を入れておく</li>
+    <li><span>エラーがすぐ分かるか</span>送信後ではなく、入力中に間違いを知らせる</li>
+    <li><span>スマートフォンでも入力しやすいか</span>入力欄やボタンが小さすぎないか</li>
+    <li><span>送信後の流れが書かれているか</span>「○営業日以内にご連絡します」など</li>
+  </ul>
+</div>
+
+<h3>お問い合わせ以外の「一歩目」も用意する</h3>
+<p>すべての訪問者が、すぐに相談したいわけではありません。検討段階の人でも行動しやすい入口を用意しておくと、将来のお客さまとの接点を増やせます。</p>
+<div class="op-table-wrap">
+<table class="op-table">
+  <thead><tr><th>入口</th><th>向いている人</th></tr></thead>
+  <tbody>
+    <tr><td><strong>資料ダウンロード</strong></td><td>社内で検討・比較したい人</td></tr>
+    <tr><td><strong>無料診断・無料相談</strong></td><td>自社の状況を一度見てほしい人</td></tr>
+    <tr><td><strong>電話</strong></td><td>急ぎの人・文章で伝えにくい相談がある人</td></tr>
+    <tr><td><strong>チャット・LINE</strong></td><td>ちょっとした質問から始めたい人</td></tr>
+  </tbody>
+</table>
+</div>
+
+<!-- ============ H2-7 ============ -->
+<h2 id="sec7">改善の優先順位を決め、お問い合わせ数の変化を確認する</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. どこから手を付ければいい？</span>「手間が小さく、効果が見えやすいもの」から始めましょう。改善前の数字を記録しておき、1か月・3か月の単位で変化を確かめながら進めるのが基本です。</p>
+</div>
+
+<h3>「手間」と「効果」で優先順位を付ける</h3>
+<p>改善したいことが多いときは、すべてに一度に手を付けるのではなく、手間と効果の2つの軸で整理すると、取り組む順番が決めやすくなります。</p>
+
+<figure class="op-matrix">
+  <div class="op-matrix__chart">
+    <div class="op-matrix__yaxis"><span>効果 大</span><i aria-hidden="true"></i><span>効果 小</span></div>
+    <div class="op-matrix__plane">
+      <div class="op-matrix__q op-matrix__q--1">
+        <p class="op-matrix__tag"><span class="op-matrix__no">1</span>まず取り組む</p>
+        <ul><li>お問い合わせボタンの追加・配置変更</li><li>フォーム項目の削減</li><li>記事からサービスページへのリンク追加</li></ul>
+      </div>
+      <div class="op-matrix__q op-matrix__q--2">
+        <p class="op-matrix__tag"><span class="op-matrix__no">2</span>計画して取り組む</p>
+        <ul><li>実績ページの充実</li><li>見込み客向けの記事づくり（SEO）</li><li>サービスページの作り直し</li></ul>
+      </div>
+      <div class="op-matrix__q op-matrix__q--3">
+        <p class="op-matrix__tag"><span class="op-matrix__no">3</span>すき間で取り組む</p>
+        <ul><li>検索結果のタイトル・説明文の見直し</li><li>誤字脱字・古い情報の修正</li></ul>
+      </div>
+      <div class="op-matrix__q op-matrix__q--4">
+        <p class="op-matrix__tag"><span class="op-matrix__no">4</span>原因が分かってから</p>
+        <ul><li>デザインを含めた全面リニューアル</li></ul>
+      </div>
+    </div>
+    <div class="op-matrix__xaxis"><span>手間 小</span><i aria-hidden="true"></i><span>手間 大</span></div>
+  </div>
+  <figcaption>左上ほど先に取り組みたい施策です（効果の大きさはサイトの状況によって変わります）</figcaption>
+</figure>
+
+<h3>改善前の数字を記録してから変える</h3>
+<p>改善を始める前に、第2章で確認した「アクセス数」「流入経路」「お問い合わせ数（ご相談の件数）」を記録しておきましょう。比べる基準がないと、施策に効果があったのか判断できません。また、複数の施策を同時に行うと、どれが効いたのか分かりにくくなります。可能であれば、ひとつずつ順番に試すのがおすすめです。</p>
+
+<h3>1か月・3か月の単位で見直す</h3>
+<div class="op-timeline">
+  <div class="op-timeline__item"><p class="op-timeline__when">改善前</p><p>3つの数字を記録し、GA4のキーイベントを設定する</p></div>
+  <div class="op-timeline__item"><p class="op-timeline__when">1か月後</p><p>ボタン配置・フォームなど「すぐできる改善」の効果を確認する</p></div>
+  <div class="op-timeline__item"><p class="op-timeline__when">3か月後</p><p>記事やページの追加など、時間のかかる施策の手ごたえを確認する</p></div>
+  <div class="op-timeline__item"><p class="op-timeline__when">以降</p><p>結果をもとに、次に取り組むことを決めて繰り返す</p></div>
+</div>
+<p>お問い合わせは月ごとのばらつきが大きいため、1か月だけの結果で判断せず、数か月の流れで見ることが大切です。</p>
+<a class="op-more" href="https://opus-plan.net/contact/">
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">分析・評価を相談する（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<!-- ============ まとめ ============ -->
+<h2 id="sec8">まとめ</h2>
+<p>ホームページにお問い合わせが来ないときは、まず原因が「アクセス不足」と「お問い合わせへのつながりにくさ」のどちらにあるのかを切り分けることが大切です。</p>
+<div class="op-summary">
+  <ol>
+    <li><strong>お問い合わせ数は「アクセス数 × お問い合わせ率」</strong>。どちらでつまずいているかを確かめる</li>
+    <li><strong>3つの数字を確認する</strong>。お問い合わせ数は営業メールを除いた「ご相談の件数」で数える</li>
+    <li><strong>アクセス不足なら入口を増やす</strong>。SEO・Web広告・MEO・SNSを目的に合わせて組み合わせる</li>
+    <li><strong>つながりにくいなら判断材料をそろえる</strong>。<span>サービス・実績・料金・担当者の情報を整える</span></li>
+    <li><strong>導線とフォームを見直す</strong>。ボタンは読み終わった場所に、入力項目は最小限に</li>
+    <li><strong>手間が小さく効果が見えやすいものから</strong>。改善前の数字を記録し、数か月単位で確かめる</li>
+  </ol>
+</div>
+<p>原因が分かれば、やるべきことは自然と絞られていきます。できるところから一つずつ取り組んでみてください。</p>
+
+<div class="op-cta">
+  <p class="op-cta__lead">「自社の場合はどちらが原因？」から、一緒に確認します</p>
+  <p>オーパスプランでは、アクセス解析をもとにした原因の切り分けから、SEO・Web広告・サイト改善まで、状況に合わせてご提案しています。「何から手を付ければいいか分からない」という段階でも、お気軽にご相談ください。</p>
+  <div class="op-cta__btns">
+    <a class="op-cta__btn op-cta__btn--main" href="https://opus-plan.net/contact">無料で相談する</a>
+    <a class="op-cta__btn" href="https://opus-plan.net/download">資料をダウンロードする</a>
+  </div>
+</div>
+
+<hr />
+<h4>関連サービス</h4>
+<ul>
+<li><a href="https://opus-plan.net/seo">SEO対策</a></li>
+<li><a href="https://opus-plan.net/uiux">UI/UX改善コンサルティング</a></li>
+<li><a href="https://opus-plan.net/ads">Web広告運用代行</a></li>
+<li><a href="https://opus-plan.net/meo">MEO対策（Googleマップ対策）</a></li>
+</ul>
+</script>
+</div><div class="card">
+  <div class="card__top">
+    <div>
+      <p class="card__no">コラム05</p>
+      <p class="card__title">サーチコンソールの使い方｜最初に見る4つの数字と、つまずきやすいポイント</p>
+    </div>
+    <button class="btn" data-copy="body05">本文をコピー</button>
+  </div>
+  <ul class="card__meta">
+    <li>本文 <b>9,589</b> 文字</li>
+    <li>画像 <b>2枚</b>（先にアップロードが必要）</li>
+    <li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column05-search-console-gvx1qb9h/" target="_blank" rel="noopener">完成イメージを見る</a></li>
+  </ul>
+  <script type="text/plain" id="body05"><p>「サーチコンソールは入れているけれど、どこを見ればいいのか分からない」というご相談をよくいただきます。サーチコンソールは、<strong>検索結果に自社サイトがどう出ていて、どれくらい選ばれているか</strong>を知るための道具です。</p>
+<p>本コラムでは、導入のしかたから、最初に見てほしい4つの数字、読み間違えやすいポイントまでを順に紹介します。</p>
+
+<div class="op-point">
+  <p class="op-point__label">この記事でわかること</p>
+  <ul class="op-check">
+    <li>サーチコンソールで分かること・分からないこと</li>
+    <li>導入と所有権の確認手順</li>
+    <li>最初に見る4つの数字と、その読み方</li>
+    <li>「どんな言葉で来ているか」「どのページが強いか」の調べ方</li>
+    <li>つまずきやすいポイントと、次に打つ手</li>
+  </ul>
+</div>
+
+<div class="op-toc">
+  <p class="op-toc__title">目次</p>
+  <ol>
+    <li><a href="#s1">サーチコンソールで分かること・分からないこと</a></li>
+    <li><a href="#s2">導入と所有権の確認</a></li>
+    <li><a href="#s3">最初に見る4つの数字</a></li>
+    <li><a href="#s4">「すでに来ている言葉」の調べ方</a></li>
+    <li><a href="#s5">「どのページが強いか」を調べる</a></li>
+    <li><a href="#s6">つまずきやすいポイント</a></li>
+    <li><a href="#s7">まとめ</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">サーチコンソールで分かること・分からないこと</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. アナリティクスと何が違うの？</span>サーチコンソールは「サイトに来る<strong>前</strong>」、アナリティクスは「サイトに来た<strong>後</strong>」を見る道具です。役割がはっきり分かれています。</p>
+</div>
+
+<figure class="op-ui">
+<svg viewBox="0 0 680 196" role="img" aria-label="検索してサイトに来るまでがサーチコンソール、来てからの動きがアナリティクスの担当範囲">
+  <rect x="18" y="56" width="150" height="78" rx="6" fill="#fff" stroke="#1B1464" stroke-width="2"/>
+  <text x="93" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B1464">検索する</text>
+  <text x="93" y="108" text-anchor="middle" font-size="11" fill="#777">キーワードを入力</text>
+  <path d="M176 95 H218" stroke="#1B1464" stroke-width="2" marker-end="url(#a2)"/>
+  <defs><marker id="a2" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#1B1464"/></marker></defs>
+  <rect x="226" y="56" width="150" height="78" rx="6" fill="#fff" stroke="#1B1464" stroke-width="2"/>
+  <text x="301" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#1B1464">検索結果に出る</text>
+  <text x="301" y="108" text-anchor="middle" font-size="11" fill="#777">表示される・選ばれる</text>
+  <path d="M384 95 H426" stroke="#0F7C8C" stroke-width="2" marker-end="url(#a3)"/>
+  <defs><marker id="a3" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#0F7C8C"/></marker></defs>
+  <rect x="434" y="56" width="150" height="78" rx="6" fill="#EAF6F7" stroke="#0F7C8C" stroke-width="2"/>
+  <text x="509" y="86" text-anchor="middle" font-size="13" font-weight="bold" fill="#0F7C8C">サイトを見る</text>
+  <text x="509" y="108" text-anchor="middle" font-size="11" fill="#5A8A91">読む・申し込む</text>
+  <rect x="18" y="18" width="358" height="24" rx="12" fill="#1B1464"/>
+  <text x="197" y="35" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">サーチコンソールの担当範囲</text>
+  <rect x="434" y="18" width="228" height="24" rx="12" fill="#0F7C8C"/>
+  <text x="548" y="35" text-anchor="middle" font-size="12" font-weight="bold" fill="#fff">アナリティクスの担当範囲</text>
+  <text x="340" y="172" text-anchor="middle" font-size="12" fill="#777">「来る前」と「来た後」で、見る道具が分かれています</text>
+</svg>
+</figure>
+
+<h3>サーチコンソールで分かること</h3>
+<ul class="op-check">
+  <li>どんな検索ワードで表示されたか</li>
+  <li>何回表示され、何回クリックされたか</li>
+  <li>平均して何位くらいに出ているか</li>
+  <li>どのページが検索から評価されているか</li>
+  <li>Googleに正しく認識されているか（エラーの有無）</li>
+</ul>
+
+<h3>サーチコンソールでは分からないこと</h3>
+<ul class="op-check">
+  <li>サイトに来たあと、どのページを見たか</li>
+  <li>どこで離脱したか</li>
+  <li>お問い合わせに至ったかどうか</li>
+</ul>
+<p>この後半は<strong>アナリティクス（GA4）の役割</strong>です。両方そろって、はじめて「検索から相談まで」の流れが見えるようになります。</p>
+<a class="op-more" href="https://opus-plan.net/blog/analytics/ga4-basics/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">GA4の使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h2 id="s2">導入と所有権の確認</h2>
+<p>サーチコンソールは無料です。Googleアカウントがあれば、次の手順で始められます。</p>
+<ol class="op-howto">
+  <li><strong>サーチコンソールにアクセスする</strong>「Google Search Console」で検索し、Googleアカウントでログインします。</li>
+  <li><strong>プロパティを追加する</strong>「ドメイン」と「URLプレフィックス」の2種類があります。<strong>サイト全体をまとめて見たい場合は「ドメイン」</strong>を選びます。</li>
+  <li><strong>所有権を確認する</strong>自分のサイトであることを証明する作業です。ドメインを選んだ場合は、ドメインを管理している会社（お名前.comなど）の設定画面でTXTレコードを追加します。</li>
+  <li><strong>データがたまるのを待つ</strong>登録した時点から記録が始まります。<strong>過去のデータはさかのぼれません</strong>ので、早めの登録がおすすめです。</li>
+</ol>
+
+<div class="op-note">
+  <p class="op-note__title">所有権の確認でつまずいたら</p>
+  <p>TXTレコードの追加はドメイン管理会社の画面で行うため、制作会社に任せている場合は自社で操作できないことがあります。その場合は、サイトを作った会社に「サーチコンソールの所有権確認をお願いしたい」と伝えるのがいちばん早道です。</p>
+</div>
+
+<h2 id="s3">最初に見る4つの数字</h2>
+<p>左メニューの「検索結果」を開くと、4つの数字が並んでいます。ここだけ分かれば、ひとまず使えます。</p>
+
+<div class="op-table">
+<table>
+  <thead><tr><th>数字</th><th>意味</th><th>上がると</th></tr></thead>
+  <tbody>
+    <tr><td><strong>クリック数</strong></td><td>検索結果から実際に訪問された回数</td><td>サイトに来る人が増える</td></tr>
+    <tr><td><strong>表示回数</strong></td><td>検索結果に自社ページが並んだ回数</td><td>見つけてもらう機会が増える</td></tr>
+    <tr><td><strong>CTR</strong></td><td>表示されたうち、クリックされた割合</td><td>検索結果で選ばれている</td></tr>
+    <tr><td><strong>平均掲載順位</strong></td><td>検索結果の何番目に出たかの平均</td><td>上位に出るようになる</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>この4つは、こう読みます</h3>
+<ul class="op-check">
+  <li><strong>表示回数が少ない</strong>　そもそも検索結果に出ていません。ページを増やす、狙う言葉を見直す段階です</li>
+  <li><strong>表示は多いのにクリックが少ない</strong>　出てはいるが選ばれていません。タイトルと説明文の見直しが効きます</li>
+  <li><strong>クリックはあるのに相談が来ない</strong>　検索は合っていて、サイトの中身に課題があります</li>
+</ul>
+
+<h2 id="s4">「すでに来ている言葉」の調べ方</h2>
+<p>同じ「検索結果」の画面を下にスクロールすると、「クエリ」というタブがあります。<strong>クエリ＝お客さまが実際に入力した検索ワード</strong>です。ここが、サーチコンソールでいちばん価値のある部分です。</p>
+<p>キーワードツールで「これから狙う言葉」を探す前に、まずこの画面で<strong>すでに自社が持っている言葉</strong>を確認してください。ゼロから考えるより、すでに表示されている言葉を伸ばすほうが、はるかに早く結果が出ます。</p>
+
+<figure class="op-shot">
+  <img src="https://opus-plan.net/wp-content/uploads/2026/10/col05-sc-performance.png" alt="サーチコンソールの検索パフォーマンス画面。左メニュー・期間・4つの数字・エクスポートの位置">
+  <figcaption>
+    <span class="op-shot__title"><i class="op-step">STEP 1</i>まずは、見るための準備をする</span>
+    <span class="op-shot__item"><i>1</i>左メニューの<strong>「検索パフォーマンス」＞「検索結果」</strong>。ここが入口です</span>
+    <span class="op-shot__item"><i>2</i>期間。<strong>「過去12か月」</strong>に広げると傾向が見えます</span>
+    <span class="op-shot__item"><i>3</i>4つの数字。<strong>平均CTRと平均掲載順位は初期状態でオフ</strong>のことが多く、カードをクリックしてオンにしないと表に列が出てきません</span>
+    <span class="op-shot__item"><i>4</i>エクスポート。一覧をスプレッドシートやCSVに書き出せます</span>
+    <span class="op-shot__note">直近28日だけだと、季節や曜日のぶれに引っぱられます。まずは12か月で全体の傾向をつかんでください。また、画面上では1000行までしか見られないため、腰を据えて整理したいときは④で書き出してから作業します。</span>
+  </figcaption>
+</figure>
+
+<figure class="op-shot">
+  <img src="https://opus-plan.net/wp-content/uploads/2026/10/col05-sc-query.png" alt="サーチコンソールのクエリ一覧。クエリタブ・クリック数・表示回数とCTR・掲載順位の位置">
+  <figcaption>
+    <span class="op-shot__title"><i class="op-step">STEP 2</i>検索ワードを読み取る</span>
+    <span class="op-shot__item"><i>1</i><strong>「クエリ」タブ</strong>。自社サイトが検索結果に表示されたときの検索ワードが並びます</span>
+    <span class="op-shot__item"><i>2</i>クリック数。見出しをクリックすると並べ替えできます。<strong>いま実際に人を連れてきている言葉＝自社の主力ワード</strong>です</span>
+    <span class="op-shot__item"><i>3</i>表示回数とCTR。<strong>表示は多いのにCTRが低い言葉</strong>は、検索結果に出ているのに選ばれていない状態です。タイトルと説明文を書き直すだけで伸びる余地があります</span>
+    <span class="op-shot__item"><i>4</i>掲載順位。<strong>11〜20位</strong>はあと少しで1ページ目です。ページを増やすより、既存ページに内容を足すほうが効率よく改善できます</span>
+    <span class="op-shot__note">社名での検索（指名検索）は、すでに自社を知っている人です。社名以外の言葉に絞って見ると、新しく見つけてもらえている言葉が分かります。</span>
+  </figcaption>
+</figure>
+
+<div class="op-note">
+  <p class="op-note__title">社内の言葉とのずれを見つける</p>
+  <p>書き出した一覧を眺めると、社内で使っているサービス名と、お客さまが実際に入力している言葉が違うことによく気づきます。<strong>お客さまが使っている言葉がページ内に1度も書かれていない</strong>なら、そこが最初に直すべき箇所です。</p>
+</div>
+<a class="op-more" href="https://opus-plan.net/blog/seo/keyword-research/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">検索ワードの調べ方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h2 id="s5">「どのページが強いか」を調べる</h2>
+<p>クエリの隣にある「ページ」タブに切り替えると、URLごとの数字が見られます。</p>
+<ul class="op-check">
+  <li>クリックが集まっているページ＝検索からの入口になっているページ</li>
+  <li>表示は多いのにクリックが少ないページ＝タイトル・説明文の見直し候補</li>
+  <li>ほとんど数字が付いていないページ＝内容の追加か、統合を検討する候補</li>
+</ul>
+<p>気になるページをクリックすると、<strong>そのページがどんな言葉で表示されているか</strong>まで絞り込めます。「このページ、自分が狙った言葉で出ているかな」を確かめるときに使います。</p>
+
+<h2 id="s6">つまずきやすいポイント</h2>
+
+<h3>表示回数はアクセス数ではありません</h3>
+<p>いちばん多い読み間違いです。<strong>表示回数は「検索結果の画面に並んだ回数」</strong>で、見られたかどうかは関係ありません。検索した人がスクロールせずに離れても、2ページ目に出ただけでもカウントされます。</p>
+<p>「表示回数が10万回もある」からといって、10万人が来たわけではありません。実際に来た数はクリック数のほうです。</p>
+
+<h3>データは数日遅れます</h3>
+<p>サーチコンソールの数字は、反映までに2〜3日かかります。「昨日の結果」はまだ出ていないので、<strong>数日前までの期間で見る</strong>のが前提になります。</p>
+
+<h3>順位は「平均」です</h3>
+<p>平均掲載順位は、すべての表示を平均した数字です。地域やデバイス、人によって見える順位は変わるため、<strong>自分で検索して出てきた順位とは一致しません</strong>。順位そのものより、上下の動きを見てください。</p>
+
+<h2 id="s7">まとめ</h2>
+<div class="op-summary">
+  <ol>
+    <li><strong>サーチコンソールは「来る前」を見る道具</strong>　来た後はアナリティクスの担当です</li>
+    <li><strong>まずは4つの数字</strong>　クリック数・表示回数・CTR・平均掲載順位</li>
+    <li><strong>クエリがいちばん価値のある部分</strong>　お客さまが実際に使っている言葉が分かります</li>
+    <li><strong>表示回数はアクセス数ではありません</strong>　並んだ回数であって、来た数ではありません</li>
+    <li><strong>登録した時点から記録が始まります</strong>　過去はさかのぼれないので早めに</li>
+  </ol>
+</div>
+<p>数字を見ること自体が目的ではありません。「どの言葉で見つけてもらえていて、どこに伸ばす余地があるか」を知り、次の一手を決めるために使ってください。</p>
+
+<a class="op-more" href="https://opus-plan.net/contact/">
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">数字の見方を相談する（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+
+<hr />
+<h4>関連サービス</h4>
+<ul>
+<li><a href="https://opus-plan.net/seo">SEO対策</a></li>
+<li><a href="https://opus-plan.net/uiux">UI/UX改善コンサルティング</a></li>
+<li><a href="https://opus-plan.net/ads">Web広告運用代行</a></li>
+<li><a href="https://opus-plan.net/meo">MEO対策（Googleマップ対策）</a></li>
+</ul>
+</script>
+</div><div class="card">
+  <div class="card__top">
+    <div>
+      <p class="card__no">コラム06</p>
+      <p class="card__title">GA4の使い方｜最初に見る3つのレポートと、お問い合わせを数える設定</p>
+    </div>
+    <button class="btn" data-copy="body06">本文をコピー</button>
+  </div>
+  <ul class="card__meta">
+    <li>本文 <b>9,266</b> 文字</li>
+    <li>画像 <b>3枚</b>（先にアップロードが必要）</li>
+    <li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/" target="_blank" rel="noopener">完成イメージを見る</a></li>
+  </ul>
+  <script type="text/plain" id="body06"><p>GA4（Googleアナリティクス4）は、<strong>サイトに来た人がどう動いたか</strong>を記録する道具です。画面が複雑で「入れてはいるが開いていない」という方も多いのですが、実際に使うのは全体のごく一部です。</p>
+<p>本コラムでは、最初に見る3つのレポートと、お問い合わせを正しく数えるための設定を紹介します。</p>
+
+<div class="op-point">
+  <p class="op-point__label">この記事でわかること</p>
+  <ul class="op-check">
+    <li>GA4で分かること・分からないこと</li>
+    <li>最初に見る3つのレポート</li>
+    <li>お問い合わせを「成果」として数える設定（キーイベント）</li>
+    <li>流入経路の見方と、Directの正体</li>
+    <li>サーチコンソールとの使い分け</li>
+  </ul>
+</div>
+
+<div class="op-toc">
+  <p class="op-toc__title">目次</p>
+  <ol>
+    <li><a href="#s1">GA4で分かること・分からないこと</a></li>
+    <li><a href="#s2">最初に見る3つのレポート</a></li>
+    <li><a href="#s3">お問い合わせを「成果」として数える</a></li>
+    <li><a href="#s4">流入経路の見方</a></li>
+    <li><a href="#s5">つまずきやすいポイント</a></li>
+    <li><a href="#s6">まとめ</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">GA4で分かること・分からないこと</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. サーチコンソールとどう使い分けるの？</span>サーチコンソールは「来る前」、GA4は「来た後」です。<strong>検索でどう見つかったか</strong>はサーチコンソール、<strong>来てから何をしたか</strong>はGA4で見ます。</p>
+</div>
+
+<div class="op-table">
+<table>
+  <thead><tr><th>知りたいこと</th><th>見る場所</th></tr></thead>
+  <tbody>
+    <tr><td>どんな検索ワードで表示されたか</td><td>サーチコンソール</td></tr>
+    <tr><td>検索結果で何回クリックされたか</td><td>サーチコンソール</td></tr>
+    <tr><td>どのページがよく見られているか</td><td><strong>GA4</strong></td></tr>
+    <tr><td>どこから来た人が多いか</td><td><strong>GA4</strong></td></tr>
+    <tr><td>どのページからお問い合わせに進んだか</td><td><strong>GA4</strong></td></tr>
+  </tbody>
+</table>
+</div>
+<a class="op-more" href="https://opus-plan.net/blog/analytics/search-console-basics/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">サーチコンソールの使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h2 id="s2">最初に見る3つのレポート</h2>
+<p>GA4の左メニューには多くの項目が並んでいますが、まずはこの3つで十分です。</p>
+
+<h3>1．ページとスクリーン（どのページが見られているか）</h3>
+<p><strong>レポート ＞ エンゲージメント ＞ ページとスクリーン</strong>で開きます。表示回数の多い順にページが並びます。</p>
+<ul class="op-check">
+  <li>どのページが入口になっているか</li>
+  <li>サービス紹介や実績のページは見られているか</li>
+  <li>お問い合わせページまで到達しているか</li>
+</ul>
+<div class="op-note">
+  <p class="op-note__title">見るときのコツ</p>
+  <p>表の左上のプルダウンを<strong>「ページパス」</strong>に切り替えると、URLで並ぶので分かりやすくなります。ページタイトルのままだと、似た名前が並んで判別しづらいことがあります。</p>
+</div>
+
+<h3>2．ランディングページ（どこから入ってきたか）</h3>
+<p><strong>レポート ＞ エンゲージメント ＞ ランディングページ</strong>です。「訪問者が最初に開いたページ」が分かります。</p>
+<p>トップページから入る人ばかりとは限りません。ブログ記事から入る人のほうが多い、というのはよくあることです。<strong>入口になっているページに、次へ進む案内があるか</strong>を確認してください。</p>
+
+<h3>3．トラフィック獲得（どこ経由で来たか）</h3>
+<p><strong>レポート ＞ 集客 ＞ トラフィック獲得</strong>です。検索・広告・SNSなど、流入元の内訳が分かります。詳しくは後述します。</p>
+
+<h2 id="s3">お問い合わせを「成果」として数える</h2>
+<p>GA4を入れただけでは、「何件お問い合わせがあったか」は分かりません。<strong>どの行動を成果とみなすか</strong>をGA4に教える必要があります。これが<strong>キーイベント</strong>の設定です。</p>
+
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. タグを埋め込む必要があるの？</span>多くの場合、必要ありません。GA4の<strong>拡張計測機能</strong>がフォームの送信を自動で記録しているため、その記録に「成果」の印を付けるだけで済みます。</p>
+</div>
+
+<h3>設定の手順</h3>
+<p>管理画面の中を順に見ていきます。まずは入口の確認からです。</p>
+
+<figure class="op-shot">
+  <img src="https://opus-plan.net/wp-content/uploads/2026/10/col06-ga4-admin.png" alt="GA4の管理画面。データ ストリームとデータの表示＞イベントの位置">
+  <figcaption>
+    <span class="op-shot__title"><i class="op-step">STEP 1</i>設定画面の入口を確認する</span>
+    <span class="op-shot__item"><i>1</i><strong>データの収集と修正 ＞ データ ストリーム</strong>。拡張計測機能の確認はここから（STEP 2）</span>
+    <span class="op-shot__item"><i>2</i><strong>「データの表示」をクリックして開く</strong>と、その下に「イベント」が現れます。キーイベントの設定はここから（STEP 4）</span>
+    <span class="op-shot__note">左メニューは折りたたまれているため、「データの表示」を開かないと<strong>「イベント」という項目自体が画面に出てきません</strong>。見つからないときは、まずここを疑ってください。</span>
+  </figcaption>
+</figure>
+
+<figure class="op-shot">
+  <img src="https://opus-plan.net/wp-content/uploads/2026/10/col06-ga4-stream.png" alt="ウェブ ストリームの詳細。拡張計測機能のスイッチと「＋ 他 4 個」の位置">
+  <figcaption>
+    <span class="op-shot__title"><i class="op-step">STEP 2</i>自動計測がオンになっているか確認する</span>
+    <span class="op-shot__item"><i>1</i>拡張計測機能のスイッチ。オンになっていれば、基本の自動計測は動いています</span>
+    <span class="op-shot__item"><i>2</i><strong>「＋ 他 ◯ 個」</strong>。「測定中：」に並ぶのは一部だけなので、ここを押して開き、<strong>「フォームの操作」</strong>がオンになっているか確認します</span>
+    <span class="op-shot__note">スイッチ全体はオンでも、「フォームの操作」だけ個別にオフになっていることがあります。見当たらない場合は、さらに右端の歯車アイコンから切り替えられます。</span>
+  </figcaption>
+</figure>
+
+<div class="op-note">
+  <p class="op-note__title"><i class="op-step">STEP 3</i>フォーム送信が届いているか確認する</p>
+  <p>レポート ＞ エンゲージメント ＞ イベント を開き、<strong>form_submit</strong> という行があるか確認します。フォーム送信があれば、ここに件数が入っています。</p>
+  <p>お使いのフォームの作り（JavaScriptで送信するタイプなど）によっては、拡張計測機能でform_submitが拾えないことがあります。実際に自分でテスト送信してみて、<strong>翌日この行の数字が増えているか</strong>で判断するのが確実です。</p>
+</div>
+
+<figure class="op-shot">
+  <img src="https://opus-plan.net/wp-content/uploads/2026/10/col06-ga4-events.png" alt="GA4のイベント一覧。イベントを作成・最近のイベントタブ・星マークの位置">
+  <figcaption>
+    <span class="op-shot__title"><i class="op-step">STEP 4</i>お問い合わせに「成果」の印を付ける</span>
+    <span class="op-shot__item"><i>1</i><strong>「＋ イベントを作成」</strong>。目的のイベントが無いときは、ここから作ります</span>
+    <span class="op-shot__item"><i>2</i><strong>「最近のイベント」タブ</strong>。実際に届いているイベント名を確認できます</span>
+    <span class="op-shot__item"><i>3</i><strong>星マーク</strong>。クリックすると、そのイベントがキーイベントになります</span>
+    <span class="op-shot__note">「キーイベント」タブに <strong>purchase</strong> だけが並んでいるのはGA4の初期状態です。まず②で届いているイベントを確認し、目的のものがあれば③で星を付けます。無ければ①から「page_view のうち page_location に /thanks/ を含むもの」のような条件で作成し、一覧に出てきたら星を付けてください。</span>
+  </figcaption>
+</figure>
+
+<div class="op-note">
+  <p class="op-note__title">設定が終わったら</p>
+  <p>集計されるのは<strong>設定した時点以降</strong>のデータです。過去にさかのぼって集計されるわけではないので、早めに入れておくほど、あとで比べやすくなります。</p>
+</div>
+
+<div class="op-note">
+  <p class="op-note__title">完了ページがある場合</p>
+  <p>送信後に「お問い合わせありがとうございました」のページへ移動する作りであれば、<strong>その完了ページの表示</strong>を成果として数えることもできます。どちらか一方で十分です。両方を数えると二重になるのでご注意ください。</p>
+</div>
+
+<h3>設定すると何が分かるようになるか</h3>
+<ul class="op-check">
+  <li>どの流入経路から来た人がお問い合わせしたか</li>
+  <li>どのページを見た人がお問い合わせしたか</li>
+  <li>パソコンとスマートフォン、どちらからの送信が多いか</li>
+  <li>施策の前後で、お問い合わせ数がどう変わったか</li>
+</ul>
+<p>フォームの送信内容そのものはメールやスプレッドシートで分かりますが、<strong>「どこから来た人か」はGA4でしか分かりません</strong>。ここが設定する価値です。</p>
+
+<h2 id="s4">流入経路の見方</h2>
+<p>トラフィック獲得のレポートでは、次のような区分で表示されます。</p>
+
+<div class="op-table">
+<table>
+  <thead><tr><th>区分</th><th>意味</th></tr></thead>
+  <tbody>
+    <tr><td><strong>Organic Search</strong></td><td>検索結果から来た人（広告を除く）</td></tr>
+    <tr><td><strong>Direct</strong></td><td>URL直接入力・ブックマーク・計測できない流入</td></tr>
+    <tr><td><strong>Referral</strong></td><td>他サイトのリンクから来た人</td></tr>
+    <tr><td><strong>Paid Search</strong></td><td>検索広告から来た人</td></tr>
+    <tr><td><strong>Organic Social</strong></td><td>SNSの投稿から来た人</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>Directが多いときに気をつけたいこと</h3>
+<p>Directは「URLを直接入力した人」と思われがちですが、実際には<strong>計測できなかった流入がまとめて入る枠</strong>です。メールのリンク、QRコード、一部のアプリ経由、そして営業目的の自動アクセスなども、ここに分類されます。</p>
+<p>そのため、<strong>施策の効果を見たいときはDirectを除いて、Organic Searchに絞って見る</strong>のがおすすめです。本当にニーズがあって検索してきた人の動きが見えやすくなります。</p>
+
+<h3 id="organic">Organic Search だけに絞って見る方法</h3>
+<p>絞り込みには、手早い方法とレポート全体に効かせる方法の2つがあります。</p>
+<ol class="op-howto">
+  <li><strong>表のなかだけを絞り込む（手早い方法）</strong>レポート ＞ 集客 ＞ トラフィック獲得 を開き、表の右上にある<strong>虫めがねの検索窓</strong>に「Organic Search」と入力します。該当する行だけが残るので、数字をさっと確認したいときはこれで十分です。ただしグラフ部分は全体のままです。</li>
+  <li><strong>レポート全体を絞り込む（比較機能）</strong>画面上部の<strong>「＋」（比較を追加）</strong>をクリックし、ディメンションで<strong>「セッションのデフォルト チャネル グループ」</strong>、一致条件を「完全一致」、値に<strong>「Organic Search」</strong>を指定して適用します。グラフも表も検索流入だけの数字になり、他のレポートに移動しても絞り込みが保たれます。</li>
+  <li><strong>期間をそろえて比べる</strong>右上の日付をクリックし、「比較」をオンにして前年同月や前期間を指定すると、施策の前後が並べて表示されます。お問い合わせはもともと月ごとのばらつきが大きいため、同じ条件でそろえて見ることが大切です。</li>
+</ol>
+<div class="op-note">
+  <p class="op-note__title">覚えておきたい使い分け</p>
+  <p>サイト全体の規模を把握したいときは<strong>Directを含めた全体</strong>、施策が効いたかを判断したいときは<strong>Organic Searchだけ</strong>。同じレポートでも、見たい目的によって絞り込みを切り替えてください。</p>
+</div>
+
+<h2 id="s5">つまずきやすいポイント</h2>
+
+<h3>自分のアクセスも記録されています</h3>
+<p>社内の人がサイトを見た分も、そのままでは数字に入ります。アクセス数が少ないサイトほど影響が大きいため、<strong>自社のIPアドレスを除外する設定</strong>（管理 ＞ データストリーム ＞ タグ設定を行う ＞ 内部トラフィックの定義）をしておくと、数字が正確になります。</p>
+
+<h3>「ユーザー」と「セッション」は別物です</h3>
+<ul class="op-check">
+  <li><strong>ユーザー</strong>　何人が来たか（同じ人が3回来ても1人）</li>
+  <li><strong>セッション</strong>　何回訪問があったか（同じ人の3回は3セッション）</li>
+</ul>
+<p>どちらで話しているかがずれると、認識が合わなくなります。社内で見るときは、どちらを使うか決めておくと混乱しません。</p>
+
+<h3>数字が反映されるまで時間がかかります</h3>
+<p>GA4の通常のレポートは、反映に24〜48時間ほどかかります。「いまの状況」を見たいときは<strong>リアルタイム</strong>のレポートを使いますが、こちらは直近30分のみが対象です。</p>
+
+<h2 id="s6">まとめ</h2>
+<div class="op-summary">
+  <ol>
+    <li><strong>GA4は「来た後」を見る道具</strong>　来る前はサーチコンソールです</li>
+    <li><strong>まずは3つのレポート</strong>　ページとスクリーン／ランディングページ／トラフィック獲得</li>
+    <li><strong>キーイベントを設定する</strong>　タグ追加は不要なことがほとんどです</li>
+    <li><strong>Directは「計測できなかった流入」の枠</strong>　施策の効果はOrganic Searchで見ます</li>
+    <li><strong>設定した時点から記録が始まります</strong>　過去にはさかのぼれません</li>
+  </ol>
+</div>
+<p>すべての機能を覚える必要はありません。「どこから来た人が、どのページを見て、お問い合わせしたか」が追えるようになれば、改善の判断には十分使えます。</p>
+
+<a class="op-more" href="https://opus-plan.net/contact/">
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">計測の設定を相談する（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+
+<hr />
+<h4>関連サービス</h4>
+<ul>
+<li><a href="https://opus-plan.net/seo">SEO対策</a></li>
+<li><a href="https://opus-plan.net/uiux">UI/UX改善コンサルティング</a></li>
+<li><a href="https://opus-plan.net/ads">Web広告運用代行</a></li>
+<li><a href="https://opus-plan.net/meo">MEO対策（Googleマップ対策）</a></li>
+</ul>
+</script>
+</div><div class="card">
+  <div class="card__top">
+    <div>
+      <p class="card__no">コラム07</p>
+      <p class="card__title">検索ワードの調べ方｜無料でできる範囲と、有料ツールが必要になる場面</p>
+    </div>
+    <button class="btn" data-copy="body07">本文をコピー</button>
+  </div>
+  <ul class="card__meta">
+    <li>本文 <b>7,747</b> 文字</li>
+    <li>画像なし（そのまま貼れます）</li>
+    <li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column07-keyword-yf4pmqaj/" target="_blank" rel="noopener">完成イメージを見る</a></li>
+  </ul>
+  <script type="text/plain" id="body07"><p>ホームページを改善するとき、最初につまずくのが<strong>「どの言葉を狙えばいいのか分からない」</strong>という点です。社内で使っているサービス名と、お客さまが検索する言葉は別物であることがほとんどです。</p>
+<p>本コラムでは、検索ワードの調べ方を<strong>無料でできる範囲</strong>と<strong>有料ツールが必要になる場面</strong>に分けて紹介します。</p>
+
+<div class="op-point">
+  <p class="op-point__label">この記事でわかること</p>
+  <ul class="op-check">
+    <li>検索ワードを調べる2つの方向（すでに来ている言葉／これから狙う言葉）</li>
+    <li>無料でできる調べ方と、その限界</li>
+    <li>有料ツールで何ができるようになるか</li>
+    <li>調べた言葉の中から、実際に狙う言葉を選ぶ基準</li>
+  </ul>
+</div>
+
+<div class="op-toc">
+  <p class="op-toc__title">目次</p>
+  <ol>
+    <li><a href="#s1">調べる方向は2つあります</a></li>
+    <li><a href="#s2">無料でできる調べ方</a></li>
+    <li><a href="#s3">有料ツールが必要になる場面</a></li>
+    <li><a href="#s4">狙う言葉を選ぶ基準</a></li>
+    <li><a href="#s5">まとめ</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">調べる方向は2つあります</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. どこから手をつければいい？</span>まず<strong>「すでに自社に来ている言葉」</strong>を確認してから、<strong>「これから狙う言葉」</strong>を探します。順番を逆にすると、すでに持っている強みを見落とします。</p>
+</div>
+
+<figure class="op-ui">
+<svg viewBox="0 0 680 210" role="img" aria-label="すでに来ている言葉はサーチコンソールで、これから狙う言葉はキーワードツールで調べる">
+  <rect x="24" y="44" width="292" height="118" rx="8" fill="#F4F6FB" stroke="#1B1464" stroke-width="2"/>
+  <rect x="24" y="44" width="292" height="30" rx="8" fill="#1B1464"/>
+  <text x="170" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">① すでに来ている言葉</text>
+  <text x="170" y="100" text-anchor="middle" font-size="13" fill="#1B1464">サーチコンソール</text>
+  <text x="170" y="124" text-anchor="middle" font-size="11" fill="#777">自社サイトが実際に表示された言葉</text>
+  <text x="170" y="146" text-anchor="middle" font-size="11" fill="#777">＝いま持っている強み</text>
+  <rect x="364" y="44" width="292" height="118" rx="8" fill="#EAF6F7" stroke="#0F7C8C" stroke-width="2"/>
+  <rect x="364" y="44" width="292" height="30" rx="8" fill="#0F7C8C"/>
+  <text x="510" y="65" text-anchor="middle" font-size="13" font-weight="bold" fill="#fff">② これから狙う言葉</text>
+  <text x="510" y="100" text-anchor="middle" font-size="13" fill="#0F7C8C">キーワードツール</text>
+  <text x="510" y="124" text-anchor="middle" font-size="11" fill="#5A8A91">まだ取れていない言葉を探す</text>
+  <text x="510" y="146" text-anchor="middle" font-size="11" fill="#5A8A91">＝これから増やす余地</text>
+  <text x="340" y="192" text-anchor="middle" font-size="12" fill="#777">①を確認してから②へ進むと、すでにある強みを活かせます</text>
+</svg>
+</figure>
+
+<h2 id="s2">無料でできる調べ方</h2>
+
+<h3>1．サーチコンソール（すでに来ている言葉）</h3>
+<p>自社サイトが<strong>実際にどんな言葉で検索結果に出ているか</strong>が分かります。想像ではなく実データなので、ここが出発点になります。</p>
+<ul class="op-check">
+  <li>検索結果 ＞ クエリ タブで、表示された言葉の一覧が見られます</li>
+  <li>期間を「過去12か月」に広げると傾向がつかめます</li>
+  <li><strong>表示は多いのにクリックが少ない言葉</strong>は、伸ばせる余地が残っています</li>
+</ul>
+<p>ただし分かるのは<strong>すでに自社が表示されている言葉だけ</strong>です。まったく出ていない言葉は、ここには現れません。</p>
+<a class="op-more" href="https://opus-plan.net/blog/analytics/search-console-basics/#s4">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">「すでに来ている言葉」の調べ方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h3>2．Googleのサジェスト・関連キーワード</h3>
+<p>Googleの検索窓に言葉を入れると、下に候補が出ます。これが<strong>サジェスト</strong>で、実際によく検索されている組み合わせです。検索結果の最下部にある「関連する検索キーワード」も同じように使えます。</p>
+<p>お金も登録もかからず、いますぐ試せる方法です。「自社のサービス名」「業種＋地域」などを入れて、どんな候補が出るか見てみてください。</p>
+
+<h3>3．ラッコキーワード</h3>
+<p class="op-toolurl">公式サイト：<a href="https://rakkokeyword.com/" target="_blank" rel="noopener">https://rakkokeyword.com/</a></p>
+<p>サジェストをまとめて取得できる無料ツールです。1つの言葉を入れると、それに続く候補が一覧で出てきます。手作業でサジェストを集めるより、はるかに早く全体像がつかめます。</p>
+<ul class="op-check">
+  <li>無料でも使えますが、<strong>1日の取得回数に制限</strong>があります</li>
+  <li>無料の範囲では<strong>検索数（ボリューム）は分かりません</strong></li>
+  <li>「どんな言葉があるか」を広く集める段階に向いています</li>
+</ul>
+
+<h3>4．Googleキーワードプランナー</h3>
+<p class="op-toolurl">公式サイト：<a href="https://business.google.com/jp/ad-tools/keyword-planner/" target="_blank" rel="noopener">https://business.google.com/jp/ad-tools/keyword-planner/</a></p>
+<p>Google広告の機能のひとつで、<strong>検索数の目安</strong>が分かります。Google広告のアカウントがあれば無料で使えます。</p>
+<div class="op-note">
+  <p class="op-note__title">無料で使うときの注意</p>
+  <p>広告を出していないアカウントでは、検索数が<strong>「100〜1000」のような幅のある表示</strong>になります。正確な数字を見るには広告の出稿が必要です。ただし、幅の表示でも「多い／少ない」の判断には十分使えます。</p>
+</div>
+
+<h3>無料でできる範囲のまとめ</h3>
+<div class="op-table">
+<table>
+  <thead><tr><th>方法</th><th>分かること</th><th>限界</th></tr></thead>
+  <tbody>
+    <tr><td>サーチコンソール</td><td>自社が実際に出ている言葉</td><td>出ていない言葉は分からない</td></tr>
+    <tr><td>サジェスト・関連検索</td><td>よく検索される組み合わせ</td><td>検索数は分からない</td></tr>
+    <tr><td>ラッコキーワード</td><td>候補をまとめて取得</td><td>無料では回数制限・検索数なし</td></tr>
+    <tr><td>キーワードプランナー</td><td>検索数の目安</td><td>無料では幅のある表示</td></tr>
+  </tbody>
+</table>
+</div>
+<p><strong>中小規模のサイトであれば、無料の範囲でも十分に始められます。</strong>まずはここから試してみてください。</p>
+
+<h2 id="s3">有料ツールが必要になる場面</h2>
+<p>無料の方法では届かない部分があります。次のようなことをしたくなったときが、有料ツールを検討するタイミングです。</p>
+
+<h3>有料ツールでできるようになること</h3>
+<ul class="op-check">
+  <li><strong>正確な検索数</strong>　幅ではなく具体的な数字で見られます</li>
+  <li><strong>競合サイトの分析</strong>　他社がどんな言葉で集客しているかが分かります</li>
+  <li><strong>順位の自動記録</strong>　狙った言葉の順位が毎日記録され、変化を追えます</li>
+  <li><strong>難易度の判定</strong>　その言葉で上位を取るのがどれくらい大変かの目安が出ます</li>
+  <li><strong>被リンクの調査</strong>　どんなサイトから紹介されているかが分かります</li>
+</ul>
+
+<div class="op-note">
+  <p class="op-note__title">代表的なツール</p>
+  <p>国内外にいくつかありますが、よく使われるのは <a href="https://ahrefs.com/ja" target="_blank" rel="noopener"><strong>Ahrefs</strong></a>、<a href="https://semrush.jp/" target="_blank" rel="noopener"><strong>Semrush</strong></a>、<a href="https://keywordfinder.jp/" target="_blank" rel="noopener"><strong>キーワードファインダー</strong></a>、<a href="https://seopro.jp/grc/" target="_blank" rel="noopener"><strong>GRC</strong></a>（順位記録に特化）などです。<strong>料金やプラン内容は変わりやすいため、検討される際は各社の公式サイトで最新の情報をご確認ください。</strong></p>
+</div>
+
+<h3>どんなときに必要になるか</h3>
+<div class="op-table">
+<table>
+  <thead><tr><th>状況</th><th>無料で足りるか</th></tr></thead>
+  <tbody>
+    <tr><td>これから記事を書き始める</td><td>足ります</td></tr>
+    <tr><td>月に数本のペースで更新する</td><td>足ります</td></tr>
+    <tr><td>競合と本気で順位を争っている</td><td>有料が向いています</td></tr>
+    <tr><td>狙う言葉が数百以上ある</td><td>有料が向いています</td></tr>
+    <tr><td>順位の変化を毎日追いたい</td><td>有料が向いています</td></tr>
+  </tbody>
+</table>
+</div>
+<p>最初から有料ツールを入れる必要はありません。<strong>無料で始めて、手が足りなくなってから検討する</strong>のが無駄のない進め方です。</p>
+
+<h2 id="s4">狙う言葉を選ぶ基準</h2>
+<p>言葉を集めたあと、全部を狙うことはできません。次の3つで絞り込みます。</p>
+
+<div class="op-steps">
+  <div class="op-steps__item"><span class="op-steps__num">1</span><p><strong>相談につながるか</strong>　調べて終わる言葉か、依頼先を探している言葉か</p></div>
+  <div class="op-steps__item"><span class="op-steps__num">2</span><p><strong>自社で答えられるか</strong>　実際に提供しているサービスと合っているか</p></div>
+  <div class="op-steps__item"><span class="op-steps__num">3</span><p><strong>勝てそうか</strong>　検索結果の上位が大手ばかりでないか</p></div>
+</div>
+
+<h3>検索数が多い＝良い言葉、ではありません</h3>
+<p>検索数が多い言葉ほど競合も多く、上位を取るのは大変です。一方で<strong>「地域名＋サービス名」</strong>のような言葉は検索数こそ少ないものの、探している人の目的がはっきりしているため、相談につながりやすくなります。</p>
+<p>数より、<strong>その言葉で検索している人がどんな状態か</strong>を考えて選んでください。</p>
+
+<h2 id="s5">まとめ</h2>
+<div class="op-summary">
+  <ol>
+    <li><strong>まずサーチコンソールで「すでに来ている言葉」を確認</strong>　持っている強みを見落とさないために</li>
+    <li><strong>次にサジェスト・ラッコキーワードで候補を広げる</strong>　無料でここまでできます</li>
+    <li><strong>検索数の目安はキーワードプランナー</strong>　無料では幅のある表示になります</li>
+    <li><strong>有料ツールは手が足りなくなってから</strong>　競合分析・順位の自動記録が必要になった段階で</li>
+    <li><strong>検索数が多い言葉が良い言葉とは限りません</strong>　相談につながるかで選びます</li>
+  </ol>
+</div>
+
+<a class="op-more" href="https://opus-plan.net/contact/">
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">狙う言葉の選び方を相談する（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+
+<hr />
+<h4>関連サービス</h4>
+<ul>
+<li><a href="https://opus-plan.net/seo">SEO対策</a></li>
+<li><a href="https://opus-plan.net/uiux">UI/UX改善コンサルティング</a></li>
+<li><a href="https://opus-plan.net/ads">Web広告運用代行</a></li>
+<li><a href="https://opus-plan.net/meo">MEO対策（Googleマップ対策）</a></li>
+</ul>
+</script>
+</div><div class="card">
+  <div class="card__top">
+    <div>
+      <p class="card__no">コラム08</p>
+      <p class="card__title">ホームページに必要なページとは？お客さまの4つの段階から考える構成の決め方</p>
+    </div>
+    <button class="btn" data-copy="body08">本文をコピー</button>
+  </div>
+  <ul class="card__meta">
+    <li>本文 <b>7,787</b> 文字</li>
+    <li>画像なし（そのまま貼れます）</li>
+    <li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column08-website-pages-zel0x7dg/" target="_blank" rel="noopener">完成イメージを見る</a></li>
+  </ul>
+  <script type="text/plain" id="body08"><p>ホームページを改善しようとすると、「もっと分かりやすく」「もっと魅力的に」という話になりがちです。ただ、<strong>訪問者がいまどの段階にいるか</strong>によって、必要な情報はまったく違います。</p>
+<p>本コラムでは、お客さまが問い合わせに至るまでに通る4つの段階にそって、<strong>ホームページにどんなページを用意すればよいか</strong>を整理します。</p>
+
+<div class="op-point">
+  <p class="op-point__label">この記事でわかること</p>
+  <ul class="op-check">
+    <li>お客さまが問い合わせるまでに通る4つの段階</li>
+    <li>段階ごとに用意すべきページと情報</li>
+    <li>自社サイトで足りていないページの見つけ方</li>
+    <li>段階を飛ばしたときに起こること</li>
+  </ul>
+</div>
+
+<div class="op-toc">
+  <p class="op-toc__title">目次</p>
+  <ol>
+    <li><a href="#s1">お客さまが問い合わせるまでの4つの段階</a></li>
+    <li><a href="#s2">段階ごとに用意するページ</a></li>
+    <li><a href="#s3">自社サイトに足りないページを見つける</a></li>
+    <li><a href="#s4">段階を飛ばすと何が起きるか</a></li>
+    <li><a href="#s5">まとめ</a></li>
+  </ol>
+</div>
+
+<h2 id="s1">お客さまが問い合わせるまでの4つの段階</h2>
+<div class="op-answer">
+  <p><span class="op-answer__q">Q. なぜ段階に分けて考えるの？</span>同じページを見ていても、<strong>「まず知りたい人」と「もう依頼先を決めたい人」では必要な情報が違う</strong>からです。段階がずれた情報を出すと、読まれずに離れてしまいます。</p>
+</div>
+
+<figure class="op-ui">
+<svg viewBox="0 0 680 290" role="img" aria-label="訪問者は、気づく・調べる・比べる・決めるの4段階を通って問い合わせに至る">
+  <defs><marker id="j1" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#9AA3B2"/></marker></defs>
+  <rect x="16" y="56" width="148" height="112" rx="8" fill="#fff" stroke="#1B1464" stroke-width="2"/>
+  <circle cx="90" cy="88" r="17" fill="#1B1464"/><text x="90" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">1</text>
+  <text x="90" y="124" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B1464">気づく</text>
+  <text x="90" y="146" text-anchor="middle" font-size="11" fill="#777">困りごとを自覚する</text>
+  <path d="M172 112 H196" stroke="#9AA3B2" stroke-width="2" marker-end="url(#j1)"/>
+  <rect x="204" y="56" width="148" height="112" rx="8" fill="#fff" stroke="#1B1464" stroke-width="2"/>
+  <circle cx="278" cy="88" r="17" fill="#1B1464"/><text x="278" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">2</text>
+  <text x="278" y="124" text-anchor="middle" font-size="14" font-weight="bold" fill="#1B1464">調べる</text>
+  <text x="278" y="146" text-anchor="middle" font-size="11" fill="#777">やり方・相場を知る</text>
+  <path d="M360 112 H384" stroke="#9AA3B2" stroke-width="2" marker-end="url(#j1)"/>
+  <rect x="392" y="56" width="148" height="112" rx="8" fill="#EAF6F7" stroke="#0F7C8C" stroke-width="2"/>
+  <circle cx="466" cy="88" r="17" fill="#0F7C8C"/><text x="466" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#fff">3</text>
+  <text x="466" y="124" text-anchor="middle" font-size="14" font-weight="bold" fill="#0F7C8C">比べる</text>
+  <text x="466" y="146" text-anchor="middle" font-size="11" fill="#5A8A91">依頼先を見比べる</text>
+  <path d="M548 112 H572" stroke="#9AA3B2" stroke-width="2" marker-end="url(#j1)"/>
+  <rect x="580" y="56" width="84" height="112" rx="8" fill="#0F7C8C"/>
+  <circle cx="622" cy="88" r="17" fill="#fff"/><text x="622" y="94" text-anchor="middle" font-size="15" font-weight="bold" fill="#0F7C8C">4</text>
+  <text x="622" y="124" text-anchor="middle" font-size="14" font-weight="bold" fill="#fff">決める</text>
+  <text x="622" y="146" text-anchor="middle" font-size="11" fill="#D6ECEF">相談する</text>
+  <rect x="16" y="24" width="336" height="22" rx="11" fill="#E4E2F2"/>
+  <text x="184" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#1B1464">まだ会社を探していない段階</text>
+  <rect x="392" y="24" width="272" height="22" rx="11" fill="#D6ECEF"/>
+  <text x="528" y="40" text-anchor="middle" font-size="11" font-weight="bold" fill="#0F7C8C">依頼先を探している段階</text>
+  <text x="340" y="212" text-anchor="middle" font-size="12" fill="#777">左の2段階はコラム、右の2段階はサービス・実績ページが受け持ちます</text>
+  <text x="340" y="238" text-anchor="middle" font-size="12" fill="#777">どこか1つでも欠けると、そこで流れが止まります</text>
+</svg>
+</figure>
+
+<h3>1．気づく</h3>
+<p>「問い合わせが来ない」「集客がうまくいかない」など、<strong>困っている状態を自覚した段階</strong>です。この時点では、何をすれば解決するのかも、誰に頼めばいいのかも分かっていません。</p>
+<p>検索する言葉は「ホームページ 集客 できない」「問い合わせ 増やす 方法」のような、<strong>状態そのものの言葉</strong>になります。</p>
+
+<h3>2．調べる</h3>
+<p>解決の手段があることを知り、<strong>やり方や相場を調べる段階</strong>です。「SEOとは」「広告運用 費用」のように、手段の名前で検索し始めます。</p>
+<p>まだ依頼先は探していません。自分でできるのか、頼むべきなのかを判断している途中です。</p>
+
+<h3>3．比べる</h3>
+<p>頼むと決めて、<strong>依頼先を見比べる段階</strong>です。「SEO対策 会社 大阪」のように、サービス名と地域を組み合わせて検索します。</p>
+<p>ここからは、サービス内容・料金・実績・会社の情報が判断材料になります。</p>
+
+<h3>4．決める</h3>
+<p>候補が絞れて、<strong>連絡しようとしている段階</strong>です。ここで迷いが残ると、フォームの前で手が止まります。</p>
+
+<h2 id="s2">段階ごとに用意するページ</h2>
+
+<div class="op-table">
+<table>
+  <thead><tr><th>段階</th><th>訪問者の疑問</th><th>用意するページ</th></tr></thead>
+  <tbody>
+    <tr><td><strong>1. 気づく</strong></td><td>この状態、どうすればいいの？</td><td>困りごとから書いたコラム</td></tr>
+    <tr><td><strong>2. 調べる</strong></td><td>どんな方法があるの？いくらかかるの？</td><td>手段を解説したコラム・用語集</td></tr>
+    <tr><td><strong>3. 比べる</strong></td><td>この会社は何をしてくれる？うちでも頼める？</td><td>サービス紹介・料金・実績</td></tr>
+    <tr><td><strong>4. 決める</strong></td><td>頼んで大丈夫？どう連絡する？</td><td>お客さまの声・会社情報・フォーム</td></tr>
+  </tbody>
+</table>
+</div>
+
+<h3>コラムとサービスページは役割が違います</h3>
+<p>1・2の段階にいる人は、<strong>まだ会社を探していません</strong>。この人たちにサービス紹介を見せても響きません。コラムで「どうすればいいか」を伝えるのが役割です。</p>
+<p>逆に3・4の段階にいる人に、用語の解説は不要です。<strong>何ができて、いくらで、誰がやるのか</strong>を知りたがっています。</p>
+
+<div class="op-note">
+  <p class="op-note__title">つなぎの導線が要ります</p>
+  <p>コラムを読んで「なるほど」と思った人が、そのまま離脱してしまうのはよくあることです。記事の中や末尾に<strong>「関連するサービスはこちら」</strong>の案内を置いて、2から3へ進める道を作ってください。</p>
+</div>
+
+<h2 id="s3">自社サイトに足りないページを見つける</h2>
+<p>4つの段階に、自社のページを当てはめてみてください。<strong>ページが1枚もない段階</strong>が、流れの止まっている場所です。</p>
+
+<ol class="op-howto">
+  <li><strong>いまあるページを4段階に振り分ける</strong>コラム・サービス紹介・実績・会社概要・料金ページなどを、どの段階向けかで分類します。</li>
+  <li><strong>ページが無い段階を探す</strong>よくあるのは「2．調べる」が充実しているのに「3．比べる」が薄い、という形です。</li>
+  <li><strong>段階と段階のつなぎを確認する</strong>ページはあっても、1→2→3と進む道（リンク）がなければ、訪問者はそこで止まります。</li>
+  <li><strong>アクセス数と突き合わせる</strong>どの段階のページに人が来ているかを見ると、いま集められている層が分かります。</li>
+</ol>
+
+<div class="op-note">
+  <p class="op-note__title">アクセス解析で確かめる</p>
+  <p>GA4の「ランディングページ」を見ると、訪問者が最初に開いたページが分かります。コラムばかりが並んでいる場合は、1・2の段階の人が中心に来ているということです。その人たちを3へ進めるための導線が足りているか、確認してみてください。</p>
+</div>
+<a class="op-more" href="https://opus-plan.net/blog/analytics/ga4-basics/">
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">GA4の使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+<h2 id="s4">段階を飛ばすと何が起きるか</h2>
+
+<h3>いきなり「お問い合わせください」と伝えても動きません</h3>
+<p>1・2の段階の人に、いきなり相談を求めるのは、何を頼むか決まっていない人に契約書を出すようなものです。まず<strong>「自分の状況はこういうことだったのか」と分かってもらう</strong>ことが先になります。</p>
+
+<h3>情報が多すぎても止まります</h3>
+<p>逆に、3・4の段階まで来ている人に、基礎的な説明を長々と読ませると、肝心の判断材料にたどり着けません。<strong>サービスページの冒頭には、何ができて誰向けなのかを先に置いてください。</strong></p>
+
+<h3>コラムだけ充実しても相談は増えません</h3>
+<p>アクセスは集まるのに相談につながらない、というご相談はよくあります。多くの場合、1・2の段階のコンテンツだけが揃っていて、3・4へ進む道がない状態です。<strong>アクセスを集めることと、相談につなげることは別の仕事</strong>だと考えてください。</p>
+
+<h2 id="s5">まとめ</h2>
+<div class="op-summary">
+  <ol>
+    <li><strong>訪問者は「気づく・調べる・比べる・決める」の順に進みます</strong></li>
+    <li><strong>1・2はコラム、3・4はサービス・実績ページの担当です</strong></li>
+    <li><strong>ページが1枚も無い段階が、流れの止まっている場所です</strong></li>
+    <li><strong>段階と段階をつなぐ導線が必要です</strong>　ページがあっても道がなければ進めません</li>
+    <li><strong>アクセスを集めることと、相談につなげることは別の仕事です</strong></li>
+  </ol>
+</div>
+<p>自社サイトを4つの段階に当てはめてみると、「何が足りないのか」がはっきりします。すべてを一度に揃える必要はありません。<strong>いちばん抜けている段階から順に埋めていってください。</strong></p>
+
+<a class="op-more" href="https://opus-plan.net/contact/">
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">サイトの抜けを一緒に探す（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
+</a>
+
+
+<hr />
+<h4>関連サービス</h4>
+<ul>
+<li><a href="https://opus-plan.net/seo">SEO対策</a></li>
+<li><a href="https://opus-plan.net/uiux">UI/UX改善コンサルティング</a></li>
+<li><a href="https://opus-plan.net/ads">Web広告運用代行</a></li>
+<li><a href="https://opus-plan.net/meo">MEO対策（Googleマップ対策）</a></li>
+</ul>
+</script>
+</div>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">7</span><h2>STEP 4　記事ごとの設定値</h2></div>
+  
+  <h3>アイキャッチ画像</h3>
+<p>編集画面の右側（サイドバー）にある<b>「アイキャッチ画像」</b>から、記事に対応する <span class="mono">colXX-eyecatch.jpg</span> を選んでください。<b>本文に貼る必要はありません。</b></p>
+<p>この1か所の設定で、次の3つがまとめて反映されます。</p>
+<table>
+ <tr><th style="width:230px">反映される場所</th><th>仕組み</th></tr>
+ <tr><td>記事の上部</td><td>テンプレートに追加してもらう3行（STEP 1の2番）で表示されます</td></tr>
+ <tr><td>コラム一覧のカード</td><td>いまは全記事がテーマの仮画像。STEP 1の3番で確認してもらいます</td></tr>
+ <tr><td><b>リンク共有したときの画像（OGP）</b></td><td>このサイトは <b>Yoast SEO</b> が入っており、アイキャッチを自動で <span class="mono">og:image</span> に使います。別途の設定は不要です</td></tr>
+</table>
+
+<h3>リンクを共有したときの見え方（OGP）</h3>
+<p>調べたところ、<b>いまサイト全体で <span class="mono">og:image</span> が1つも出力されていません</b>。アイキャッチが未設定のためです。URLをチャットやSNSに貼ると、画像の代わりに<b>ファビコン（小さいロゴマーク）</b>が表示されます。</p>
+<div class="note">
+  <p class="note__t">アイキャッチを設定すれば解決します</p>
+  <p>Yoast SEOはアイキャッチを自動的に <span class="mono">og:image</span> として出力します。<b>記事ごとに特別な作業は要りません。</b></p>
+  <p>公開後に、実際にチャットへURLを貼って画像が出るか確認してください。</p>
+</div>
+<div class="note">
+  <p class="note__t">テスト用の共有ページ（GitHub Pages）について</p>
+  <p>テスト用に共有しているURLは、WordPressのページをコピーした<b>静的なHTML</b>です。アイキャッチから <span class="mono">og:image</span> を作るのはWordPress側（Yoast）の機能なので、コピーには引き継がれません。そのためLINEに貼ってもファビコンしか出ていませんでした。</p>
+  <p><b>テストURLにもアイキャッチが出るよう、OGPタグを埋め込みました。</b>これ以降に共有するURLは画像つきのカードで表示されます。すでに送ったURLは、LINE側がプレビューを保存しているため、<b>末尾に <span class="mono">?2</span> などを付けて貼り直す</b>と更新されます。</p>
+</div>
+
+<h3>タイトル・カテゴリ・URL</h3>
+<table>
+ <tr><th style="width:80px"></th><th>タイトル</th><th style="width:170px">カテゴリ</th><th style="width:170px">URLスラッグ</th></tr>
+ <tr>
+ <td class="nw">コラム01</td>
+ <td>ホームページにお問い合わせが来ない原因とは？確認すべきポイントと改善方法</td>
+ <td class="nw">webマーケティング<br><span class="mono">web-marketing</span></td>
+ <td class="mono">inquiry-not-coming</td>
+</tr><tr>
+ <td class="nw">コラム05</td>
+ <td>サーチコンソールの使い方｜最初に見る4つの数字と、つまずきやすいポイント</td>
+ <td class="nw">アクセス分析・広告効果測定<br><span class="mono">analytics</span></td>
+ <td class="mono">search-console-basics</td>
+</tr><tr>
+ <td class="nw">コラム06</td>
+ <td>GA4の使い方｜最初に見る3つのレポートと、お問い合わせを数える設定</td>
+ <td class="nw">アクセス分析・広告効果測定<br><span class="mono">analytics</span></td>
+ <td class="mono">ga4-basics</td>
+</tr><tr>
+ <td class="nw">コラム07</td>
+ <td>検索ワードの調べ方｜無料でできる範囲と、有料ツールが必要になる場面</td>
+ <td class="nw">SEO対策<br><span class="mono">seo</span></td>
+ <td class="mono">keyword-research</td>
+</tr><tr>
+ <td class="nw">コラム08</td>
+ <td>ホームページに必要なページとは？お客さまの4つの段階から考える構成の決め方</td>
+ <td class="nw">webマーケティング<br><span class="mono">web-marketing</span></td>
+ <td class="mono">website-pages</td>
+</tr>
+</table>
+<div class="note">
+  <p class="note__t">カテゴリは1つだけ選んでください</p>
+  <p>記事のURLは <span class="mono">/blog/カテゴリ名/スラッグ/</span> になります。複数のカテゴリを付けるとURLが想定と変わり、記事どうしのリンクが切れます。<b>上の表のカテゴリを1つだけ</b>選んでください。</p>
+</div>
+<h3>ディスクリプション（メタディスクリプション欄に貼ってください）</h3>
+<div class="dbox">
+  <div class="dbox__h"><span>コラム01　ディスクリプション</span><button class="btn btn--s" data-copy="d01">コピー</button></div>
+  <p class="dbox__t" id="d01">ホームページにお問い合わせが来ない原因を「アクセス不足」と「お問い合わせへのつながりにくさ」に分けて解説。確認すべき3つの数字、サービス・実績・料金・フォームの整え方、優先順位の付け方まで紹介します。</p>
+</div><div class="dbox">
+  <div class="dbox__h"><span>コラム05　ディスクリプション</span><button class="btn btn--s" data-copy="d05">コピー</button></div>
+  <p class="dbox__t" id="d05">Googleサーチコンソールの導入から、クリック数・表示回数・CTR・掲載順位の見方までを順に解説。表示回数とアクセス数の違いや、クエリ・ページの読み解き方も紹介します。</p>
+</div><div class="dbox">
+  <div class="dbox__h"><span>コラム06　ディスクリプション</span><button class="btn btn--s" data-copy="d06">コピー</button></div>
+  <p class="dbox__t" id="d06">Googleアナリティクス4（GA4）で最初に見るべきレポートと、お問い合わせを「成果」として数えるキーイベントの設定方法を解説。サーチコンソールとの使い分けも紹介します。</p>
+</div><div class="dbox">
+  <div class="dbox__h"><span>コラム07　ディスクリプション</span><button class="btn btn--s" data-copy="d07">コピー</button></div>
+  <p class="dbox__t" id="d07">お客さまが実際に使っている検索ワードの調べ方を、無料でできる方法と有料ツールに分けて解説。サーチコンソール・ラッコキーワード・キーワードプランナーの使い分けも紹介します。</p>
+</div><div class="dbox">
+  <div class="dbox__h"><span>コラム08　ディスクリプション</span><button class="btn btn--s" data-copy="d08">コピー</button></div>
+  <p class="dbox__t" id="d08">ホームページにどんなページが必要かを、お客さまが問い合わせに至るまでの4つの段階から整理。段階ごとに用意するページと、自社サイトで足りていない部分の見つけ方を解説します。</p>
+</div>
+<h3>記事どうしのリンクについて</h3>
+<p>本文の中に、ほかのコラムへのリンクが入っています。リンク先は上の表のURLで書いてあるので、<b>5本すべてを上の設定どおりに公開すれば、そのままつながります</b>。順番はどれからでも構いませんが、全部公開するまでは一部のリンクが404になります。</p>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">8</span><h2>STEP 5　公開前のチェックリスト</h2></div>
+  
+  <ul class="chk">
+  <li>見出しの背景（薄い水色の帯）が付いている ─ 付いていなければ、CSSがまだ読み込まれていません</li>
+  <li>手順リストに丸い番号が付いている</li>
+  <li>画像が表示されている（コラム05・06）。表示されない場合はURLの年月を確認</li>
+  <li>図（SVG）が崩れていない ─ 崩れていたら、ビジュアルタブに切り替えた可能性があります</li>
+  <li>アイキャッチ画像が設定されている（全5記事）</li>
+  <li>記事の上部にアイキャッチが表示されている（STEP 1の2番が終わっていれば）</li>
+  <li>URLをチャットに貼って、画像つきのカードで表示される</li>
+  <li>記事末尾に「関連サービス」が入っている</li>
+  <li>スマートフォン幅でも横スクロールが出ない</li>
+  <li>カテゴリが1つだけ選ばれている</li>
+  <li>URLスラッグが表のとおりになっている</li>
+  <li>記事内のリンクがエラーにならない（全記事の公開後）</li>
+</ul>
+</section>
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">9</span><h2>2本目以降を書くとき</h2></div>
+  
+  <p>CSSの追加はもう必要ありません。新しい記事でも、下の部品をそのまま使えます。<b>書き方は、既存の本文HTMLから同じ部分をコピーして中身を差し替えるのがいちばん早い</b>です。</p>
+<div class="parts">
+  <div><b>op-point</b><span>「この記事でわかること」のボックス</span></div>
+  <div><b>op-toc</b><span>目次</span></div>
+  <div><b>op-answer</b><span>「Q.〜」と直接回答のボックス（AI検索対策）</span></div>
+  <div><b>op-howto</b><span>番号つきの手順リスト</span></div>
+  <div><b>op-note</b><span>補足・注意のボックス</span></div>
+  <div><b>op-check</b><span>チェックマーク付きの箇条書き</span></div>
+  <div><b>op-table</b><span>表（スマホでは横スクロール）</span></div>
+  <div><b>op-steps</b><span>横並びのカード（3〜5個）</span></div>
+  <div><b>op-shot</b><span>操作画面のスクショ＋番号つき説明</span></div>
+  <div><b>op-summary</b><span>まとめの番号つきリスト</span></div>
+  <div><b>op-more</b><span>関連記事・ご相談への導線ボタン</span></div>
+  <div><b>op-cta</b><span>記事末尾の相談ボタン</span></div>
+</div>
+<div class="note">
+  <p class="note__t">記事の作り方そのもの</p>
+  <p>キーワードの決め方から見出しの整理までは、（共有）タスク管理の<b>「コラム作成マニュ」タブ</b>にある手順（SEO用・AIO用）に沿って進めてください。書き上がった記事は<b>「コラム管理」タブ</b>に、ステータス・テストURL・本番URLを記録します。</p>
+</div>
+</section>
+
+<footer class="ft">高寺　／　2026-10-21</footer>
+</div>
+
+<script>
+document.addEventListener('click', function(e){
+  var b = e.target.closest('[data-copy]');
+  if(!b) return;
+  var el = document.getElementById(b.getAttribute('data-copy'));
+  if(!el) return;
+  var text = el.textContent;
+  function ok(){
+    var old = b.dataset.label || b.textContent;
+    b.dataset.label = old;
+    b.textContent = 'コピーしました';
+    b.classList.add('is-done');
+    setTimeout(function(){ b.textContent = old; b.classList.remove('is-done'); }, 1800);
+  }
+  function legacy(){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    var done=false;
+    try { done = document.execCommand('copy'); } catch(err) { done=false; }
+    document.body.removeChild(ta);
+    if(done) ok(); else alert('コピーできませんでした。_入稿用 フォルダのファイルから直接コピーしてください。');
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(ok).catch(legacy);
+  } else {
+    legacy();
+  }
+});
+</script>
+<script>
+// 旧実装（未使用）
+void function(){ if(false) {
+  } }();
+</script>
+</body>
+</html>
