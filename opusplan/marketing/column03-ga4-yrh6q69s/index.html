@@ -114,6 +114,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-newbox{outline:2px solid #C8102E;outline-offset:4px;border-radius:3px}
 .p-blog__content-dec .op-newbox::before{content:"今回の更新";display:inline-block;background:#C8102E;
   color:#fff;font-size:11px;font-weight:bold;border-radius:3px;padding:2px 9px;margin-bottom:6px}
+/* すでに ::before を使っている要素はバッジを出さない（番号丸などが崩れるため） */
+.p-blog__content-dec .op-more.op-newbox::before{display:none}
+.p-blog__content-dec .op-howto>li.op-newbox::before{padding:0;margin-bottom:0}
 
 /* 関連記事・ご相談への導線（案B／ラベルは文頭・本文は右揃え） */
 .p-blog__content-dec .op-more{display:flex;align-items:center;gap:18px;width:fit-content;max-width:100%;
@@ -560,11 +563,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   「測定中：」に並ぶのは一部だけなので、右の<strong>「＋ 他 ◯ 個」</strong>をクリックして開き、<strong>「フォームの操作」</strong>がオンになっているか確認してください。</li>
   <li><strong>イベントが記録されているか見る</strong>レポート ＞ エンゲージメント ＞ イベントを開き、<strong>form_submit</strong>という行があるか確認します。フォーム送信があれば、ここに件数が入っています。<br>
   なお、お使いのフォームの作り（JavaScriptで送信するタイプなど）によっては、拡張計測機能ではform_submitが拾えないことがあります。実際に自分でテスト送信してみて、翌日この行に数字が増えているかで判断するのが確実です。</li>
-  <li><strong>キーイベントの印を付ける</strong>ここも場所が分かりにくいところです。管理画面の左メニューは折りたたまれているため、<strong>「プロパティ設定」＞「データの表示」をクリックして開く</strong>と、はじめてその下に<strong>「イベント」</strong>が現れます。閉じたままだと「イベント」という項目自体が画面に出てこないので、見つからないときはここを疑ってください。<br>
-  イベントの一覧が開いたら、<strong>イベント名の左にある星マーク</strong>をクリックします。星が付いた状態＝キーイベントです。画面上部にも「イベントにキーイベントとしてマークを付けるには、イベント名の横にあるスターを選択します」という案内が出ています。</li>
-  <li><strong>一覧に目的のイベントが無い場合は作成する</strong>「キーイベント」タブを開いたとき、<strong>purchase</strong> だけが並んでいて「ストリーム データが検出されませんでした」と表示されることがあります。これはGA4の初期状態で、まだ自社に合ったキーイベントが用意されていないという意味です。<br>
-  その場合はまず隣の<strong>「最近のイベント」タブ</strong>に切り替えて、実際に届いているイベント名（form_submit や page_view など）を確認します。目的のものがあれば、そこで星を付ければ完了です。<br>
-  どうしても該当するイベントが無いときは、<strong>「＋ イベントを作成」</strong>から独自のイベントを作ります。たとえば「page_view のうち、page_location に /thanks/ を含むもの」という条件にすれば、お問い合わせ完了ページの表示を1件としてカウントできます。作成したイベントは数十分〜翌日に一覧へ現れるので、そのあとで星を付けてください。</li>
+  <li class="op-newbox"><strong>キーイベントの印を付ける</strong>管理 ＞ プロパティ設定 ＞ <strong>「データの表示」をクリックして開く</strong>と、その下に<strong>「イベント」</strong>が現れます（閉じたままだと項目自体が出てきません）。<br>
+  一覧が開いたら、<strong>イベント名の左にある星マーク</strong>をクリックすれば完了です。</li>
+  <li class="op-newbox"><strong>目的のイベントが無い場合は作成する</strong><strong>purchase</strong> だけが並んでいるのは、まだキーイベントが用意されていない状態です。隣の<strong>「最近のイベント」タブ</strong>で実際に届いているイベント名を確認し、目的のものがあれば星を付けます。<br>
+  無ければ<strong>「＋ イベントを作成」</strong>から作ります。例：「page_view のうち page_location に /thanks/ を含むもの」でお問い合わせ完了ページの表示を数えられます。作成後、一覧に出てきたら星を付けてください。</li>
   <li><strong>反映を待つ</strong>設定した時点以降のデータが対象です。過去にさかのぼって集計されるわけではありません。</li>
 </ol>
 
