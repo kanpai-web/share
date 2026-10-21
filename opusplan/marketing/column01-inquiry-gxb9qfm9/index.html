@@ -121,22 +121,25 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-newbox::before{content:"今回の更新";display:inline-block;background:#C8102E;
   color:#fff;font-size:11px;font-weight:bold;border-radius:3px;padding:2px 9px;margin-bottom:6px}
 
-/* 関連記事・ご相談への導線（さりげない右寄せリンク） */
-.p-blog__content-dec .op-more{display:flex;width:fit-content;max-width:100%;
-  margin:4px 0 30px auto;align-items:center;gap:11px;
-  padding:10px 18px 10px 21px;border:1px solid #DCE0E8;border-radius:100px;background:#fff;
-  text-decoration:none;line-height:1.5;transition:border-color .15s,background-color .15s}
-.p-blog__content-dec .op-more:hover{border-color:var(--op-navy);background:#F8F9FC}
-.p-blog__content-dec .op-more .op-more__label{font-size:11.5px;color:#949AA6;white-space:nowrap}
-.p-blog__content-dec .op-more .op-more__text{font-size:14px;color:var(--op-navy);font-weight:500;
-  position:relative;padding-right:19px}
-.p-blog__content-dec .op-more .op-more__text::after{content:"";position:absolute;right:3px;top:50%;
-  width:6px;height:6px;border-top:1.5px solid var(--op-navy);border-right:1.5px solid var(--op-navy);
-  transform:translateY(-50%) rotate(45deg)}
+/* 関連記事・ご相談への導線（案B／ラベルは文頭・本文は右揃え） */
+.p-blog__content-dec .op-more{display:flex;align-items:center;gap:18px;width:fit-content;max-width:100%;
+  margin:4px 0 28px auto;text-decoration:none;background:#EEF4FF;border-radius:8px;
+  padding:14px 16px 14px 24px;transition:background-color .15s}
+.p-blog__content-dec .op-more:hover{background:#E4ECFC}
+.p-blog__content-dec .op-more__tx{text-align:right}
+.p-blog__content-dec .op-more .op-more__label{display:block;text-align:left;
+  font-size:10.5px;font-weight:700;color:#7C86A0;letter-spacing:.14em;margin-bottom:3px}
+.p-blog__content-dec .op-more .op-more__text{display:block;font-size:15px;font-weight:700;
+  color:var(--op-navy);line-height:1.5}
+.p-blog__content-dec .op-more__ar{flex:none;width:32px;height:32px;border-radius:50%;
+  background:var(--op-navy);position:relative}
+.p-blog__content-dec .op-more__ar::before{content:"";position:absolute;left:calc(50% - 3px);top:calc(50% - 4px);
+  width:7px;height:7px;border-top:1.6px solid #fff;border-right:1.6px solid #fff;transform:rotate(45deg)}
 @media screen and (max-width:600px){
-  .p-blog__content-dec .op-more{padding:10px 15px 10px 17px;gap:8px}
+  .p-blog__content-dec .op-more{gap:13px;padding:13px 13px 13px 17px}
   .p-blog__content-dec .op-more .op-more__text{font-size:13.5px}
-  .p-blog__content-dec .op-more .op-more__label{font-size:11px}
+  .p-blog__content-dec .op-more .op-more__label{font-size:10px}
+  .p-blog__content-dec .op-more__ar{width:28px;height:28px}
 }
 /* 黄色マーカー */
 .p-blog__content-dec .op-marker{background:linear-gradient(transparent 58%,#FFF1A8 58%);font-weight:bold}
@@ -607,8 +610,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <h3>サーチコンソールの「表示回数」はアクセス数ではない</h3>
 <p>サーチコンソールには「表示回数」と「クリック数」があります。<strong>表示回数は、検索結果に自社ページが並んだ回数</strong>で、実際に訪問された回数ではありません。表示回数が多いのにクリック数が少ない場合は、「検索結果には出ているが、選ばれていない」状態です。この場合は、検索結果に表示されるタイトルや説明文の見直しが効果的です。</p>
 <a class="op-more op-newbox" href="https://kanpai-web.github.io/share/opusplan/marketing/column02-search-console-gvx1qb9h/">
-  <span class="op-more__label">あわせて読みたい</span>
-  <span class="op-more__text">サーチコンソールの使い方はこちら</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">サーチコンソールの使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 <h3>「お問い合わせ数」に営業メールが含まれていないか</h3>
@@ -624,8 +630,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <p>GA4では、フォーム送信などの行動に「キーイベント（成果）」の印を付けておくと、どの流入経路・どのページを経由した人がお問い合わせたかを追えるようになります。まだ設定していない場合は、改善を始める前に設定しておくと、施策の効果を比べやすくなります。</p>
 </div>
 <a class="op-more op-newbox" href="https://kanpai-web.github.io/share/opusplan/marketing/column03-ga4-yrh6q69s/">
-  <span class="op-more__label">あわせて読みたい</span>
-  <span class="op-more__text">GA4の使い方はこちら</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">GA4の使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 <!-- ============ H2-3 ============ -->
@@ -637,8 +646,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <h3>原因1：見込み客が検索する言葉で見つけてもらえていない</h3>
 <p class="op-new">社内で使っているサービス名と、お客さまが検索する言葉は別物です。自社が「Webコンサルティング」と呼んでいるサービスを、お客さまは「ホームページ 集客 相談」のように、<strong>いま困っている状態そのものの言葉</strong>で探します。お客さまが実際に使う言葉がページ内にないかぎり、検索結果には表示されません。まずはサーチコンソールで「どんな言葉で表示されているか」を確認し、狙いたい言葉とのずれを見つけてください。</p>
 <a class="op-more op-newbox" href="https://kanpai-web.github.io/share/opusplan/marketing/column04-keyword-yf4pmqaj/">
-  <span class="op-more__label">あわせて読みたい</span>
-  <span class="op-more__text">検索ワードの確認方法はこちら</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">検索ワードの確認方法はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 <h3>原因2：アクセスはあっても、見込み客ではない人が中心になっている</h3>
@@ -668,8 +680,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 <p>どれか1つが正解というわけではなく、業種や目的、予算によって最適な組み合わせは変わります。</p>
 <a class="op-more op-newbox" href="https://opus-plan.net/contact/">
-  <span class="op-more__label">ご相談</span>
-  <span class="op-more__text">向いている対策を相談する（無料）</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">向いている対策を相談する（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 <!-- ============ H2-4 ============ -->
@@ -692,8 +707,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <figcaption class="op-new">訪問者の疑問と、その答えを置くページの対応です</figcaption>
 </figure>
 <a class="op-more op-newbox" href="https://kanpai-web.github.io/share/opusplan/marketing/column05-journey-zel0x7dg/">
-  <span class="op-more__label">あわせて読みたい</span>
-  <span class="op-more__text">訪問者が通る4つの心理プロセスはこちら</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">訪問者が通る4つの心理プロセスはこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 <h3>原因1：訪問者がサービスページまでたどり着いていない</h3>
@@ -856,8 +874,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 <p>お問い合わせは月ごとのばらつきが大きいため、1か月だけの結果で判断せず、数か月の流れで見ることが大切です。</p>
 <a class="op-more op-newbox" href="https://opus-plan.net/contact/">
-  <span class="op-more__label">ご相談</span>
-  <span class="op-more__text">分析・評価を相談する（無料）</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">分析・評価を相談する（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 <!-- ============ まとめ ============ -->

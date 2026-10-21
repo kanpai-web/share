@@ -110,22 +110,25 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec ul.op-check li{list-style:none;position:relative;padding-left:28px;margin:6px 0}
 .p-blog__content-dec ul.op-check li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:7px;border-left:2px solid var(--op-accent);border-bottom:2px solid var(--op-accent);transform:rotate(-45deg);background:none;border-radius:0}
 
-/* 関連記事・ご相談への導線（さりげない右寄せリンク） */
-.p-blog__content-dec .op-more{display:flex;width:fit-content;max-width:100%;
-  margin:4px 0 30px auto;align-items:center;gap:11px;
-  padding:10px 18px 10px 21px;border:1px solid #DCE0E8;border-radius:100px;background:#fff;
-  text-decoration:none;line-height:1.5;transition:border-color .15s,background-color .15s}
-.p-blog__content-dec .op-more:hover{border-color:var(--op-navy);background:#F8F9FC}
-.p-blog__content-dec .op-more .op-more__label{font-size:11.5px;color:#949AA6;white-space:nowrap}
-.p-blog__content-dec .op-more .op-more__text{font-size:14px;color:var(--op-navy);font-weight:500;
-  position:relative;padding-right:19px}
-.p-blog__content-dec .op-more .op-more__text::after{content:"";position:absolute;right:3px;top:50%;
-  width:6px;height:6px;border-top:1.5px solid var(--op-navy);border-right:1.5px solid var(--op-navy);
-  transform:translateY(-50%) rotate(45deg)}
+/* 関連記事・ご相談への導線（案B／ラベルは文頭・本文は右揃え） */
+.p-blog__content-dec .op-more{display:flex;align-items:center;gap:18px;width:fit-content;max-width:100%;
+  margin:4px 0 28px auto;text-decoration:none;background:#EEF4FF;border-radius:8px;
+  padding:14px 16px 14px 24px;transition:background-color .15s}
+.p-blog__content-dec .op-more:hover{background:#E4ECFC}
+.p-blog__content-dec .op-more__tx{text-align:right}
+.p-blog__content-dec .op-more .op-more__label{display:block;text-align:left;
+  font-size:10.5px;font-weight:700;color:#7C86A0;letter-spacing:.14em;margin-bottom:3px}
+.p-blog__content-dec .op-more .op-more__text{display:block;font-size:15px;font-weight:700;
+  color:var(--op-navy);line-height:1.5}
+.p-blog__content-dec .op-more__ar{flex:none;width:32px;height:32px;border-radius:50%;
+  background:var(--op-navy);position:relative}
+.p-blog__content-dec .op-more__ar::before{content:"";position:absolute;left:calc(50% - 3px);top:calc(50% - 4px);
+  width:7px;height:7px;border-top:1.6px solid #fff;border-right:1.6px solid #fff;transform:rotate(45deg)}
 @media screen and (max-width:600px){
-  .p-blog__content-dec .op-more{padding:10px 15px 10px 17px;gap:8px}
+  .p-blog__content-dec .op-more{gap:13px;padding:13px 13px 13px 17px}
   .p-blog__content-dec .op-more .op-more__text{font-size:13.5px}
-  .p-blog__content-dec .op-more .op-more__label{font-size:11px}
+  .p-blog__content-dec .op-more .op-more__label{font-size:10px}
+  .p-blog__content-dec .op-more__ar{width:28px;height:28px}
 }
 /* 黄色マーカー */
 .p-blog__content-dec .op-marker{background:linear-gradient(transparent 58%,#FFF1A8 58%);font-weight:bold}
@@ -576,8 +579,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <p>GA4の「ランディングページ」を見ると、訪問者が最初に開いたページが分かります。コラムばかりが並んでいる場合は、1・2の段階の人が中心に来ているということです。その人たちを3へ進めるための導線が足りているか、確認してみてください。</p>
 </div>
 <a class="op-more" href="https://kanpai-web.github.io/share/opusplan/marketing/column03-ga4-yrh6q69s/">
-  <span class="op-more__label">あわせて読みたい</span>
-  <span class="op-more__text">GA4の使い方はこちら</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">あわせて読みたい</span>
+    <span class="op-more__text">GA4の使い方はこちら</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 <h2 id="s4">段階を飛ばすと何が起きるか</h2>
@@ -604,8 +610,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <p>自社サイトを4つの段階に当てはめてみると、「何が足りないのか」がはっきりします。すべてを一度に揃える必要はありません。<strong>いちばん抜けている段階から順に埋めていってください。</strong></p>
 
 <a class="op-more" href="https://opus-plan.net/contact/">
-  <span class="op-more__label">ご相談</span>
-  <span class="op-more__text">サイトの抜けを一緒に探す（無料）</span>
+  <span class="op-more__tx">
+    <span class="op-more__label">ご相談</span>
+    <span class="op-more__text">サイトの抜けを一緒に探す（無料）</span>
+  </span>
+  <span class="op-more__ar"></span>
 </a>
 
 </div>
