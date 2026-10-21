@@ -142,7 +142,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-shot{margin:22px 0 28px;border:1px solid var(--op-line);border-radius:6px;background:#fff;overflow:hidden}
 .p-blog__content-dec .op-shot img{display:block;width:100%;height:auto;margin:0;border:0;border-radius:0}
 .p-blog__content-dec .op-shot figcaption{padding:13px 16px;background:#F7F8FA;border-top:1px solid var(--op-line);font-size:13px;line-height:1.7;color:#555;text-align:left}
-.p-blog__content-dec .op-shot__title{display:block;font-weight:bold;color:var(--op-navy);margin-bottom:5px}
+.p-blog__content-dec .op-shot__title{display:block;font-weight:bold;color:var(--op-navy);margin-bottom:7px;font-size:14px}
+.p-blog__content-dec .op-step{display:inline-block;background:var(--op-navy);color:#fff;font-size:11px;font-weight:bold;
+  border-radius:3px;padding:2px 8px;margin-right:9px;font-style:normal;letter-spacing:.06em;vertical-align:1px}
 .p-blog__content-dec .op-shot figcaption>*{margin:0}
 .p-blog__content-dec .op-shot__item{display:block;position:relative;padding-left:26px;margin:3px 0 0}
 .p-blog__content-dec .op-shot__note{display:block;margin-top:11px!important;padding-top:10px;border-top:1px dashed #D8DCE3;color:#6B7280}
@@ -560,9 +562,9 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <figure class="op-shot op-newbox">
   <img src="images/ga4-admin.png" alt="GA4の管理画面。データ ストリームとデータの表示＞イベントの位置">
   <figcaption>
-    <span class="op-shot__title">図1　管理画面（画面左下の歯車アイコンから開きます）</span>
-    <span class="op-shot__item"><i>1</i><strong>データの収集と修正 ＞ データ ストリーム</strong>。拡張計測機能の確認はここから（図2へ）</span>
-    <span class="op-shot__item"><i>2</i><strong>「データの表示」をクリックして開く</strong>と、その下に「イベント」が現れます。キーイベントの設定はここから（図3へ）</span>
+    <span class="op-shot__title"><i class="op-step">STEP 1</i>設定画面の入口を確認する</span>
+    <span class="op-shot__item"><i>1</i><strong>データの収集と修正 ＞ データ ストリーム</strong>。拡張計測機能の確認はここから（STEP 2）</span>
+    <span class="op-shot__item"><i>2</i><strong>「データの表示」をクリックして開く</strong>と、その下に「イベント」が現れます。キーイベントの設定はここから（STEP 4）</span>
     <span class="op-shot__note">左メニューは折りたたまれているため、「データの表示」を開かないと<strong>「イベント」という項目自体が画面に出てきません</strong>。見つからないときは、まずここを疑ってください。</span>
   </figcaption>
 </figure>
@@ -570,7 +572,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <figure class="op-shot op-newbox">
   <img src="images/ga4-stream.png" alt="ウェブ ストリームの詳細。拡張計測機能のスイッチと「＋ 他 4 個」の位置">
   <figcaption>
-    <span class="op-shot__title">図2　ウェブ ストリームの詳細　― 拡張計測機能を確認する</span>
+    <span class="op-shot__title"><i class="op-step">STEP 2</i>自動計測がオンになっているか確認する</span>
     <span class="op-shot__item"><i>1</i>拡張計測機能のスイッチ。オンになっていれば、基本の自動計測は動いています</span>
     <span class="op-shot__item"><i>2</i><strong>「＋ 他 ◯ 個」</strong>。「測定中：」に並ぶのは一部だけなので、ここを押して開き、<strong>「フォームの操作」</strong>がオンになっているか確認します</span>
     <span class="op-shot__note">スイッチ全体はオンでも、「フォームの操作」だけ個別にオフになっていることがあります。見当たらない場合は、さらに右端の歯車アイコンから切り替えられます。</span>
@@ -578,7 +580,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </figure>
 
 <div class="op-note">
-  <p class="op-note__title">図2のあとに　― イベントが記録されているか見る</p>
+  <p class="op-note__title"><i class="op-step">STEP 3</i>フォーム送信が届いているか確認する</p>
   <p>レポート ＞ エンゲージメント ＞ イベント を開き、<strong>form_submit</strong> という行があるか確認します。フォーム送信があれば、ここに件数が入っています。</p>
   <p>お使いのフォームの作り（JavaScriptで送信するタイプなど）によっては、拡張計測機能でform_submitが拾えないことがあります。実際に自分でテスト送信してみて、<strong>翌日この行の数字が増えているか</strong>で判断するのが確実です。</p>
 </div>
@@ -586,7 +588,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <figure class="op-shot op-newbox">
   <img src="images/ga4-events.png" alt="GA4のイベント一覧。イベントを作成・最近のイベントタブ・星マークの位置">
   <figcaption>
-    <span class="op-shot__title">図3　イベントの一覧　― キーイベントの印を付ける</span>
+    <span class="op-shot__title"><i class="op-step">STEP 4</i>お問い合わせに「成果」の印を付ける</span>
     <span class="op-shot__item"><i>1</i><strong>「＋ イベントを作成」</strong>。目的のイベントが無いときは、ここから作ります</span>
     <span class="op-shot__item"><i>2</i><strong>「最近のイベント」タブ</strong>。実際に届いているイベント名を確認できます</span>
     <span class="op-shot__item"><i>3</i><strong>星マーク</strong>。クリックすると、そのイベントがキーイベントになります</span>
@@ -595,7 +597,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </figure>
 
 <div class="op-note">
-  <p class="op-note__title">設定したあとは</p>
+  <p class="op-note__title">設定が終わったら</p>
   <p>集計されるのは<strong>設定した時点以降</strong>のデータです。過去にさかのぼって集計されるわけではないので、早めに入れておくほど、あとで比べやすくなります。</p>
 </div>
 
