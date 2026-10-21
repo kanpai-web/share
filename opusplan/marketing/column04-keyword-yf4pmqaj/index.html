@@ -145,10 +145,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-ui{border:1px solid var(--op-line);border-radius:4px;overflow:hidden;margin:0}
 .p-blog__content-dec .op-ui svg{display:block;width:100%;height:auto}
 /* 手順ステップ */
+.p-blog__content-dec h2[id],.p-blog__content-dec h3[id]{scroll-margin-top:100px}
+.p-blog__content-dec .op-toolurl{font-size:13px;margin:-6px 0 14px!important;word-break:break-all}
+.p-blog__content-dec .op-toolurl a{color:var(--op-accent)}
 .p-blog__content-dec .op-howto{counter-reset:ht;margin:24px 0}
 .p-blog__content-dec .op-howto>li{counter-increment:ht;list-style:none;position:relative;padding:14px 18px 14px 56px;background:#F7F8FA;border:1px solid var(--op-line);border-radius:4px;margin:0 0 10px}
 .p-blog__content-dec .op-howto>li::before{content:counter(ht);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--op-navy);color:#fff;font-size:13px;font-weight:bold;display:flex;align-items:center;justify-content:center}
-.p-blog__content-dec .op-howto>li strong{display:block;margin-bottom:3px}
+.p-blog__content-dec .op-howto>li>strong:first-child{display:block;margin-bottom:3px;width:fit-content;max-width:100%}
 
 /* 目次 */
 .op-toc{background:#F7F8FA;border:1px solid var(--op-line);padding:20px 24px;margin:28px 0 40px}
@@ -232,7 +235,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .op-before-after__arrow{align-self:center;text-align:center;font-size:22px;color:var(--op-accent);font-weight:bold}
 
 /* 5項目 */
-.op-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0}
+.op-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;margin:20px 0}
 .op-steps__item{border:1px solid var(--op-line);padding:14px 10px;text-align:center;background:#fff}
 .op-steps__num{display:inline-block;width:28px;height:28px;line-height:28px;border-radius:50%;background:var(--op-navy);color:#fff;font-weight:bold;font-size:14px}
 .op-steps__item p{margin:8px 0 0!important;font-size:13px;line-height:1.6;color:#555}
@@ -290,7 +293,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .op-formula__op{font-size:20px;line-height:1.2}
   .op-before-after{grid-template-columns:1fr}
   .op-before-after__arrow{transform:rotate(90deg)}
-  .op-steps{grid-template-columns:1fr 1fr}
+  .op-steps{grid-auto-flow:row;grid-template-columns:1fr 1fr}
   .op-steps__item:last-child{grid-column:1/-1}
   .op-wire{grid-template-columns:1fr;padding:16px}
   .op-wire__page{max-width:260px;margin:0 auto}
@@ -523,10 +526,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <li><strong>表示は多いのにクリックが少ない言葉</strong>は、伸ばせる余地が残っています</li>
 </ul>
 <p>ただし分かるのは<strong>すでに自社が表示されている言葉だけ</strong>です。まったく出ていない言葉は、ここには現れません。</p>
-<a class="op-more" href="https://kanpai-web.github.io/share/opusplan/marketing/column02-search-console-gvx1qb9h/">
+<a class="op-more" href="https://kanpai-web.github.io/share/opusplan/marketing/column02-search-console-gvx1qb9h/#s4">
   <span class="op-more__tx">
     <span class="op-more__label">あわせて読みたい</span>
-    <span class="op-more__text">サーチコンソールの使い方はこちら</span>
+    <span class="op-more__text">「すでに来ている言葉」の調べ方はこちら</span>
   </span>
   <span class="op-more__ar"></span>
 </a>
@@ -536,6 +539,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <p>お金も登録もかからず、いますぐ試せる方法です。「自社のサービス名」「業種＋地域」などを入れて、どんな候補が出るか見てみてください。</p>
 
 <h3>3．ラッコキーワード</h3>
+<p class="op-toolurl">公式サイト：<a href="https://rakkokeyword.com/" target="_blank" rel="noopener">https://rakkokeyword.com/</a></p>
 <p>サジェストをまとめて取得できる無料ツールです。1つの言葉を入れると、それに続く候補が一覧で出てきます。手作業でサジェストを集めるより、はるかに早く全体像がつかめます。</p>
 <ul class="op-check">
   <li>無料でも使えますが、<strong>1日の取得回数に制限</strong>があります</li>
@@ -544,6 +548,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </ul>
 
 <h3>4．Googleキーワードプランナー</h3>
+<p class="op-toolurl">公式サイト：<a href="https://business.google.com/jp/ad-tools/keyword-planner/" target="_blank" rel="noopener">https://business.google.com/jp/ad-tools/keyword-planner/</a></p>
 <p>Google広告の機能のひとつで、<strong>検索数の目安</strong>が分かります。Google広告のアカウントがあれば無料で使えます。</p>
 <div class="op-note">
   <p class="op-note__title">無料で使うときの注意</p>
@@ -578,7 +583,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <div class="op-note">
   <p class="op-note__title">代表的なツール</p>
-  <p>国内外にいくつかありますが、よく使われるのは <strong>Ahrefs</strong>、<strong>Semrush</strong>、<strong>キーワードファインダー</strong>、<strong>GRC</strong>（順位記録に特化）などです。<strong>料金やプラン内容は変わりやすいため、検討される際は各社の公式サイトで最新の情報をご確認ください。</strong></p>
+  <p>国内外にいくつかありますが、よく使われるのは <a href="https://ahrefs.com/ja" target="_blank" rel="noopener"><strong>Ahrefs</strong></a>、<a href="https://semrush.jp/" target="_blank" rel="noopener"><strong>Semrush</strong></a>、<a href="https://keywordfinder.jp/" target="_blank" rel="noopener"><strong>キーワードファインダー</strong></a>、<a href="https://seopro.jp/grc/" target="_blank" rel="noopener"><strong>GRC</strong></a>（順位記録に特化）などです。<strong>料金やプラン内容は変わりやすいため、検討される際は各社の公式サイトで最新の情報をご確認ください。</strong></p>
 </div>
 
 <h3>どんなときに必要になるか</h3>

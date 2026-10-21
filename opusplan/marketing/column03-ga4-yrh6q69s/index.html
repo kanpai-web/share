@@ -145,10 +145,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-ui{border:1px solid var(--op-line);border-radius:4px;overflow:hidden;margin:0}
 .p-blog__content-dec .op-ui svg{display:block;width:100%;height:auto}
 /* 手順ステップ */
+.p-blog__content-dec h2[id],.p-blog__content-dec h3[id]{scroll-margin-top:100px}
 .p-blog__content-dec .op-howto{counter-reset:ht;margin:24px 0}
 .p-blog__content-dec .op-howto>li{counter-increment:ht;list-style:none;position:relative;padding:14px 18px 14px 56px;background:#F7F8FA;border:1px solid var(--op-line);border-radius:4px;margin:0 0 10px}
 .p-blog__content-dec .op-howto>li::before{content:counter(ht);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--op-navy);color:#fff;font-size:13px;font-weight:bold;display:flex;align-items:center;justify-content:center}
-.p-blog__content-dec .op-howto>li strong{display:block;margin-bottom:3px}
+.p-blog__content-dec .op-howto>li>strong:first-child{display:block;margin-bottom:3px;width:fit-content;max-width:100%}
 
 /* 目次 */
 .op-toc{background:#F7F8FA;border:1px solid var(--op-line);padding:20px 24px;margin:28px 0 40px}
@@ -232,7 +233,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .op-before-after__arrow{align-self:center;text-align:center;font-size:22px;color:var(--op-accent);font-weight:bold}
 
 /* 5項目 */
-.op-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0}
+.op-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;margin:20px 0}
 .op-steps__item{border:1px solid var(--op-line);padding:14px 10px;text-align:center;background:#fff}
 .op-steps__num{display:inline-block;width:28px;height:28px;line-height:28px;border-radius:50%;background:var(--op-navy);color:#fff;font-weight:bold;font-size:14px}
 .op-steps__item p{margin:8px 0 0!important;font-size:13px;line-height:1.6;color:#555}
@@ -290,7 +291,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .op-formula__op{font-size:20px;line-height:1.2}
   .op-before-after{grid-template-columns:1fr}
   .op-before-after__arrow{transform:rotate(90deg)}
-  .op-steps{grid-template-columns:1fr 1fr}
+  .op-steps{grid-auto-flow:row;grid-template-columns:1fr 1fr}
   .op-steps__item:last-child{grid-column:1/-1}
   .op-wire{grid-template-columns:1fr;padding:16px}
   .op-wire__page{max-width:260px;margin:0 auto}
@@ -548,9 +549,15 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 <h3>設定の手順</h3>
 <ol class="op-howto">
-  <li><strong>拡張計測機能を確認する</strong>管理 ＞ データストリーム ＞ 該当のウェブストリームを開き、「フォームの操作」がオンになっているか確認します。</li>
-  <li><strong>イベントが記録されているか見る</strong>レポート ＞ エンゲージメント ＞ イベントを開き、<strong>form_submit</strong>という行があるか確認します。フォーム送信があれば、ここに件数が入っています。</li>
-  <li><strong>キーイベントの印を付ける</strong>管理 ＞ イベント（またはキーイベント）で、該当のイベントの「キーイベントとしてマークを付ける」をオンにします。</li>
+  <li><strong>拡張計測機能を確認する</strong>画面左下の歯車アイコン（管理）を開き、「プロパティ設定」の中の<strong>データの収集と修正 ＞ データ ストリーム</strong>へ進みます。一覧から自社サイトのストリームをクリックすると「ウェブ ストリームの詳細」が開き、その中ほどに<strong>拡張計測機能</strong>の項目があります。右側のスイッチがオンになっていれば、基本の自動計測は動いています。<br>
+  ここで注意したいのが、<strong>「測定中：」の横に出ているのは一部だけ</strong>だという点です。初期表示では「ページビュー数／スクロール数／離脱クリック」の3つしか並んでおらず、肝心の「フォームの操作」が見当たりません。その右にある<strong>「＋ 他 ◯ 個」</strong>という青い文字をクリックすると残りが開くので、そこに<strong>「フォームの操作」</strong>があり、グレーアウトしていないかを確認してください。見当たらない場合は、さらに右端の<strong>歯車アイコン</strong>から個別にオン・オフを切り替えられます。</li>
+  <li><strong>イベントが記録されているか見る</strong>レポート ＞ エンゲージメント ＞ イベントを開き、<strong>form_submit</strong>という行があるか確認します。フォーム送信があれば、ここに件数が入っています。<br>
+  なお、お使いのフォームの作り（JavaScriptで送信するタイプなど）によっては、拡張計測機能ではform_submitが拾えないことがあります。実際に自分でテスト送信してみて、翌日この行に数字が増えているかで判断するのが確実です。</li>
+  <li><strong>キーイベントの印を付ける</strong>ここも場所が分かりにくいところです。管理画面の左メニューは折りたたまれているため、<strong>「プロパティ設定」＞「データの表示」をクリックして開く</strong>と、はじめてその下に<strong>「イベント」</strong>が現れます。閉じたままだと「イベント」という項目自体が画面に出てこないので、見つからないときはここを疑ってください。<br>
+  イベントの一覧が開いたら、<strong>イベント名の左にある星マーク</strong>をクリックします。星が付いた状態＝キーイベントです。画面上部にも「イベントにキーイベントとしてマークを付けるには、イベント名の横にあるスターを選択します」という案内が出ています。</li>
+  <li><strong>一覧に目的のイベントが無い場合は作成する</strong>「キーイベント」タブを開いたとき、<strong>purchase</strong> だけが並んでいて「ストリーム データが検出されませんでした」と表示されることがあります。これはGA4の初期状態で、まだ自社に合ったキーイベントが用意されていないという意味です。<br>
+  その場合はまず隣の<strong>「最近のイベント」タブ</strong>に切り替えて、実際に届いているイベント名（form_submit や page_view など）を確認します。目的のものがあれば、そこで星を付ければ完了です。<br>
+  どうしても該当するイベントが無いときは、<strong>「＋ イベントを作成」</strong>から独自のイベントを作ります。たとえば「page_view のうち、page_location に /thanks/ を含むもの」という条件にすれば、お問い合わせ完了ページの表示を1件としてカウントできます。作成したイベントは数十分〜翌日に一覧へ現れるので、そのあとで星を付けてください。</li>
   <li><strong>反映を待つ</strong>設定した時点以降のデータが対象です。過去にさかのぼって集計されるわけではありません。</li>
 </ol>
 
@@ -587,6 +594,18 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <h3>Directが多いときに気をつけたいこと</h3>
 <p>Directは「URLを直接入力した人」と思われがちですが、実際には<strong>計測できなかった流入がまとめて入る枠</strong>です。メールのリンク、QRコード、一部のアプリ経由、そして営業目的の自動アクセスなども、ここに分類されます。</p>
 <p>そのため、<strong>施策の効果を見たいときはDirectを除いて、Organic Searchに絞って見る</strong>のがおすすめです。本当にニーズがあって検索してきた人の動きが見えやすくなります。</p>
+
+<h3 id="organic">Organic Search だけに絞って見る方法</h3>
+<p>絞り込みには、手早い方法とレポート全体に効かせる方法の2つがあります。</p>
+<ol class="op-howto">
+  <li><strong>表のなかだけを絞り込む（手早い方法）</strong>レポート ＞ 集客 ＞ トラフィック獲得 を開き、表の右上にある<strong>虫めがねの検索窓</strong>に「Organic Search」と入力します。該当する行だけが残るので、数字をさっと確認したいときはこれで十分です。ただしグラフ部分は全体のままです。</li>
+  <li><strong>レポート全体を絞り込む（比較機能）</strong>画面上部の<strong>「＋」（比較を追加）</strong>をクリックし、ディメンションで<strong>「セッションのデフォルト チャネル グループ」</strong>、一致条件を「完全一致」、値に<strong>「Organic Search」</strong>を指定して適用します。グラフも表も検索流入だけの数字になり、他のレポートに移動しても絞り込みが保たれます。</li>
+  <li><strong>期間をそろえて比べる</strong>右上の日付をクリックし、「比較」をオンにして前年同月や前期間を指定すると、施策の前後が並べて表示されます。お問い合わせはもともと月ごとのばらつきが大きいため、同じ条件でそろえて見ることが大切です。</li>
+</ol>
+<div class="op-note">
+  <p class="op-note__title">覚えておきたい使い分け</p>
+  <p>サイト全体の規模を把握したいときは<strong>Directを含めた全体</strong>、施策が効いたかを判断したいときは<strong>Organic Searchだけ</strong>。同じレポートでも、見たい目的によって絞り込みを切り替えてください。</p>
+</div>
 
 <h2 id="s5">つまずきやすいポイント</h2>
 

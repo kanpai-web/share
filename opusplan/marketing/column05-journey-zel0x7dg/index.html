@@ -145,10 +145,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-ui{border:1px solid var(--op-line);border-radius:4px;overflow:hidden;margin:0}
 .p-blog__content-dec .op-ui svg{display:block;width:100%;height:auto}
 /* 手順ステップ */
+.p-blog__content-dec h2[id],.p-blog__content-dec h3[id]{scroll-margin-top:100px}
 .p-blog__content-dec .op-howto{counter-reset:ht;margin:24px 0}
 .p-blog__content-dec .op-howto>li{counter-increment:ht;list-style:none;position:relative;padding:14px 18px 14px 56px;background:#F7F8FA;border:1px solid var(--op-line);border-radius:4px;margin:0 0 10px}
 .p-blog__content-dec .op-howto>li::before{content:counter(ht);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--op-navy);color:#fff;font-size:13px;font-weight:bold;display:flex;align-items:center;justify-content:center}
-.p-blog__content-dec .op-howto>li strong{display:block;margin-bottom:3px}
+.p-blog__content-dec .op-howto>li>strong:first-child{display:block;margin-bottom:3px;width:fit-content;max-width:100%}
 
 /* 目次 */
 .op-toc{background:#F7F8FA;border:1px solid var(--op-line);padding:20px 24px;margin:28px 0 40px}
@@ -232,7 +233,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .op-before-after__arrow{align-self:center;text-align:center;font-size:22px;color:var(--op-accent);font-weight:bold}
 
 /* 5項目 */
-.op-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0}
+.op-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;margin:20px 0}
 .op-steps__item{border:1px solid var(--op-line);padding:14px 10px;text-align:center;background:#fff}
 .op-steps__num{display:inline-block;width:28px;height:28px;line-height:28px;border-radius:50%;background:var(--op-navy);color:#fff;font-weight:bold;font-size:14px}
 .op-steps__item p{margin:8px 0 0!important;font-size:13px;line-height:1.6;color:#555}
@@ -290,7 +291,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .op-formula__op{font-size:20px;line-height:1.2}
   .op-before-after{grid-template-columns:1fr}
   .op-before-after__arrow{transform:rotate(90deg)}
-  .op-steps{grid-template-columns:1fr 1fr}
+  .op-steps{grid-auto-flow:row;grid-template-columns:1fr 1fr}
   .op-steps__item:last-child{grid-column:1/-1}
   .op-wire{grid-template-columns:1fr;padding:16px}
   .op-wire__page{max-width:260px;margin:0 auto}
@@ -527,7 +528,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </figure>
 
 <h3>1．気づく</h3>
-<p>「問い合わせが来ない」「集客がうまくいかない」と、<strong>困っている状態を自覚した段階</strong>です。この時点では、何をすれば解決するのかも、誰に頼めばいいのかも分かっていません。</p>
+<p>「問い合わせが来ない」「集客がうまくいかない」など、<strong>困っている状態を自覚した段階</strong>です。この時点では、何をすれば解決するのかも、誰に頼めばいいのかも分かっていません。</p>
 <p>検索する言葉は「ホームページ 集客 できない」「問い合わせ 増やす 方法」のような、<strong>状態そのものの言葉</strong>になります。</p>
 
 <h3>2．調べる</h3>

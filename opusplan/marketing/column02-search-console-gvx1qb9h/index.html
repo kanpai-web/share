@@ -145,10 +145,11 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec .op-ui{border:1px solid var(--op-line);border-radius:4px;overflow:hidden;margin:0}
 .p-blog__content-dec .op-ui svg{display:block;width:100%;height:auto}
 /* 手順ステップ */
+.p-blog__content-dec h2[id],.p-blog__content-dec h3[id]{scroll-margin-top:100px}
 .p-blog__content-dec .op-howto{counter-reset:ht;margin:24px 0}
 .p-blog__content-dec .op-howto>li{counter-increment:ht;list-style:none;position:relative;padding:14px 18px 14px 56px;background:#F7F8FA;border:1px solid var(--op-line);border-radius:4px;margin:0 0 10px}
 .p-blog__content-dec .op-howto>li::before{content:counter(ht);position:absolute;left:16px;top:14px;width:26px;height:26px;border-radius:50%;background:var(--op-navy);color:#fff;font-size:13px;font-weight:bold;display:flex;align-items:center;justify-content:center}
-.p-blog__content-dec .op-howto>li strong{display:block;margin-bottom:3px}
+.p-blog__content-dec .op-howto>li>strong:first-child{display:block;margin-bottom:3px;width:fit-content;max-width:100%}
 
 /* 目次 */
 .op-toc{background:#F7F8FA;border:1px solid var(--op-line);padding:20px 24px;margin:28px 0 40px}
@@ -232,7 +233,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .op-before-after__arrow{align-self:center;text-align:center;font-size:22px;color:var(--op-accent);font-weight:bold}
 
 /* 5項目 */
-.op-steps{display:grid;grid-template-columns:repeat(5,1fr);gap:8px;margin:20px 0}
+.op-steps{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:8px;margin:20px 0}
 .op-steps__item{border:1px solid var(--op-line);padding:14px 10px;text-align:center;background:#fff}
 .op-steps__num{display:inline-block;width:28px;height:28px;line-height:28px;border-radius:50%;background:var(--op-navy);color:#fff;font-weight:bold;font-size:14px}
 .op-steps__item p{margin:8px 0 0!important;font-size:13px;line-height:1.6;color:#555}
@@ -290,7 +291,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .op-formula__op{font-size:20px;line-height:1.2}
   .op-before-after{grid-template-columns:1fr}
   .op-before-after__arrow{transform:rotate(90deg)}
-  .op-steps{grid-template-columns:1fr 1fr}
+  .op-steps{grid-auto-flow:row;grid-template-columns:1fr 1fr}
   .op-steps__item:last-child{grid-column:1/-1}
   .op-wire{grid-template-columns:1fr;padding:16px}
   .op-wire__page{max-width:260px;margin:0 auto}
@@ -486,7 +487,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     <li><a href="#s1">サーチコンソールで分かること・分からないこと</a></li>
     <li><a href="#s2">導入と所有権の確認</a></li>
     <li><a href="#s3">最初に見る4つの数字</a></li>
-    <li><a href="#s4">「どんな言葉で来ているか」を調べる</a></li>
+    <li><a href="#s4">「すでに来ている言葉」の調べ方</a></li>
     <li><a href="#s5">「どのページが強いか」を調べる</a></li>
     <li><a href="#s6">つまずきやすいポイント</a></li>
     <li><a href="#s7">まとめ</a></li>
@@ -581,14 +582,24 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <li><strong>クリックはあるのに相談が来ない</strong>　検索は合っていて、サイトの中身に課題があります</li>
 </ul>
 
-<h2 id="s4">「どんな言葉で来ているか」を調べる</h2>
+<h2 id="s4">「すでに来ている言葉」の調べ方</h2>
 <p>同じ「検索結果」の画面を下にスクロールすると、「クエリ」というタブがあります。<strong>クエリ＝お客さまが実際に入力した検索ワード</strong>です。ここが、サーチコンソールでいちばん価値のある部分です。</p>
+<p>キーワードツールで「これから狙う言葉」を探す前に、まずこの画面で<strong>すでに自社が持っている言葉</strong>を確認してください。ゼロから考えるより、すでに表示されている言葉を伸ばすほうが、はるかに早く結果が出ます。</p>
 
 <ol class="op-howto">
-  <li><strong>期間を広げる</strong>右上の日付で「過去12か月」にすると傾向が見えます。</li>
-  <li><strong>クリック数の多い順に並べる</strong>いま実際に人を連れてきている言葉が分かります。</li>
-  <li><strong>表示回数が多くクリックが少ない行を探す</strong>伸ばせる余地が残っている言葉です。</li>
+  <li><strong>クエリの一覧を開く</strong>左メニューの<strong>「検索パフォーマンス」＞「検索結果」</strong>を開き、グラフの下にある<strong>「クエリ」タブ</strong>を選びます。ここに、自社サイトが検索結果に表示されたときの検索ワードが一覧で並びます。</li>
+  <li><strong>4つの数字を表示する</strong>グラフ上部の<strong>「合計クリック数」「合計表示回数」「平均CTR」「平均掲載順位」</strong>のカードをクリックして、4つともオンにします。初期状態では平均CTRと平均掲載順位がオフになっていることが多く、オンにしないと表に列が出てきません。</li>
+  <li><strong>期間を広げる</strong>右上の日付で「過去12か月」にすると傾向が見えます。直近28日だけだと、季節や曜日のぶれに引っぱられます。</li>
+  <li><strong>クリック数の多い順に並べる</strong>列の見出しをクリックすると並べ替えできます。いま実際に人を連れてきている言葉＝自社の主力ワードが分かります。</li>
+  <li><strong>表示回数が多くクリックが少ない行を探す</strong>「表示回数は多いのに平均CTRが低い」言葉は、検索結果には出ているのに選ばれていない状態です。タイトルと説明文を書き直すだけで伸びる余地が残っています。</li>
+  <li><strong>掲載順位11〜20位の行を探す</strong>あと少しで1ページ目に届く言葉です。ページを増やすより、既存ページに内容を足すほうが効率よく改善できます。</li>
+  <li><strong>一覧をダウンロードする</strong>表の右上の<strong>エクスポート</strong>からスプレッドシートやCSVに書き出せます。画面上では1000行までしか見られないため、腰を据えて整理したいときは書き出してから作業します。</li>
 </ol>
+
+<div class="op-note">
+  <p class="op-note__title">社内の言葉とのずれを見つける</p>
+  <p>書き出した一覧を眺めると、社内で使っているサービス名と、お客さまが実際に入力している言葉が違うことによく気づきます。<strong>お客さまが使っている言葉がページ内に1度も書かれていない</strong>なら、そこが最初に直すべき箇所です。</p>
+</div>
 
 <div class="op-note">
   <p class="op-note__title">見るときのコツ</p>
