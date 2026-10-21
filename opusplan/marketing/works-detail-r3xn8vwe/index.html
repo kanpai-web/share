@@ -73,11 +73,27 @@ body{background:#e8eaf0;color:var(--ink);
 
 /* ── 一覧カード ── */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-bottom:40px}
-.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;
-  border-radius:6px;transition:transform .18s ease, box-shadow .18s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,60,.13)}
-    .card:hover .title{color:var(--navy)}
-    .card:hover .thumb{filter:brightness(1.03)}
+.card{display:flex;flex-direction:column;position:relative;border-radius:6px;
+  transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,60,.13)}
+.card:hover .title{color:var(--navy)}
+.card:hover .thumb{filter:brightness(1.03)}
+/* カード全体をクリック可能に。<a>の入れ子を避けるため、タイトルのリンクを疑似要素で全面に広げている */
+.card .title.stretch{text-decoration:none;display:block;color:var(--ink)}
+.card .title.stretch::after{content:"";position:absolute;inset:0;z-index:1}
+/* タグはカードのリンクより上に重ねて、別リンクとして押せるようにする */
+.card .tags{position:relative;z-index:2}
+.card .tags .tag{text-decoration:none;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.card .tags .tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.hide{display:none}
+.pager{display:flex;justify-content:center;align-items:center;gap:8px;margin:38px 0 4px}
+.pager .pg{min-width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);border-radius:4px;font-size:14px;color:var(--ink);
+  text-decoration:none;background:#fff}
+.pager .pg.cur{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
+.pager .pg.nx{padding:0 16px}
+.pager .pg:not(.cur):hover{border-color:var(--navy);color:var(--navy)}
+.fcount b{color:var(--navy);font-size:15px}
 .card .thumb{width:100%;aspect-ratio:16/10;border-radius:4px;position:relative;overflow:hidden;
   background:linear-gradient(135deg,#dfe6f5 0%,#eef3fb 60%,#e7eefb 100%);display:flex;align-items:center;justify-content:center}
 .card .thumb span{font-size:11px;color:#9aa6c4;letter-spacing:.1em}
@@ -452,20 +468,49 @@ body.noanno .legend{display:none}
 
 <script>
 (function(){
-  var b=document.getElementById('tg');
-  b.addEventListener('click',function(){
-    var on=document.body.classList.toggle('noanno')===false;
-    b.setAttribute('aria-pressed',on?'true':'false');
-    b.textContent=on?'注釈を表示中（クリックで消す）':'注釈は非表示（クリックで出す）';
+  var tabs  = [].slice.call(document.querySelectorAll('.ftab'));
+  var chips = [].slice.call(document.querySelectorAll('.chip'));
+  var cards = [].slice.call(document.querySelectorAll('.card'));
+  var AX2PANEL = {ind:'p1', area:'p2', svc:'p3', res:'p4'};
+  var state = {ind:'all', area:'all', svc:'all', res:'all'};
+
+  function showPanel(pid){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.p === pid)); });
+    [].forEach.call(document.querySelectorAll('.fpanel'), function(p){ p.classList.remove('on'); });
+    var el = document.getElementById(pid); if(el) el.classList.add('on');
+  }
+  function apply(){
+    var n = 0;
+    cards.forEach(function(c){
+      var ok = Object.keys(state).every(function(k){
+        return state[k] === 'all' || c.dataset[k] === state[k];
+      });
+      c.classList.toggle('hide', !ok);
+      if(ok) n++;
+    });
+    var filtered = Object.keys(state).some(function(k){ return state[k] !== 'all'; });
+    [].forEach.call(document.querySelectorAll('.fcount b'), function(b){ b.textContent = filtered ? n : 24; });
+    var pager = document.querySelector('.pager');
+    if(pager) pager.style.display = filtered ? 'none' : '';
+  }
+  function select(ax, v){
+    state[ax] = v;
+    chips.forEach(function(c){ if(c.dataset.ax === ax) c.classList.toggle('on', c.dataset.v === v); });
+    showPanel(AX2PANEL[ax]);
+    apply();
+  }
+
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ showPanel(t.dataset.p); }); });
+  chips.forEach(function(c){
+    c.addEventListener('click', function(e){ e.preventDefault(); select(c.dataset.ax, c.dataset.v); });
   });
-  // 絞り込みタブ
-  var tabs=[].slice.call(document.querySelectorAll('.ftab'));
-  tabs.forEach(function(t){
-    t.addEventListener('click',function(){
-      tabs.forEach(function(x){x.setAttribute('aria-selected','false');});
-      t.setAttribute('aria-selected','true');
-      [].forEach.call(document.querySelectorAll('.fpanel'),function(p){p.classList.remove('on');});
-      document.getElementById(t.dataset.p).classList.add('on');
+  // カード内のタグ → 絞り込み検索ゾーンでチップを押したのと同じ動き
+  [].forEach.call(document.querySelectorAll('.card .tag'), function(t){
+    t.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      select(t.dataset.ax, t.dataset.v);
+      var fl = document.querySelector('.filters');
+      if(fl) fl.scrollIntoView({behavior:'smooth', block:'center'});
     });
   });
 })();

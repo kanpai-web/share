@@ -73,11 +73,27 @@ body{background:#e8eaf0;color:var(--ink);
 
 /* ── 一覧カード ── */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-bottom:40px}
-.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;
-  border-radius:6px;transition:transform .18s ease, box-shadow .18s ease}
-    .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,60,.13)}
-    .card:hover .title{color:var(--navy)}
-    .card:hover .thumb{filter:brightness(1.03)}
+.card{display:flex;flex-direction:column;position:relative;border-radius:6px;
+  transition:transform .18s ease, box-shadow .18s ease}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,60,.13)}
+.card:hover .title{color:var(--navy)}
+.card:hover .thumb{filter:brightness(1.03)}
+/* カード全体をクリック可能に。<a>の入れ子を避けるため、タイトルのリンクを疑似要素で全面に広げている */
+.card .title.stretch{text-decoration:none;display:block;color:var(--ink)}
+.card .title.stretch::after{content:"";position:absolute;inset:0;z-index:1}
+/* タグはカードのリンクより上に重ねて、別リンクとして押せるようにする */
+.card .tags{position:relative;z-index:2}
+.card .tags .tag{text-decoration:none;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
+.card .tags .tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.card.hide{display:none}
+.pager{display:flex;justify-content:center;align-items:center;gap:8px;margin:38px 0 4px}
+.pager .pg{min-width:38px;height:38px;display:flex;align-items:center;justify-content:center;
+  border:1px solid var(--line);border-radius:4px;font-size:14px;color:var(--ink);
+  text-decoration:none;background:#fff}
+.pager .pg.cur{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
+.pager .pg.nx{padding:0 16px}
+.pager .pg:not(.cur):hover{border-color:var(--navy);color:var(--navy)}
+.fcount b{color:var(--navy);font-size:15px}
 .card .thumb{width:100%;aspect-ratio:16/10;border-radius:4px;position:relative;overflow:hidden;
   background:linear-gradient(135deg,#dfe6f5 0%,#eef3fb 60%,#e7eefb 100%);display:flex;align-items:center;justify-content:center}
 .card .thumb span{font-size:11px;color:#9aa6c4;letter-spacing:.1em}
@@ -313,52 +329,161 @@ body.noanno .legend{display:none}
             <button class="ftab" role="tab" aria-selected="false" data-p="p4">成果から探す</button>
           </div>
           <div class="fpanel on" id="p1"><div class="chips">
-            <a class="chip on" href="#">すべて</a><a class="chip" href="#">葬儀・終活</a><a class="chip" href="#">医療・クリニック</a>
-            <a class="chip" href="#">建設・リフォーム</a><a class="chip" href="#">不動産</a><a class="chip" href="#">飲食</a>
-            <a class="chip" href="#">士業</a><a class="chip" href="#">小売・EC以外</a>
-          </div><div class="fcount">全24件</div></div>
+            <a class="chip on" href="#" data-ax="ind" data-v="all">すべて</a><a class="chip" href="#" data-ax="ind" data-v="sogi">葬儀・終活</a><a class="chip" href="#" data-ax="ind" data-v="clinic">医療・クリニック</a><a class="chip" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="chip" href="#" data-ax="ind" data-v="estate">不動産</a><a class="chip" href="#" data-ax="ind" data-v="food">飲食</a><a class="chip" href="#" data-ax="ind" data-v="shigyo">士業</a><a class="chip" href="#" data-ax="ind" data-v="ec">小売・EC</a>
+          </div><div class="fcount"><b>24</b>件</div></div>
           <div class="fpanel" id="p2"><div class="chips">
-            <a class="chip on" href="#">すべて</a><a class="chip" href="#">大阪府</a><a class="chip" href="#">堺市</a><a class="chip" href="#">京都府</a>
-            <a class="chip" href="#">兵庫県</a><a class="chip" href="#">奈良県</a><a class="chip" href="#">愛媛県</a><a class="chip" href="#">全国</a>
-          </div><div class="fcount">全24件</div></div>
+            <a class="chip on" href="#" data-ax="area" data-v="all">すべて</a><a class="chip" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="chip" href="#" data-ax="area" data-v="sakai">堺市</a><a class="chip" href="#" data-ax="area" data-v="kyoto">京都府</a><a class="chip" href="#" data-ax="area" data-v="hyogo">兵庫県</a><a class="chip" href="#" data-ax="area" data-v="ehime">愛媛県</a><a class="chip" href="#" data-ax="area" data-v="zenkoku">全国</a>
+          </div><div class="fcount"><b>24</b>件</div></div>
           <div class="fpanel" id="p3"><div class="chips">
-            <a class="chip on" href="#">すべて</a><a class="chip" href="#">SEO対策</a><a class="chip" href="#">Web広告運用代行</a>
-            <a class="chip" href="#">MEO対策</a><a class="chip" href="#">SNS運用代行</a><a class="chip" href="#">風評被害対策</a><a class="chip" href="#">サイト制作</a>
-          </div><div class="fcount">全24件</div></div>
+            <a class="chip on" href="#" data-ax="svc" data-v="all">すべて</a><a class="chip" href="#" data-ax="svc" data-v="seo">SEO対策</a><a class="chip" href="#" data-ax="svc" data-v="ads">Web広告運用代行</a><a class="chip" href="#" data-ax="svc" data-v="meo">MEO対策</a><a class="chip" href="#" data-ax="svc" data-v="sns">SNS運用代行</a><a class="chip" href="#" data-ax="svc" data-v="rumor">風評被害対策</a><a class="chip" href="#" data-ax="svc" data-v="build">サイト制作</a>
+          </div><div class="fcount"><b>24</b>件</div></div>
           <div class="fpanel" id="p4"><div class="chips">
-            <a class="chip on" href="#">すべて</a><a class="chip" href="#">問い合わせが増えた</a><a class="chip" href="#">検索順位が上がった</a>
-            <a class="chip" href="#">アクセスが増えた</a><a class="chip" href="#">広告費を抑えられた</a>
-          </div><div class="fcount">全24件</div></div>
+            <a class="chip on" href="#" data-ax="res" data-v="all">すべて</a><a class="chip" href="#" data-ax="res" data-v="inquiry">問い合わせが増えた</a><a class="chip" href="#" data-ax="res" data-v="rank">検索順位が上がった</a><a class="chip" href="#" data-ax="res" data-v="access">アクセスが増えた</a><a class="chip" href="#" data-ax="res" data-v="cost">広告費を抑えられた</a>
+          </div><div class="fcount"><b>24</b>件</div></div>
         </div>
       </div>
 
       <div class="wrap">
         <div class="cards">
-          <a class="card" href="#">
+          <div class="card" data-ind="sogi" data-area="sakai" data-svc="seo" data-res="inquiry">
             <div class="thumb"><span>サイトキャプチャ</span></div>
-            <div class="tags"><span class="tag">葬儀・終活</span><span class="tag">堺市</span><span class="tag svc">SEO対策</span></div>
-            <div class="title">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="sogi">葬儀・終活</a><a class="tag" href="#" data-ax="area" data-v="sakai">堺市</a><a class="tag svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+            </div>
+            <a class="title stretch" href="#">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</a>
             <div class="meta">従業員15名・年商3億円規模／支援期間 1年6ヶ月</div>
             <div class="resultbar annobox">
-              <div class="anno" style="top:-11px;right:-11px">2</div>
+            <div class="anno" style="top:-11px;right:-11px">2</div>
               <span class="rb-l">RESULT</span><span class="rb-v">問い合わせ 月1件 → <em>月8件</em></span>
             </div>
-          </a>
-          <a class="card" href="#">
+          </div>
+          <div class="card" data-ind="const" data-area="osaka" data-svc="ads" data-res="cost">
             <div class="thumb"><span>サイトキャプチャ</span></div>
-            <div class="tags"><span class="tag">建設・リフォーム</span><span class="tag">大阪市</span><span class="tag svc">Web広告運用代行</span></div>
-            <div class="title">大阪市 リフォーム会社｜広告の無駄打ちを削って受注単価を改善</div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="tag svc" href="#" data-ax="svc" data-v="ads">Web広告運用代行</a>
+            </div>
+            <a class="title stretch" href="#">大阪市 リフォーム会社｜広告の無駄打ちを削って受注単価を改善</a>
             <div class="meta">従業員30名規模／支援期間 10ヶ月</div>
-            <div class="resultbar"><span class="rb-l">RESULT</span><span class="rb-v">獲得単価 <em>-42%</em></span></div>
-          </a>
-          <a class="card" href="#">
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">獲得単価 <em>-42%</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="clinic" data-area="kyoto" data-svc="meo" data-res="inquiry">
             <div class="thumb"><span>サイトキャプチャ</span></div>
-            <div class="tags"><span class="tag">医療・クリニック</span><span class="tag">京都府</span><span class="tag svc">MEO対策</span></div>
-            <div class="title">京都市 歯科クリニック｜MEOで地図検索からの来院を増やす</div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="clinic">医療・クリニック</a><a class="tag" href="#" data-ax="area" data-v="kyoto">京都府</a><a class="tag svc" href="#" data-ax="svc" data-v="meo">MEO対策</a>
+            </div>
+            <a class="title stretch" href="#">京都市 歯科クリニック｜MEOで地図検索からの来院を増やす</a>
             <div class="meta">スタッフ8名・1拠点／支援期間 8ヶ月</div>
-            <div class="resultbar"><span class="rb-l">RESULT</span><span class="rb-v">地図経由の予約 <em>3.1倍</em></span></div>
-          </a>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">地図経由の予約 <em>3.1倍</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="estate" data-area="hyogo" data-svc="seo" data-res="inquiry">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="estate">不動産</a><a class="tag" href="#" data-ax="area" data-v="hyogo">兵庫県</a><a class="tag svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+            </div>
+            <a class="title stretch" href="#">兵庫県芦屋市 不動産｜物件ページの作り替えで反響を倍に</a>
+            <div class="meta">従業員12名規模／支援期間 1年</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">反響数 <em>2.2倍</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="shigyo" data-area="osaka" data-svc="seo" data-res="rank">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="shigyo">士業</a><a class="tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="tag svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+            </div>
+            <a class="title stretch" href="#">大阪市 社会保険労務士事務所｜相談先を探す層を取りにいく</a>
+            <div class="meta">所員6名規模／支援期間 9ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">「大阪 社労士 相談」 圏外 → <em>1位</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="const" data-area="zenkoku" data-svc="seo" data-res="access">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="tag" href="#" data-ax="area" data-v="zenkoku">全国</a><a class="tag svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+            </div>
+            <a class="title stretch" href="#">全国 建材メーカー｜指名検索以外からの流入をつくる</a>
+            <div class="meta">従業員120名規模／支援期間 1年2ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">自然検索の流入 <em>3.4倍</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="food" data-area="osaka" data-svc="meo" data-res="access">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="food">飲食</a><a class="tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="tag svc" href="#" data-ax="svc" data-v="meo">MEO対策</a>
+            </div>
+            <a class="title stretch" href="#">大阪市 飲食3店舗｜Googleマップの情報整備で来店を増やす</a>
+            <div class="meta">3店舗／支援期間 6ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">地図での表示回数 <em>5.8倍</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="const" data-area="ehime" data-svc="build" data-res="inquiry">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="tag" href="#" data-ax="area" data-v="ehime">愛媛県</a><a class="tag svc" href="#" data-ax="svc" data-v="build">サイト制作</a>
+            </div>
+            <a class="title stretch" href="#">愛媛県 建材商社｜リニューアルで問い合わせ導線を整理</a>
+            <div class="meta">従業員45名規模／支援期間 7ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">問い合わせ 月2件 → <em>月9件</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="clinic" data-area="sakai" data-svc="rumor" data-res="rank">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="clinic">医療・クリニック</a><a class="tag" href="#" data-ax="area" data-v="sakai">堺市</a><a class="tag svc" href="#" data-ax="svc" data-v="rumor">風評被害対策</a>
+            </div>
+            <a class="title stretch" href="#">大阪府堺市 整形外科｜検索候補に出る言葉への対応</a>
+            <div class="meta">スタッフ20名規模／支援期間 4ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">指名検索の候補 <em>改善</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="ec" data-area="kyoto" data-svc="ads" data-res="cost">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="ec">小売・EC</a><a class="tag" href="#" data-ax="area" data-v="kyoto">京都府</a><a class="tag svc" href="#" data-ax="svc" data-v="ads">Web広告運用代行</a>
+            </div>
+            <a class="title stretch" href="#">京都市 和菓子店（EC）｜広告とSEOの役割を分けて費用対効果を改善</a>
+            <div class="meta">従業員25名規模／支援期間 11ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">ROAS 180% → <em>320%</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="shigyo" data-area="osaka" data-svc="sns" data-res="inquiry">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="shigyo">士業</a><a class="tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="tag svc" href="#" data-ax="svc" data-v="sns">SNS運用代行</a>
+            </div>
+            <a class="title stretch" href="#">大阪市 税理士事務所｜SNSでの認知を相談につなげる</a>
+            <div class="meta">所員10名規模／支援期間 8ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">問い合わせ 月3件 → <em>月11件</em></span>
+            </div>
+          </div>
+          <div class="card" data-ind="const" data-area="hyogo" data-svc="build" data-res="access">
+            <div class="thumb"><span>サイトキャプチャ</span></div>
+            <div class="tags">
+              <a class="tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="tag" href="#" data-ax="area" data-v="hyogo">兵庫県</a><a class="tag svc" href="#" data-ax="svc" data-v="build">サイト制作</a>
+            </div>
+            <a class="title stretch" href="#">兵庫県 住宅設備メーカー｜採用と集客を1サイトで両立</a>
+            <div class="meta">従業員80名規模／支援期間 1年3ヶ月</div>
+            <div class="resultbar">
+              <span class="rb-l">RESULT</span><span class="rb-v">月間セッション <em>4.1倍</em></span>
+            </div>
+          </div>
         </div>
+        <nav class="pager" aria-label="ページ送り">
+          <span class="pg cur">1</span><a class="pg" href="#">2</a>
+          <a class="pg nx" href="#">次へ</a>
+        </nav>
+      
       </div>
 
       <div class="cta">
@@ -374,20 +499,49 @@ body.noanno .legend{display:none}
 
 <script>
 (function(){
-  var b=document.getElementById('tg');
-  b.addEventListener('click',function(){
-    var on=document.body.classList.toggle('noanno')===false;
-    b.setAttribute('aria-pressed',on?'true':'false');
-    b.textContent=on?'注釈を表示中（クリックで消す）':'注釈は非表示（クリックで出す）';
+  var tabs  = [].slice.call(document.querySelectorAll('.ftab'));
+  var chips = [].slice.call(document.querySelectorAll('.chip'));
+  var cards = [].slice.call(document.querySelectorAll('.card'));
+  var AX2PANEL = {ind:'p1', area:'p2', svc:'p3', res:'p4'};
+  var state = {ind:'all', area:'all', svc:'all', res:'all'};
+
+  function showPanel(pid){
+    tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.p === pid)); });
+    [].forEach.call(document.querySelectorAll('.fpanel'), function(p){ p.classList.remove('on'); });
+    var el = document.getElementById(pid); if(el) el.classList.add('on');
+  }
+  function apply(){
+    var n = 0;
+    cards.forEach(function(c){
+      var ok = Object.keys(state).every(function(k){
+        return state[k] === 'all' || c.dataset[k] === state[k];
+      });
+      c.classList.toggle('hide', !ok);
+      if(ok) n++;
+    });
+    var filtered = Object.keys(state).some(function(k){ return state[k] !== 'all'; });
+    [].forEach.call(document.querySelectorAll('.fcount b'), function(b){ b.textContent = filtered ? n : 24; });
+    var pager = document.querySelector('.pager');
+    if(pager) pager.style.display = filtered ? 'none' : '';
+  }
+  function select(ax, v){
+    state[ax] = v;
+    chips.forEach(function(c){ if(c.dataset.ax === ax) c.classList.toggle('on', c.dataset.v === v); });
+    showPanel(AX2PANEL[ax]);
+    apply();
+  }
+
+  tabs.forEach(function(t){ t.addEventListener('click', function(){ showPanel(t.dataset.p); }); });
+  chips.forEach(function(c){
+    c.addEventListener('click', function(e){ e.preventDefault(); select(c.dataset.ax, c.dataset.v); });
   });
-  // 絞り込みタブ
-  var tabs=[].slice.call(document.querySelectorAll('.ftab'));
-  tabs.forEach(function(t){
-    t.addEventListener('click',function(){
-      tabs.forEach(function(x){x.setAttribute('aria-selected','false');});
-      t.setAttribute('aria-selected','true');
-      [].forEach.call(document.querySelectorAll('.fpanel'),function(p){p.classList.remove('on');});
-      document.getElementById(t.dataset.p).classList.add('on');
+  // カード内のタグ → 絞り込み検索ゾーンでチップを押したのと同じ動き
+  [].forEach.call(document.querySelectorAll('.card .tag'), function(t){
+    t.addEventListener('click', function(e){
+      e.preventDefault(); e.stopPropagation();
+      select(t.dataset.ax, t.dataset.v);
+      var fl = document.querySelector('.filters');
+      if(fl) fl.scrollIntoView({behavior:'smooth', block:'center'});
     });
   });
 })();
