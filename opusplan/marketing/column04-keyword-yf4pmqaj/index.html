@@ -135,14 +135,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /* 黄色マーカー */
 .p-blog__content-dec .op-marker{background:linear-gradient(transparent 58%,#FFF1A8 58%);font-weight:bold}
 
-/* ===== スクリーンショット枠（画像が入るまでの仮表示） ===== */
-.p-blog__content-dec .op-shot{margin:28px 0}
-.p-blog__content-dec .op-shot img{width:100%;height:auto;border:1px solid var(--op-line);border-radius:4px}
-.p-blog__content-dec .op-shot__ph{border:2px dashed #C9A227;background:repeating-linear-gradient(135deg,#FFFDF5,#FFFDF5 10px,#FFF8E5 10px,#FFF8E5 20px);padding:22px 24px;border-radius:4px}
-.p-blog__content-dec .op-shot__no{display:inline-block;background:#C9A227;color:#fff;font-size:12px;font-weight:bold;border-radius:3px;padding:2px 10px;margin:0 0 8px!important}
-.p-blog__content-dec .op-shot__t{font-weight:bold;color:#7A5F0B;margin:0 0 8px!important}
-.p-blog__content-dec .op-shot__how{font-size:13px;color:#6B5316;line-height:1.9;margin:0 0 8px!important}
-.p-blog__content-dec .op-shot__path{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#7A5F0B;background:#fff;border:1px solid #E8D4A8;border-radius:3px;padding:5px 9px;margin:0!important;display:inline-block}
+/* ===== 操作画面のスクリーンショット ===== */
+.p-blog__content-dec .op-shot{margin:22px 0 28px;border:1px solid var(--op-line);border-radius:6px;background:#fff;overflow:hidden}
+.p-blog__content-dec .op-shot img{display:block;width:100%;height:auto;margin:0;border:0;border-radius:0}
+.p-blog__content-dec .op-shot figcaption{padding:13px 16px;background:#F7F8FA;border-top:1px solid var(--op-line);font-size:13px;line-height:1.7;color:#555;text-align:left}
+.p-blog__content-dec .op-shot__title{display:block;font-weight:bold;color:var(--op-navy);margin-bottom:5px}
+.p-blog__content-dec .op-shot figcaption>*{margin:0}
+.p-blog__content-dec .op-shot__item{display:block;position:relative;padding-left:26px;margin:3px 0 0}
+.p-blog__content-dec .op-shot__zoom{display:block;margin-top:8px!important;font-size:12px;color:#8A8A8A}
+.p-blog__content-dec .op-shot__item i{position:absolute;left:0;top:.2em;width:18px;height:18px;border-radius:50%;
+  background:#E8720C;color:#fff;font-style:normal;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center}
 /* 図解（自動生成） */
 .p-blog__content-dec .op-ui{border:1px solid var(--op-line);border-radius:4px;overflow:hidden;margin:0}
 .p-blog__content-dec .op-ui svg{display:block;width:100%;height:auto}

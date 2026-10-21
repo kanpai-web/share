@@ -110,6 +110,17 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec ul.op-check li{list-style:none;position:relative;padding-left:28px;margin:6px 0}
 .p-blog__content-dec ul.op-check li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:7px;border-left:2px solid var(--op-accent);border-bottom:2px solid var(--op-accent);transform:rotate(-45deg);background:none;border-radius:0}
 
+/* ===== 操作画面のスクリーンショット ===== */
+.p-blog__content-dec .op-shot{margin:22px 0 28px;border:1px solid var(--op-line);border-radius:6px;background:#fff;overflow:hidden}
+.p-blog__content-dec .op-shot img{display:block;width:100%;height:auto;margin:0;border:0;border-radius:0}
+.p-blog__content-dec .op-shot figcaption{padding:13px 16px;background:#F7F8FA;border-top:1px solid var(--op-line);font-size:13px;line-height:1.7;color:#555;text-align:left}
+.p-blog__content-dec .op-shot__title{display:block;font-weight:bold;color:var(--op-navy);margin-bottom:5px}
+.p-blog__content-dec .op-shot figcaption>*{margin:0}
+.p-blog__content-dec .op-shot__item{display:block;position:relative;padding-left:26px;margin:3px 0 0}
+.p-blog__content-dec .op-shot__zoom{display:block;margin-top:8px!important;font-size:12px;color:#8A8A8A}
+.p-blog__content-dec .op-shot__item i{position:absolute;left:0;top:.2em;width:18px;height:18px;border-radius:50%;
+  background:#E8720C;color:#fff;font-style:normal;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center}
+
 /* 関連記事・ご相談への導線（案B／ラベルは文頭・本文は右揃え） */
 .p-blog__content-dec .op-more{display:flex;align-items:center;gap:18px;width:fit-content;max-width:100%;
   margin:4px 0 28px auto;text-decoration:none;background:#EEF4FF;border-radius:8px;

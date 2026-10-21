@@ -135,14 +135,19 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /* 黄色マーカー */
 .p-blog__content-dec .op-marker{background:linear-gradient(transparent 58%,#FFF1A8 58%);font-weight:bold}
 
-/* ===== スクリーンショット枠（画像が入るまでの仮表示） ===== */
-.p-blog__content-dec .op-shot{margin:28px 0}
-.p-blog__content-dec .op-shot img{width:100%;height:auto;border:1px solid var(--op-line);border-radius:4px}
-.p-blog__content-dec .op-shot__ph{border:2px dashed #C9A227;background:repeating-linear-gradient(135deg,#FFFDF5,#FFFDF5 10px,#FFF8E5 10px,#FFF8E5 20px);padding:22px 24px;border-radius:4px}
-.p-blog__content-dec .op-shot__no{display:inline-block;background:#C9A227;color:#fff;font-size:12px;font-weight:bold;border-radius:3px;padding:2px 10px;margin:0 0 8px!important}
-.p-blog__content-dec .op-shot__t{font-weight:bold;color:#7A5F0B;margin:0 0 8px!important}
-.p-blog__content-dec .op-shot__how{font-size:13px;color:#6B5316;line-height:1.9;margin:0 0 8px!important}
-.p-blog__content-dec .op-shot__path{font-family:ui-monospace,Menlo,monospace;font-size:12px;color:#7A5F0B;background:#fff;border:1px solid #E8D4A8;border-radius:3px;padding:5px 9px;margin:0!important;display:inline-block}
+/* ===== 今回の更新箇所（確認用・公開前に外す） ===== */
+.p-blog__content-dec .op-newbox{outline:2px solid #C8102E;outline-offset:4px;border-radius:3px}
+
+/* ===== 操作画面のスクリーンショット ===== */
+.p-blog__content-dec .op-shot{margin:22px 0 28px;border:1px solid var(--op-line);border-radius:6px;background:#fff;overflow:hidden}
+.p-blog__content-dec .op-shot img{display:block;width:100%;height:auto;margin:0;border:0;border-radius:0}
+.p-blog__content-dec .op-shot figcaption{padding:13px 16px;background:#F7F8FA;border-top:1px solid var(--op-line);font-size:13px;line-height:1.7;color:#555;text-align:left}
+.p-blog__content-dec .op-shot__title{display:block;font-weight:bold;color:var(--op-navy);margin-bottom:5px}
+.p-blog__content-dec .op-shot figcaption>*{margin:0}
+.p-blog__content-dec .op-shot__item{display:block;position:relative;padding-left:26px;margin:3px 0 0}
+.p-blog__content-dec .op-shot__zoom{display:block;margin-top:8px!important;font-size:12px;color:#8A8A8A}
+.p-blog__content-dec .op-shot__item i{position:absolute;left:0;top:.2em;width:18px;height:18px;border-radius:50%;
+  background:#E8720C;color:#fff;font-style:normal;font-size:11px;font-weight:bold;display:flex;align-items:center;justify-content:center}
 /* 図解（自動生成） */
 .p-blog__content-dec .op-ui{border:1px solid var(--op-line);border-radius:4px;overflow:hidden;margin:0}
 .p-blog__content-dec .op-ui svg{display:block;width:100%;height:auto}
@@ -587,6 +592,30 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <h2 id="s4">「すでに来ている言葉」の調べ方</h2>
 <p>同じ「検索結果」の画面を下にスクロールすると、「クエリ」というタブがあります。<strong>クエリ＝お客さまが実際に入力した検索ワード</strong>です。ここが、サーチコンソールでいちばん価値のある部分です。</p>
 <p>キーワードツールで「これから狙う言葉」を探す前に、まずこの画面で<strong>すでに自社が持っている言葉</strong>を確認してください。ゼロから考えるより、すでに表示されている言葉を伸ばすほうが、はるかに早く結果が出ます。</p>
+
+<figure class="op-shot op-newbox">
+  <a href="images/sc-performance.png" target="_blank" rel="noopener"><img src="images/sc-performance.png" alt="サーチコンソールの検索パフォーマンス画面。左メニュー・期間・4つの数字・エクスポートの位置"></a>
+  <figcaption>
+    <span class="op-shot__title">図1　検索パフォーマンスを開いたところ</span>
+    <span class="op-shot__item"><i>1</i>左メニューの「検索パフォーマンス」</span>
+    <span class="op-shot__item"><i>2</i>期間。「12 か月」に広げる</span>
+    <span class="op-shot__item"><i>3</i>4つの数字。平均CTRと平均掲載順位はクリックしてオンにする</span>
+    <span class="op-shot__item"><i>4</i>エクスポート。一覧をスプレッドシートやCSVに書き出せる</span>
+    <span class="op-shot__zoom">画像をクリックすると原寸で開きます</span>
+  </figcaption>
+</figure>
+
+<figure class="op-shot op-newbox">
+  <a href="images/sc-query.png" target="_blank" rel="noopener"><img src="images/sc-query.png" alt="サーチコンソールのクエリ一覧。クエリタブ・クリック数・表示回数とCTR・掲載順位の位置"></a>
+  <figcaption>
+    <span class="op-shot__title">図2　「クエリ」タブに切り替えたところ</span>
+    <span class="op-shot__item"><i>1</i>「クエリ」タブ。ここに検索ワードが並ぶ</span>
+    <span class="op-shot__item"><i>2</i>クリック数。見出しをクリックすると並べ替えできる</span>
+    <span class="op-shot__item"><i>3</i>表示回数とCTR。表示が多いのにCTRが低い＝伸ばせる余地</span>
+    <span class="op-shot__item"><i>4</i>掲載順位。11〜20位はあと少しで1ページ目</span>
+    <span class="op-shot__zoom">画像をクリックすると原寸で開きます</span>
+  </figcaption>
+</figure>
 
 <ol class="op-howto">
   <li><strong>クエリの一覧を開く</strong>左メニューの<strong>「検索パフォーマンス」＞「検索結果」</strong>を開き、グラフの下にある<strong>「クエリ」タブ</strong>を選びます。ここに、自社サイトが検索結果に表示されたときの検索ワードが一覧で並びます。</li>
