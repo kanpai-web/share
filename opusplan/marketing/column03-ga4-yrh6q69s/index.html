@@ -110,14 +110,28 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec ul.op-check li{list-style:none;position:relative;padding-left:28px;margin:6px 0}
 .p-blog__content-dec ul.op-check li::before{content:"";position:absolute;left:4px;top:.55em;width:12px;height:7px;border-left:2px solid var(--op-accent);border-bottom:2px solid var(--op-accent);transform:rotate(-45deg);background:none;border-radius:0}
 
+/* ===== 今回の更新箇所（確認用・公開前に外す） ===== */
+.p-blog__content-dec .op-new,
+.p-blog__content-dec .op-new strong,
+.p-blog__content-dec .op-new a,
+.p-blog__content-dec .op-new span{color:#C8102E!important}
+.p-blog__content-dec h2.op-new,
+.p-blog__content-dec h3.op-new{color:#C8102E!important}
+.p-blog__content-dec .op-newbox{outline:2px solid #C8102E;outline-offset:4px;border-radius:3px}
+.p-blog__content-dec .op-more.op-newbox::before{display:none}
+.p-blog__content-dec .op-newbox::before{content:"今回の更新";display:inline-block;background:#C8102E;
+  color:#fff;font-size:11px;font-weight:bold;border-radius:3px;padding:2px 9px;margin-bottom:6px}
+
 /* 関連記事・ご相談への導線（案B／ラベルは文頭・本文は右揃え） */
 .p-blog__content-dec .op-more{display:flex;align-items:center;gap:18px;width:fit-content;max-width:100%;
   margin:4px 0 28px auto;text-decoration:none;background:#EEF4FF;border-radius:8px;
   padding:14px 16px 14px 24px;transition:background-color .15s}
 .p-blog__content-dec .op-more:hover{background:#E4ECFC}
-.p-blog__content-dec .op-more__tx{text-align:right}
+.p-blog__content-dec .op-more__tx{text-align:right;margin:0}
+.p-blog__content-dec .op-more__tx>*,
+.p-blog__content-dec .op-more__ar{margin:0}
 .p-blog__content-dec .op-more .op-more__label{display:block;text-align:left;
-  font-size:10.5px;font-weight:700;color:#7C86A0;letter-spacing:.14em;margin-bottom:3px}
+  font-size:10.5px;font-weight:700;color:#7C86A0;letter-spacing:.14em;margin:0 0 3px}
 .p-blog__content-dec .op-more .op-more__text{display:block;font-size:15px;font-weight:700;
   color:var(--op-navy);line-height:1.5}
 .p-blog__content-dec .op-more__ar{flex:none;width:32px;height:32px;border-radius:50%;
@@ -548,7 +562,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 
 <h3>設定の手順</h3>
-<ol class="op-howto">
+<ol class="op-howto op-newbox">
   <li><strong>拡張計測機能を確認する</strong>画面左下の歯車アイコン（管理）を開き、「プロパティ設定」の中の<strong>データの収集と修正 ＞ データ ストリーム</strong>へ進みます。一覧から自社サイトのストリームをクリックすると「ウェブ ストリームの詳細」が開き、その中ほどに<strong>拡張計測機能</strong>の項目があります。右側のスイッチがオンになっていれば、基本の自動計測は動いています。<br>
   ここで注意したいのが、<strong>「測定中：」の横に出ているのは一部だけ</strong>だという点です。初期表示では「ページビュー数／スクロール数／離脱クリック」の3つしか並んでおらず、肝心の「フォームの操作」が見当たりません。その右にある<strong>「＋ 他 ◯ 個」</strong>という青い文字をクリックすると残りが開くので、そこに<strong>「フォームの操作」</strong>があり、グレーアウトしていないかを確認してください。見当たらない場合は、さらに右端の<strong>歯車アイコン</strong>から個別にオン・オフを切り替えられます。</li>
   <li><strong>イベントが記録されているか見る</strong>レポート ＞ エンゲージメント ＞ イベントを開き、<strong>form_submit</strong>という行があるか確認します。フォーム送信があれば、ここに件数が入っています。<br>
@@ -595,14 +609,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <p>Directは「URLを直接入力した人」と思われがちですが、実際には<strong>計測できなかった流入がまとめて入る枠</strong>です。メールのリンク、QRコード、一部のアプリ経由、そして営業目的の自動アクセスなども、ここに分類されます。</p>
 <p>そのため、<strong>施策の効果を見たいときはDirectを除いて、Organic Searchに絞って見る</strong>のがおすすめです。本当にニーズがあって検索してきた人の動きが見えやすくなります。</p>
 
-<h3 id="organic">Organic Search だけに絞って見る方法</h3>
-<p>絞り込みには、手早い方法とレポート全体に効かせる方法の2つがあります。</p>
-<ol class="op-howto">
+<h3 id="organic" class="op-new">Organic Search だけに絞って見る方法</h3>
+<p class="op-new">絞り込みには、手早い方法とレポート全体に効かせる方法の2つがあります。</p>
+<ol class="op-howto op-newbox">
   <li><strong>表のなかだけを絞り込む（手早い方法）</strong>レポート ＞ 集客 ＞ トラフィック獲得 を開き、表の右上にある<strong>虫めがねの検索窓</strong>に「Organic Search」と入力します。該当する行だけが残るので、数字をさっと確認したいときはこれで十分です。ただしグラフ部分は全体のままです。</li>
   <li><strong>レポート全体を絞り込む（比較機能）</strong>画面上部の<strong>「＋」（比較を追加）</strong>をクリックし、ディメンションで<strong>「セッションのデフォルト チャネル グループ」</strong>、一致条件を「完全一致」、値に<strong>「Organic Search」</strong>を指定して適用します。グラフも表も検索流入だけの数字になり、他のレポートに移動しても絞り込みが保たれます。</li>
   <li><strong>期間をそろえて比べる</strong>右上の日付をクリックし、「比較」をオンにして前年同月や前期間を指定すると、施策の前後が並べて表示されます。お問い合わせはもともと月ごとのばらつきが大きいため、同じ条件でそろえて見ることが大切です。</li>
 </ol>
-<div class="op-note">
+<div class="op-note op-newbox">
   <p class="op-note__title">覚えておきたい使い分け</p>
   <p>サイト全体の規模を把握したいときは<strong>Directを含めた全体</strong>、施策が効いたかを判断したいときは<strong>Organic Searchだけ</strong>。同じレポートでも、見たい目的によって絞り込みを切り替えてください。</p>
 </div>
