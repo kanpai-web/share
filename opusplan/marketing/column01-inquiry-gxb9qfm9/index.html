@@ -117,26 +117,27 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .p-blog__content-dec h2.op-new,
 .p-blog__content-dec h3.op-new{color:#C8102E!important}
 .p-blog__content-dec .op-newbox{outline:2px solid #C8102E;outline-offset:4px;border-radius:3px}
+.p-blog__content-dec .op-more.op-newbox::before{display:none}
 .p-blog__content-dec .op-newbox::before{content:"今回の更新";display:inline-block;background:#C8102E;
   color:#fff;font-size:11px;font-weight:bold;border-radius:3px;padding:2px 9px;margin-bottom:6px}
 
-/* 関連記事リンク */
-.p-blog__content-dec .op-more{display:block;margin:14px 0 28px;padding:14px 20px 14px 18px;
-  background:#F7F8FA;border:1px solid var(--op-line);border-left:4px solid var(--op-navy);
-  text-decoration:none;position:relative}
-.p-blog__content-dec .op-more:hover{background:#F0F3F8}
-.p-blog__content-dec .op-more .op-more__label{display:block;font-size:12px;color:#777;margin-bottom:3px}
-.p-blog__content-dec .op-more .op-more__text{display:block;font-weight:bold;color:var(--op-navy);
-  font-size:15px;line-height:1.6;padding-right:22px}
-.p-blog__content-dec .op-more .op-more__text::after{content:"";position:absolute;right:18px;top:50%;
-  width:7px;height:7px;border-top:2px solid var(--op-navy);border-right:2px solid var(--op-navy);
+/* 関連記事・ご相談への導線（さりげない右寄せリンク） */
+.p-blog__content-dec .op-more{display:flex;width:fit-content;max-width:100%;
+  margin:4px 0 30px auto;align-items:center;gap:11px;
+  padding:10px 18px 10px 21px;border:1px solid #DCE0E8;border-radius:100px;background:#fff;
+  text-decoration:none;line-height:1.5;transition:border-color .15s,background-color .15s}
+.p-blog__content-dec .op-more:hover{border-color:var(--op-navy);background:#F8F9FC}
+.p-blog__content-dec .op-more .op-more__label{font-size:11.5px;color:#949AA6;white-space:nowrap}
+.p-blog__content-dec .op-more .op-more__text{font-size:14px;color:var(--op-navy);font-weight:500;
+  position:relative;padding-right:19px}
+.p-blog__content-dec .op-more .op-more__text::after{content:"";position:absolute;right:3px;top:50%;
+  width:6px;height:6px;border-top:1.5px solid var(--op-navy);border-right:1.5px solid var(--op-navy);
   transform:translateY(-50%) rotate(45deg)}
-/* 相談ボタン */
-.p-blog__content-dec .op-cta{text-align:center;margin:22px 0 32px}
-.p-blog__content-dec .op-cta a{display:inline-block;background:var(--op-navy);color:#fff;
-  font-weight:bold;font-size:15px;text-decoration:none;border-radius:100px;padding:14px 40px;line-height:1.5}
-.p-blog__content-dec .op-cta a:hover{opacity:.88}
-.p-blog__content-dec .op-cta__note{display:block;font-size:12px;color:#777;margin-top:8px}
+@media screen and (max-width:600px){
+  .p-blog__content-dec .op-more{padding:10px 15px 10px 17px;gap:8px}
+  .p-blog__content-dec .op-more .op-more__text{font-size:13.5px}
+  .p-blog__content-dec .op-more .op-more__label{font-size:11px}
+}
 /* 黄色マーカー */
 .p-blog__content-dec .op-marker{background:linear-gradient(transparent 58%,#FFF1A8 58%);font-weight:bold}
 
@@ -666,10 +667,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </table>
 </div>
 <p>どれか1つが正解というわけではなく、業種や目的、予算によって最適な組み合わせは変わります。</p>
-<div class="op-cta op-newbox">
-  <a href="https://opus-plan.net/contact/">向いている対策を相談する（無料）</a>
-  <span class="op-cta__note">現在の状況をうかがって、優先順位をご提案します</span>
-</div>
+<a class="op-more op-newbox" href="https://opus-plan.net/contact/">
+  <span class="op-more__label">ご相談</span>
+  <span class="op-more__text">向いている対策を相談する（無料）</span>
+</a>
 
 <!-- ============ H2-4 ============ -->
 <h2 id="sec4">アクセスはあるのにお問い合わせが来ない場合の原因と改善方法</h2>
@@ -854,10 +855,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   <div class="op-timeline__item"><p class="op-timeline__when">以降</p><p>結果をもとに、次に取り組むことを決めて繰り返す</p></div>
 </div>
 <p>お問い合わせは月ごとのばらつきが大きいため、1か月だけの結果で判断せず、数か月の流れで見ることが大切です。</p>
-<div class="op-cta op-newbox">
-  <a href="https://opus-plan.net/contact/">分析・評価を相談する（無料）</a>
-  <span class="op-cta__note">いまの数字の見方から、一緒に整理します</span>
-</div>
+<a class="op-more op-newbox" href="https://opus-plan.net/contact/">
+  <span class="op-more__label">ご相談</span>
+  <span class="op-more__text">分析・評価を相談する（無料）</span>
+</a>
 
 <!-- ============ まとめ ============ -->
 <h2 id="sec8">まとめ</h2>
@@ -874,13 +875,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 </div>
 <p>原因が分かれば、やるべきことは自然と絞られていきます。できるところから一つずつ取り組んでみてください。</p>
 
-<div class="op-cta op-newbox">
+<div class="op-cta">
   <p class="op-cta__lead">「自社の場合はどちらが原因？」から、一緒に確認します</p>
   <p>オーパスプランでは、アクセス解析をもとにした原因の切り分けから、SEO・Web広告・サイト改善まで、状況に合わせてご提案しています。「何から手を付ければいいか分からない」という段階でも、お気軽にご相談ください。</p>
   <div class="op-cta__btns">
     <a class="op-cta__btn op-cta__btn--main" href="https://opus-plan.net/contact">無料で相談する</a>
     <a class="op-cta__btn" href="https://opus-plan.net/download">資料をダウンロードする</a>
   </div>
+</div>
 </div>
 
 <hr />
