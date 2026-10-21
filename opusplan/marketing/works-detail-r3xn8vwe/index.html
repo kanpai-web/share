@@ -73,7 +73,11 @@ body{background:#e8eaf0;color:var(--ink);
 
 /* ── 一覧カード ── */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-bottom:40px}
-.card{display:flex;flex-direction:column}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  border-radius:6px;transition:transform .18s ease, box-shadow .18s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,60,.13)}
+    .card:hover .title{color:var(--navy)}
+    .card:hover .thumb{filter:brightness(1.03)}
 .card .thumb{width:100%;aspect-ratio:16/10;border-radius:4px;position:relative;overflow:hidden;
   background:linear-gradient(135deg,#dfe6f5 0%,#eef3fb 60%,#e7eefb 100%);display:flex;align-items:center;justify-content:center}
 .card .thumb span{font-size:11px;color:#9aa6c4;letter-spacing:.1em}
@@ -113,7 +117,7 @@ body{background:#e8eaf0;color:var(--ink);
 .dcol-main{min-width:0;padding-top:52px}
 
 /* サイド：概要カード（ヒーローに重ねる） */
-.aside{margin-top:-78px;position:sticky;top:20px}
+.aside{margin-top:52px;position:sticky;top:20px}
 .sumcard{background:#fff;border-radius:8px;box-shadow:0 8px 26px rgba(10,10,60,.15);overflow:hidden}
 .sumcard .sc-hd{background:var(--navy-dp);color:#fff;font-size:12px;font-weight:700;letter-spacing:.16em;padding:13px 20px}
 .sumcard .sc-b{padding:6px 20px 18px}
@@ -250,7 +254,7 @@ body.noanno .legend{display:none}
 
 @media (max-width:980px){
   .dbody{grid-template-columns:1fr;gap:0}
-  .aside{margin-top:-70px;position:static}
+  .aside{margin-top:28px;position:static}
   .dcol-main{padding-top:34px}
   .sec.hl{margin-left:0;margin-right:0}
   .cards,.results,.phase{grid-template-columns:1fr}
@@ -318,9 +322,7 @@ body.noanno .legend{display:none}
             <div class="sc-b">
               <dl><dt>お客様の業種・規模</dt><dd>葬儀、家族葬<br>従業員15名・年商3億円規模</dd></dl>
               <dl><dt>エリア</dt><dd>大阪府堺市（堺区・北区・中区）</dd></dl>
-              <dl><dt>サイト種別</dt><dd>コーポレートサイト・サービスサイト</dd></dl>
               <dl><dt>ご支援した内容</dt><dd><span class="pill">SEO対策</span><span class="pill">サイト構成の見直し</span><span class="pill">記事作成の運用代行</span></dd></dl>
-              <dl><dt>支援期間</dt><dd>2025年4月〜継続中（1年6ヶ月）</dd></dl>
               <dl><dt>効果</dt><dd>地域検索からの問い合わせ増加</dd></dl>
             </div>
           </div>

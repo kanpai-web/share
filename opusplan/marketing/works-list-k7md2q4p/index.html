@@ -73,7 +73,11 @@ body{background:#e8eaf0;color:var(--ink);
 
 /* ── 一覧カード ── */
 .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-bottom:40px}
-.card{display:flex;flex-direction:column}
+.card{display:flex;flex-direction:column;text-decoration:none;color:inherit;
+  border-radius:6px;transition:transform .18s ease, box-shadow .18s ease}
+    .card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,60,.13)}
+    .card:hover .title{color:var(--navy)}
+    .card:hover .thumb{filter:brightness(1.03)}
 .card .thumb{width:100%;aspect-ratio:16/10;border-radius:4px;position:relative;overflow:hidden;
   background:linear-gradient(135deg,#dfe6f5 0%,#eef3fb 60%,#e7eefb 100%);display:flex;align-items:center;justify-content:center}
 .card .thumb span{font-size:11px;color:#9aa6c4;letter-spacing:.1em}
@@ -113,7 +117,7 @@ body{background:#e8eaf0;color:var(--ink);
 .dcol-main{min-width:0;padding-top:52px}
 
 /* サイド：概要カード（ヒーローに重ねる） */
-.aside{margin-top:-78px;position:sticky;top:20px}
+.aside{margin-top:52px;position:sticky;top:20px}
 .sumcard{background:#fff;border-radius:8px;box-shadow:0 8px 26px rgba(10,10,60,.15);overflow:hidden}
 .sumcard .sc-hd{background:var(--navy-dp);color:#fff;font-size:12px;font-weight:700;letter-spacing:.16em;padding:13px 20px}
 .sumcard .sc-b{padding:6px 20px 18px}
@@ -250,7 +254,7 @@ body.noanno .legend{display:none}
 
 @media (max-width:980px){
   .dbody{grid-template-columns:1fr;gap:0}
-  .aside{margin-top:-70px;position:static}
+  .aside{margin-top:28px;position:static}
   .dcol-main{padding-top:34px}
   .sec.hl{margin-left:0;margin-right:0}
   .cards,.results,.phase{grid-template-columns:1fr}
@@ -263,7 +267,7 @@ body.noanno .legend{display:none}
   <div class="inner">
     <div class="eyebrow">MOCKUP ／ opus-plan.net</div>
     <h1>実績一覧ページ</h1>
-    <p>実績改善シートで整理した「一覧の絞り込み軸」を、実際のサイトのデザインに当てはめたものです。業種・エリア・サービス・成果の4軸をタブで切り替え、カードには成果バッジを載せています。<br>
+    <p>実績改善シートで整理した「一覧の絞り込み軸」を、実際のサイトのデザインに当てはめたものです。業種・エリア・サービス・成果の4軸をタブで切り替え、カードには成果バッジを載せています。カードはどこをクリックしても詳細ページへ移動します。<br>
     配色・ボタン・見出しの形は現在の opus-plan.net から取っています（ネイビー #000080／本文 #363636／角丸ピルのボタン）。
     <b>オレンジの番号は、いま無くて新しく作る必要があるパーツ</b>です。下のボタンで表示を切り替えられます。</p>
   </div>
@@ -330,7 +334,7 @@ body.noanno .legend{display:none}
 
       <div class="wrap">
         <div class="cards">
-          <div class="card">
+          <a class="card" href="#">
             <div class="thumb"><span>サイトキャプチャ</span></div>
             <div class="tags"><span class="tag">葬儀・終活</span><span class="tag">堺市</span><span class="tag svc">SEO対策</span></div>
             <div class="title">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</div>
@@ -339,24 +343,21 @@ body.noanno .legend{display:none}
               <div class="anno" style="top:-11px;right:-11px">2</div>
               <span class="rb-l">RESULT</span><span class="rb-v">問い合わせ 月1件 → <em>月8件</em></span>
             </div>
-            <a class="link" href="#">詳しく見る</a>
-          </div>
-          <div class="card">
+          </a>
+          <a class="card" href="#">
             <div class="thumb"><span>サイトキャプチャ</span></div>
             <div class="tags"><span class="tag">建設・リフォーム</span><span class="tag">大阪市</span><span class="tag svc">Web広告運用代行</span></div>
             <div class="title">大阪市 リフォーム会社｜広告の無駄打ちを削って受注単価を改善</div>
             <div class="meta">従業員30名規模／支援期間 10ヶ月</div>
             <div class="resultbar"><span class="rb-l">RESULT</span><span class="rb-v">獲得単価 <em>-42%</em></span></div>
-            <a class="link" href="#">詳しく見る</a>
-          </div>
-          <div class="card">
+          </a>
+          <a class="card" href="#">
             <div class="thumb"><span>サイトキャプチャ</span></div>
             <div class="tags"><span class="tag">医療・クリニック</span><span class="tag">京都府</span><span class="tag svc">MEO対策</span></div>
             <div class="title">京都市 歯科クリニック｜MEOで地図検索からの来院を増やす</div>
             <div class="meta">スタッフ8名・1拠点／支援期間 8ヶ月</div>
             <div class="resultbar"><span class="rb-l">RESULT</span><span class="rb-v">地図経由の予約 <em>3.1倍</em></span></div>
-            <a class="link" href="#">詳しく見る</a>
-          </div>
+          </a>
         </div>
       </div>
 
