@@ -105,20 +105,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .owl-panel{display:none}
 .owl-panel.is-on{display:block}
 .owl-chips{display:flex;flex-wrap:wrap;gap:8px}
-.owl-chip{display:inline-block;font-size:13px;color:var(--ink);background:#fff;border:1px solid var(--line2); border-radius:100px;padding:8px 20px;text-decoration:none;transition:.15s}
+.owl-chip{display:inline-block;font-size:13px;color:var(--ink);background:#fff;border:1px solid var(--line2); border-radius:100px;padding:8px 20px;text-decoration:none;transition:.15s;cursor:pointer;user-select:none}
 .owl-chip:hover{border-color:var(--navy);color:var(--navy)}
 .owl-chip.is-on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
 .owl-count{font-size:11.5px;color:var(--ink-faint);margin-top:14px}
-.owl-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-bottom:40px}
-.owl-card{display:flex;flex-direction:column;position:relative;border-radius:6px; transition:transform .18s ease, box-shadow .18s ease}
-.owl-card:hover{transform:translateY(-4px);box-shadow:0 14px 30px rgba(10,10,60,.13)}
-.owl-card:hover .owl-card__title{color:var(--navy)}
-.owl-card:hover .owl-card__thumb{filter:brightness(1.03)}
-.owl-card .owl-card__title.owl-stretch{text-decoration:none;display:block;color:var(--ink)}
-.owl-card .owl-card__title.owl-stretch::after{content:"";position:absolute;inset:0;z-index:1}
-.owl-card .owl-card__tags{position:relative;z-index:2}
-.owl-card .owl-card__tags .owl-tag{text-decoration:none;cursor:pointer;transition:background .15s,color .15s,border-color .15s}
-.owl-card .owl-card__tags .owl-tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
 .owl-card.is-hide{display:none}
 .l-works .pagination .nav-links{display:flex;justify-content:center;align-items:center;gap:8px;margin:38px 0 4px;flex-wrap:wrap}
 .l-works .pagination .page-numbers{min-width:38px;height:38px;display:flex;align-items:center;justify-content:center; border:1px solid var(--line);border-radius:4px;font-size:14px;color:var(--ink);text-decoration:none;background:#fff}
@@ -126,20 +116,33 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .l-works .pagination .page-numbers:not(.current):hover{border-color:var(--navy);color:var(--navy)}
 .l-works .pagination .screen-reader-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .owl-count b{color:var(--navy);font-size:15px}
-.owl-card .owl-card__thumb{width:100%;aspect-ratio:16/10;border-radius:4px;position:relative;overflow:hidden; background:linear-gradient(135deg,#dfe6f5 0%,#eef3fb 60%,#e7eefb 100%);display:flex;align-items:center;justify-content:center}
-.owl-card .owl-card__thumb span{font-size:11px;color:#9aa6c4;letter-spacing:.1em}
-.owl-card .owl-card__tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:13px}
-.owl-tag{font-size:10.5px;background:var(--tint);color:var(--navy);border-radius:3px;padding:3px 9px;font-weight:700}
-.owl-tag.owl-tag--svc{background:var(--navy);color:#fff}
-.owl-card .owl-card__title{font-size:16px;font-weight:bold;line-height:1.5;margin-top:11px;color:var(--ink)}
-.owl-card .owl-card__meta{font-size:11.5px;color:var(--ink-sub);margin-top:8px;line-height:1.7}
-.owl-badge{margin-top:12px;background:var(--tint);border-left:3px solid var(--navy);padding:9px 12px;border-radius:0 4px 4px 0}
-.owl-badge .owl-badge__l{font-size:10px;font-weight:700;color:var(--navy);letter-spacing:.1em;display:block;margin-bottom:2px}
-.owl-badge .owl-badge__v{font-size:15px;font-weight:800;color:var(--navy);line-height:1.4}
-.owl-badge .owl-badge__v em{font-style:normal;font-size:19px}
 @media (max-width:980px){
   .owl-cards,.ow-results,.ow-phase{grid-template-columns:1fr}
 }
+.owl-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:26px 22px;margin-bottom:12px}
+.owl-card{display:flex;flex-direction:column;position:relative;background:#fff; border:1px solid var(--line);border-bottom:3px solid var(--navy);padding:16px 18px 18px; transition:border-bottom-color .14s linear, background-color .14s linear}
+.owl-card:hover{border-bottom-color:var(--blue);background:#fbfcfe}
+.owl-card:hover .owl-card__title{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.owl-card.is-hide{display:none}
+.owl-card .owl-card__title.owl-stretch{text-decoration:none;display:block;color:var(--ink)}
+.owl-card .owl-card__title.owl-stretch::after{content:"";position:absolute;inset:0;z-index:1}
+.owl-card .owl-card__thumb{width:100%;aspect-ratio:16/10;background:#eceff4;border:1px solid #e3e7ee; display:flex;align-items:center;justify-content:center}
+.owl-card .owl-card__thumb span{font-size:10px;color:#9aa3b2;letter-spacing:.18em}
+.owl-card .owl-card__tags{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px;position:relative;z-index:2}
+.owl-tag{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;border:1px solid #c9d2e4; background:#fff;color:var(--navy);cursor:pointer;transition:background-color .14s linear,color .14s linear}
+.owl-tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
+.owl-tag.owl-tag--svc{background:var(--navy);color:#fff;border-color:var(--navy)}
+.owl-tag.owl-tag--svc:hover{background:var(--navy-lt);border-color:var(--navy-lt)}
+.owl-card .owl-card__title{font-size:16px;font-weight:700;line-height:1.55;margin-top:12px;color:var(--ink)}
+.owl-card .owl-card__meta{font-size:11px;color:#8d939e;margin-top:7px;line-height:1.7}
+.owl-badge{margin-top:auto;padding-top:13px;border-top:1px solid var(--line)}
+.owl-badge .owl-badge__l{font-size:9.5px;font-weight:700;color:#a7adb8;letter-spacing:.2em;margin:0 0 5px}
+.owl-badge .owl-badge__v{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 7px;margin:0;line-height:1.1}
+.owl-badge .owl-badge__k{font-size:11.5px;color:var(--ink-sub);font-weight:500}
+.owl-badge .owl-badge__be{font-size:12px;color:#a7adb8;font-weight:700}
+.owl-badge .owl-badge__ar{font-size:11px;color:#c3c8d2}
+.owl-badge .owl-badge__af{font-size:30px;font-weight:900;color:var(--blue);letter-spacing:-.02em; font-feature-settings:"palt"}
+.owl-badge .owl-badge__af small{font-size:13px;font-weight:700;margin-left:1px}
 </style>
 </head>
 
@@ -260,16 +263,16 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             <button class="owl-tab" role="tab" aria-selected="false" data-p="p4">成果から探す</button>
           </div>
           <div class="owl-panel is-on" id="p1"><div class="owl-chips">
-            <a class="owl-chip is-on" href="#" data-ax="ind" data-v="all">すべて</a><a class="owl-chip" href="#" data-ax="ind" data-v="sogi">葬儀・終活</a><a class="owl-chip" href="#" data-ax="ind" data-v="clinic">医療・クリニック</a><a class="owl-chip" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="owl-chip" href="#" data-ax="ind" data-v="estate">不動産</a><a class="owl-chip" href="#" data-ax="ind" data-v="food">飲食</a><a class="owl-chip" href="#" data-ax="ind" data-v="shigyo">士業</a><a class="owl-chip" href="#" data-ax="ind" data-v="ec">小売・EC</a>
+            <span class="owl-chip is-on" role="button" tabindex="0" data-ax="ind" data-v="all">すべて</span><span class="owl-chip" role="button" tabindex="0" data-ax="ind" data-v="sogi">葬儀・終活</span><span class="owl-chip" role="button" tabindex="0" data-ax="ind" data-v="clinic">医療・クリニック</span><span class="owl-chip" role="button" tabindex="0" data-ax="ind" data-v="const">建設・リフォーム</span><span class="owl-chip" role="button" tabindex="0" data-ax="ind" data-v="estate">不動産</span><span class="owl-chip" role="button" tabindex="0" data-ax="ind" data-v="food">飲食</span><span class="owl-chip" role="button" tabindex="0" data-ax="ind" data-v="shigyo">士業</span><span class="owl-chip" role="button" tabindex="0" data-ax="ind" data-v="ec">小売・EC</span>
           </div><div class="owl-count"><b>24</b>件</div></div>
           <div class="owl-panel" id="p2"><div class="owl-chips">
-            <a class="owl-chip is-on" href="#" data-ax="area" data-v="all">すべて</a><a class="owl-chip" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="owl-chip" href="#" data-ax="area" data-v="sakai">堺市</a><a class="owl-chip" href="#" data-ax="area" data-v="kyoto">京都府</a><a class="owl-chip" href="#" data-ax="area" data-v="hyogo">兵庫県</a><a class="owl-chip" href="#" data-ax="area" data-v="ehime">愛媛県</a><a class="owl-chip" href="#" data-ax="area" data-v="zenkoku">全国</a>
+            <span class="owl-chip is-on" role="button" tabindex="0" data-ax="area" data-v="all">すべて</span><span class="owl-chip" role="button" tabindex="0" data-ax="area" data-v="osaka">大阪市</span><span class="owl-chip" role="button" tabindex="0" data-ax="area" data-v="sakai">堺市</span><span class="owl-chip" role="button" tabindex="0" data-ax="area" data-v="kyoto">京都府</span><span class="owl-chip" role="button" tabindex="0" data-ax="area" data-v="hyogo">兵庫県</span><span class="owl-chip" role="button" tabindex="0" data-ax="area" data-v="ehime">愛媛県</span><span class="owl-chip" role="button" tabindex="0" data-ax="area" data-v="zenkoku">全国</span>
           </div><div class="owl-count"><b>24</b>件</div></div>
           <div class="owl-panel" id="p3"><div class="owl-chips">
-            <a class="owl-chip is-on" href="#" data-ax="svc" data-v="all">すべて</a><a class="owl-chip" href="#" data-ax="svc" data-v="seo">SEO対策</a><a class="owl-chip" href="#" data-ax="svc" data-v="ads">Web広告運用代行</a><a class="owl-chip" href="#" data-ax="svc" data-v="meo">MEO対策</a><a class="owl-chip" href="#" data-ax="svc" data-v="sns">SNS運用代行</a><a class="owl-chip" href="#" data-ax="svc" data-v="rumor">風評被害対策</a><a class="owl-chip" href="#" data-ax="svc" data-v="build">サイト制作</a>
+            <span class="owl-chip is-on" role="button" tabindex="0" data-ax="svc" data-v="all">すべて</span><span class="owl-chip" role="button" tabindex="0" data-ax="svc" data-v="seo">SEO対策</span><span class="owl-chip" role="button" tabindex="0" data-ax="svc" data-v="ads">Web広告運用代行</span><span class="owl-chip" role="button" tabindex="0" data-ax="svc" data-v="meo">MEO対策</span><span class="owl-chip" role="button" tabindex="0" data-ax="svc" data-v="sns">SNS運用代行</span><span class="owl-chip" role="button" tabindex="0" data-ax="svc" data-v="rumor">風評被害対策</span><span class="owl-chip" role="button" tabindex="0" data-ax="svc" data-v="build">サイト制作</span>
           </div><div class="owl-count"><b>24</b>件</div></div>
           <div class="owl-panel" id="p4"><div class="owl-chips">
-            <a class="owl-chip is-on" href="#" data-ax="res" data-v="all">すべて</a><a class="owl-chip" href="#" data-ax="res" data-v="inquiry">問い合わせが増えた</a><a class="owl-chip" href="#" data-ax="res" data-v="rank">検索順位が上がった</a><a class="owl-chip" href="#" data-ax="res" data-v="access">アクセスが増えた</a><a class="owl-chip" href="#" data-ax="res" data-v="cost">広告費を抑えられた</a>
+            <span class="owl-chip is-on" role="button" tabindex="0" data-ax="res" data-v="all">すべて</span><span class="owl-chip" role="button" tabindex="0" data-ax="res" data-v="inquiry">問い合わせが増えた</span><span class="owl-chip" role="button" tabindex="0" data-ax="res" data-v="rank">検索順位が上がった</span><span class="owl-chip" role="button" tabindex="0" data-ax="res" data-v="access">アクセスが増えた</span><span class="owl-chip" role="button" tabindex="0" data-ax="res" data-v="cost">広告費を抑えられた</span>
           </div><div class="owl-count"><b>24</b>件</div></div>
         </div>
       </div>
@@ -279,133 +282,145 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
           <div class="owl-card" data-ind="sogi" data-area="sakai" data-svc="seo" data-res="inquiry">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="sogi">葬儀・終活</a><a class="owl-tag" href="#" data-ax="area" data-v="sakai">堺市</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="sogi">葬儀・終活</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="sakai">堺市</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="seo">SEO対策</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</a>
-            <div class="owl-card__meta">従業員15名・年商3億円規模／支援期間 1年6ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</a>
+            <p class="owl-card__meta">従業員15名・年商3億円規模／支援期間 1年6ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">問い合わせ 月1件 → <em>月8件</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">お問い合わせ</span><span class="owl-badge__be">月1件</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">8<small>件</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="const" data-area="osaka" data-svc="ads" data-res="cost">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="owl-tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="ads">Web広告運用代行</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="const">建設・リフォーム</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="osaka">大阪市</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="ads">Web広告運用代行</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">大阪市 リフォーム会社｜広告の無駄打ちを削って受注単価を改善</a>
-            <div class="owl-card__meta">従業員30名規模／支援期間 10ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">大阪市 リフォーム会社｜広告の無駄打ちを削って受注単価を改善</a>
+            <p class="owl-card__meta">従業員30名規模／支援期間 10ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">獲得単価 <em>-42%</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">獲得単価</span><strong class="owl-badge__af">-42<small>%</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="clinic" data-area="kyoto" data-svc="meo" data-res="inquiry">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="clinic">医療・クリニック</a><a class="owl-tag" href="#" data-ax="area" data-v="kyoto">京都府</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="meo">MEO対策</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="clinic">医療・クリニック</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="kyoto">京都府</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="meo">MEO対策</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">京都市 歯科クリニック｜MEOで地図検索からの来院を増やす</a>
-            <div class="owl-card__meta">スタッフ8名・1拠点／支援期間 8ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">京都市 歯科クリニック｜MEOで地図検索からの来院を増やす</a>
+            <p class="owl-card__meta">スタッフ8名・1拠点／支援期間 8ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">地図経由の予約 <em>3.1倍</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">地図経由の予約</span><strong class="owl-badge__af">3.1<small>倍</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="estate" data-area="hyogo" data-svc="seo" data-res="inquiry">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="estate">不動産</a><a class="owl-tag" href="#" data-ax="area" data-v="hyogo">兵庫県</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="estate">不動産</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="hyogo">兵庫県</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="seo">SEO対策</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">兵庫県芦屋市 不動産｜物件ページの作り替えで反響を倍に</a>
-            <div class="owl-card__meta">従業員12名規模／支援期間 1年</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">兵庫県芦屋市 不動産｜物件ページの作り替えで反響を倍に</a>
+            <p class="owl-card__meta">従業員12名規模／支援期間 1年</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">反響数 <em>2.2倍</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">反響数</span><strong class="owl-badge__af">2.2<small>倍</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="shigyo" data-area="osaka" data-svc="seo" data-res="rank">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="shigyo">士業</a><a class="owl-tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="shigyo">士業</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="osaka">大阪市</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="seo">SEO対策</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">大阪市 社会保険労務士事務所｜相談先を探す層を取りにいく</a>
-            <div class="owl-card__meta">所員6名規模／支援期間 9ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">大阪市 社会保険労務士事務所｜相談先を探す層を取りにいく</a>
+            <p class="owl-card__meta">所員6名規模／支援期間 9ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">「大阪 社労士 相談」 圏外 → <em>1位</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">「大阪 社労士 相談」</span><span class="owl-badge__be">圏外</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">1<small>位</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="const" data-area="zenkoku" data-svc="seo" data-res="access">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="owl-tag" href="#" data-ax="area" data-v="zenkoku">全国</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="seo">SEO対策</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="const">建設・リフォーム</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="zenkoku">全国</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="seo">SEO対策</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">全国 建材メーカー｜指名検索以外からの流入をつくる</a>
-            <div class="owl-card__meta">従業員120名規模／支援期間 1年2ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">全国 建材メーカー｜指名検索以外からの流入をつくる</a>
+            <p class="owl-card__meta">従業員120名規模／支援期間 1年2ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">自然検索の流入 <em>3.4倍</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">自然検索の流入</span><strong class="owl-badge__af">3.4<small>倍</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="food" data-area="osaka" data-svc="meo" data-res="access">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="food">飲食</a><a class="owl-tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="meo">MEO対策</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="food">飲食</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="osaka">大阪市</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="meo">MEO対策</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">大阪市 飲食3店舗｜Googleマップの情報整備で来店を増やす</a>
-            <div class="owl-card__meta">3店舗／支援期間 6ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">大阪市 飲食3店舗｜Googleマップの情報整備で来店を増やす</a>
+            <p class="owl-card__meta">3店舗／支援期間 6ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">地図での表示回数 <em>5.8倍</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">地図での表示回数</span><strong class="owl-badge__af">5.8<small>倍</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="const" data-area="ehime" data-svc="build" data-res="inquiry">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="owl-tag" href="#" data-ax="area" data-v="ehime">愛媛県</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="build">サイト制作</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="const">建設・リフォーム</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="ehime">愛媛県</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="build">サイト制作</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">愛媛県 建材商社｜リニューアルで問い合わせ導線を整理</a>
-            <div class="owl-card__meta">従業員45名規模／支援期間 7ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">愛媛県 建材商社｜リニューアルで問い合わせ導線を整理</a>
+            <p class="owl-card__meta">従業員45名規模／支援期間 7ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">問い合わせ 月2件 → <em>月9件</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">お問い合わせ</span><span class="owl-badge__be">月2件</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">9<small>件</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="clinic" data-area="sakai" data-svc="rumor" data-res="rank">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="clinic">医療・クリニック</a><a class="owl-tag" href="#" data-ax="area" data-v="sakai">堺市</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="rumor">風評被害対策</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="clinic">医療・クリニック</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="sakai">堺市</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="rumor">風評被害対策</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">大阪府堺市 整形外科｜検索候補に出る言葉への対応</a>
-            <div class="owl-card__meta">スタッフ20名規模／支援期間 4ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">大阪府堺市 整形外科｜検索候補に出る言葉への対応</a>
+            <p class="owl-card__meta">スタッフ20名規模／支援期間 4ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">指名検索の候補 <em>改善</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">指名検索の候補</span><strong class="owl-badge__af">改善</strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="ec" data-area="kyoto" data-svc="ads" data-res="cost">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="ec">小売・EC</a><a class="owl-tag" href="#" data-ax="area" data-v="kyoto">京都府</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="ads">Web広告運用代行</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="ec">小売・EC</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="kyoto">京都府</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="ads">Web広告運用代行</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">京都市 和菓子店（EC）｜広告とSEOの役割を分けて費用対効果を改善</a>
-            <div class="owl-card__meta">従業員25名規模／支援期間 11ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">京都市 和菓子店（EC）｜広告とSEOの役割を分けて費用対効果を改善</a>
+            <p class="owl-card__meta">従業員25名規模／支援期間 11ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">ROAS 180% → <em>320%</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">ROAS</span><span class="owl-badge__be">180%</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">320<small>%</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="shigyo" data-area="osaka" data-svc="sns" data-res="inquiry">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="shigyo">士業</a><a class="owl-tag" href="#" data-ax="area" data-v="osaka">大阪市</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="sns">SNS運用代行</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="shigyo">士業</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="osaka">大阪市</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="sns">SNS運用代行</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">大阪市 税理士事務所｜SNSでの認知を相談につなげる</a>
-            <div class="owl-card__meta">所員10名規模／支援期間 8ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">大阪市 税理士事務所｜SNSでの認知を相談につなげる</a>
+            <p class="owl-card__meta">所員10名規模／支援期間 8ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">問い合わせ 月3件 → <em>月11件</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">お問い合わせ</span><span class="owl-badge__be">月3件</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">11<small>件</small></strong></p>
             </div>
           </div>
           <div class="owl-card" data-ind="const" data-area="hyogo" data-svc="build" data-res="access">
             <div class="owl-card__thumb"><span>サイトキャプチャ</span></div>
             <div class="owl-card__tags">
-              <a class="owl-tag" href="#" data-ax="ind" data-v="const">建設・リフォーム</a><a class="owl-tag" href="#" data-ax="area" data-v="hyogo">兵庫県</a><a class="owl-tag owl-tag--svc" href="#" data-ax="svc" data-v="build">サイト制作</a>
+              <span class="owl-tag" role="button" tabindex="0" data-ax="ind" data-v="const">建設・リフォーム</span><span class="owl-tag" role="button" tabindex="0" data-ax="area" data-v="hyogo">兵庫県</span><span class="owl-tag owl-tag--svc" role="button" tabindex="0" data-ax="svc" data-v="build">サイト制作</span>
             </div>
-            <a class="owl-card__title owl-stretch" href="#">兵庫県 住宅設備メーカー｜採用と集客を1サイトで両立</a>
-            <div class="owl-card__meta">従業員80名規模／支援期間 1年3ヶ月</div>
+            <a class="owl-card__title owl-stretch" href="https://opus-plan.net/works/sakai-sogi/">兵庫県 住宅設備メーカー｜採用と集客を1サイトで両立</a>
+            <p class="owl-card__meta">従業員80名規模／支援期間 1年3ヶ月</p>
             <div class="owl-badge">
-              <span class="owl-badge__l">RESULT</span><span class="owl-badge__v">月間セッション <em>4.1倍</em></span>
+              <p class="owl-badge__l">RESULT</p>
+              <p class="owl-badge__v"><span class="owl-badge__k">月間セッション</span><strong class="owl-badge__af">4.1<small>倍</small></strong></p>
             </div>
           </div>
         </div>
@@ -532,7 +547,9 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
   var chips = [].slice.call(document.querySelectorAll('.owl-chip'));
   var cards = [].slice.call(document.querySelectorAll('.owl-card'));
   var AX2PANEL = {ind:'p1', area:'p2', svc:'p3', res:'p4'};
-  var state = {ind:'all', area:'all', svc:'all', res:'all'};
+  var AXES = ['ind','area','svc','res'];
+  // 絞り込みは1軸ずつ。別の軸を選ぶと前の軸は解除する
+  var active = {ax:null, v:'all'};
 
   function showPanel(pid){
     tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.p === pid)); });
@@ -540,37 +557,43 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     var el = document.getElementById(pid); if(el) el.classList.add('is-on');
   }
   function apply(){
+    var filtered = !!active.ax;
     var n = 0;
     cards.forEach(function(c){
-      var ok = Object.keys(state).every(function(k){
-        return state[k] === 'all' || c.dataset[k] === state[k];
-      });
+      var ok = !filtered || c.dataset[active.ax] === active.v;
       c.classList.toggle('is-hide', !ok);
       if(ok) n++;
     });
-    var filtered = Object.keys(state).some(function(k){ return state[k] !== 'all'; });
     [].forEach.call(document.querySelectorAll('.owl-count b'), function(b){ b.textContent = filtered ? n : 24; });
-    var pager = document.querySelector('.l-works .pagination, .pagination');
-    if(pager) pager.style.display = filtered ? 'none' : '';
+    var pg = document.querySelector('.l-works .pagination') || document.querySelector('.pagination');
+    if(pg) pg.style.display = filtered ? 'none' : '';
   }
   function select(ax, v){
-    state[ax] = v;
-    chips.forEach(function(c){ if(c.dataset.ax === ax) c.classList.toggle('is-on', c.dataset.v === v); });
-    showPanel(AX2PANEL[ax]);
+    if(v === 'all'){ active = {ax:null, v:'all'}; }   // 「すべて」は全解除
+    else { active = {ax:ax, v:v}; }
+    // チップの選択状態：選んだ軸だけ該当、他の軸は「すべて」に戻す
+    chips.forEach(function(c){
+      var isAll = c.dataset.v === 'all';
+      var on = active.ax ? (c.dataset.ax === active.ax ? c.dataset.v === active.v : isAll) : isAll;
+      c.classList.toggle('is-on', on);
+    });
     apply();
   }
 
   tabs.forEach(function(t){ t.addEventListener('click', function(){ showPanel(t.dataset.p); }); });
-  chips.forEach(function(c){
-    c.addEventListener('click', function(e){ e.preventDefault(); select(c.dataset.ax, c.dataset.v); });
-  });
-  // カード内のタグ → 絞り込み検索ゾーンでチップを押したのと同じ動き
+
+  function bind(el, handler){
+    el.addEventListener('click', function(e){ e.preventDefault(); e.stopPropagation(); handler(); });
+    el.addEventListener('keydown', function(e){
+      if(e.key === 'Enter' || e.key === ' '){ e.preventDefault(); handler(); }
+    });
+  }
+  chips.forEach(function(c){ bind(c, function(){ select(c.dataset.ax, c.dataset.v); }); });
+  // カード内のタグ → 絞り込みゾーンのチップを押したのと同じ動き（ページは動かさない）
   [].forEach.call(document.querySelectorAll('.owl-card .owl-tag'), function(t){
-    t.addEventListener('click', function(e){
-      e.preventDefault(); e.stopPropagation();
+    bind(t, function(){
+      showPanel(AX2PANEL[t.dataset.ax]);
       select(t.dataset.ax, t.dataset.v);
-      var fl = document.querySelector('.owl-filters');
-      if(fl) fl.scrollIntoView({behavior:'smooth', block:'center'});
     });
   });
 })();
