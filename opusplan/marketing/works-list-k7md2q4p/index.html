@@ -151,6 +151,17 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .owl-card .owl-card__thumb{aspect-ratio:16/9}
   .l-works .pagination{padding-bottom:48px}
 }
+.owl-sp{display:none}
+.owl-sp__label{display:block;font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.08em;margin-bottom:7px}
+.owl-sp__select{-webkit-appearance:none;appearance:none;width:100%;height:50px; font-family:inherit;font-size:16px;font-weight:700;color:var(--ink); background:#fff;border:1px solid #c9d2e4;border-radius:6px;padding:0 42px 0 14px; background-image:linear-gradient(45deg,transparent 50%,var(--navy) 50%),linear-gradient(135deg,var(--navy) 50%,transparent 50%); background-position:calc(100% - 20px) 22px,calc(100% - 14px) 22px; background-size:6px 6px,6px 6px;background-repeat:no-repeat}
+.owl-sp__select:focus{outline:2px solid var(--navy);outline-offset:1px}
+.owl-sp .owl-count{margin-top:9px}
+@media screen and (max-width:600px){
+  .owl-sp{display:block}
+  .owl-tabs,.owl-panel,.owl-panel.is-on{display:none}
+  .owl-filters .owl-inner{padding:0 16px}
+  .owl-filters{margin-top:18px!important}
+}
 </style>
 </head>
 
@@ -264,7 +275,45 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
     </div>
     <div class="owl-filters" style="margin-top:26px">
         <div class="owl-inner">
-          <div class="owl-tabs" role="tablist">
+          <div class="owl-sp">
+        <label class="owl-sp__label" for="owl-filter">実績を絞り込む</label>
+        <select class="owl-sp__select" id="owl-filter">
+          <option value="all">すべての実績</option>
+        <optgroup label="業種から探す">
+          <option value="ind:sogi">葬儀・終活</option>
+          <option value="ind:clinic">医療・クリニック</option>
+          <option value="ind:const">建設・リフォーム</option>
+          <option value="ind:estate">不動産</option>
+          <option value="ind:food">飲食</option>
+          <option value="ind:shigyo">士業</option>
+          <option value="ind:ec">小売・EC</option>
+        </optgroup>
+        <optgroup label="エリアから探す">
+          <option value="area:osaka">大阪市</option>
+          <option value="area:sakai">堺市</option>
+          <option value="area:kyoto">京都府</option>
+          <option value="area:hyogo">兵庫県</option>
+          <option value="area:ehime">愛媛県</option>
+          <option value="area:zenkoku">全国</option>
+        </optgroup>
+        <optgroup label="サービスから探す">
+          <option value="svc:seo">SEO対策</option>
+          <option value="svc:ads">Web広告運用代行</option>
+          <option value="svc:meo">MEO対策</option>
+          <option value="svc:sns">SNS運用代行</option>
+          <option value="svc:rumor">風評被害対策</option>
+          <option value="svc:build">サイト制作</option>
+        </optgroup>
+        <optgroup label="成果から探す">
+          <option value="res:inquiry">問い合わせが増えた</option>
+          <option value="res:rank">検索順位が上がった</option>
+          <option value="res:access">アクセスが増えた</option>
+          <option value="res:cost">広告費を抑えられた</option>
+        </optgroup>
+        </select>
+        <div class="owl-count"><b>24</b>件</div>
+      </div>
+      <div class="owl-tabs" role="tablist">
             <button class="owl-tab" role="tab" aria-selected="true"  data-p="p1">業種から探す</button>
             <button class="owl-tab" role="tab" aria-selected="false" data-p="p2">エリアから探す</button>
             <button class="owl-tab" role="tab" aria-selected="false" data-p="p3">サービスから探す</button>
@@ -618,6 +667,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
   var AXES = ['ind','area','svc','res'];
   // 絞り込みは1軸ずつ。別の軸を選ぶと前の軸は解除する
   var active = {ax:null, v:'all'};
+  var sp = document.getElementById('owl-filter');
 
   function showPanel(pid){
     tabs.forEach(function(t){ t.setAttribute('aria-selected', String(t.dataset.p === pid)); });
@@ -637,7 +687,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     if(pg) pg.style.display = filtered ? 'none' : '';
   }
   function select(ax, v){
-    if(v === 'all'){ active = {ax:null, v:'all'}; }   // 「すべて」は全解除
+    if(v === 'all' || !ax){ active = {ax:null, v:'all'}; }   // 「すべて」は全解除
     else { active = {ax:ax, v:v}; }
     // チップの選択状態：選んだ軸だけ該当、他の軸は「すべて」に戻す
     chips.forEach(function(c){
@@ -645,7 +695,16 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
       var on = active.ax ? (c.dataset.ax === active.ax ? c.dataset.v === active.v : isAll) : isAll;
       c.classList.toggle('is-on', on);
     });
+    if(sp) sp.value = active.ax ? (active.ax + ':' + active.v) : 'all';
     apply();
+  }
+
+  if(sp){
+    sp.addEventListener('change', function(){
+      var v = sp.value;
+      if(v === 'all'){ select(null, 'all'); }
+      else { var a = v.split(':'); showPanel(AX2PANEL[a[0]]); select(a[0], a[1]); }
+    });
   }
 
   tabs.forEach(function(t){ t.addEventListener('click', function(){ showPanel(t.dataset.p); }); });
