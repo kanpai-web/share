@@ -97,6 +97,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   --ink:#363636; --ink-sub:#6b6b6b;
   --tint:#eefaff; --tint2:#f3f7ff; --grey2:#f4f6f7; --line:#e1e1e1; --line2:#dcdcdc; --ink-faint:#9a9a9a; --blue:#2b95ff;
 }
+.ow{max-width:1020px;margin:0 auto;padding:0 28px 10px;display:grid; grid-template-columns:286px 1fr;gap:44px;align-items:start}
 .ow-main{min-width:0;padding-top:52px}
 .ow-side{margin-top:52px;position:sticky;top:20px}
 .ow-sum{background:#fff;border-radius:8px;box-shadow:0 8px 26px rgba(10,10,60,.15);overflow:hidden}
@@ -107,14 +108,10 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .ow-sum dt{font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:5px}
 .ow-sum dd{font-size:13px;line-height:1.75;color:var(--ink)}
 .ow-sum .ow-pill{display:inline-block;background:var(--tint);color:var(--navy);font-size:11.5px; font-weight:700;border-radius:3px;padding:3px 9px;margin:2px 3px 2px 0}
-.ow-sidecta{margin-top:16px;background:var(--tint);border-radius:8px;padding:18px 20px;text-align:center}
-.ow-sidecta p{font-size:12.5px;color:var(--ink-sub);line-height:1.8;margin-bottom:11px}
-.ow-sidecta a{display:block;background:var(--navy);color:#fff;font-size:13.5px;font-weight:700; border-radius:100px;padding:11px 0;text-decoration:none}
 .ow-sec{margin-bottom:46px;position:relative}
 .ow-hd{position:relative;margin-bottom:26px;padding-bottom:17px}
 .ow-hd .ow-en{display:block;font-family:'Helvetica Neue',Helvetica,Arial,sans-serif; font-size:46px;font-weight:900;color:var(--navy);letter-spacing:-.012em;line-height:.98;margin-bottom:11px}
 .ow-hd .ow-ja{display:block;font-size:16px;font-weight:700;color:var(--ink-sub);letter-spacing:.09em}
-.ow-hd .ow-num{position:absolute;right:0;top:9px;font-family:'Helvetica Neue',Arial,sans-serif; font-size:13px;font-weight:800;color:var(--navy);opacity:.34;letter-spacing:.14em}
 .ow-hd::after{content:"";position:absolute;left:0;bottom:0;width:100%;height:1px;background:var(--line)}
 .ow-hd::before{content:"";position:absolute;left:0;bottom:0;width:84px;height:3px;background:var(--navy);z-index:1}
 .ow-sec > *{position:relative;z-index:1}
@@ -127,31 +124,12 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .ow-check li:last-child{margin-bottom:0}
 .ow-before{background:#fff;border:1px solid var(--line);border-left:3px solid var(--navy-lt); border-radius:0 5px 5px 0;padding:14px 18px;margin-top:15px;font-size:13px;color:var(--ink-sub);line-height:1.9}
 .ow-before b{color:var(--navy);font-weight:700}
-.ow-phase{display:grid;grid-template-columns:repeat(3,1fr);gap:11px;margin-top:20px}
-.ow-phase__item{background:#fff;border:1px solid var(--line);border-radius:6px;padding:15px;position:relative}
-.ow-phase__item::before{content:"";position:absolute;left:15px;right:15px;top:0;height:3px;background:var(--navy);border-radius:0 0 2px 2px}
-.ow-phase__item .ow-phase__t{font-size:11.5px;font-weight:800;color:var(--navy);margin:5px 0 6px;letter-spacing:.04em}
-.ow-phase__item p{font-size:12.5px;line-height:1.8;color:var(--ink-sub)}
-.ow-sec.ow-sec--hl{background:linear-gradient(160deg,var(--navy) 0%,var(--navy-dp) 100%);color:#fff; border-radius:10px;padding:34px 34px 32px;margin-left:-34px;margin-right:-34px;overflow:hidden}
 .ow-sec.ow-sec--hl::after{content:"";position:absolute;right:-70px;top:-70px;width:230px;height:230px; border:1px solid rgba(255,255,255,.13);border-radius:50%}
 .ow-sec.ow-sec--hl .ow-hd::before{background:#fff}
 .ow-sec.ow-sec--hl .ow-hd::after{background:rgba(255,255,255,.26)}
 .ow-sec.ow-sec--hl .ow-hd .ow-en{color:#fff}
 .ow-sec.ow-sec--hl .ow-hd .ow-ja{color:rgba(255,255,255,.85)}
-.ow-sec.ow-sec--hl .ow-hd .ow-num{color:#fff;opacity:.45}
-.ow-results{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
-.ow-rcard{background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.2);border-radius:7px;padding:20px 16px;text-align:center}
-.ow-rcard .ow-rcard__k{font-size:11.5px;opacity:.85;margin-bottom:13px;line-height:1.5;min-height:2.6em}
-.ow-rcard .ow-rcard__ba{display:flex;align-items:baseline;justify-content:center;gap:9px;margin-bottom:10px}
-.ow-rcard .ow-rcard__b{font-size:13px;opacity:.6}
-.ow-rcard .ow-rcard__ar{font-size:11px;opacity:.5}
-.ow-rcard .ow-rcard__a{font-size:36px;font-weight:800;line-height:1;letter-spacing:-.01em}
-.ow-rcard .ow-rcard__a small{font-size:15px;font-weight:700;margin-left:2px}
-.ow-rcard .ow-rcard__note{font-size:11px;opacity:.7;border-top:1px solid rgba(255,255,255,.22);padding-top:9px}
-.ow-rsum{margin-top:18px;font-size:16px;font-weight:700;line-height:1.85;text-align:center}
 .voice .ow-voice__who{font-size:12.5px;color:var(--ink-sub);text-align:right;padding-top:12px;border-top:1px solid var(--line)}
-.ow-cats{display:flex;flex-wrap:wrap;gap:8px}
-.ow-cat{font-size:12.5px;border:1px solid var(--navy);color:var(--navy);border-radius:100px;padding:6px 16px;text-decoration:none}
 .ow-next{background:var(--tint2);border-radius:8px;padding:22px 26px}
 .ow-next p{font-size:14.5px;line-height:2}
 .ow-reason{background:var(--tint2);border-top:1px solid #dde6f7;padding:58px 0 54px;position:relative;overflow:hidden}
@@ -177,11 +155,74 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .ow-reason .ow-reason__hd .ow-en{font-size:38px}
 }
 @media (max-width:980px){
+  .ow{grid-template-columns:1fr;gap:0}
   .ow-side{margin-top:28px;position:static}
   .ow-main{padding-top:34px}
   .ow-sec.ow-sec--hl{margin-left:0;margin-right:0}
   .ow-results,.ow-phase{grid-template-columns:1fr}
 }
+.ow-phase{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin:26px 0 0;padding:0; border-top:1px solid var(--line)}
+.ow-phase li{position:relative;padding:20px 18px 0 0}
+.ow-phase li::before{content:"";position:absolute;left:0;top:-4px;width:7px;height:7px;border-radius:50%;background:var(--navy)}
+.ow-phase li+li{padding-left:18px}
+.ow-phase li+li::before{left:18px}
+.ow-phase .ow-phase__t{display:block;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:6px}
+.ow-phase .ow-phase__d{display:block;font-size:13px;color:var(--ink-sub);line-height:1.8}
+.ow-sec.ow-sec--hl{background:var(--navy);color:#fff;padding:34px 30px 30px;margin-left:-30px;margin-right:-30px}
+.ow-sec.ow-sec--hl .ow-hd .ow-en{color:#fff}
+.ow-sec.ow-sec--hl .ow-hd .ow-ja{color:rgba(255,255,255,.72)}
+.ow-sec.ow-sec--hl .ow-hd::after{background:rgba(255,255,255,.4)}
+.ow-results{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px}
+.ow-rcard{padding:0 22px}
+.ow-rcard+.ow-rcard{border-left:1px solid rgba(255,255,255,.22)}
+.ow-rcard .ow-rcard__k{display:block;font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.6;margin-bottom:12px;min-height:2.4em}
+.ow-rcard .ow-rcard__ba{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
+.ow-rcard .ow-rcard__b{font-size:13px;color:rgba(255,255,255,.55);font-weight:700}
+.ow-rcard .ow-rcard__ar{font-size:11px;color:rgba(255,255,255,.45)}
+.ow-rcard .ow-rcard__a{font-size:46px;font-weight:900;line-height:1.05;letter-spacing:-.02em;font-feature-settings:"palt"}
+.ow-rcard .ow-rcard__a small{font-size:16px;font-weight:700;margin-left:2px}
+.ow-rcard .ow-rcard__note{display:block;font-size:11px;color:rgba(255,255,255,.6);margin-top:10px}
+.ow-rsum{font-size:14px;font-weight:700;color:#fff;margin:26px 0 0;padding-top:18px; border-top:1px solid rgba(255,255,255,.22)}
+@media screen and (max-width:767px){
+  .ow-phase{grid-template-columns:1fr}
+  .ow-phase li,.ow-phase li+li{padding:18px 0 0 18px}
+  .ow-phase li::before,.ow-phase li+li::before{left:0;top:22px}
+  .ow-phase li+li{border-top:1px solid var(--line);margin-top:14px}
+  .ow-results{grid-template-columns:1fr;gap:22px}
+  .ow-rcard{padding:0}
+  .ow-rcard+.ow-rcard{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding-top:20px}
+  .ow-rcard .ow-rcard__k{min-height:0}
+  .ow-sec.ow-sec--hl{margin-left:-16px;margin-right:-16px;padding:26px 16px 24px}
+}
+/* 上部のタグを一覧カードと同じ見た目に */
+.p-work__content-cat{display:flex;flex-wrap:wrap;gap:5px}
+.p-work__content-cat .c-cat{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;
+  border:1px solid #c9d2e4;border-radius:0;background:#fff;color:var(--navy)}
+
+/* REASON を中央に戻す */
+.p-work__detail .ow-reason{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:24px;padding-right:24px}
+.p-work__detail .ow-reason__inner{max-width:880px;margin:0 auto;padding:0}
+
+/* 関連実績のカードを一覧と同じ見た目に */
+.l-results .p-results__items{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;float:none;
+  max-width:1020px;margin:0 auto;padding:0 28px;box-sizing:border-box;
+  height:auto;min-height:0;max-height:none}
+.l-results .p-results__item{width:auto;height:auto!important;margin:0;background:#fff;border:1px solid #e6e9f0;
+  border-radius:8px;overflow:hidden}
+.l-results .p-results__item > a{display:block;text-decoration:none;color:inherit}
+.l-results .p-results__item-img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:0}
+.l-results .p-results__item-content{padding:15px 16px 17px}
+.l-results .p-results__item-heading{font-size:11px;color:#8d939e;line-height:1.7;margin:0}
+.l-results .p-results__item-company{font-size:16px;font-weight:700;line-height:1.55;color:var(--ink);margin:6px 0 0}
+.l-results .p-results__item > a:hover .p-results__item-company{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.l-results .p-results__item-cats{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
+.l-results .slick-list,.l-results .slick-track{height:auto!important}
+.l-results .p-results__item-company{margin-bottom:0}
+.l-results .p-results__item-cat{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;
+  border:1px solid #c9d2e4;border-radius:0;background:#fff;color:var(--navy);margin:0}
+@media screen and (max-width:900px){ .l-results .p-results__items{grid-template-columns:repeat(2,1fr)} }
+@media screen and (max-width:600px){ .l-results .p-results__items{grid-template-columns:1fr} }
+
 </style>
 </head>
 
@@ -284,10 +325,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
       <div class="p-work__content">
         <div class="p-work__content-top">
 
-          <p class="p-work__content-date">
-            <time datetime="2026-10-07">2026</time>
-            <time datetime="2026-10-07">10.07</time>
-          </p>
+          
           <div class="p-work__content-dec">
             <p class="p-work__content-name">株式会社萬歳様</p>
             <p class="p-work__content-kind">
@@ -304,34 +342,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
         </div>
       </div>
     </div>
-    <div class="p-work__content-bottom">
-      <div class="p-work__content-seika">
-        <p class="p-work__content-title">成果</p>
-        <p class="p-work__content-text">
-                    兵庫県芦屋市の骨董品・美術品買取専門店「古美術 寿永堂」様のサイト保守管理・SEO対策・Web広告を担当しました。SEO対策開始前と比較して、サイトへのアクセスは125％増加（2.25倍）となりました。
-
-寿永堂様は、兵庫・大阪・京都・奈良・滋賀・和歌山の近畿地方を中心に、全国から査定・買取相談を受け付ける専門店です。骨董品の売却を検討する方に、取扱品目や対応地域、査定方法を伝える公式サイトが、お客様との重要な接点となっています。
-
-オーパスプランでは、サイト運営を支える保守管理と、SEO対策・Web広告による集客を支援。骨董品の買取先を探す方にサービスを知っていただく機会を広げ、査定・買取相談につながるWebサイトの活用を支えています。
-
-SEO対策では、開始前比でアクセス125％増加を達成。継続的なサイト運営と集客施策を組み合わせた、骨董品買取専門店のWebマーケティング支援事例です。        </p>
-      </div>
-      <div class="p-work__content-gaiyou">
-        <p class="p-work__content-title">概要</p>
-        <p class="p-work__content-text">
-                    古美術 寿永堂様は、株式会社萬歳が運営する、兵庫県芦屋市の骨董品・美術品買取専門店です。茶道具、掛軸、陶磁器、絵画などを取り扱い、近畿地方を中心に全国の査定・買取相談に対応しています。
-
-オーパスプランでは、公式サイトの保守管理・SEO対策・Web広告を担当。継続的なサイト運営とWeb集客を支援し、SEO対策開始前と比較して、サイトへのアクセスは125％増加となりました。        </p>
-      </div>
-      <div class="p-work__content-area">
-        <span>実績エリア</span>
-                          <!-- <a href="https://opus-plan.net/area//%e5%85%b5%e5%ba%ab%e7%9c%8c/">兵庫県</a> -->
-          <span class="%e5%85%b5%e5%ba%ab%e7%9c%8c"> 兵庫県 </span>
-                  <!-- <a href="https://opus-plan.net/area//%e8%8a%a6%e5%b1%8b%e5%b8%82/">芦屋市</a> -->
-          <span class="%e8%8a%a6%e5%b1%8b%e5%b8%82"> 芦屋市 </span>
-              </div>
-          </div>
-<div class="p-work__detail">
+    <div class="p-work__detail">
 <div class="ow">
         <aside class="ow-side">
           <div class="ow-sum">
@@ -339,19 +350,15 @@ SEO対策では、開始前比でアクセス125％増加を達成。継続的�
             <div class="ow-sum__b">
               <dl><dt>お客様の業種・規模</dt><dd>葬儀、家族葬<br>従業員15名・年商3億円規模</dd></dl>
               <dl><dt>エリア</dt><dd>大阪府堺市（堺区・北区・中区）</dd></dl>
-              <dl><dt>ご支援した内容</dt><dd><span class="ow-pill">SEO対策</span><span class="ow-pill">サイト構成の見直し</span><span class="ow-pill">記事作成の運用代行</span></dd></dl>
+              <dl><dt>ご支援した内容</dt><dd><a class="ow-pill" href="https://opus-plan.net/seo">SEO対策</a><a class="ow-pill" href="https://opus-plan.net/uiux">サイト構成の見直し</a><a class="ow-pill" href="https://opus-plan.net/seo/contentsmarketing">記事作成の運用代行</a></dd></dl>
               <dl><dt>効果</dt><dd>地域検索からの問い合わせ増加</dd></dl>
             </div>
-          </div>
-          <div class="ow-sidecta">
-            <p>同じようなお悩みは<br>ありませんか？</p>
-            <a href="https://opus-plan.net/contact/">無料で相談する</a>
           </div>
         </aside>
         <div class="ow-main">
 
           <div class="ow-sec">
-            <div class="ow-hd"><span class="ow-num">01</span><span class="ow-en">PROBLEM</span><span class="ow-ja">ご相談時の課題</span></div>
+            <div class="ow-hd"><span class="ow-en">PROBLEM</span><span class="ow-ja">ご相談時の課題</span></div>
             <ul class="ow-check">
               <li>問い合わせが月1件以下で、営業に頼りきりになっていた</li>
               <li>「地域名＋業種」で検索しても3ページ目以降にしか出てこない</li>
@@ -361,7 +368,7 @@ SEO対策では、開始前比でアクセス125％増加を達成。継続的�
           </div>
 
           <div class="ow-sec">
-            <div class="ow-hd"><span class="ow-num">02</span><span class="ow-en">REQUEST</span><span class="ow-ja">ご要望</span></div>
+            <div class="ow-hd"><span class="ow-en">REQUEST</span><span class="ow-ja">ご要望</span></div>
             <ul class="ow-check">
               <li>地域からの集客を強化したい</li>
               <li>電話とフォームの両方へ迷わず進める導線にしたい</li>
@@ -370,7 +377,7 @@ SEO対策では、開始前比でアクセス125％増加を達成。継続的�
           </div>
 
           <div class="ow-sec">
-            <div class="ow-hd"><span class="ow-num">03</span><span class="ow-en">APPROACH</span><span class="ow-ja">ご提案・実施した施策</span></div>
+            <div class="ow-hd"><span class="ow-en">APPROACH</span><span class="ow-ja">ご提案・実施した施策</span></div>
             <p class="ow-text">記事の本数ではなく、<b>サイトの構成そのものが検索と噛み合っていない</b>ことが原因と考え、サービスと地域を掛け合わせたページ設計に作り替える方針をご提案しました。</p>
             <ul class="ow-check">
               <li>サービス配下にエリアページを新設し、「地域 × サービス」で狙える構成へ</li>
@@ -378,50 +385,41 @@ SEO対策では、開始前比でアクセス125％増加を達成。継続的�
               <li>プラン別の総額目安とよくあるご質問を追加し、費用の不安を解消</li>
               <li>スマートフォンの画面下部に固定のお問い合わせボタンを設置</li>
             </ul>
-            <div class="ow-phase">
-              <div class="ow-phase__item"><div class="ow-phase__t">1〜3ヶ月目</div><p>現状分析と構成設計。キーワードの洗い出しまで</p></div>
-              <div class="ow-phase__item"><div class="ow-phase__t">4〜6ヶ月目</div><p>記事投入とエリアページの公開。導線の調整</p></div>
-              <div class="ow-phase__item"><div class="ow-phase__t">7ヶ月目〜</div><p>数値を見ながら改善と追加施策</p></div>
-            </div>
+            <ol class="ow-phase">
+              <li><span class="ow-phase__t">1〜3ヶ月目</span><span class="ow-phase__d">現状分析と構成設計。キーワードの洗い出しまで</span></li>
+              <li><span class="ow-phase__t">4〜6ヶ月目</span><span class="ow-phase__d">記事投入とエリアページの公開。導線の調整</span></li>
+              <li><span class="ow-phase__t">7ヶ月目〜</span><span class="ow-phase__d">数値を見ながら改善と追加施策</span></li>
+            </ol>
           </div>
 
           <div class="ow-sec ow-sec--hl">
-            <div class="ow-hd"><span class="ow-num">04</span><span class="ow-en">RESULT</span><span class="ow-ja">導入による効果</span></div>
+            <div class="ow-hd"><span class="ow-en">RESULT</span><span class="ow-ja">導入による効果</span></div>
             <div class="ow-results">
               <div class="ow-rcard">
-                <div class="ow-rcard__k">お問い合わせ件数</div>
-                <div class="ow-rcard__ba"><span class="ow-rcard__b">月1件</span><span class="ow-rcard__ar">▶</span><span class="ow-rcard__a">8<small>件</small></span></div>
-                <div class="ow-rcard__note">6ヶ月で8倍</div>
+                <span class="ow-rcard__k">お問い合わせ件数</span>
+                <span class="ow-rcard__ba"><span class="ow-rcard__b">月1件</span><span class="ow-rcard__ar" aria-hidden="true">→</span><strong class="ow-rcard__a">8<small>件</small></strong></span>
+                <span class="ow-rcard__note">6ヶ月で8倍</span>
               </div>
               <div class="ow-rcard">
-                <div class="ow-rcard__k">「堺市 家族葬」<br>検索順位</div>
-                <div class="ow-rcard__ba"><span class="ow-rcard__b">圏外</span><span class="ow-rcard__ar">▶</span><span class="ow-rcard__a">2<small>位</small></span></div>
-                <div class="ow-rcard__note">4ヶ月で到達</div>
+                <span class="ow-rcard__k">「堺市 家族葬」検索順位</span>
+                <span class="ow-rcard__ba"><span class="ow-rcard__b">圏外</span><span class="ow-rcard__ar" aria-hidden="true">→</span><strong class="ow-rcard__a">2<small>位</small></strong></span>
+                <span class="ow-rcard__note">4ヶ月で到達</span>
               </div>
               <div class="ow-rcard">
-                <div class="ow-rcard__k">月間セッション</div>
-                <div class="ow-rcard__ba"><span class="ow-rcard__b">420</span><span class="ow-rcard__ar">▶</span><span class="ow-rcard__a">1,850</span></div>
-                <div class="ow-rcard__note">6ヶ月で4.4倍</div>
+                <span class="ow-rcard__k">月間セッション</span>
+                <span class="ow-rcard__ba"><span class="ow-rcard__b">420</span><span class="ow-rcard__ar" aria-hidden="true">→</span><strong class="ow-rcard__a">1,850</strong></span>
+                <span class="ow-rcard__note">6ヶ月で4.4倍</span>
               </div>
             </div>
-            <div class="ow-rsum">6ヶ月で問い合わせが月1件から月8件に増えました。</div>
+            <p class="ow-rsum">6ヶ月で問い合わせが月1件から月8件に増えました。</p>
           </div>
 
           <div class="ow-sec">
-            <div class="ow-hd"><span class="ow-num">05</span><span class="ow-en">NEXT</span><span class="ow-ja">今後の展開</span></div>
+            <div class="ow-hd"><span class="ow-en">NEXT</span><span class="ow-ja">今後の展開</span></div>
             <div class="ow-next">
               <p>現在も月4本の記事投入と、エリアページの追加を続けています。次は「大阪市」エリアでの上位表示と、問い合わせ月15件を目標にしています。</p>
             </div>
           </div>
-
-          <div class="ow-sec" style="margin-bottom:10px">
-            <div class="ow-hd"><span class="ow-en">CATEGORY</span><span class="ow-ja">カテゴリー</span></div>
-            <div class="ow-cats">
-              <a class="ow-cat" href="https://opus-plan.net/contact/">葬儀・終活</a><a class="ow-cat" href="https://opus-plan.net/contact/">堺市</a>
-              <a class="ow-cat" href="https://opus-plan.net/contact/">SEO対策</a><a class="ow-cat" href="https://opus-plan.net/contact/">問い合わせが増えた</a>
-            </div>
-          </div>
-
         </div>
       </div>
       <div class="ow-reason">
