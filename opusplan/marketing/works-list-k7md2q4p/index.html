@@ -110,25 +110,22 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .owl-chip.is-on{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
 .owl-count{font-size:11.5px;color:var(--ink-faint);margin-top:14px}
 .owl-card.is-hide{display:none}
-.l-works .pagination{padding-bottom:76px}
-.l-works .pagination .nav-links{display:flex;justify-content:center;align-items:center;gap:8px;margin:40px 0 0;flex-wrap:wrap}
+.l-works .pagination{padding-bottom:72px}
+.l-works .pagination .nav-links{display:flex;justify-content:center;align-items:center;gap:8px;margin:0;flex-wrap:wrap}
 .l-works .pagination .page-numbers{min-width:38px;height:38px;display:flex;align-items:center;justify-content:center; border:1px solid var(--line);border-radius:4px;font-size:14px;color:var(--ink);text-decoration:none;background:#fff}
 .l-works .pagination .page-numbers.current{background:var(--navy);border-color:var(--navy);color:#fff;font-weight:700}
 .l-works .pagination .page-numbers:not(.current):hover{border-color:var(--navy);color:var(--navy)}
 .l-works .pagination .screen-reader-text{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
 .owl-count b{color:var(--navy);font-size:15px}
-@media (max-width:980px){
-  .owl-cards,.ow-results,.ow-phase{grid-template-columns:1fr}
-}
-.owl-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:40px 24px;margin-bottom:4px}
-.owl-card{display:flex;flex-direction:column;position:relative;background:#fff}
+.owl-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;margin-bottom:72px}
+.owl-card{display:flex;flex-direction:column;position:relative;background:#fff; border:1px solid #e6e9f0;border-radius:8px;overflow:hidden}
 .owl-card.is-hide{display:none}
 .owl-card .owl-card__title.owl-stretch{text-decoration:none;display:block;color:var(--ink)}
 .owl-card .owl-card__title.owl-stretch::after{content:"";position:absolute;inset:0;z-index:1}
 .owl-card:hover .owl-card__title{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
 .owl-card .owl-card__thumb{width:100%;aspect-ratio:16/10;background:#eceff4; display:flex;align-items:center;justify-content:center}
 .owl-card .owl-card__thumb span{font-size:10px;color:#9aa3b2;letter-spacing:.18em}
-.owl-card .owl-card__body{display:flex;flex-direction:column;flex:1;padding:15px 4px 0}
+.owl-card .owl-card__body{display:flex;flex-direction:column;flex:1;padding:15px 16px 17px}
 .owl-card .owl-card__tags{display:flex;flex-wrap:wrap;gap:5px;position:relative;z-index:2}
 .owl-tag{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;border:1px solid #c9d2e4; background:#fff;color:var(--navy);cursor:pointer;transition:background-color .14s linear,color .14s linear}
 .owl-tag:hover{background:var(--navy);color:#fff;border-color:var(--navy)}
@@ -144,6 +141,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .owl-badge .owl-badge__ar{font-size:11px;color:#c3c8d2}
 .owl-badge .owl-badge__af{font-size:30px;font-weight:900;color:var(--blue);letter-spacing:-.02em; font-feature-settings:"palt"}
 .owl-badge .owl-badge__af small{font-size:13px;font-weight:700;margin-left:1px}
+@media screen and (max-width:900px){
+  .owl-cards{grid-template-columns:repeat(2,1fr);gap:24px 20px;margin-bottom:56px}
+}
+@media screen and (max-width:600px){
+  .owl-cards{grid-template-columns:1fr;gap:22px;margin-bottom:48px}
+  .owl-card .owl-card__thumb{aspect-ratio:16/9}
+  .l-works .pagination{padding-bottom:48px}
+}
 </style>
 </head>
 
