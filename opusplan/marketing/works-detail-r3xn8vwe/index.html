@@ -826,26 +826,28 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
       var gap = parseFloat(getComputedStyle(t).columnGap || getComputedStyle(t).gap) || 0;
       return c.getBoundingClientRect().width + gap;
     }
-    // 2周ぶん並べてあるので、半分を超えたら戻す（見た目は同じカードなので気づかれない）
+    // カードは2周ぶん並べてある。位置は常に 0〜半分 の範囲に収めて扱う
+    // （0 と「半分」は見た目が同じなので、両方向から戻すと行き来して震える。
+    //   戻すのは前向きの1方向だけにして、後ろ向きは動かす前に先回りして飛ばす）
     function half(){ return t.scrollWidth / 2; }
+    // 画面が広くてカード全部が収まってしまうときは、ループさせず素直に端で止める
+    function canLoop(){ return t.scrollWidth - t.clientWidth > half(); }
     var animating = false, timer = null;
     function normalize(){
-      if(animating) return;
+      if(animating || !canLoop()) return;
       var h = half();
       if(t.scrollLeft >= h) t.scrollLeft -= h;
-      else if(t.scrollLeft < 1) t.scrollLeft += h;
     }
     t.addEventListener('scroll', normalize, {passive:true});
 
     // ← → ボタン：1枚ずつ送る
     function step(dir){
       var h = half(), u = unit();
-      // 端に当たる直前で、同じ見た目の位置へ飛ばしてから動かす
-      if(dir > 0 && t.scrollLeft + t.clientWidth + u >= t.scrollWidth) t.scrollLeft -= h;
-      else if(dir < 0 && t.scrollLeft - u < 0) t.scrollLeft += h;
-      animating = true;
+      animating = true;                    // 先回りの移動で normalize が走らないように先に立てる
       clearTimeout(timer);
-      timer = setTimeout(function(){ animating = false; normalize(); }, 450);
+      timer = setTimeout(function(){ animating = false; normalize(); }, 500);
+      // 端に当たる直前で、同じ見た目の位置へ飛ばしてから動かす
+      if(canLoop() && dir < 0 && t.scrollLeft - u < 0) t.scrollLeft += h;
       t.scrollBy({left: dir * u, behavior: 'smooth'});
     }
     var prev = wrap.querySelector('[data-rel-prev]'), next = wrap.querySelector('[data-rel-next]');
@@ -870,7 +872,16 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
         try{ t.setPointerCapture(pid); }catch(err){}
         t.classList.add('is-drag');
       }
-      if(held){ t.scrollLeft = s0 - d; e.preventDefault(); }
+      if(held){
+        // ドラッグ中もその場で折り返す（端で止まらないように）
+        var h = half(), to = s0 - d;
+        if(canLoop()){
+          if(to < 0){ s0 += h; to += h; }
+          else if(to >= h){ s0 -= h; to -= h; }
+        }
+        t.scrollLeft = to;
+        e.preventDefault();
+      }
     });
     function release(e){
       if(!down || (e.pointerId !== undefined && e.pointerId !== pid)) return;
