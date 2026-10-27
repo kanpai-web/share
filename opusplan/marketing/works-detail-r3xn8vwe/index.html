@@ -97,7 +97,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   --ink:#363636; --ink-sub:#6b6b6b;
   --tint:#eefaff; --tint2:#f3f7ff; --grey2:#f4f6f7; --line:#e1e1e1; --line2:#dcdcdc; --ink-faint:#9a9a9a; --blue:#2b95ff;
 }
-.ow{max-width:1020px;margin:0 auto;padding:0 28px 10px;display:grid; grid-template-columns:286px 1fr;gap:44px;align-items:start}
+.ow{width:100%;margin:0;padding:0 0 10px;display:grid; grid-template-columns:260px 1fr;gap:34px;align-items:start}
 .ow-main{min-width:0;padding-top:52px}
 .ow-side{margin-top:52px;position:sticky;top:20px}
 .ow-sum{background:#fff;border-radius:8px;box-shadow:0 8px 26px rgba(10,10,60,.15);overflow:hidden}
@@ -168,21 +168,22 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .ow-phase li+li::before{left:18px}
 .ow-phase .ow-phase__t{display:block;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.06em;margin-bottom:6px}
 .ow-phase .ow-phase__d{display:block;font-size:13px;color:var(--ink-sub);line-height:1.8}
-.ow-sec.ow-sec--hl{background:var(--navy);color:#fff;padding:34px 30px 30px;margin-left:-30px;margin-right:-30px}
-.ow-sec.ow-sec--hl .ow-hd .ow-en{color:#fff}
-.ow-sec.ow-sec--hl .ow-hd .ow-ja{color:rgba(255,255,255,.72)}
-.ow-sec.ow-sec--hl .ow-hd::after{background:rgba(255,255,255,.4)}
-.ow-results{display:grid;grid-template-columns:repeat(3,1fr);margin-top:26px}
+.ow-sec.ow-sec--hl{background:#fff;border-top:3px solid var(--navy);border-bottom:1px solid var(--line); padding:30px 0 26px;margin:0}
+.ow-sec.ow-sec--hl .ow-hd .ow-en{color:var(--navy)}
+.ow-sec.ow-sec--hl .ow-hd .ow-ja{color:var(--ink-sub)}
+.ow-results{display:grid;grid-template-columns:repeat(3,1fr);margin-top:24px}
 .ow-rcard{padding:0 22px}
-.ow-rcard+.ow-rcard{border-left:1px solid rgba(255,255,255,.22)}
-.ow-rcard .ow-rcard__k{display:block;font-size:11.5px;color:rgba(255,255,255,.72);line-height:1.6;margin-bottom:12px;min-height:2.4em}
+.ow-rcard:first-child{padding-left:0}
+.ow-rcard+.ow-rcard{border-left:1px solid var(--line)}
+.ow-rcard .ow-rcard__k{display:block;font-size:12px;color:var(--ink-sub);line-height:1.6;margin-bottom:12px;min-height:2.4em}
 .ow-rcard .ow-rcard__ba{display:flex;align-items:baseline;gap:8px;flex-wrap:wrap}
-.ow-rcard .ow-rcard__b{font-size:13px;color:rgba(255,255,255,.55);font-weight:700}
-.ow-rcard .ow-rcard__ar{font-size:11px;color:rgba(255,255,255,.45)}
-.ow-rcard .ow-rcard__a{font-size:46px;font-weight:900;line-height:1.05;letter-spacing:-.02em;font-feature-settings:"palt"}
-.ow-rcard .ow-rcard__a small{font-size:16px;font-weight:700;margin-left:2px}
-.ow-rcard .ow-rcard__note{display:block;font-size:11px;color:rgba(255,255,255,.6);margin-top:10px}
-.ow-rsum{font-size:14px;font-weight:700;color:#fff;margin:26px 0 0;padding-top:18px; border-top:1px solid rgba(255,255,255,.22)}
+.ow-rcard .ow-rcard__b{font-size:13px;color:#9aa3b2;font-weight:700}
+.ow-rcard .ow-rcard__ar{font-size:12px;color:#c3c8d2}
+.ow-rcard .ow-rcard__a{font-size:44px;font-weight:900;line-height:1.05;letter-spacing:-.02em; color:var(--navy);font-feature-settings:"palt"}
+.ow-rcard .ow-rcard__a small{font-size:16px;font-weight:700;margin-left:2px;color:var(--ink-sub)}
+.ow-rcard .ow-rcard__note{display:block;font-size:11.5px;color:#8d939e;margin-top:10px}
+.ow-rsum{font-size:15px;font-weight:700;color:var(--ink);margin:26px 0 0}
+.ow-rsum span{background:linear-gradient(transparent 58%,#FFF1A8 58%);padding:0 2px}
 @media screen and (max-width:767px){
   .ow-phase{grid-template-columns:1fr}
   .ow-phase li,.ow-phase li+li{padding:18px 0 0 18px}
@@ -190,25 +191,40 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .ow-phase li+li{border-top:1px solid var(--line);margin-top:14px}
   .ow-results{grid-template-columns:1fr;gap:22px}
   .ow-rcard{padding:0}
-  .ow-rcard+.ow-rcard{border-left:0;border-top:1px solid rgba(255,255,255,.22);padding-top:20px}
+  .ow-rcard+.ow-rcard{border-left:0;border-top:1px solid var(--line);padding-top:20px}
   .ow-rcard .ow-rcard__k{min-height:0}
-  .ow-sec.ow-sec--hl{margin-left:-16px;margin-right:-16px;padding:26px 16px 24px}
+  .ow-rcard:first-child{padding-left:0}
+  .ow-sec.ow-sec--hl{padding:24px 0 22px}
 }
-/* 上部のタグを一覧カードと同じ見た目に */
-.p-work__content-cat{display:flex;flex-wrap:wrap;gap:5px}
-.p-work__content-cat .c-cat{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;
-  border:1px solid #c9d2e4;border-radius:0;background:#fff;color:var(--navy)}
+/* ── ヒーロー：モックアップ画像を小さくし、左右を中央で揃える ── */
+.l-work .p-work__inner{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center}
+.l-work .p-work__img{width:auto}
+.l-work .p-work__img img{width:100%;max-width:420px;height:auto;display:block;margin-left:auto}
+.l-work .p-work__content{width:auto}
+.l-work .p-work__content-name{font-size:24px;line-height:1.5}
+.l-work .p-work__content-kind{font-size:15px;color:var(--ink-sub);margin-top:4px}
+
+/* 上部のタグを一覧カードと同じ見た目にし、絞り込み結果へのリンクにする */
+.p-work__content-cat{display:flex;flex-wrap:wrap;gap:5px;margin-top:14px}
+.p-work__content-cat .c-cat{display:inline-block;font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;
+  border:1px solid #c9d2e4;border-radius:0;background:#fff;color:var(--navy);text-decoration:none;
+  transition:border-color .14s linear}
+.p-work__content-cat a.c-cat:hover{border-color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+
+/* サマリーをスクロールに追従させる（body の overflow-x:hidden が sticky を無効化するため clip に） */
+html,body{overflow-x:clip}
 
 /* REASON を中央に戻す */
 .p-work__detail .ow-reason{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:24px;padding-right:24px}
 .p-work__detail .ow-reason__inner{max-width:880px;margin:0 auto;padding:0}
 
-/* 関連実績のカードを一覧と同じ見た目に */
+/* 関連実績：スライダーが動いてもカードが崩れないようにする */
+.l-results .slick-list,.l-results .slick-track{display:contents!important}
 .l-results .p-results__items{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;float:none;
-  max-width:1020px;margin:0 auto;padding:0 28px;box-sizing:border-box;
-  height:auto;min-height:0;max-height:none}
-.l-results .p-results__item{width:auto;height:auto!important;margin:0;background:#fff;border:1px solid #e6e9f0;
-  border-radius:8px;overflow:hidden}
+  max-width:1180px;margin:0;padding:0;box-sizing:border-box;
+  height:auto!important;min-height:0;max-height:none}
+.l-results .p-results__item{width:auto!important;height:auto!important;float:none!important;margin:0;
+  background:#fff;border:1px solid #e6e9f0;border-radius:8px;overflow:hidden}
 .l-results .p-results__item > a{display:block;text-decoration:none;color:inherit}
 .l-results .p-results__item-img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:0}
 .l-results .p-results__item-content{padding:15px 16px 17px}
@@ -216,11 +232,14 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 .l-results .p-results__item-company{font-size:16px;font-weight:700;line-height:1.55;color:var(--ink);margin:6px 0 0}
 .l-results .p-results__item > a:hover .p-results__item-company{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
 .l-results .p-results__item-cats{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
-.l-results .slick-list,.l-results .slick-track{height:auto!important}
-.l-results .p-results__item-company{margin-bottom:0}
+.l-results .c-btn{grid-column:1/-1;justify-self:center;width:auto;margin:14px auto 0;float:none}
 .l-results .p-results__item-cat{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;
   border:1px solid #c9d2e4;border-radius:0;background:#fff;color:var(--navy);margin:0}
-@media screen and (max-width:900px){ .l-results .p-results__items{grid-template-columns:repeat(2,1fr)} }
+@media screen and (max-width:900px){
+  .l-work .p-work__inner{grid-template-columns:1fr;gap:24px}
+  .l-work .p-work__img img{margin:0 auto}
+  .l-results .p-results__items{grid-template-columns:repeat(2,1fr)}
+}
 @media screen and (max-width:600px){ .l-results .p-results__items{grid-template-columns:1fr} }
 
 </style>
@@ -333,9 +352,8 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
             <div class="p-work__content-cat">
 
 
-              <p class="c-cat %e5%85%b5%e5%ba%ab%e7%9c%8c">
-                兵庫県芦屋市              </p>
-              <p class="c-cat p-results__btn">SEO対策</p><p class="c-cat p-results__btn">その他</p><p class="c-cat p-results__btn">広告運用代行</p>              <p class="c-cat p-results__btn">デザイン改修</p><p class="c-cat p-results__btn">マーケティング</p>              
+              <a class="c-cat %e5%85%b5%e5%ba%ab%e7%9c%8c" href="https://opus-plan.net/works/">兵庫県芦屋市</a>
+              <a class="c-cat p-results__btn" href="https://opus-plan.net/works/seo/">SEO対策</a><a class="c-cat p-results__btn" href="https://opus-plan.net/works/other/">その他</a><a class="c-cat p-results__btn" href="https://opus-plan.net/works/ads/">広告運用代行</a>              <a class="c-cat p-results__btn" href="https://opus-plan.net/part/%e3%83%87%e3%82%b6%e3%82%a4%e3%83%b3%e6%94%b9%e4%bf%ae/">デザイン改修</a><a class="c-cat p-results__btn" href="https://opus-plan.net/part/%e3%83%9e%e3%83%bc%e3%82%b1%e3%83%86%e3%82%a3%e3%83%b3%e3%82%b0/">マーケティング</a>              
 
             </div>
           </div>
@@ -411,7 +429,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
                 <span class="ow-rcard__note">6ヶ月で4.4倍</span>
               </div>
             </div>
-            <p class="ow-rsum">6ヶ月で問い合わせが月1件から月8件に増えました。</p>
+            <p class="ow-rsum"><span>6ヶ月で問い合わせが月1件から月8件に増えました。</span></p>
           </div>
 
           <div class="ow-sec">
