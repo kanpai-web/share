@@ -93,83 +93,119 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 <link rel="icon" href="https://opus-plan.net/wp-content/uploads/2022/12/cropped-tablogo-192x192.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="https://opus-plan.net/wp-content/uploads/2022/12/cropped-tablogo-180x180.png" />
 <meta name="msapplication-TileImage" content="https://opus-plan.net/wp-content/uploads/2022/12/cropped-tablogo-270x270.png" />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Klee+One:wght@600&display=swap">
 <style>
 /* ===== メンバー紹介（会社概要ページ） om- ===== */
-.l-member{--navy:#000080;--navy-dp:#1b1464;--ink:#363636;--ink-sub:#6b6b6b;--ink-faint:#9a9a9a;--line:#e1e1e1;--tag:#c9d2e4;--photo:#e2e7ea;
+.l-member{--navy:#000080;--navy-dp:#1b1464;--blue:#2b95ff;--tint:#eefaff;--ink:#363636;--ink-sub:#6b6b6b;--ink-faint:#9a9a9a;--line:#e1e8ee;--photo:#e2e7ea;
+  --hand:"Klee One","Noto Sans JP",sans-serif;
   padding:0 0 130px;color:var(--ink)}
-.l-member .om-lead{font-size:15px;line-height:2;margin:26px 0 52px}
-.om-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:48px 30px;margin:0;padding:0;list-style:none}
+.l-member .om-lead{font-size:15px;line-height:2;margin:26px 0 56px}
+.om-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:56px 34px;margin:0;padding:0;list-style:none}
 .om-card{display:flex;margin:0;padding:0;list-style:none}
 .om-card__btn{display:flex;flex-direction:column;width:100%;margin:0;padding:0;border:0;background:none;text-align:left;font:inherit;color:inherit;cursor:pointer}
-.om-card__btn .om-role,.om-card__btn .om-name,.om-card__btn .om-roman,.om-card__btn .om-catch{display:block}
-.om-photo{position:relative;aspect-ratio:4/5;background:var(--photo);overflow:hidden}
+.om-card__btn .om-name,.om-card__btn .om-roman,.om-card__btn .om-catch{display:block}
+
+/* 写真：ポラロイド風。1枚ずつ少し傾け、下の余白に手書きのひとこと */
+.om-snap{display:block;position:relative;background:#fff;padding:10px 10px 0;border-radius:4px;
+  box-shadow:0 1px 2px rgba(0,0,40,.08),0 8px 22px rgba(0,0,60,.10);transform:rotate(-2deg);transition:transform .25s ease}
+.om-card:nth-child(2n) .om-snap{transform:rotate(1.6deg)}
+.om-card:nth-child(3n) .om-snap{transform:rotate(-1deg)}
+.om-card__btn:hover .om-snap{transform:rotate(0) translateY(-4px)}
+.om-snap::before{content:"";position:absolute;top:-9px;left:50%;width:62px;height:18px;margin-left:-31px;
+  background:rgba(43,149,255,.22);transform:rotate(-3deg)}
+.om-photo{display:block;position:relative;aspect-ratio:4/5;background:var(--photo);overflow:hidden;border-radius:2px}
 .om-photo img,.om-photo svg{display:block;width:100%;height:100%;object-fit:cover}
-.om-role{margin-top:18px;font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.04em;line-height:1.5}
-.om-name{margin-top:4px;font-size:21px;font-weight:700;color:var(--navy-dp);line-height:1.4}
+.om-snap__cap{display:block;min-height:46px;padding:9px 4px 10px;font-family:var(--hand);font-weight:600;font-size:13px;line-height:1.5;color:var(--navy-dp);text-align:center}
+
+.om-role{display:inline-block;align-self:flex-start;margin-top:22px;padding:4px 11px;border-radius:999px;background:var(--tint);
+  font-size:11px;font-weight:700;color:var(--navy);letter-spacing:.03em;line-height:1.5}
+.om-name{margin-top:9px;font-size:21px;font-weight:700;color:var(--navy-dp);line-height:1.4}
 .om-roman{font-family:"Josefin Sans",sans-serif;font-size:12px;font-weight:500;color:var(--ink-faint);letter-spacing:.08em}
-.om-catch{margin-top:12px;font-size:13.5px;line-height:1.8}
-.om-stats{display:flex;margin-top:16px;border-top:1px solid var(--line)}
-.om-stat{flex:1;min-width:0;padding-top:13px}
-.om-stat + .om-stat{border-left:1px solid var(--line);padding-left:12px;margin-left:12px}
-.om-stat__v{display:block;white-space:nowrap;font-family:"Josefin Sans",sans-serif;font-size:30px;font-weight:700;color:var(--navy);line-height:1}
-.om-stat__u{font-family:"Noto Sans JP",sans-serif;font-size:11px;font-weight:700;margin-left:2px}
-.om-stat__l{display:block;margin-top:7px;font-size:11px;color:var(--ink-sub);line-height:1.5}
-.om-areas{display:flex;flex-wrap:wrap;gap:5px;margin-top:15px}
-.om-tag{display:inline-block;font-size:10.5px;font-weight:700;line-height:1;padding:5px 8px;border:1px solid var(--tag);background:#fff;color:var(--navy)}
-.om-more{display:inline-block;align-self:flex-start;margin-top:auto;padding-top:18px;font-size:12.5px;font-weight:700;color:var(--navy)}
-.om-more::after{content:"";display:inline-block;width:6px;height:6px;margin-left:8px;border-top:1.5px solid currentColor;border-right:1.5px solid currentColor;transform:translateY(-1px) rotate(45deg)}
-.om-card__btn:hover .om-name,.om-card__btn:hover .om-more{text-decoration:underline;text-underline-offset:3px}
-.om-card__btn:focus-visible{outline:2px solid var(--navy);outline-offset:4px}
+.om-catch{margin-top:10px;font-size:13.5px;line-height:1.8}
+.om-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:14px}
+.om-chip{display:inline-flex;align-items:baseline;gap:5px;padding:6px 11px 5px;border-radius:999px;border:1px solid var(--line);background:#fff;font-size:11px;color:var(--ink-sub);line-height:1.3}
+.om-chip b{font-family:"Josefin Sans",sans-serif;font-size:18px;font-weight:700;color:var(--blue);line-height:1}
+.om-chip i{font-style:normal;font-weight:700;color:var(--navy)}
+.om-tags{display:flex;flex-wrap:wrap;gap:2px 10px;margin-top:12px;font-size:12px;font-weight:700;color:var(--blue)}
+.om-more{display:inline-flex;align-items:center;gap:8px;align-self:flex-start;margin-top:auto;padding-top:18px;font-size:12.5px;font-weight:700;color:var(--navy)}
+.om-more::after{content:"";width:22px;height:22px;border-radius:50%;background:var(--navy) url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 22 22'%3E%3Cpath d='M9 7l4 4-4 4' fill='none' stroke='%23fff' stroke-width='1.6'/%3E%3C/svg%3E") center/22px no-repeat;transition:transform .2s ease}
+.om-card__btn:hover .om-more::after{transform:translateX(3px)}
+.om-card__btn:hover .om-name{text-decoration:underline;text-decoration-color:var(--blue);text-decoration-thickness:2px;text-underline-offset:4px}
+.om-card__btn:focus-visible{outline:2px solid var(--blue);outline-offset:6px;border-radius:6px}
 
 /* ── 詳細（モーダル） ── */
 html.om-open{overflow:hidden}
-.om-modal{width:calc(100% - 32px);max-width:920px;max-height:88vh;margin:auto;padding:0;border:0;background:#fff;color:#363636;overflow:auto}
-.om-modal::backdrop{background:rgba(12,14,48,.55)}
-.om-modal__inner{position:relative;display:grid;grid-template-columns:280px minmax(0,1fr);gap:40px;padding:48px}
-.om-modal__close{position:absolute;top:14px;right:14px;width:40px;height:40px;border:1px solid #e1e1e1;background:#fff;cursor:pointer;font-size:0}
-.om-modal__close::before,.om-modal__close::after{content:"";position:absolute;left:11px;top:19px;width:17px;height:1.5px;background:#000080}
+.om-modal{width:calc(100% - 32px);max-width:860px;max-height:90vh;margin:auto;padding:0;border:0;border-radius:20px;background:#fff;color:#363636;overflow:auto;overscroll-behavior:contain}
+.om-modal:focus{outline:none}
+.om-modal[open]{animation:om-pop .32s cubic-bezier(.2,.8,.3,1.2)}
+.om-modal::backdrop{background:rgba(10,20,60,.45);backdrop-filter:blur(3px)}
+@keyframes om-pop{from{opacity:0;transform:translateY(18px) scale(.97)}to{opacity:1;transform:none}}
+@media (prefers-reduced-motion:reduce){.om-modal[open]{animation:none}.om-snap,.om-more::after{transition:none}}
+.om-modal__close{position:sticky;top:16px;float:right;margin:16px 16px -58px 0;z-index:2;width:42px;height:42px;border:0;border-radius:50%;background:#fff;cursor:pointer;font-size:0;
+  box-shadow:0 2px 8px rgba(0,0,60,.12);transition:transform .2s ease}
+.om-modal__close::before,.om-modal__close::after{content:"";position:absolute;left:13px;top:20px;width:16px;height:2px;border-radius:2px;background:var(--navy)}
 .om-modal__close::before{transform:rotate(45deg)}.om-modal__close::after{transform:rotate(-45deg)}
-.om-modal__close:hover{border-color:#000080}
-.om-modal .om-photo{align-self:start;position:sticky;top:0}
-.om-modal .om-role{margin-top:0}
-.om-modal .om-name{font-size:26px}
-.om-modal__catch{margin-top:16px;font-size:17px;font-weight:700;color:#1b1464;line-height:1.7}
-.om-modal .om-stats{max-width:420px}
-.om-dl{margin:28px 0 0;padding:0}
-.om-dl__row{display:grid;grid-template-columns:150px minmax(0,1fr);gap:16px;padding:14px 0;border-top:1px solid #e1e1e1}
-.om-dl__row:last-child{border-bottom:1px solid #e1e1e1}
-.om-dl dt{font-size:12.5px;font-weight:700;color:#000080;line-height:1.8}
-.om-dl dd{margin:0;font-size:14px;line-height:1.8}
-.om-dl ul{margin:0;padding:0;list-style:none}
-.om-dl li{position:relative;padding-left:1em}
-.om-dl li::before{content:"・";position:absolute;left:0}
-.om-msg{margin:26px 0 0;padding:4px 0 4px 18px;border-left:3px solid #000080;font-size:15px;line-height:1.9}
-.om-links{margin:22px 0 0;padding:0;list-style:none}
-.om-links li{margin-top:6px;font-size:13.5px;line-height:1.7}
-.om-links a{color:#000080;text-decoration:underline;text-underline-offset:3px}
-.om-cta{margin-top:28px}
-.om-cta a{display:inline-block;padding:14px 34px;background:#000080;color:#fff;font-size:14px;font-weight:700;text-decoration:none}
-.om-cta a:hover{background:#1b1464}
+.om-modal__close:hover{transform:rotate(90deg)}
+.om-modal__head{position:relative;display:grid;grid-template-columns:210px minmax(0,1fr);gap:40px;align-items:center;padding:48px 52px 40px;background:var(--tint);border-radius:20px 20px 0 0}
+.om-modal__head .om-snap{transform:rotate(-3deg)}
+.om-modal__head .om-role{margin-top:0;background:#fff}
+.om-modal .om-name{font-size:28px;margin-top:10px}
+.om-modal__catch{margin-top:14px;font-size:16px;font-weight:700;color:var(--navy-dp);line-height:1.75}
+.om-modal__body{padding:40px 52px 48px}
+.om-h{display:flex;align-items:center;gap:10px;margin:0 0 14px;font-size:14px;font-weight:700;color:var(--navy)}
+.om-h::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--blue)}
+/* 経歴：点と線のタイムライン */
+.om-tl{margin:0 0 34px;padding:0;list-style:none}
+.om-tl li{position:relative;padding:0 0 12px 22px;font-size:14px;line-height:1.8}
+.om-tl li::before{content:"";position:absolute;left:3px;top:9px;width:9px;height:9px;border-radius:50%;border:2px solid var(--blue);background:#fff;box-sizing:border-box}
+.om-tl li::after{content:"";position:absolute;left:7px;top:20px;bottom:-6px;width:1px;background:var(--line)}
+.om-tl li:last-child::after{display:none}
+/* インタビュー形式のQ&A */
+.om-qa{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin:0}
+.om-qa__item{margin:0;padding:20px 22px;border:1px solid var(--line);border-radius:14px}
+.om-qa__item--wide{grid-column:1/-1}
+.om-qa dt{display:flex;gap:8px;font-size:13px;font-weight:700;color:var(--navy);line-height:1.6}
+.om-qa dt::before{content:"Q";font-family:"Josefin Sans",sans-serif;font-size:17px;color:var(--blue);line-height:1.3}
+.om-qa dd{margin:8px 0 0;font-size:14px;line-height:1.85}
+.om-qa ul{margin:0;padding:0;list-style:none}
+.om-qa li{position:relative;padding-left:20px}
+.om-qa li::before{content:"";position:absolute;left:2px;top:.55em;width:9px;height:5px;border-left:2px solid var(--blue);border-bottom:2px solid var(--blue);transform:rotate(-45deg)}
+.om-qa__sub{display:block;margin-top:6px;font-size:12px;color:var(--ink-sub)}
+/* 本人からのひとこと（吹き出し） */
+.om-say{display:flex;gap:14px;align-items:flex-start;margin:34px 0 0}
+.om-say__face{flex:0 0 56px;width:56px;height:56px;border-radius:50%;overflow:hidden;background:var(--photo);border:2px solid #fff;box-shadow:0 0 0 1px var(--line)}
+.om-say__face svg,.om-say__face img{display:block;width:100%;height:100%;object-fit:cover}
+.om-say__txt{position:relative;margin:4px 0 0;padding:16px 20px;border-radius:4px 16px 16px 16px;background:var(--tint);font-family:var(--hand);font-weight:600;font-size:15.5px;line-height:1.85;color:var(--navy-dp)}
+.om-links{display:flex;flex-wrap:wrap;gap:10px;margin:28px 0 0;padding:0;list-style:none}
+.om-links a{display:inline-flex;align-items:center;gap:8px;padding:9px 14px;border:1px solid var(--line);border-radius:10px;font-size:13px;color:var(--navy);text-decoration:none;line-height:1.5}
+.om-links a::before{content:"→";color:var(--blue);font-weight:700}
+.om-links a:hover{border-color:var(--blue)}
+.om-cta{margin-top:34px;text-align:center}
+.om-cta a{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:999px;background:var(--navy);color:#fff;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s ease}
+.om-cta a:hover{background:var(--blue)}
 
 @media screen and (max-width:1024px){
-  .om-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:44px 28px}
-  .om-modal__inner{grid-template-columns:200px minmax(0,1fr);gap:28px;padding:40px 28px}
+  .om-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:52px 30px}
+  .om-modal__head{grid-template-columns:170px minmax(0,1fr);gap:28px;padding:44px 32px 34px}
+  .om-modal__body{padding:34px 32px 40px}
 }
 @media screen and (max-width:599px){
   .l-member{padding-bottom:90px}
-  .l-member .om-lead{font-size:14px;margin:18px 0 34px}
-  .om-grid{gap:36px 14px}
+  .l-member .om-lead{font-size:14px;margin:18px 0 36px}
+  .om-grid{gap:40px 16px}
+  .om-snap{padding:7px 7px 0}
+  .om-snap__cap{font-size:11.5px;min-height:40px;padding:7px 2px 8px}
   .om-name{font-size:17px}
   .om-catch{font-size:12.5px}
-  .om-stat + .om-stat{padding-left:8px;margin-left:8px}
-  .om-stat__v{font-size:24px}
-  .om-stat__u{font-size:10px}
-  .om-modal{width:100%;max-width:none;max-height:none;height:100%}
-  .om-modal__inner{grid-template-columns:1fr;gap:20px;padding:56px 18px 36px}
-  .om-modal .om-photo{width:150px}
-  .om-modal .om-name{font-size:22px}
+  .om-chip{padding:5px 9px 4px;font-size:10px}
+  .om-chip b{font-size:15px}
+  .om-modal{width:100%;max-width:none;max-height:none;height:100%;border-radius:0}
+  .om-modal__head{grid-template-columns:1fr;gap:18px;padding:56px 20px 28px;border-radius:0}
+  .om-modal__head .om-snap{width:190px}
+  .om-modal .om-name{font-size:23px}
   .om-modal__catch{font-size:15px}
-  .om-dl__row{grid-template-columns:1fr;gap:2px}
+  .om-modal__body{padding:28px 20px 40px}
+  .om-qa{grid-template-columns:1fr}
 }
 .l-company{margin-bottom:120px}
 @media screen and (max-width:599px){.l-company{margin-bottom:80px}}
@@ -528,120 +564,136 @@ html.om-open{overflow:hidden}
     <ul class="om-grid">
 <li class="om-card">
   <button type="button" class="om-card__btn" data-om-open="om-m1" aria-haspopup="dialog">
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">週末は大阪の喫茶店めぐり</span></span>
     <span class="om-role">代表取締役／Webコンサルタント</span>
     <span class="om-name">山田 太郎</span>
     <span class="om-roman">Taro Yamada</span>
     <span class="om-catch">「何から手をつけるか」を一緒に決めるところから伴走します</span>
-    <span class="om-stats"><span class="om-stat"><span class="om-stat__v">15<span class="om-stat__u">年</span></span><span class="om-stat__l">Web集客の経験</span></span><span class="om-stat"><span class="om-stat__v">200<span class="om-stat__u">社以上</span></span><span class="om-stat__l">支援してきた企業</span></span></span>
-    <span class="om-areas"><span class="om-tag">戦略設計</span><span class="om-tag">SEO対策</span><span class="om-tag">風評被害対策</span></span>
+    <span class="om-chips"><span class="om-chip">Web集客の経験 <b>15</b><i>年</i></span><span class="om-chip">支援してきた企業 <b>200</b><i>社以上</i></span></span>
+    <span class="om-tags"><span>#戦略設計</span><span>#SEO対策</span><span>#風評被害対策</span></span>
     <span class="om-more">プロフィールを見る</span>
   </button>
 </li>
 <li class="om-card">
   <button type="button" class="om-card__btn" data-om-open="om-m2" aria-haspopup="dialog">
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">焼き立てパンを探して歩く休日</span></span>
     <span class="om-role">Webマーケター</span>
     <span class="om-name">佐藤 花子</span>
     <span class="om-roman">Hanako Sato</span>
     <span class="om-catch">アクセス解析の数字を「次にやること」に置き換えてお渡しします</span>
-    <span class="om-stats"><span class="om-stat"><span class="om-stat__v">8<span class="om-stat__u">年</span></span><span class="om-stat__l">Webマーケティングの経験</span></span><span class="om-stat"><span class="om-stat__v">120<span class="om-stat__u">件以上</span></span><span class="om-stat__l">分析してきたサイト</span></span></span>
-    <span class="om-areas"><span class="om-tag">アクセス解析</span><span class="om-tag">コンテンツ設計</span><span class="om-tag">GA4</span></span>
+    <span class="om-chips"><span class="om-chip">Webマーケティングの経験 <b>8</b><i>年</i></span><span class="om-chip">分析してきたサイト <b>120</b><i>件以上</i></span></span>
+    <span class="om-tags"><span>#アクセス解析</span><span>#コンテンツ設計</span><span>#GA4</span></span>
     <span class="om-more">プロフィールを見る</span>
   </button>
 </li>
 <li class="om-card">
   <button type="button" class="om-card__btn" data-om-open="om-m3" aria-haspopup="dialog">
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">キャンプと古いカメラいじり</span></span>
     <span class="om-role">Webエンジニア</span>
     <span class="om-name">鈴木 一郎</span>
     <span class="om-roman">Ichiro Suzuki</span>
     <span class="om-catch">施策をサイトに反映するところまで、社内で完結させます</span>
-    <span class="om-stats"><span class="om-stat"><span class="om-stat__v">10<span class="om-stat__u">年</span></span><span class="om-stat__l">Web制作の経験</span></span><span class="om-stat"><span class="om-stat__v">150<span class="om-stat__u">件以上</span></span><span class="om-stat__l">制作・改修したサイト</span></span></span>
-    <span class="om-areas"><span class="om-tag">サイト制作</span><span class="om-tag">WordPress</span><span class="om-tag">表示速度の改善</span></span>
+    <span class="om-chips"><span class="om-chip">Web制作の経験 <b>10</b><i>年</i></span><span class="om-chip">制作・改修したサイト <b>150</b><i>件以上</i></span></span>
+    <span class="om-tags"><span>#サイト制作</span><span>#WordPress</span><span>#表示速度の改善</span></span>
     <span class="om-more">プロフィールを見る</span>
   </button>
 </li>
 <li class="om-card">
   <button type="button" class="om-card__btn" data-om-open="om-m4" aria-haspopup="dialog">
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">月に一度の宝塚観劇が楽しみ</span></span>
     <span class="om-role">営業・カスタマーサクセス</span>
     <span class="om-name">高橋 美咲</span>
     <span class="om-roman">Misaki Takahashi</span>
     <span class="om-catch">最初のお問い合わせから、毎月の定例まで窓口を担当します</span>
-    <span class="om-stats"><span class="om-stat"><span class="om-stat__v">6<span class="om-stat__u">年</span></span><span class="om-stat__l">Web業界の経験</span></span><span class="om-stat"><span class="om-stat__v">300<span class="om-stat__u">件以上</span></span><span class="om-stat__l">受けてきたご相談</span></span></span>
-    <span class="om-areas"><span class="om-tag">初回のご相談</span><span class="om-tag">お見積り</span><span class="om-tag">定例の進行</span></span>
+    <span class="om-chips"><span class="om-chip">Web業界の経験 <b>6</b><i>年</i></span><span class="om-chip">受けてきたご相談 <b>300</b><i>件以上</i></span></span>
+    <span class="om-tags"><span>#初回のご相談</span><span>#お見積り</span><span>#定例の進行</span></span>
     <span class="om-more">プロフィールを見る</span>
   </button>
 </li>
     </ul>
   </div>
-<dialog class="om-modal" id="om-m1" aria-label="山田 太郎のプロフィール">
-  <div class="om-modal__inner">
-    <button type="button" class="om-modal__close">閉じる</button>
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
-    <div class="om-modal__body">
+<dialog class="om-modal" id="om-m1" aria-label="山田 太郎のプロフィール" autofocus>
+  <button type="button" class="om-modal__close">閉じる</button>
+  <div class="om-modal__head">
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">週末は大阪の喫茶店めぐり</span></span>
+    <div>
       <p class="om-role">代表取締役／Webコンサルタント</p>
       <p class="om-name">山田 太郎</p>
       <p class="om-roman">Taro Yamada</p>
       <p class="om-modal__catch">「何から手をつけるか」を一緒に決めるところから伴走します</p>
-      <span class="om-stats"><span class="om-stat"><span class="om-stat__v">15<span class="om-stat__u">年</span></span><span class="om-stat__l">Web集客の経験</span></span><span class="om-stat"><span class="om-stat__v">200<span class="om-stat__u">社以上</span></span><span class="om-stat__l">支援してきた企業</span></span></span>
-      <dl class="om-dl"><div class="om-dl__row"><dt>経歴</dt><dd><ul><li>2010年 Web制作会社に入社。ディレクターとして中小企業のサイト制作を担当</li><li>2015年 オーパスプラン有限会社を設立</li><li>現在 SEO・広告・風評被害対策の戦略設計と、定例での優先順位づけを担当</li></ul></dd></div><div class="om-dl__row"><dt>得意な業種</dt><dd>士業／医療・クリニック／葬儀／建設・リフォーム</dd></div><div class="om-dl__row"><dt>得意な施策</dt><dd>地域名での上位表示、問い合わせまでの導線設計</dd></div><div class="om-dl__row"><dt>資格・認定</dt><dd>ウェブ解析士</dd></div><div class="om-dl__row"><dt>よく受けるご相談</dt><dd><ul><li>ホームページはあるのに問い合わせが来ない</li><li>広告とSEO、どちらに予算をかけるべきか</li><li>ネット上の悪い口コミへの対応</li></ul></dd></div><div class="om-dl__row"><dt>大事にしていること</dt><dd>数字で説明できない提案はしないこと。やらない方がいい施策も正直にお伝えします。</dd></div><div class="om-dl__row"><dt>休日の過ごし方</dt><dd>週末のランニングと、大阪の喫茶店めぐり</dd></div></dl>
-      <p class="om-msg">社内にWebの担当者がいなくても大丈夫です。まずは今の状況をそのまま聞かせてください。</p>
-      <ul class="om-links"><li><a href="https://opus-plan.net/works/">担当した実績：大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</a></li><li><a href="https://opus-plan.net/blog/">執筆したコラム：ホームページに問い合わせが来ない原因とは？</a></li></ul>
-      <p class="om-cta"><a href="https://opus-plan.net/contact">相談してみる</a></p>
+      <span class="om-chips"><span class="om-chip">Web集客の経験 <b>15</b><i>年</i></span><span class="om-chip">支援してきた企業 <b>200</b><i>社以上</i></span></span>
+      <span class="om-tags"><span>#戦略設計</span><span>#SEO対策</span><span>#風評被害対策</span></span>
     </div>
   </div>
+  <div class="om-modal__body">
+    <p class="om-h">これまでの経歴</p><ul class="om-tl"><li>2010年 Web制作会社に入社。ディレクターとして中小企業のサイト制作を担当</li><li>2015年 オーパスプラン有限会社を設立</li><li>現在 SEO・広告・風評被害対策の戦略設計と、定例での優先順位づけを担当</li></ul>
+    <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>地域名での上位表示、問い合わせまでの導線設計<span class="om-qa__sub">よく担当する業種：士業／医療・クリニック／葬儀／建設・リフォーム</span><span class="om-qa__sub">資格：ウェブ解析士</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>ホームページはあるのに問い合わせが来ない</li><li>広告とSEO、どちらに予算をかけるべきか</li><li>ネット上の悪い口コミへの対応</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>数字で説明できない提案はしないこと。やらない方がいい施策も正直にお伝えします。</dd></div></dl>
+    <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">社内にWebの担当者がいなくても大丈夫です。まずは今の状況をそのまま聞かせてください。</p></div>
+    <ul class="om-links"><li><a href="https://opus-plan.net/works/">担当した実績：大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</a></li><li><a href="https://opus-plan.net/blog/">執筆したコラム：ホームページに問い合わせが来ない原因とは？</a></li></ul>
+    <p class="om-cta"><a href="https://opus-plan.net/contact">山田さんに相談してみる</a></p>
+  </div>
 </dialog>
-<dialog class="om-modal" id="om-m2" aria-label="佐藤 花子のプロフィール">
-  <div class="om-modal__inner">
-    <button type="button" class="om-modal__close">閉じる</button>
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
-    <div class="om-modal__body">
+<dialog class="om-modal" id="om-m2" aria-label="佐藤 花子のプロフィール" autofocus>
+  <button type="button" class="om-modal__close">閉じる</button>
+  <div class="om-modal__head">
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">焼き立てパンを探して歩く休日</span></span>
+    <div>
       <p class="om-role">Webマーケター</p>
       <p class="om-name">佐藤 花子</p>
       <p class="om-roman">Hanako Sato</p>
       <p class="om-modal__catch">アクセス解析の数字を「次にやること」に置き換えてお渡しします</p>
-      <span class="om-stats"><span class="om-stat"><span class="om-stat__v">8<span class="om-stat__u">年</span></span><span class="om-stat__l">Webマーケティングの経験</span></span><span class="om-stat"><span class="om-stat__v">120<span class="om-stat__u">件以上</span></span><span class="om-stat__l">分析してきたサイト</span></span></span>
-      <dl class="om-dl"><div class="om-dl__row"><dt>経歴</dt><dd><ul><li>事業会社でインハウスのWeb担当として、自社サイトの集客と改善を担当</li><li>2022年 オーパスプランに参画。GA4・サーチコンソールの分析とコラムの企画を担当</li></ul></dd></div><div class="om-dl__row"><dt>得意な業種</dt><dd>BtoBサービス／教育・スクール／不動産</dd></div><div class="om-dl__row"><dt>得意な施策</dt><dd>GA4・サーチコンソールの分析、検索ワード調査、記事の構成づくり</dd></div><div class="om-dl__row"><dt>資格・認定</dt><dd>Google アナリティクス認定資格</dd></div><div class="om-dl__row"><dt>よく受けるご相談</dt><dd><ul><li>GA4の見方が分からない</li><li>ブログを書いているのにアクセスが増えない</li><li>どのページを直せばいいか知りたい</li></ul></dd></div><div class="om-dl__row"><dt>大事にしていること</dt><dd>専門用語を使わずに、社内で説明できる言葉でレポートをお渡しすること。</dd></div><div class="om-dl__row"><dt>休日の過ごし方</dt><dd>パン屋めぐり。休日はだいたい焼き立てを探して歩いています</dd></div></dl>
-      <p class="om-msg">「数字は取っているけど見方が分からない」という段階からのご相談も歓迎です。</p>
-      <ul class="om-links"><li><a href="https://opus-plan.net/blog/">執筆したコラム：サーチコンソールの使い方</a></li><li><a href="https://opus-plan.net/blog/">執筆したコラム：GA4の使い方</a></li></ul>
-      <p class="om-cta"><a href="https://opus-plan.net/contact">相談してみる</a></p>
+      <span class="om-chips"><span class="om-chip">Webマーケティングの経験 <b>8</b><i>年</i></span><span class="om-chip">分析してきたサイト <b>120</b><i>件以上</i></span></span>
+      <span class="om-tags"><span>#アクセス解析</span><span>#コンテンツ設計</span><span>#GA4</span></span>
     </div>
   </div>
+  <div class="om-modal__body">
+    <p class="om-h">これまでの経歴</p><ul class="om-tl"><li>事業会社でインハウスのWeb担当として、自社サイトの集客と改善を担当</li><li>2022年 オーパスプランに参画。GA4・サーチコンソールの分析とコラムの企画を担当</li></ul>
+    <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>GA4・サーチコンソールの分析、検索ワード調査、記事の構成づくり<span class="om-qa__sub">よく担当する業種：BtoBサービス／教育・スクール／不動産</span><span class="om-qa__sub">資格：Google アナリティクス認定資格</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>GA4の見方が分からない</li><li>ブログを書いているのにアクセスが増えない</li><li>どのページを直せばいいか知りたい</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>専門用語を使わずに、社内で説明できる言葉でレポートをお渡しすること。</dd></div></dl>
+    <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">「数字は取っているけど見方が分からない」という段階からのご相談も歓迎です。</p></div>
+    <ul class="om-links"><li><a href="https://opus-plan.net/blog/">執筆したコラム：サーチコンソールの使い方</a></li><li><a href="https://opus-plan.net/blog/">執筆したコラム：GA4の使い方</a></li></ul>
+    <p class="om-cta"><a href="https://opus-plan.net/contact">佐藤さんに相談してみる</a></p>
+  </div>
 </dialog>
-<dialog class="om-modal" id="om-m3" aria-label="鈴木 一郎のプロフィール">
-  <div class="om-modal__inner">
-    <button type="button" class="om-modal__close">閉じる</button>
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
-    <div class="om-modal__body">
+<dialog class="om-modal" id="om-m3" aria-label="鈴木 一郎のプロフィール" autofocus>
+  <button type="button" class="om-modal__close">閉じる</button>
+  <div class="om-modal__head">
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">キャンプと古いカメラいじり</span></span>
+    <div>
       <p class="om-role">Webエンジニア</p>
       <p class="om-name">鈴木 一郎</p>
       <p class="om-roman">Ichiro Suzuki</p>
       <p class="om-modal__catch">施策をサイトに反映するところまで、社内で完結させます</p>
-      <span class="om-stats"><span class="om-stat"><span class="om-stat__v">10<span class="om-stat__u">年</span></span><span class="om-stat__l">Web制作の経験</span></span><span class="om-stat"><span class="om-stat__v">150<span class="om-stat__u">件以上</span></span><span class="om-stat__l">制作・改修したサイト</span></span></span>
-      <dl class="om-dl"><div class="om-dl__row"><dt>経歴</dt><dd><ul><li>制作会社でコーダー・エンジニアとして企業サイトや採用サイトを担当</li><li>現在 オーパスプランでWordPressの構築・改修と、表示速度の改善を担当</li></ul></dd></div><div class="om-dl__row"><dt>得意な業種</dt><dd>コーポレートサイト／採用サイト／LP</dd></div><div class="om-dl__row"><dt>得意な施策</dt><dd>WordPressのテーマ制作、フォーム改善、表示速度の改善</dd></div><div class="om-dl__row"><dt>よく受けるご相談</dt><dd><ul><li>WordPressの更新が自社でできない</li><li>スマホで見ると表示が崩れる</li><li>ページの表示が遅い</li></ul></dd></div><div class="om-dl__row"><dt>大事にしていること</dt><dd>直したあとに、お客様の社内で更新できる状態でお渡しすること。</dd></div><div class="om-dl__row"><dt>休日の過ごし方</dt><dd>キャンプと、古いカメラの修理</dd></div></dl>
-      <p class="om-msg">分析で見つかった改善点を、外注を挟まずにすぐ形にできるのが私たちの強みです。</p>
-      
-      <p class="om-cta"><a href="https://opus-plan.net/contact">相談してみる</a></p>
+      <span class="om-chips"><span class="om-chip">Web制作の経験 <b>10</b><i>年</i></span><span class="om-chip">制作・改修したサイト <b>150</b><i>件以上</i></span></span>
+      <span class="om-tags"><span>#サイト制作</span><span>#WordPress</span><span>#表示速度の改善</span></span>
     </div>
   </div>
+  <div class="om-modal__body">
+    <p class="om-h">これまでの経歴</p><ul class="om-tl"><li>制作会社でコーダー・エンジニアとして企業サイトや採用サイトを担当</li><li>現在 オーパスプランでWordPressの構築・改修と、表示速度の改善を担当</li></ul>
+    <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>WordPressのテーマ制作、フォーム改善、表示速度の改善<span class="om-qa__sub">よく担当する業種：コーポレートサイト／採用サイト／LP</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>WordPressの更新が自社でできない</li><li>スマホで見ると表示が崩れる</li><li>ページの表示が遅い</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>直したあとに、お客様の社内で更新できる状態でお渡しすること。</dd></div></dl>
+    <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">分析で見つかった改善点を、外注を挟まずにすぐ形にできるのが私たちの強みです。</p></div>
+    
+    <p class="om-cta"><a href="https://opus-plan.net/contact">鈴木さんに相談してみる</a></p>
+  </div>
 </dialog>
-<dialog class="om-modal" id="om-m4" aria-label="高橋 美咲のプロフィール">
-  <div class="om-modal__inner">
-    <button type="button" class="om-modal__close">閉じる</button>
-    <div class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></div>
-    <div class="om-modal__body">
+<dialog class="om-modal" id="om-m4" aria-label="高橋 美咲のプロフィール" autofocus>
+  <button type="button" class="om-modal__close">閉じる</button>
+  <div class="om-modal__head">
+    <span class="om-snap"><span class="om-photo"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><span class="om-snap__cap">月に一度の宝塚観劇が楽しみ</span></span>
+    <div>
       <p class="om-role">営業・カスタマーサクセス</p>
       <p class="om-name">高橋 美咲</p>
       <p class="om-roman">Misaki Takahashi</p>
       <p class="om-modal__catch">最初のお問い合わせから、毎月の定例まで窓口を担当します</p>
-      <span class="om-stats"><span class="om-stat"><span class="om-stat__v">6<span class="om-stat__u">年</span></span><span class="om-stat__l">Web業界の経験</span></span><span class="om-stat"><span class="om-stat__v">300<span class="om-stat__u">件以上</span></span><span class="om-stat__l">受けてきたご相談</span></span></span>
-      <dl class="om-dl"><div class="om-dl__row"><dt>経歴</dt><dd><ul><li>広告代理店で営業として、中小企業のWeb広告の提案を担当</li><li>現在 オーパスプランで初回相談・お見積り・定例の進行を担当</li></ul></dd></div><div class="om-dl__row"><dt>得意な業種</dt><dd>飲食／美容・サロン／小売</dd></div><div class="om-dl__row"><dt>得意な施策</dt><dd>ご予算に合わせたプランの組み立て、定例の進行</dd></div><div class="om-dl__row"><dt>資格・認定</dt><dd>Google 広告認定資格</dd></div><div class="om-dl__row"><dt>よく受けるご相談</dt><dd><ul><li>費用の目安を知りたい</li><li>他社の見積もりと比べたい</li><li>社内の稟議用に資料がほしい</li></ul></dd></div><div class="om-dl__row"><dt>大事にしていること</dt><dd>ご予算と社内の事情をうかがったうえで、無理のない進め方を一緒に考えること。</dd></div><div class="om-dl__row"><dt>休日の過ごし方</dt><dd>宝塚観劇</dd></div></dl>
-      <p class="om-msg">「こんなことを聞いてもいいのかな」という段階でも、お気軽にご連絡ください。</p>
-      
-      <p class="om-cta"><a href="https://opus-plan.net/contact">相談してみる</a></p>
+      <span class="om-chips"><span class="om-chip">Web業界の経験 <b>6</b><i>年</i></span><span class="om-chip">受けてきたご相談 <b>300</b><i>件以上</i></span></span>
+      <span class="om-tags"><span>#初回のご相談</span><span>#お見積り</span><span>#定例の進行</span></span>
     </div>
+  </div>
+  <div class="om-modal__body">
+    <p class="om-h">これまでの経歴</p><ul class="om-tl"><li>広告代理店で営業として、中小企業のWeb広告の提案を担当</li><li>現在 オーパスプランで初回相談・お見積り・定例の進行を担当</li></ul>
+    <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>ご予算に合わせたプランの組み立て、定例の進行<span class="om-qa__sub">よく担当する業種：飲食／美容・サロン／小売</span><span class="om-qa__sub">資格：Google 広告認定資格</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>費用の目安を知りたい</li><li>他社の見積もりと比べたい</li><li>社内の稟議用に資料がほしい</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>ご予算と社内の事情をうかがったうえで、無理のない進め方を一緒に考えること。</dd></div></dl>
+    <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">「こんなことを聞いてもいいのかな」という段階でも、お気軽にご連絡ください。</p></div>
+    
+    <p class="om-cta"><a href="https://opus-plan.net/contact">高橋さんに相談してみる</a></p>
   </div>
 </dialog>
 </div>
@@ -781,7 +833,7 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
     btn.addEventListener('click',function(){
       var d=document.getElementById(btn.getAttribute('data-om-open'));
       if(!d||!d.showModal) return;
-      d.showModal(); root.classList.add('om-open');
+      d.showModal(); d.focus(); d.scrollTop=0; root.classList.add('om-open');
     });
   });
   document.querySelectorAll('.om-modal').forEach(function(d){
