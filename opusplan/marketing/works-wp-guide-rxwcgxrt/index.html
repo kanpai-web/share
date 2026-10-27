@@ -1,0 +1,583 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>実績ページ WordPress掲載ガイド｜オーパスプラン</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B1464;--teal:#0F7C8C;--orange:#E8720C;--text:#25282F;--grey:#5A6273;
+  --line:#E3E6EC;--bg:#F7F8FA;--pale:#F4F7FD;--paleT:#EDF6F7;--paleO:#FDF3E8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 90px}
+header.hd{background:#fff;border-bottom:1px solid var(--line);padding:44px 0 36px;margin-bottom:38px}
+header.hd .wrap{padding-bottom:0}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--teal);font-weight:700;margin:0 0 10px}
+h1{font-size:30px;line-height:1.45;margin:0 0 14px;color:var(--navy);font-weight:700}
+.hd p.sub{margin:0;color:var(--grey);font-size:14.5px}
+.hd .meta{margin-top:18px;font-size:12.5px;color:var(--grey);border-top:1px solid var(--line);padding-top:14px}
+.sec{background:#fff;border:1px solid var(--line);border-radius:10px;padding:34px 36px;margin:0 0 22px}
+.sec__head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.sec__no{flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;
+  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec h2{font-size:20px;margin:0;color:var(--navy);font-weight:700;line-height:1.5}
+.sec h3{font-size:15.5px;margin:30px 0 10px;color:var(--navy);font-weight:700;
+  border-left:3px solid var(--teal);padding-left:10px}
+p{margin:0 0 14px}
+.lead{color:var(--grey);font-size:14px;margin-bottom:20px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:5px 0}
+b,strong{font-weight:700}
+a{color:var(--teal)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.nw{white-space:nowrap}
+
+table{width:100%;border-collapse:collapse;margin:6px 0 16px;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--pale);color:var(--navy);font-weight:700;white-space:nowrap}
+
+.note{border:1px solid var(--line);border-left:3px solid var(--teal);background:#FBFCFD;
+  border-radius:4px;padding:16px 18px;margin:14px 0}
+.note__t{font-weight:700;color:var(--teal);margin:0 0 6px;font-size:14px}
+.warn{border:1px solid #F0C9A0;background:var(--paleO);border-radius:4px;padding:16px 18px;margin:14px 0}
+.warn__t{font-weight:700;color:var(--orange);margin:0 0 6px;font-size:14px}
+.note p:last-child,.warn p:last-child,.note ul:last-child,.warn ul:last-child{margin-bottom:0}
+
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 4px}
+.who--2{grid-template-columns:repeat(2,1fr)}
+.who__c{border:1px solid var(--line);border-radius:8px;padding:18px}
+.who__c h4{margin:0 0 4px;font-size:14.5px;color:var(--navy)}
+.who__c .role{font-size:11.5px;color:var(--teal);font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.who__c ul{margin:0;padding-left:18px;font-size:13px;color:var(--grey)}
+
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:10px 0 4px}
+.flow__s{border:1px solid var(--line);border-radius:8px;padding:16px 14px;position:relative;background:#fff}
+.flow__s.is-coder{border-color:#C9D4F0;background:var(--pale)}
+.flow__n{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:#fff;background:var(--navy);border-radius:3px;padding:2px 8px;margin-bottom:8px}
+.flow__s.is-coder .flow__n{background:var(--teal)}
+.flow__t{font-size:13.5px;font-weight:700;margin:0 0 5px;line-height:1.5}
+.flow__d{font-size:11.5px;color:var(--grey);margin:0;line-height:1.65}
+.flow__who{font-size:11px;color:var(--teal);font-weight:700;margin:8px 0 0}
+
+.card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:0 0 12px}
+.card__top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.card__no{font-size:11.5px;color:var(--teal);font-weight:700;margin:0 0 3px;letter-spacing:.06em}
+.card__title{font-size:15px;font-weight:700;margin:0;line-height:1.55;color:var(--navy)}
+.card__meta{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:18px;
+  font-size:12.5px;color:var(--grey);border-top:1px dashed var(--line);padding-top:10px}
+.card__meta li{margin:0}
+
+.btn{flex:none;border:0;background:var(--navy);color:#fff;font-family:inherit;font-size:13px;
+  font-weight:700;border-radius:6px;padding:9px 18px;cursor:pointer;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn.is-done{background:var(--teal)}
+.btn--s{font-size:11.5px;padding:5px 12px}
+.btn--out{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+
+.dbox{border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:0 0 8px;background:#FBFCFD}
+.dbox__h{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.dbox__h span{font-size:12px;font-weight:700;color:var(--navy)}
+.dbox__t{margin:0;font-size:12.5px;color:var(--grey);line-height:1.75}
+
+pre.code{background:#1C1F27;color:#E8EAF0;border-radius:6px;padding:16px 18px;overflow-x:auto;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.75;margin:10px 0 14px}
+.codehead{display:flex;justify-content:space-between;align-items:center;margin:16px 0 0}
+.codehead span{font-size:12.5px;font-weight:700;color:var(--navy)}
+
+.chk{list-style:none;padding:0;margin:4px 0 0}
+.chk li{position:relative;padding-left:28px;margin:9px 0;font-size:14px}
+.chk li::before{content:"";position:absolute;left:2px;top:.42em;width:13px;height:8px;
+  border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+
+.parts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.parts div{border:1px solid var(--line);border-radius:6px;padding:11px 14px;font-size:13px}
+.parts b{color:var(--navy)}
+.parts span{display:block;color:var(--grey);font-size:12px;margin-top:2px}
+
+footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
+@media (max-width:860px){
+  .who,.who--2,.flow,.parts{grid-template-columns:1fr}
+  .sec{padding:26px 20px}
+  h1{font-size:23px}
+  .card__top{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap">
+  <p class="eyebrow">OPUS PLAN ─ WORKS</p>
+  <h1>実績ページ WordPress掲載ガイド<br>新しいデザインを本番サイトに載せるまで</h1>
+  <p class="sub">実績の一覧ページと詳細ページを、新しいデザインに差し替えるための手順書です。<br>
+  コーダーさんにお願いする部分と、管理画面で高寺が行う部分を分けて整理しました。</p>
+  <p class="meta">作成：2026年10月27日　／　高寺　／　対象：opus-plan.net 実績（カスタム投稿タイプ works）</p>
+</div></header>
+
+<div class="wrap">
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">1</span><h2>このガイドについて</h2></div>
+  <p class="lead">実績ページ（一覧・詳細）のデザインを新しくします。そのために本番サイト側で必要な作業をまとめました。</p>
+  <p>完成イメージは、実際の opus-plan.net のページに新しいパーツを差し込んだ形で確認できます。デザインの正はこの2つです。</p>
+  <table>
+   <tr><th style="width:150px">実績一覧</th><td><a href="https://kanpai-web.github.io/share/opusplan/marketing/works-list-k7md2q4p/">https://kanpai-web.github.io/share/opusplan/marketing/works-list-k7md2q4p/</a></td></tr>
+   <tr><th>実績詳細</th><td><a href="https://kanpai-web.github.io/share/opusplan/marketing/works-detail-r3xn8vwe/">https://kanpai-web.github.io/share/opusplan/marketing/works-detail-r3xn8vwe/</a></td></tr>
+  </table>
+  <div class="note">
+    <p class="note__t">先に結論</p>
+    <p>関連実績は<b>すでに動的に出力されています</b>（投稿をループして出している）ので、仕組みを作り直す必要はありません。<br>
+    いちばん手数がかかるのは、新しいカードが表示する<b>「業種」「成果」「見出し」「規模・支援期間」「成果の数値」が、いまの実績に存在しない</b>ことです。ここを足す作業が本体になります。</p>
+  </div>
+
+<h3>本番サイトを調べて分かったこと</h3>
+<table>
+ <tr><th style="width:230px">調べたこと</th><th>分かったこと</th></tr>
+ <tr><td>実績の投稿場所</td><td>カスタム投稿タイプ <span class="mono">works</span>。URLは <span class="mono">/works/&lt;サービス&gt;/&lt;スラッグ&gt;/</span></td></tr>
+ <tr><td>実績詳細の本文</td><td><b><span class="mono">the_content()</span> がテンプレートで呼ばれていません。</b>いま本文欄に書いても画面に出ません（STEP 1 で追加をお願いします）</td></tr>
+ <tr><td>いまの絞り込み</td><td>サービス4分類（SEO対策・広告運用代行・風評被害対策・その他）のリンク。クリックでアーカイブURLへ遷移します</td></tr>
+ <tr><td>関連実績</td><td>すでに動的。アイキャッチ・サイト種別・会社名・タグを出力しています（スライダーのマークアップ付き）</td></tr>
+ <tr><td>既存のタクソノミー</td><td>サービス（<span class="mono">work_category</span>）／エリア（<span class="mono">area_category</span>）／支援内容（<span class="mono">part</span>）／サイト種別（<span class="mono">work_type</span>）／プラン（<span class="mono">work_plan</span>）</td></tr>
+ <tr><td>足りないタクソノミー</td><td><b>業種</b>と<b>成果</b>。新しい絞り込みで使うため、新規に作成が必要です</td></tr>
+</table>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">2</span><h2>だれが、何をするか</h2></div>
+  <div class="who who--2">
+    <div class="who__c">
+      <h4>コーダーさん</h4>
+      <p class="role">1回だけ・テンプレート側</p>
+      <ul>
+        <li>CSS（opus-works.css）の設置と読み込み</li>
+        <li>実績詳細に本文の出力を追加（1行）</li>
+        <li>業種・成果のタクソノミーを追加</li>
+        <li>カスタムフィールド3つの入力欄を用意</li>
+        <li>実績一覧のカードと絞り込みUIを差し替え</li>
+        <li>関連実績のカードと横スクロールを差し替え</li>
+      </ul>
+    </div>
+    <div class="who__c">
+      <h4>高寺</h4>
+      <p class="role">毎回・管理画面側</p>
+      <ul>
+        <li>実績詳細の本文（HTML）を貼る</li>
+        <li>業種・成果のチェックを入れる</li>
+        <li>見出し・規模／支援期間・成果の数値を入力</li>
+        <li>既存の実績ぶんのデータを揃える</li>
+      </ul>
+    </div>
+  </div>
+  <div class="note">
+    <p class="note__t">分担の考え方</p>
+    <p>テンプレートに触る作業はすべてコーダーさんにお願いします。記事ごとに変わる内容は、管理画面から高寺が入れます。<b>本文は素のHTMLを貼るだけ</b>なので、コラムと同じ手順です。</p>
+  </div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">3</span><h2>公開までの5ステップ</h2></div>
+  <p class="lead">順番に意味があります。STEP 1 だけで1件まるごと新デザインになるので、まずそこまでを先に出すのがおすすめです。</p>
+  <div class="flow">
+    <div class="flow__s is-coder">
+      <span class="flow__n">STEP 1</span>
+      <p class="flow__t">CSSと本文出力</p>
+      <p class="flow__d">CSSを読み込み、詳細に the_content() を追加</p>
+      <p class="flow__who">コーダーさん</p>
+    </div>
+    <div class="flow__s is-coder">
+      <span class="flow__n">STEP 2</span>
+      <p class="flow__t">持たせる情報を増やす</p>
+      <p class="flow__d">業種・成果のタクソノミーと、カスタムフィールド3つ</p>
+      <p class="flow__who">コーダーさん</p>
+    </div>
+    <div class="flow__s">
+      <span class="flow__n">STEP 3</span>
+      <p class="flow__t">データを入れる</p>
+      <p class="flow__d">既存の実績に、新しい項目を入力していく</p>
+      <p class="flow__who">高寺</p>
+    </div>
+    <div class="flow__s is-coder">
+      <span class="flow__n">STEP 4</span>
+      <p class="flow__t">一覧を差し替え</p>
+      <p class="flow__d">カードと4軸の絞り込みUI、ページネーション</p>
+      <p class="flow__who">コーダーさん</p>
+    </div>
+    <div class="flow__s is-coder">
+      <span class="flow__n">STEP 5</span>
+      <p class="flow__t">関連実績を差し替え</p>
+      <p class="flow__d">カードを一覧と揃え、横スクロールに</p>
+      <p class="flow__who">コーダーさん</p>
+    </div>
+  </div>
+  <div class="warn">
+    <p class="warn__t">STEP 3 を飛ばさないでください</p>
+    <p>新しいカードは「見出し」「規模・支援期間」「成果の数値」を表示します。データが空のまま STEP 4 を当てると、<b>カードの下半分が空いた状態</b>になります。先に数件ぶんだけでも入れてから進めてください。</p>
+  </div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">4</span><h2>STEP 1　CSSの読み込みと、本文の出力</h2></div>
+  <p class="lead">ここまでで、実績詳細のページが新しいデザインになります。コーダーさんの作業は実質2か所です。</p>
+
+<h3>① CSSファイルを置く</h3>
+<p><span class="mono">opus-works.css</span> をお渡しします。テーマ内の任意の場所（例：<span class="mono">assets/css/</span>）に置いて読み込んでください。既存の <span class="mono">style.css</span> や <span class="mono">reset.css</span> は変更していません。</p>
+<p>クラス名はすべて <span class="mono">ow-</span>（詳細）／<span class="mono">owl-</span>（一覧）で始めてあるため、<b>他のページに影響しません</b>。色はファイル冒頭の <span class="mono">:root</span> でまとめて変えられます。</p>
+<div class="codehead"><span>functions.php（読み込みの例）</span><button class="btn btn--s" data-copy="c1">コピー</button></div><pre class="code" id="c1">// functions.php
+// 実績ページ（一覧・詳細）でだけ読み込む
+add_action( &#x27;wp_enqueue_scripts&#x27;, function () {
+    if ( is_singular( &#x27;works&#x27; ) || is_post_type_archive( &#x27;works&#x27; )
+         || is_tax( array( &#x27;work_category&#x27;, &#x27;area_category&#x27;, &#x27;part&#x27; ) ) ) {
+        wp_enqueue_style(
+            &#x27;opus-works&#x27;,
+            get_theme_file_uri( &#x27;/assets/css/opus-works.css&#x27; ),
+            array(),
+            filemtime( get_theme_file_path( &#x27;/assets/css/opus-works.css&#x27; ) )
+        );
+    }
+} );</pre>
+
+<h3>② 実績詳細に本文の出力を追加する</h3>
+<p>いまのテンプレートでは <span class="mono">the_content()</span> が呼ばれていないため、本文欄に何を書いても画面に出ません。1行だけ追加をお願いします。</p>
+<div class="codehead"><span>single-works.php に追加</span><button class="btn btn--s" data-copy="c2">コピー</button></div><pre class="code" id="c2">&lt;?php // single-works.php ?&gt;
+&lt;?php // 「実績エリア」のブロック（p-work__content-area）の直後に置いてください ?&gt;
+&lt;?php if ( get_the_content() ) : ?&gt;
+  &lt;div class=&quot;p-work__detail&quot;&gt;&lt;?php the_content(); ?&gt;&lt;/div&gt;
+&lt;?php endif; ?&gt;</pre>
+<div class="note">
+  <p class="note__t">自動整形について</p>
+  <p>お渡しする本文は、<span class="mono">div</span> と <span class="mono">p</span> で構造が閉じた素のHTMLです。<b>ブロックエディタのマークアップは使っていません。</b>もし <span class="mono">wpautop</span> で余計な <span class="mono">&lt;p&gt;</span> が入って崩れる場合は、ご相談ください（本文側で調整します）。</p>
+</div>
+<div class="note">
+  <p class="note__t">この時点で確認できること</p>
+  <p>1件に本文を入れれば、PROBLEM／REQUEST／APPROACH／RESULT／NEXT／REASON とサマリーの追従まで、<a href="https://kanpai-web.github.io/share/opusplan/marketing/works-detail-r3xn8vwe/">詳細プレビュー</a>と同じ見た目になります。</p>
+</div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">5</span><h2>STEP 2　実績に持たせる情報を増やす</h2></div>
+  <p class="lead">新しいカードが表示する項目のうち、5つが現状ありません。ここを足します。</p>
+
+<table>
+ <tr><th style="width:210px">カードの要素</th><th>いまあるか</th><th style="width:230px">どうするか</th></tr>
+ <tr><td>アイキャッチ</td><td>あり</td><td>そのまま</td></tr>
+ <tr><td>会社名／サイト種別</td><td>あり</td><td>そのまま</td></tr>
+ <tr><td>エリア・サービスのタグ</td><td>あり</td><td>そのまま</td></tr>
+ <tr><td><b>業種</b></td><td>なし</td><td>タクソノミーを新規作成</td></tr>
+ <tr><td><b>成果</b></td><td>なし</td><td>タクソノミーを新規作成</td></tr>
+ <tr><td><b>カード見出し</b><br><span class="mono">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</span></td><td>なし</td><td>カスタムフィールド</td></tr>
+ <tr><td><b>規模・支援期間</b><br><span class="mono">従業員15名・年商3億円規模／支援期間 1年6ヶ月</span></td><td>なし</td><td>カスタムフィールド</td></tr>
+ <tr><td><b>成果の数値</b><br><span class="mono">お問い合わせ／月1件／8／件</span></td><td>なし</td><td>カスタムフィールド</td></tr>
+</table>
+
+<h3>① 業種・成果のタクソノミーを追加</h3>
+<p>どちらも絞り込みに使うので、自由入力ではなく<b>チェックで選ぶ形</b>にしてください。</p>
+<div class="codehead"><span>functions.php（タクソノミーの例）</span><button class="btn btn--s" data-copy="c3">コピー</button></div><pre class="code" id="c3">// functions.php
+// 新しい絞り込み軸：業種 と 成果
+add_action( &#x27;init&#x27;, function () {
+
+    register_taxonomy( &#x27;work_industry&#x27;, &#x27;works&#x27;, array(
+        &#x27;label&#x27;        =&gt; &#x27;業種&#x27;,
+        &#x27;hierarchical&#x27; =&gt; true,          // チェックボックスで選ばせる
+        &#x27;public&#x27;       =&gt; true,
+        &#x27;rewrite&#x27;      =&gt; array( &#x27;slug&#x27; =&gt; &#x27;works/industry&#x27; ),
+        &#x27;show_in_rest&#x27; =&gt; true,
+    ) );
+
+    register_taxonomy( &#x27;work_result&#x27;, &#x27;works&#x27;, array(
+        &#x27;label&#x27;        =&gt; &#x27;成果&#x27;,
+        &#x27;hierarchical&#x27; =&gt; true,
+        &#x27;public&#x27;       =&gt; true,
+        &#x27;rewrite&#x27;      =&gt; array( &#x27;slug&#x27; =&gt; &#x27;works/result&#x27; ),
+        &#x27;show_in_rest&#x27; =&gt; true,
+    ) );
+
+} );</pre>
+<div class="parts">
+  <div><b>業種のターム（案）</b><span>葬儀・終活／建設・リフォーム／医療・クリニック／不動産／士業／製造・メーカー／飲食・店舗／教育・スクール</span></div>
+  <div><b>成果のターム（案）</b><span>問い合わせが増えた／検索順位が上がった／アクセスが増えた／広告費を抑えられた</span></div>
+</div>
+<p>タームの実際の並びは、既存の実績を見ながら高寺のほうで決めます。まずは上記で作っていただければ大丈夫です。</p>
+
+<h3>② カスタムフィールドの入力欄を用意</h3>
+<p>本文に決まった書式で書かせる方式は、入力ミスで崩れるため採りません。<b>管理画面に入力欄が並ぶ形</b>にしてください。</p>
+<table>
+ <tr><th style="width:190px">キー（案）</th><th>ラベル</th><th>入ってくる値の例</th></tr>
+ <tr><td class="mono">work_card_title</td><td>カード見出し</td><td>大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</td></tr>
+ <tr><td class="mono">work_card_meta</td><td>規模・支援期間</td><td>従業員15名・年商3億円規模／支援期間 1年6ヶ月</td></tr>
+ <tr><td class="mono">work_kpi_label</td><td>成果の項目名</td><td>お問い合わせ</td></tr>
+ <tr><td class="mono">work_kpi_before</td><td>支援前</td><td>月1件</td></tr>
+ <tr><td class="mono">work_kpi_after</td><td>支援後（数字）</td><td>8</td></tr>
+ <tr><td class="mono">work_kpi_unit</td><td>単位</td><td>件</td></tr>
+</table>
+<div class="note">
+  <p class="note__t">ご確認いただきたいこと</p>
+  <p>ACF などのカスタムフィールド用プラグインがすでに入っているかどうか、こちらからは分かりませんでした。<b>入っていればそれを使ってください。</b>入っていない場合は、どの方法が運用しやすいかご提案いただけると助かります。</p>
+</div>
+<div class="warn">
+  <p class="warn__t">空のときの扱い</p>
+  <p>成果の数値が入っていない実績もあります。<b>値が空のときは RESULT のブロックごと出力しない</b>ようにしてください（枠だけ残ると不自然になります）。見出しが空のときは、会社名を代わりに出す形で構いません。</p>
+</div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">6</span><h2>STEP 3　データを入れる（高寺の作業）</h2></div>
+  <p class="lead">STEP 2 の入力欄ができたら、既存の実績に順番に入れていきます。</p>
+  <ol>
+    <li>実績改善シートに、実績ごとの「業種・成果・見出し・規模／支援期間・成果の数値」の列を用意する</li>
+    <li>既存の実績の本文を読みながら、シート上で全件ぶんを書き出す</li>
+    <li>管理画面で1件ずつ転記する</li>
+  </ol>
+  <p>先にシートで揃えてから転記したほうが、言い回しのばらつきが出ません。<b>新しく実績を追加するときは、最初から入力欄を埋めるだけ</b>になります。</p>
+  <div class="note">
+    <p class="note__t">成果の数値が無い実績</p>
+    <p>数値が出せない実績は、無理に埋めずに空のままで構いません。RESULT のブロックごと出ない作りにしてあります。</p>
+  </div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">7</span><h2>STEP 4　実績一覧を差し替える</h2></div>
+  <p class="lead">カードのマークアップと、4軸の絞り込みUIをお渡しします。<span class="mono">実績一覧_マークアップ.html</span> が正です。</p>
+
+<h3>絞り込みの仕様</h3>
+<ul>
+  <li><b>4つの軸</b>（業種／エリア／サービス／成果）をタブで切り替え、その中のチップを押して絞り込みます</li>
+  <li>絞り込みは<b>ページ遷移せず、JavaScriptで表示を切り替える</b>方式です。カードの <span class="mono">data-ind / data-area / data-svc / data-res</span> を見ています</li>
+  <li>カード内のタグを押しても同じ絞り込みが動きます</li>
+  <li>SP（600px以下）ではタブとチップをやめ、<b>選択メニュー1つ</b>に置き換わります。タップ先が1か所に集まり、レイアウトが動きません</li>
+  <li>件数表示とページネーション（12件ずつ）も同梱しています</li>
+</ul>
+<div class="note">
+  <p class="note__t">全件をHTMLに出してください</p>
+  <p>絞り込みはJavaScriptで行うため、<b>実績は全件を出力</b>してください（ページネーションもJS側で処理します）。件数が大きく増えた場合は、サーバー側での絞り込みに切り替えるご相談をさせてください。</p>
+</div>
+
+<h3>カード1枚のPHP（参考実装）</h3>
+<p>テーマの書き方に合わせて調整していただいて構いません。<b>クラス名と <span class="mono">data-*</span> 属性だけは変えないでください。</b>JSとCSSがそこを見ています。</p>
+<div class="codehead"><span>実績カード（parts/works-card.php など）</span><button class="btn btn--s" data-copy="c4">コピー</button></div><pre class="code" id="c4">&lt;?php
+/**
+ * 実績カード 1枚（実績一覧・関連実績の両方で使う）
+ * マークアップの正：実績一覧_マークアップ.html
+ */
+$ind  = get_the_terms( get_the_ID(), &#x27;work_industry&#x27; );
+$area = get_the_terms( get_the_ID(), &#x27;area_category&#x27; );
+$svc  = get_the_terms( get_the_ID(), &#x27;work_category&#x27; );
+$res  = get_the_terms( get_the_ID(), &#x27;work_result&#x27; );
+
+$title = get_post_meta( get_the_ID(), &#x27;work_card_title&#x27;, true );
+$meta  = get_post_meta( get_the_ID(), &#x27;work_card_meta&#x27;,  true );
+$k_lab = get_post_meta( get_the_ID(), &#x27;work_kpi_label&#x27;,  true );
+$k_be  = get_post_meta( get_the_ID(), &#x27;work_kpi_before&#x27;, true );
+$k_af  = get_post_meta( get_the_ID(), &#x27;work_kpi_after&#x27;,  true );
+$k_un  = get_post_meta( get_the_ID(), &#x27;work_kpi_unit&#x27;,   true );
+
+// data-* は絞り込みJSが参照します。ターム slug をそのまま入れてください
+$d = function ( $terms ) {
+    return ( $terms &amp;&amp; ! is_wp_error( $terms ) ) ? esc_attr( $terms[0]-&gt;slug ) : &#x27;&#x27;;
+};
+?&gt;
+&lt;div class=&quot;owl-card&quot;
+     data-ind=&quot;&lt;?php echo $d( $ind ); ?&gt;&quot;
+     data-area=&quot;&lt;?php echo $d( $area ); ?&gt;&quot;
+     data-svc=&quot;&lt;?php echo $d( $svc ); ?&gt;&quot;
+     data-res=&quot;&lt;?php echo $d( $res ); ?&gt;&quot;&gt;
+
+  &lt;a class=&quot;owl-card__thumblink&quot; href=&quot;&lt;?php the_permalink(); ?&gt;&quot; tabindex=&quot;-1&quot; aria-hidden=&quot;true&quot;&gt;
+    &lt;span class=&quot;owl-card__thumb&quot;&gt;&lt;?php the_post_thumbnail( &#x27;medium_large&#x27;, array( &#x27;alt&#x27; =&gt; &#x27;&#x27;, &#x27;loading&#x27; =&gt; &#x27;lazy&#x27; ) ); ?&gt;&lt;/span&gt;
+  &lt;/a&gt;
+
+  &lt;div class=&quot;owl-card__body&quot;&gt;
+    &lt;div class=&quot;owl-card__tags&quot;&gt;
+      &lt;?php if ( $ind &amp;&amp; ! is_wp_error( $ind ) ) : ?&gt;
+        &lt;span class=&quot;owl-tag&quot; role=&quot;button&quot; tabindex=&quot;0&quot; data-ax=&quot;ind&quot; data-v=&quot;&lt;?php echo $d( $ind ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $ind[0]-&gt;name ); ?&gt;&lt;/span&gt;
+      &lt;?php endif; ?&gt;
+      &lt;?php if ( $area &amp;&amp; ! is_wp_error( $area ) ) : ?&gt;
+        &lt;span class=&quot;owl-tag&quot; role=&quot;button&quot; tabindex=&quot;0&quot; data-ax=&quot;area&quot; data-v=&quot;&lt;?php echo $d( $area ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $area[0]-&gt;name ); ?&gt;&lt;/span&gt;
+      &lt;?php endif; ?&gt;
+      &lt;?php if ( $svc &amp;&amp; ! is_wp_error( $svc ) ) : ?&gt;
+        &lt;span class=&quot;owl-tag owl-tag--svc&quot; role=&quot;button&quot; tabindex=&quot;0&quot; data-ax=&quot;svc&quot; data-v=&quot;&lt;?php echo $d( $svc ); ?&gt;&quot;&gt;&lt;?php echo esc_html( $svc[0]-&gt;name ); ?&gt;&lt;/span&gt;
+      &lt;?php endif; ?&gt;
+    &lt;/div&gt;
+
+    &lt;a class=&quot;owl-card__textlink&quot; href=&quot;&lt;?php the_permalink(); ?&gt;&quot;&gt;
+      &lt;span class=&quot;owl-card__title&quot;&gt;&lt;?php echo esc_html( $title ? $title : get_the_title() ); ?&gt;&lt;/span&gt;
+      &lt;?php if ( $meta ) : ?&gt;
+        &lt;span class=&quot;owl-card__meta&quot;&gt;&lt;?php echo esc_html( $meta ); ?&gt;&lt;/span&gt;
+      &lt;?php endif; ?&gt;
+
+      &lt;?php if ( $k_af ) : // 数値が無い実績では RESULT ごと出さない ?&gt;
+        &lt;span class=&quot;owl-badge&quot;&gt;
+          &lt;span class=&quot;owl-badge__l&quot;&gt;RESULT&lt;/span&gt;
+          &lt;span class=&quot;owl-badge__v&quot;&gt;
+            &lt;span class=&quot;owl-badge__k&quot;&gt;&lt;?php echo esc_html( $k_lab ); ?&gt;&lt;/span&gt;
+            &lt;span class=&quot;owl-badge__be&quot;&gt;&lt;?php echo esc_html( $k_be ); ?&gt;&lt;/span&gt;
+            &lt;span class=&quot;owl-badge__ar&quot; aria-hidden=&quot;true&quot;&gt;&amp;rarr;&lt;/span&gt;
+            &lt;strong class=&quot;owl-badge__af&quot;&gt;&lt;?php echo esc_html( $k_af ); ?&gt;&lt;small&gt;&lt;?php echo esc_html( $k_un ); ?&gt;&lt;/small&gt;&lt;/strong&gt;
+          &lt;/span&gt;
+        &lt;/span&gt;
+      &lt;?php endif; ?&gt;
+    &lt;/a&gt;
+  &lt;/div&gt;
+&lt;/div&gt;</pre>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">8</span><h2>STEP 5　関連実績を横スクロールにする</h2></div>
+  <p class="lead">カードを一覧と同じものに揃え、横スクロール（ループ）に変えます。マークアップとスクリプトは <span class="mono">実績詳細_関連実績マークアップ.html</span> が正です。</p>
+
+<h3>仕様</h3>
+<ul>
+  <li>表示するのは、その実績と<b>同じサービス</b>の実績。最大8件、<b>4件に満たないときだけ新着で補います</b></li>
+  <li>操作は<b>ドラッグ</b>と<b>左右ボタン</b>の2つ。ボタンはカード1枚ぶん送ります</li>
+  <li>ループさせるため、<b>同じカードを2周ぶん出力</b>します。端まで行くと切れ目なく先頭に戻ります</li>
+  <li>右端のカードがわざと見切れるようにしています（横に続きがあることを示すため）</li>
+</ul>
+<div class="warn">
+  <p class="warn__t">いまのスライダーを外してください</p>
+  <p>関連実績には slick のマークアップ（<span class="mono">slick-list</span> / <span class="mono">slick-track</span>）と、高さを固定するCSS（<span class="mono">.p-results__items{height:43vh}</span>）が効いています。<b>このままだとカードが途中で切れます。</b>新しい横スクロールと二重になるため、関連実績のスライダー初期化は止めてください。</p>
+</div>
+
+<h3>関連実績のPHP（参考実装）</h3>
+<div class="codehead"><span>single-works.php の関連実績部分</span><button class="btn btn--s" data-copy="c5">コピー</button></div><pre class="code" id="c5">&lt;?php
+/**
+ * 関連実績（Related Works）
+ * いまの関連実績の出力を、このループに置き換えてください
+ */
+$svc_terms = get_the_terms( get_the_ID(), &#x27;work_category&#x27; );
+$svc_ids   = ( $svc_terms &amp;&amp; ! is_wp_error( $svc_terms ) ) ? wp_list_pluck( $svc_terms, &#x27;term_id&#x27; ) : array();
+
+$args = array(
+    &#x27;post_type&#x27;      =&gt; &#x27;works&#x27;,
+    &#x27;post_status&#x27;    =&gt; &#x27;publish&#x27;,
+    &#x27;posts_per_page&#x27; =&gt; 8,
+    &#x27;post__not_in&#x27;   =&gt; array( get_the_ID() ),   // 自分自身は除く
+    &#x27;orderby&#x27;        =&gt; &#x27;date&#x27;,
+    &#x27;order&#x27;          =&gt; &#x27;DESC&#x27;,
+);
+if ( $svc_ids ) {
+    $args[&#x27;tax_query&#x27;] = array(
+        array(
+            &#x27;taxonomy&#x27; =&gt; &#x27;work_category&#x27;,
+            &#x27;field&#x27;    =&gt; &#x27;term_id&#x27;,
+            &#x27;terms&#x27;    =&gt; $svc_ids,
+        ),
+    );
+}
+$rel = new WP_Query( $args );
+
+// 一致が4件に満たないときだけ、新着の実績で補う
+if ( $rel-&gt;post_count &lt; 4 ) {
+    $have = wp_list_pluck( $rel-&gt;posts, &#x27;ID&#x27; );
+    $fill = get_posts( array(
+        &#x27;post_type&#x27;      =&gt; &#x27;works&#x27;,
+        &#x27;post_status&#x27;    =&gt; &#x27;publish&#x27;,
+        &#x27;posts_per_page&#x27; =&gt; 4 - $rel-&gt;post_count,
+        &#x27;post__not_in&#x27;   =&gt; array_merge( $have, array( get_the_ID() ) ),
+    ) );
+    $rel-&gt;posts      = array_merge( $rel-&gt;posts, $fill );
+    $rel-&gt;post_count = count( $rel-&gt;posts );
+}
+
+if ( $rel-&gt;post_count ) : ?&gt;
+&lt;div class=&quot;ow-rel&quot;&gt;
+  &lt;div class=&quot;ow-rel__track&quot; data-rel-loop&gt;
+    &lt;?php // ループさせるため、同じカードを2周ぶん出力する
+    for ( $pass = 0; $pass &lt; 2; $pass++ ) :
+        foreach ( $rel-&gt;posts as $p ) :
+            setup_postdata( $GLOBALS[&#x27;post&#x27;] = $p );
+            get_template_part( &#x27;parts/works-card&#x27; );   // ← STEP 4 と同じカード
+        endforeach;
+    endfor;
+    wp_reset_postdata(); ?&gt;
+  &lt;/div&gt;
+  &lt;div class=&quot;ow-rel__nav&quot;&gt;
+    &lt;div class=&quot;ow-rel__btns&quot;&gt;
+      &lt;button type=&quot;button&quot; class=&quot;ow-rel__btn&quot; data-rel-prev aria-label=&quot;前の実績へ&quot;&gt;
+        &lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M15 5 8 12 15 19&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot;/&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+      &lt;button type=&quot;button&quot; class=&quot;ow-rel__btn&quot; data-rel-next aria-label=&quot;次の実績へ&quot;&gt;
+        &lt;svg viewBox=&quot;0 0 24 24&quot; aria-hidden=&quot;true&quot;&gt;&lt;path d=&quot;M9 5 16 12 9 19&quot; stroke-linecap=&quot;square&quot; stroke-linejoin=&quot;miter&quot;/&gt;&lt;/svg&gt;
+      &lt;/button&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+&lt;?php endif; ?&gt;</pre>
+<div class="note">
+  <p class="note__t">カードは共通です</p>
+  <p>関連実績のカードは、STEP 4 の実績カードとまったく同じものです。<b>テンプレートパーツとして切り出して、一覧と関連実績の両方から呼ぶ</b>形にしていただけると、以降の修正が1か所で済みます。</p>
+</div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">9</span><h2>公開前のチェック</h2></div>
+  <p class="lead">プレビューと見比べながら確認してください。</p>
+  <ul class="chk">
+    <li>実績詳細の本文が表示され、サマリーがスクロールに追従する（固定ヘッダーの下で止まる）</li>
+    <li>ヒーローのタグが、サービスごとの絞り込み結果ページに遷移する</li>
+    <li>RESULT の数字と黄色いマーカーが出ている</li>
+    <li>実績一覧で、4つの軸それぞれの絞り込みが動く。「すべて」で全件に戻る</li>
+    <li>カード内のタグを押しても絞り込みが動き、<b>カード全体がホバー状態にならない</b></li>
+    <li>カードのアイキャッチ部分とテキスト部分、どちらを押しても詳細ページへ遷移する</li>
+    <li>SP幅で、絞り込みが選択メニュー1つになり、カードが1列になる</li>
+    <li>関連実績が横に流れ、左右ボタンで1枚ずつ送れる。端で切れ目なく戻る</li>
+    <li>関連実績のカードを<b>ドラッグしたときはリンクが開かず、クリックしたときは開く</b></li>
+    <li>成果の数値が入っていない実績で、RESULT の枠だけが残っていない</li>
+  </ul>
+  <div class="note">
+    <p class="note__t">お渡しするファイル</p>
+    <table>
+      <tr><th style="width:280px">ファイル</th><th>中身</th></tr>
+      <tr><td class="mono">opus-works.css</td><td>実績一覧・実績詳細の追加スタイル（1ファイル）</td></tr>
+      <tr><td class="mono">実績一覧_マークアップ.html</td><td>絞り込みUI＋カード＋ページネーション＋動作用スクリプト</td></tr>
+      <tr><td class="mono">実績詳細_関連実績マークアップ.html</td><td>関連実績の横スクロール＋動作用スクリプト</td></tr>
+      <tr><td class="mono">実績_サンプル_本文.html</td><td>実績詳細の本文（管理画面に貼るHTML）</td></tr>
+    </table>
+  </div>
+</section>
+
+</div>
+
+<footer class="ft"><div class="wrap">高寺　／　2026-10-27</div></footer>
+
+<script>
+document.addEventListener('click', function(e){
+  var b = e.target.closest('[data-copy]');
+  if(!b) return;
+  var el = document.getElementById(b.getAttribute('data-copy'));
+  if(!el) return;
+  var text = el.textContent;
+  function ok(){
+    var old = b.dataset.label || b.textContent;
+    b.dataset.label = old;
+    b.textContent = 'コピーしました';
+    b.classList.add('is-done');
+    setTimeout(function(){ b.textContent = old; b.classList.remove('is-done'); }, 1800);
+  }
+  function legacy(){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    var done=false;
+    try { done = document.execCommand('copy'); } catch(err) { done=false; }
+    document.body.removeChild(ta);
+    if(done) ok(); else alert('コピーできませんでした。_入稿用 フォルダのファイルから直接コピーしてください。');
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(ok).catch(legacy);
+  } else {
+    legacy();
+  }
+});
+</script>
+</body>
+</html>
