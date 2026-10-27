@@ -196,6 +196,41 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
   .ow-rcard:first-child{padding-left:0}
   .ow-sec.ow-sec--hl{padding:24px 0 22px}
 }
+/* 関連実績で使う一覧カードのスタイル */
+.owl-card.is-hide{display:none}
+.owl-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;margin-bottom:72px}
+.owl-card{display:flex;flex-direction:column;position:relative;background:#fff; border:1px solid #e6e9f0;border-radius:8px;overflow:hidden}
+.owl-card.is-hide{display:none}
+.owl-card .owl-card__thumblink{display:block;text-decoration:none}
+.owl-card .owl-card__thumb{display:flex;width:100%;aspect-ratio:16/10;background:#eceff4; align-items:center;justify-content:center;transition:background-color .14s linear}
+.owl-card .owl-card__thumb img{display:block;width:100%;height:100%;object-fit:cover}
+.owl-card .owl-card__thumblink:hover .owl-card__thumb{background:#e3e7ee}
+.owl-card .owl-card__body{display:flex;flex-direction:column;flex:1;padding:15px 16px 17px}
+.owl-card .owl-card__textlink{display:flex;flex-direction:column;flex:1;text-decoration:none;color:inherit}
+.owl-card .owl-card__textlink:hover .owl-card__title,
+.owl-card .owl-card__thumblink:hover ~ .owl-card__body .owl-card__title{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
+.owl-card .owl-card__tags{display:flex;flex-wrap:wrap;gap:5px;position:relative;z-index:2}
+.owl-tag{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;border:1px solid #c9d2e4; background:#fff;color:var(--navy);cursor:pointer;text-decoration:none; transition:border-color .14s linear}
+.owl-tag:hover{border-color:var(--navy);text-decoration:underline;text-underline-offset:2px}
+.owl-tag.owl-tag--svc{background:var(--navy);color:#fff;border-color:var(--navy)}
+.owl-tag.owl-tag--svc:hover{border-color:#fff;box-shadow:0 0 0 1px var(--navy)}
+.owl-card .owl-card__title{display:block;font-size:16px;font-weight:700;line-height:1.55;margin-top:12px;color:var(--ink)}
+.owl-card .owl-card__meta{display:block;font-size:11px;color:#8d939e;margin-top:7px;line-height:1.7}
+.owl-badge{display:block;margin-top:auto;padding-top:12px}
+.owl-badge .owl-badge__l{display:block;font-size:9.5px;font-weight:700;color:#a7adb8;letter-spacing:.2em;margin:0 0 5px}
+.owl-badge .owl-badge__v{display:flex;align-items:baseline;flex-wrap:wrap;gap:0 7px;margin:0;line-height:1.1}
+.owl-badge .owl-badge__k{font-size:11.5px;color:var(--ink-sub);font-weight:500}
+.owl-badge .owl-badge__be{font-size:12px;color:#a7adb8;font-weight:700}
+.owl-badge .owl-badge__ar{font-size:11px;color:#c3c8d2}
+.owl-badge .owl-badge__af{font-size:30px;font-weight:900;color:var(--blue);letter-spacing:-.02em; font-feature-settings:"palt"}
+.owl-badge .owl-badge__af small{font-size:13px;font-weight:700;margin-left:1px}
+@media screen and (max-width:900px){
+  .owl-cards{grid-template-columns:repeat(2,1fr);gap:24px 20px;margin-bottom:56px}
+}
+@media screen and (max-width:600px){
+  .owl-cards{grid-template-columns:1fr;gap:22px;margin-bottom:48px}
+  .owl-card .owl-card__thumb{aspect-ratio:16/9}
+}
 /* ── ヒーロー：モックアップ画像を小さくし、左右を中央で揃える ── */
 .l-work .p-work__inner{display:grid;grid-template-columns:1fr 420px;gap:40px;align-items:center}
 .l-work .p-work__img{width:auto}
@@ -218,29 +253,28 @@ html,body{overflow-x:clip}
 .p-work__detail .ow-reason{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw);padding-left:24px;padding-right:24px}
 .p-work__detail .ow-reason__inner{max-width:880px;margin:0 auto;padding:0}
 
-/* 関連実績：スライダーが動いてもカードが崩れないようにする */
-.l-results .slick-list,.l-results .slick-track{display:contents!important}
-.l-results .p-results__items{display:grid;grid-template-columns:repeat(3,1fr);gap:28px 24px;float:none;
-  max-width:1180px;margin:0;padding:0;box-sizing:border-box;
-  height:auto!important;min-height:0;max-height:none}
-.l-results .p-results__item{width:auto!important;height:auto!important;float:none!important;margin:0;
-  background:#fff;border:1px solid #e6e9f0;border-radius:8px;overflow:hidden}
-.l-results .p-results__item > a{display:block;text-decoration:none;color:inherit}
-.l-results .p-results__item-img{display:block;width:100%;aspect-ratio:16/10;object-fit:cover;margin:0}
-.l-results .p-results__item-content{padding:15px 16px 17px}
-.l-results .p-results__item-heading{font-size:11px;color:#8d939e;line-height:1.7;margin:0}
-.l-results .p-results__item-company{font-size:16px;font-weight:700;line-height:1.55;color:var(--ink);margin:6px 0 0}
-.l-results .p-results__item > a:hover .p-results__item-company{color:var(--navy);text-decoration:underline;text-underline-offset:3px}
-.l-results .p-results__item-cats{display:flex;flex-wrap:wrap;gap:5px;margin-top:12px}
-.l-results .c-btn{grid-column:1/-1;justify-self:center;width:auto;margin:14px auto 0;float:none}
-.l-results .p-results__item-cat{font-size:10.5px;font-weight:700;line-height:1;padding:5px 9px;
-  border:1px solid #c9d2e4;border-radius:0;background:#fff;color:var(--navy);margin:0}
+/* ── 関連実績：一覧と同じカードを横スクロール（ループ）で並べる ── */
+.l-work{margin-bottom:56px}
+.l-results{padding-top:40px}
+.l-results .p-results__items,.l-results .slick-list,.l-results .slick-track{display:contents!important}
+.ow-rel{margin:0;padding:0}
+.ow-rel__track{display:flex;gap:24px;overflow-x:auto;overflow-y:hidden;
+  scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+  padding:4px 0 10px;margin:0;scrollbar-width:none;-ms-overflow-style:none}
+.ow-rel__track::-webkit-scrollbar{display:none}
+.ow-rel__track > .owl-card{flex:0 0 300px;width:300px;scroll-snap-align:start;margin:0}
+.ow-rel__hint{display:flex;align-items:center;gap:8px;margin-top:10px;
+  font-size:12px;color:var(--ink-sub);letter-spacing:.04em}
+.ow-rel__hint::after{content:"";flex:1 1 auto;height:1px;background:var(--line)}
+.l-results .c-btn{width:300px!important;max-width:100%;margin:30px auto 0!important;float:none}
+.l-results .c-btn > a{width:100%!important}
 @media screen and (max-width:900px){
   .l-work .p-work__inner{grid-template-columns:1fr;gap:24px}
   .l-work .p-work__img img{margin:0 auto}
-  .l-results .p-results__items{grid-template-columns:repeat(2,1fr)}
 }
-@media screen and (max-width:600px){ .l-results .p-results__items{grid-template-columns:1fr} }
+@media screen and (max-width:600px){
+  .ow-rel__track > .owl-card{flex:0 0 260px;width:260px}
+}
 
 </style>
 </head>
@@ -475,90 +509,181 @@ html,body{overflow-x:clip}
       <p class="p-heading__main">関連実績</p>
     </div>
 
-    <div class="p-results__items  p-results-slider p-success__items p-results__non-move">
-      
-          <div class="c-flex__item p-results__item p-success__item">
-            <a href="https://opus-plan.net/works/seo/moonable-jp/">
-              <img src="https://opus-plan.net/wp-content/uploads/2022/11/実績一覧＿まなべる.webp" class="img p-results__item-img" />
-
-              <div class="p-results__item-content">
-                <p class="p-results__item-heading">
-                  BtoCサービスサイト                </p>
-                <p class="p-results__item-company">まなべる様</p>
-                <div class="p-results__item-cats c-flex">
-                  <p class="c-cat p-results__item-cat">堺市</p><p class="c-cat p-results__item-cat">大阪</p>                  <p class="c-cat p-results__item-cat">SEO対策</p>                  <p class="c-cat p-results__item-cat">ホームページ制作</p>
-                </div>
-              </div>
+    <div class="ow-rel">
+  <div class="ow-rel__track" data-rel-loop>
+<div class="owl-card" data-ind="estate" data-area="hyogo" data-svc="seo" data-res="inquiry">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BFsym.jpg" alt="" loading="lazy"></span>
             </a>
-          </div>
-
-        
-          <div class="c-flex__item p-results__item p-success__item">
-            <a href="https://opus-plan.net/works/seo/mia-ud-co-jp/">
-              <img src="https://opus-plan.net/wp-content/uploads/2022/12/ｍｖ-1024x575.jpg" class="img p-results__item-img" />
-
-              <div class="p-results__item-content">
-                <p class="p-results__item-heading">
-                  BtoBサービスサイト                </p>
-                <p class="p-results__item-company">M.I.A.都市開発株式会社様</p>
-                <div class="p-results__item-cats c-flex">
-                  <p class="c-cat p-results__item-cat">大阪</p>                  <p class="c-cat p-results__item-cat">SEO対策</p>                  <p class="c-cat p-results__item-cat">サイトリニューアル</p>
-                </div>
-              </div>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">不動産</span><span class="owl-tag">兵庫県</span><span class="owl-tag owl-tag--svc">SEO対策</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">兵庫県芦屋市 不動産｜物件ページの作り替えで反響を倍に</span>
+              <span class="owl-card__meta">従業員12名規模／支援期間 1年</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">反響数</span><strong class="owl-badge__af">2.2<small>倍</small></strong></span>
+              </span>
             </a>
+            </div>
           </div>
-
-        
-          <div class="c-flex__item p-results__item p-success__item">
-            <a href="https://opus-plan.net/works/seo/%e3%82%aa%e3%83%bc%e3%83%91%e3%82%b9%e3%83%97%e3%83%a9%e3%83%b3%e6%9c%89%e9%99%90%e4%bc%9a%e7%a4%be-2/">
-              <img src="https://opus-plan.net/wp-content/uploads/2022/11/制作実績＿オーパスプラン２-1024x575.webp" class="img p-results__item-img" />
-
-              <div class="p-results__item-content">
-                <p class="p-results__item-heading">
-                  BtoBサービスサイト                </p>
-                <p class="p-results__item-company">オーパスプラン有限会社様</p>
-                <div class="p-results__item-cats c-flex">
-                  <p class="c-cat p-results__item-cat">大阪</p>                  <p class="c-cat p-results__item-cat">SEO対策</p>                  <p class="c-cat p-results__item-cat">サイトリニューアル</p>
-                </div>
-              </div>
+<div class="owl-card" data-ind="shigyo" data-area="osaka" data-svc="seo" data-res="rank">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/12/shashohands-1024x576.jpg" alt="" loading="lazy"></span>
             </a>
-          </div>
-
-        
-          <div class="c-flex__item p-results__item p-success__item">
-            <a href="https://opus-plan.net/works/seo/tomato-house-net/">
-              <img src="https://opus-plan.net/wp-content/uploads/2022/11/実績一覧＿テナント.webp" class="img p-results__item-img" />
-
-              <div class="p-results__item-content">
-                <p class="p-results__item-heading">
-                  BtoBサービスサイト                </p>
-                <p class="p-results__item-company">とまとハウス株式会社様</p>
-                <div class="p-results__item-cats c-flex">
-                  <p class="c-cat p-results__item-cat">京都</p>                  <p class="c-cat p-results__item-cat">SEO対策</p>                  <p class="c-cat p-results__item-cat">システム改善</p><p class="c-cat p-results__item-cat">デザイン改修</p>
-                </div>
-              </div>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">士業</span><span class="owl-tag">大阪市</span><span class="owl-tag owl-tag--svc">SEO対策</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">大阪市 社会保険労務士事務所｜相談先を探す層を取りにいく</span>
+              <span class="owl-card__meta">所員6名規模／支援期間 9ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">「大阪 社労士 相談」</span><span class="owl-badge__be">圏外</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">1<small>位</small></strong></span>
+              </span>
             </a>
+            </div>
           </div>
-
-        
-          <div class="c-flex__item p-results__item p-success__item">
-            <a href="https://opus-plan.net/works/seo/serv-asnova-co-jp/">
-              <img src="https://opus-plan.net/wp-content/uploads/2022/11/実績一覧＿asonova.webp" class="img p-results__item-img" />
-
-              <div class="p-results__item-content">
-                <p class="p-results__item-heading">
-                  BtoBサービスサイト                </p>
-                <p class="p-results__item-company">株式会社ASNOVA様</p>
-                <div class="p-results__item-cats c-flex">
-                  <p class="c-cat p-results__item-cat">愛知</p>                  <p class="c-cat p-results__item-cat">SEO対策</p>                  <p class="c-cat p-results__item-cat">サイトリニューアル</p>
-                </div>
-              </div>
+<div class="owl-card" data-ind="const" data-area="zenkoku" data-svc="seo" data-res="access">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BFasonova.webp" alt="" loading="lazy"></span>
             </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">建設・リフォーム</span><span class="owl-tag">全国</span><span class="owl-tag owl-tag--svc">SEO対策</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">全国 建材メーカー｜指名検索以外からの流入をつくる</span>
+              <span class="owl-card__meta">従業員120名規模／支援期間 1年2ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">自然検索の流入</span><strong class="owl-badge__af">3.4<small>倍</small></strong></span>
+              </span>
+            </a>
+            </div>
           </div>
-
-                    
-
-    </div>
+<div class="owl-card" data-ind="const" data-area="ehime" data-svc="build" data-res="inquiry">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2026/10/%E5%8F%A4%E7%BE%8E%E8%A1%93-%E5%AF%BF%E6%B0%B8%E5%A0%82%E3%81%AE%E5%85%AC%E5%BC%8F%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8-2-1024x576.png" alt="" loading="lazy"></span>
+            </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">建設・リフォーム</span><span class="owl-tag">愛媛県</span><span class="owl-tag owl-tag--svc">サイト制作</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">愛媛県 建材商社｜リニューアルで問い合わせ導線を整理</span>
+              <span class="owl-card__meta">従業員45名規模／支援期間 7ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">お問い合わせ</span><span class="owl-badge__be">月2件</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">9<small>件</small></strong></span>
+              </span>
+            </a>
+            </div>
+          </div>
+<div class="owl-card" data-ind="const" data-area="hyogo" data-svc="build" data-res="access">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/12/shashohands-1024x576.jpg" alt="" loading="lazy"></span>
+            </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">建設・リフォーム</span><span class="owl-tag">兵庫県</span><span class="owl-tag owl-tag--svc">サイト制作</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">兵庫県 住宅設備メーカー｜採用と集客を1サイトで両立</span>
+              <span class="owl-card__meta">従業員80名規模／支援期間 1年3ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">月間セッション</span><strong class="owl-badge__af">4.1<small>倍</small></strong></span>
+              </span>
+            </a>
+            </div>
+          </div>
+<div class="owl-card" aria-hidden="true" data-ind="estate" data-area="hyogo" data-svc="seo" data-res="inquiry">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BFsym.jpg" alt="" loading="lazy"></span>
+            </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">不動産</span><span class="owl-tag">兵庫県</span><span class="owl-tag owl-tag--svc">SEO対策</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">兵庫県芦屋市 不動産｜物件ページの作り替えで反響を倍に</span>
+              <span class="owl-card__meta">従業員12名規模／支援期間 1年</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">反響数</span><strong class="owl-badge__af">2.2<small>倍</small></strong></span>
+              </span>
+            </a>
+            </div>
+          </div>
+<div class="owl-card" aria-hidden="true" data-ind="shigyo" data-area="osaka" data-svc="seo" data-res="rank">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/12/shashohands-1024x576.jpg" alt="" loading="lazy"></span>
+            </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">士業</span><span class="owl-tag">大阪市</span><span class="owl-tag owl-tag--svc">SEO対策</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">大阪市 社会保険労務士事務所｜相談先を探す層を取りにいく</span>
+              <span class="owl-card__meta">所員6名規模／支援期間 9ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">「大阪 社労士 相談」</span><span class="owl-badge__be">圏外</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">1<small>位</small></strong></span>
+              </span>
+            </a>
+            </div>
+          </div>
+<div class="owl-card" aria-hidden="true" data-ind="const" data-area="zenkoku" data-svc="seo" data-res="access">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BFasonova.webp" alt="" loading="lazy"></span>
+            </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">建設・リフォーム</span><span class="owl-tag">全国</span><span class="owl-tag owl-tag--svc">SEO対策</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">全国 建材メーカー｜指名検索以外からの流入をつくる</span>
+              <span class="owl-card__meta">従業員120名規模／支援期間 1年2ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">自然検索の流入</span><strong class="owl-badge__af">3.4<small>倍</small></strong></span>
+              </span>
+            </a>
+            </div>
+          </div>
+<div class="owl-card" aria-hidden="true" data-ind="const" data-area="ehime" data-svc="build" data-res="inquiry">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2026/10/%E5%8F%A4%E7%BE%8E%E8%A1%93-%E5%AF%BF%E6%B0%B8%E5%A0%82%E3%81%AE%E5%85%AC%E5%BC%8F%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8-2-1024x576.png" alt="" loading="lazy"></span>
+            </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">建設・リフォーム</span><span class="owl-tag">愛媛県</span><span class="owl-tag owl-tag--svc">サイト制作</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">愛媛県 建材商社｜リニューアルで問い合わせ導線を整理</span>
+              <span class="owl-card__meta">従業員45名規模／支援期間 7ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">お問い合わせ</span><span class="owl-badge__be">月2件</span><span class="owl-badge__ar" aria-hidden="true">→</span><strong class="owl-badge__af">9<small>件</small></strong></span>
+              </span>
+            </a>
+            </div>
+          </div>
+<div class="owl-card" aria-hidden="true" data-ind="const" data-area="hyogo" data-svc="build" data-res="access">
+            <a class="owl-card__thumblink" href="https://opus-plan.net/works/sakai-sogi/" tabindex="-1" aria-hidden="true">
+              <span class="owl-card__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/12/shashohands-1024x576.jpg" alt="" loading="lazy"></span>
+            </a>
+            <div class="owl-card__body">            <div class="owl-card__tags">
+              <span class="owl-tag">建設・リフォーム</span><span class="owl-tag">兵庫県</span><span class="owl-tag owl-tag--svc">サイト制作</span>
+            </div>
+            <a class="owl-card__textlink" href="https://opus-plan.net/works/sakai-sogi/">
+              <span class="owl-card__title">兵庫県 住宅設備メーカー｜採用と集客を1サイトで両立</span>
+              <span class="owl-card__meta">従業員80名規模／支援期間 1年3ヶ月</span>
+              <span class="owl-badge">
+              <span class="owl-badge__l">RESULT</span>
+              <span class="owl-badge__v"><span class="owl-badge__k">月間セッション</span><strong class="owl-badge__af">4.1<small>倍</small></strong></span>
+              </span>
+            </a>
+            </div>
+          </div>
+  </div>
+  <p class="ow-rel__hint">横にスクロールできます</p>
+</div>
 
 
 
@@ -674,6 +799,25 @@ html,body{overflow-x:clip}
 var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof HTMLScriptElement))throw new Error("Element missing: "+e);const r=JSON.parse(t.text),s=(window._wpemojiSettings=r,"wpEmojiSettingsSupports"),o=["flag","emoji"];function i(e){try{var t={supportTests:e,timestamp:(new Date).valueOf()};sessionStorage.setItem(s,JSON.stringify(t))}catch(e){}}function c(e,t,n){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);t=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(n,0,0);const r=new Uint32Array(e.getImageData(0,0,e.canvas.width,e.canvas.height).data);return t.every((e,t)=>e===r[t])}function p(e,t){e.clearRect(0,0,e.canvas.width,e.canvas.height),e.fillText(t,0,0);var n=e.getImageData(16,16,1,1);for(let e=0;e<n.data.length;e++)if(0!==n.data[e])return!1;return!0}function u(e,t,n,r){switch(t){case"flag":return n(e,"\ud83c\udff3\ufe0f\u200d\u26a7\ufe0f","\ud83c\udff3\ufe0f\u200b\u26a7\ufe0f")?!1:!n(e,"\ud83c\udde8\ud83c\uddf6","\ud83c\udde8\u200b\ud83c\uddf6")&&!n(e,"\ud83c\udff4\udb40\udc67\udb40\udc62\udb40\udc65\udb40\udc6e\udb40\udc67\udb40\udc7f","\ud83c\udff4\u200b\udb40\udc67\u200b\udb40\udc62\u200b\udb40\udc65\u200b\udb40\udc6e\u200b\udb40\udc67\u200b\udb40\udc7f");case"emoji":return!r(e,"\ud83e\u1fac8")}return!1}function f(e,t,n,r){let a;const s=(a="undefined"!=typeof WorkerGlobalScope&&self instanceof WorkerGlobalScope?new OffscreenCanvas(300,150):document.createElement("canvas")).getContext("2d",{willReadFrequently:!0}),o=(s.textBaseline="top",s.font="600 32px Arial",{});return e.forEach(e=>{o[e]=t(s,e,n,r)}),o}function a(e){var t=document.createElement("script");t.src=e,t.defer=!0,document.head.appendChild(t)}r.supports={everything:!0,everythingExceptFlag:!0},new Promise(t=>{let n=function(){try{var e=JSON.parse(sessionStorage.getItem(s));if("object"==typeof e&&"number"==typeof e.timestamp&&(new Date).valueOf()<e.timestamp+604800&&"object"==typeof e.supportTests)return e.supportTests}catch(e){}return null}();if(!n){if("undefined"!=typeof Worker&&"undefined"!=typeof OffscreenCanvas&&"undefined"!=typeof URL&&URL.createObjectURL&&"undefined"!=typeof Blob)try{var e="postMessage("+f.toString()+"("+[JSON.stringify(o),u.toString(),c.toString(),p.toString()].join(",")+"));",r=new Blob([e],{type:"text/javascript"});const a=new Worker(URL.createObjectURL(r),{name:"wpTestEmojiSupports"});return void(a.onmessage=e=>{i(n=e.data),a.terminate(),t(n)})}catch(e){}i(n=f(o,u,c,p))}t(n)}).then(e=>{for(const n in e)r.supports[n]=e[n],r.supports.everything=r.supports.everything&&r.supports[n],"flag"!==n&&(r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&r.supports[n]);var t;r.supports.everythingExceptFlag=r.supports.everythingExceptFlag&&!r.supports.flag,r.supports.everything||((t=r.source||{}).concatemoji?a(t.concatemoji):t.wpemoji&&t.twemoji&&(a(t.twemoji),a(t.wpemoji)))});
 //# sourceURL=https://opus-plan.net/wp-includes/js/wp-emoji-loader.min.js
 </script>
+
+<script>
+(function(){
+  document.querySelectorAll('[data-rel-loop]').forEach(function(t){
+    var lock=false;
+    t.addEventListener('scroll', function(){
+      if(lock) return;
+      var half=t.scrollWidth/2;
+      if(t.scrollLeft>=half){ lock=true; t.scrollLeft-=half; lock=false; }
+      else if(t.scrollLeft<1){ lock=true; t.scrollLeft+=half; lock=false; }
+    }, {passive:true});
+    // ホイールの縦回転でも横に流す
+    t.addEventListener('wheel', function(e){
+      if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ t.scrollLeft+=e.deltaY; e.preventDefault(); }
+    }, {passive:false});
+  });
+})();
+</script>
+
 </body>
 
 </html>
