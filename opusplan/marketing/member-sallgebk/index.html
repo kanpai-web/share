@@ -198,6 +198,7 @@ html.om-open{overflow:hidden}
 .om-rel__all a::after{content:"→"}
 .om-rel__all a:hover{text-decoration:underline;text-underline-offset:3px}
 .om-cta{margin-top:40px;padding-top:30px;border-top:1px dashed var(--line);text-align:center}
+.om-sp-br{display:none}
 .om-cta__note{margin:0 0 14px;font-size:12.5px;line-height:1.8;color:var(--ink-sub)}
 .om-cta a{display:inline-flex;align-items:center;gap:10px;padding:15px 34px;border-radius:999px;background:var(--navy);color:#fff;font-size:14px;font-weight:700;text-decoration:none;transition:background .2s ease}
 .om-cta a:hover{background:var(--blue)}
@@ -210,9 +211,20 @@ html.om-open{overflow:hidden}
 @media screen and (max-width:599px){
   .l-member{padding-bottom:90px}
   .l-member .om-lead{font-size:14px;margin:18px 0 36px}
-  .om-grid{gap:40px 16px}
-  .om-snap{padding:7px 7px 0}
-  .om-snap__cap{font-size:11.5px;min-height:40px;padding:7px 2px 8px}
+  .om-sp-br{display:inline}
+  /* 1人ずつ横長に：左に写真、右に名前と情報。人と人のあいだに区切り線 */
+  .om-grid{grid-template-columns:1fr;gap:0}
+  .om-card{padding:28px 0;border-top:1px dashed #cfd8e3}
+  .om-card:first-child{border-top:0;padding-top:8px}
+  .om-card:last-child{padding-bottom:0}
+  .om-card__btn{display:grid;grid-template-columns:132px minmax(0,1fr);column-gap:18px;align-content:start}
+  .om-card__btn > *{grid-column:2}
+  .om-card__btn > .om-snap{grid-column:1;grid-row:1 / span 7;align-self:start;padding:6px 6px 0}
+  .om-snap::before{width:44px;height:14px;margin-left:-22px;top:-7px}
+  .om-snap__cap{font-size:10.5px;min-height:0;padding:6px 2px 7px}
+  .om-card__btn .om-role{margin-top:0}
+  .om-card__btn .om-catch{margin-top:6px}
+  .om-card__btn .om-more{padding-top:12px}
   .om-name{font-size:17px}
   .om-catch{font-size:12.5px}
   .om-chip{padding:5px 9px 4px;font-size:10px}
@@ -652,7 +664,7 @@ html.om-open{overflow:hidden}
     <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>地域名での上位表示、問い合わせまでの導線設計<span class="om-qa__sub">よく担当する業種：士業／医療・クリニック／葬儀／建設・リフォーム</span><span class="om-qa__sub">資格：ウェブ解析士</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>ホームページはあるのに問い合わせが来ない</li><li>広告とSEO、どちらに予算をかけるべきか</li><li>ネット上の悪い口コミへの対応</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>数字で説明できない提案はしないこと。やらない方がいい施策も正直にお伝えします。</dd></div></dl>
     <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">社内にWebの担当者がいなくても大丈夫です。まずは今の状況をそのまま聞かせてください。</p></div>
     <div class="om-rel"><div class="om-rel__tabs" role="tablist"><button type="button" class="om-rel__tab" role="tab" aria-controls="om-m1-works" aria-selected="true">担当した実績<b>12</b></button><button type="button" class="om-rel__tab" role="tab" aria-controls="om-m1-columns" aria-selected="false">書いたコラム<b>5</b></button></div><div class="om-rel__panel is-on" id="om-m1-works" role="tabpanel"><ul class="om-mini"><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2026/10/%E5%8F%A4%E7%BE%8E%E8%A1%93-%E5%AF%BF%E6%B0%B8%E5%A0%82%E3%81%AE%E5%85%AC%E5%BC%8F%E3%83%9B%E3%83%BC%E3%83%A0%E3%83%9A%E3%83%BC%E3%82%B8-2-1024x576.png" alt="" loading="lazy"></span><span class="om-mini__title">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</span></a></li><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/12/www.konohanahome.com_-2-1024x575.jpg" alt="" loading="lazy"></span><span class="om-mini__title">大阪市 リフォーム会社｜広告の無駄打ちを削って受注単価を改善</span></a></li><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BFsym.jpg" alt="" loading="lazy"></span><span class="om-mini__title">兵庫県芦屋市 不動産｜物件ページの作り替えで反響を倍に</span></a></li></ul><p class="om-rel__all"><a href="https://opus-plan.net/works/">実績をすべて見る（12件）</a></p></div><div class="om-rel__panel" id="om-m1-columns" role="tabpanel"><ul class="om-mini"><li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column01-inquiry-gxb9qfm9/"><span class="om-mini__thumb"><img src="https://kanpai-web.github.io/share/opusplan/marketing/column01-inquiry-gxb9qfm9/images/col01-eyecatch.jpg" alt="" loading="lazy"></span><span class="om-mini__title">ホームページにお問い合わせが来ない原因とは？確認すべきポイントと改善方法</span></a></li><li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column08-website-pages-zel0x7dg/"><span class="om-mini__thumb"><img src="https://kanpai-web.github.io/share/opusplan/marketing/column08-website-pages-zel0x7dg/images/col08-eyecatch.jpg" alt="" loading="lazy"></span><span class="om-mini__title">ホームページに必要なページとは？お客さまの4つの段階から考える構成の決め方</span></a></li><li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column07-keyword-yf4pmqaj/"><span class="om-mini__thumb"><img src="https://kanpai-web.github.io/share/opusplan/marketing/column07-keyword-yf4pmqaj/images/col07-eyecatch.jpg" alt="" loading="lazy"></span><span class="om-mini__title">検索ワードの調べ方｜無料でできる範囲と、有料ツールが必要になる場面</span></a></li></ul><p class="om-rel__all"><a href="https://opus-plan.net/blog/">コラムをすべて見る（5件）</a></p></div></div>
-    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
+    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。<br class="om-sp-br">内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
   </div>
 </dialog>
 <dialog class="om-modal" id="om-m2" aria-label="佐藤 花子のプロフィール" autofocus>
@@ -673,7 +685,7 @@ html.om-open{overflow:hidden}
     <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>GA4・サーチコンソールの分析、検索ワード調査、記事の構成づくり<span class="om-qa__sub">よく担当する業種：BtoBサービス／教育・スクール／不動産</span><span class="om-qa__sub">資格：Google アナリティクス認定資格</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>GA4の見方が分からない</li><li>ブログを書いているのにアクセスが増えない</li><li>どのページを直せばいいか知りたい</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>専門用語を使わずに、社内で説明できる言葉でレポートをお渡しすること。</dd></div></dl>
     <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">「数字は取っているけど見方が分からない」という段階からのご相談も歓迎です。</p></div>
     <div class="om-rel"><div class="om-rel__tabs" role="tablist"><button type="button" class="om-rel__tab" role="tab" aria-controls="om-m2-works" aria-selected="true">担当した実績<b>2</b></button><button type="button" class="om-rel__tab" role="tab" aria-controls="om-m2-columns" aria-selected="false">書いたコラム<b>4</b></button></div><div class="om-rel__panel is-on" id="om-m2-works" role="tabpanel"><ul class="om-mini"><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/12/%EF%BD%8D%EF%BD%96-1024x575.jpg" alt="" loading="lazy"></span><span class="om-mini__title">京都市 歯科クリニック｜MEOで地図検索からの来院を増やす</span></a></li><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BFasonova.webp" alt="" loading="lazy"></span><span class="om-mini__title">全国 建材メーカー｜指名検索以外からの流入をつくる</span></a></li></ul></div><div class="om-rel__panel" id="om-m2-columns" role="tabpanel"><ul class="om-mini"><li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column05-search-console-gvx1qb9h/"><span class="om-mini__thumb"><img src="https://kanpai-web.github.io/share/opusplan/marketing/column05-search-console-gvx1qb9h/images/col05-eyecatch.jpg" alt="" loading="lazy"></span><span class="om-mini__title">サーチコンソールの使い方｜最初に見る4つの数字と、つまずきやすいポイント</span></a></li><li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/"><span class="om-mini__thumb"><img src="https://kanpai-web.github.io/share/opusplan/marketing/column06-ga4-yrh6q69s/images/col06-eyecatch.jpg" alt="" loading="lazy"></span><span class="om-mini__title">GA4の使い方｜最初に見る3つのレポートと、お問い合わせを数える設定</span></a></li><li><a href="https://kanpai-web.github.io/share/opusplan/marketing/column07-keyword-yf4pmqaj/"><span class="om-mini__thumb"><img src="https://kanpai-web.github.io/share/opusplan/marketing/column07-keyword-yf4pmqaj/images/col07-eyecatch.jpg" alt="" loading="lazy"></span><span class="om-mini__title">検索ワードの調べ方｜無料でできる範囲と、有料ツールが必要になる場面</span></a></li></ul><p class="om-rel__all"><a href="https://opus-plan.net/blog/">コラムをすべて見る（4件）</a></p></div></div>
-    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
+    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。<br class="om-sp-br">内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
   </div>
 </dialog>
 <dialog class="om-modal" id="om-m3" aria-label="鈴木 一郎のプロフィール" autofocus>
@@ -694,7 +706,7 @@ html.om-open{overflow:hidden}
     <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>WordPressのテーマ制作、フォーム改善、表示速度の改善<span class="om-qa__sub">よく担当する業種：コーポレートサイト／採用サイト／LP</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>WordPressの更新が自社でできない</li><li>スマホで見ると表示が崩れる</li><li>ページの表示が遅い</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>直したあとに、お客様の社内で更新できる状態でお渡しすること。</dd></div></dl>
     <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">分析で見つかった改善点を、外注を挟まずにすぐ形にできるのが私たちの強みです。</p></div>
     <div class="om-rel"><div class="om-rel__tabs" role="tablist"><button type="button" class="om-rel__tab" role="tab" aria-controls="om-m3-works" aria-selected="true">担当した実績<b>8</b></button></div><div class="om-rel__panel is-on" id="om-m3-works" role="tabpanel"><ul class="om-mini"><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BFasonova.webp" alt="" loading="lazy"></span><span class="om-mini__title">全国 建材メーカー｜指名検索以外からの流入をつくる</span></a></li><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/12/shashohands-1024x576.jpg" alt="" loading="lazy"></span><span class="om-mini__title">大阪市 社会保険労務士事務所｜相談先を探す層を取りにいく</span></a></li><li><a href="https://opus-plan.net/works/"><span class="om-mini__thumb"><img src="https://opus-plan.net/wp-content/uploads/2022/11/%E5%AE%9F%E7%B8%BE%E4%B8%80%E8%A6%A7%EF%BC%BF%E3%83%86%E3%83%8A%E3%83%B3%E3%83%88.webp" alt="" loading="lazy"></span><span class="om-mini__title">大阪市 飲食3店舗｜Googleマップの情報整備で来店を増やす</span></a></li></ul><p class="om-rel__all"><a href="https://opus-plan.net/works/">実績をすべて見る（8件）</a></p></div></div>
-    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
+    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。<br class="om-sp-br">内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
   </div>
 </dialog>
 <dialog class="om-modal" id="om-m4" aria-label="高橋 美咲のプロフィール" autofocus>
@@ -715,7 +727,7 @@ html.om-open{overflow:hidden}
     <dl class="om-qa"><div class="om-qa__item"><dt>得意なことは？</dt><dd>ご予算に合わせたプランの組み立て、定例の進行<span class="om-qa__sub">よく担当する業種：飲食／美容・サロン／小売</span><span class="om-qa__sub">資格：Google 広告認定資格</span></dd></div><div class="om-qa__item"><dt>よく受けるご相談は？</dt><dd><ul><li>費用の目安を知りたい</li><li>他社の見積もりと比べたい</li><li>社内の稟議用に資料がほしい</li></ul></dd></div><div class="om-qa__item om-qa__item--wide"><dt>仕事で大事にしていることは？</dt><dd>ご予算と社内の事情をうかがったうえで、無理のない進め方を一緒に考えること。</dd></div></dl>
     <div class="om-say"><span class="om-say__face"><svg viewBox="0 0 400 500" aria-hidden="true"><rect width="400" height="500" fill="#e2e7ea"/><circle cx="200" cy="200" r="78" fill="#c8d0d8"/><path d="M60 500c0-92 63-160 140-160s140 68 140 160z" fill="#c8d0d8"/></svg></span><p class="om-say__txt">「こんなことを聞いてもいいのかな」という段階でも、お気軽にご連絡ください。</p></div>
     
-    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
+    <div class="om-cta"><p class="om-cta__note">ご相談はチームでお受けしています。<br class="om-sp-br">内容に合わせて、合うメンバーが対応します。</p><a href="https://opus-plan.net/contact">まずは気軽に相談する</a></div>
   </div>
 </dialog>
 </div>
