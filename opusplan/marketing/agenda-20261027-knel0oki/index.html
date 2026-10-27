@@ -1,0 +1,578 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>定例MTG アジェンダ 2026-10-27｜オーパスプラン</title>
+<style>
+:root{
+  --navy:#2E467C; --navy-band:#184D86; --navy-dp:#1B3563;
+  --teal:#0097B1; --teal-lt:#E3F3F6; --blue-sq:#E2E8F4;
+  --label:#6E82AA; --block:#F6F7F7; --block-ln:#E8EBEF; --bg-tint:#F4F7FF;
+  --red:#BD4553; --red-lt:#FBEEF0; --amber:#C98A1F; --amber-lt:#FBF3E2;
+  --green:#2E7D5B; --green-lt:#E6F2EC;
+  --ink:#37415A; --ink-sub:#55617A; --ink-faint:#8D96A8;
+  --line:#DFE5F0; --paper:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#D9DFEA;
+  font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic','Noto Sans JP',sans-serif;
+  color:var(--ink);-webkit-font-smoothing:antialiased}
+.print-hint{position:sticky;top:0;z-index:10;background:var(--navy-band);color:#fff;
+  text-align:center;font-size:12px;letter-spacing:.02em;padding:9px 12px}
+.deck{display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px 12px 56px}
+.sw{width:calc(1280px * var(--s,1));height:calc(720px * var(--s,1));flex:none}
+
+.slide{width:1280px;height:720px;flex:none;background:var(--paper);transform-origin:top left;
+  transform:scale(var(--s,1));box-shadow:0 6px 28px rgba(30,45,80,.16);padding:38px 52px 32px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden}
+.slide.tint{background:linear-gradient(135deg,#F7FAFF 0%,#EDF2FC 100%)}
+
+.deco{position:absolute;pointer-events:none}
+.deco-dots{background-image:radial-gradient(var(--blue-sq) 1.4px,transparent 1.4px);background-size:13px 13px}
+.deco-sq-out{border:1.3px solid #B9C6E2}
+.deco-sq-fill{background:var(--blue-sq);opacity:.55}
+.d-tl-dots{top:0;left:0;width:118px;height:140px}
+.d-tr-out{top:26px;right:34px;width:72px;height:72px}
+.d-tr-fill{top:52px;right:14px;width:58px;height:58px}
+.d-br-dots{bottom:0;right:0;width:104px;height:112px}
+
+.s-head{margin-bottom:13px;flex:none}
+.crumb{font-size:10.5px;font-weight:800;color:var(--teal);letter-spacing:.12em;margin-bottom:5px}
+.s-title{font-size:23px;font-weight:800;color:var(--navy);line-height:1.36;letter-spacing:.01em;
+  padding-bottom:9px;border-bottom:2.5px solid var(--blue-sq);position:relative}
+.s-title::after{content:'';position:absolute;left:0;bottom:-2.5px;width:86px;height:2.5px;background:var(--teal)}
+.s-body{flex:1;min-height:0;display:flex;flex-direction:column;position:relative;z-index:1}
+.s-foot,.s-num{position:absolute;bottom:16px;font-size:9px;color:var(--ink-faint);letter-spacing:.05em;z-index:2}
+.s-foot{left:52px} .s-num{right:52px;font-weight:700;color:#B4BDCE}
+
+.cover{align-items:center;justify-content:center;text-align:center}
+.cover .eyebrow{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.34em;margin-bottom:20px}
+.cover h1{font-size:42px;font-weight:800;color:var(--navy);line-height:1.3;letter-spacing:.02em;margin-bottom:20px}
+.goal-box{background:var(--bg-tint);border:1.3px solid #D6DFF2;border-radius:10px;
+  padding:16px 28px;max-width:760px;margin:0 auto 22px}
+.goal-box .g-label{font-size:10px;font-weight:800;color:var(--teal);letter-spacing:.24em;margin-bottom:7px}
+.goal-box .g-text{font-size:13px;color:var(--ink-sub);line-height:1.95}
+.goal-box .g-text b{color:var(--navy);font-weight:800}
+.cover .meta{font-size:11.5px;color:var(--ink-sub);line-height:1.95;letter-spacing:.04em}
+
+.thesis{font-size:13.5px;font-weight:800;color:var(--navy);line-height:1.72;
+  background:var(--bg-tint);border-left:4px solid var(--teal);padding:10px 14px;border-radius:0 6px 6px 0;margin-bottom:11px}
+.band{background:var(--navy);color:#fff;border-radius:8px;padding:11px 16px;font-size:12px;font-weight:700;line-height:1.72}
+.band .b-lbl{display:block;font-size:9.5px;font-weight:800;letter-spacing:.16em;opacity:.82;margin-bottom:3px}
+.band.teal{background:var(--teal)}
+.push{margin-top:auto}
+.lbl{font-size:10.5px;font-weight:800;color:var(--label);letter-spacing:.1em;margin-bottom:6px}
+
+.tag{display:inline-block;font-size:9.5px;font-weight:800;padding:2px 8px;border-radius:5px;white-space:nowrap}
+.tag.ok{background:var(--green-lt);color:var(--green)}
+.tag.fix{background:var(--amber-lt);color:#8A6A1C}
+.tag.new{background:var(--teal-lt);color:#046A7E}
+.tag.hold{background:#F0F2F7;color:#6E7A94}
+.tag.hot{background:var(--red-lt);color:var(--red)}
+
+.bl{list-style:none;margin:0;padding:0}
+.bl li{font-size:11.5px;color:var(--ink-sub);line-height:1.72;padding-left:14px;position:relative;margin-bottom:4px}
+.bl li::before{content:'';position:absolute;left:2px;top:8px;width:4.5px;height:4.5px;border-radius:50%;background:var(--teal)}
+.bl li b{color:var(--navy);font-weight:800}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.blk{background:var(--block);border:1px solid var(--block-ln);border-radius:9px;padding:11px 13px}
+.blk h4{font-size:12px;font-weight:800;color:var(--navy);line-height:1.5;margin-bottom:6px;
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.blk p{font-size:11px;color:var(--ink-sub);line-height:1.72}
+.blk p+p{margin-top:4px}
+.blk b{color:var(--navy);font-weight:800}
+.code{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;background:#fff;
+  border:1px solid var(--line);border-radius:5px;padding:4px 7px;display:inline-block;margin-bottom:5px;color:var(--navy)}
+
+table{width:100%;border-collapse:collapse;font-size:11px}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--block-ln);vertical-align:top;line-height:1.66}
+thead th{background:var(--navy);color:#fff;font-size:10px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+tbody tr:nth-child(even){background:#FAFBFD}
+td b{color:var(--navy);font-weight:800}
+.ct td:first-child{font-weight:800;color:var(--navy);background:#F2F5FA}
+
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0 7px}
+.fl{background:var(--paper);border:1.3px solid var(--line);border-top:3px solid var(--teal);
+  border-radius:8px;padding:9px 10px;position:relative}
+.fl .f-no{font-size:9px;font-weight:800;color:var(--teal);letter-spacing:.12em;margin-bottom:3px}
+.fl .f-t{font-size:11px;font-weight:800;color:var(--navy);line-height:1.45;margin-bottom:3px}
+.fl p{font-size:10px;color:var(--ink-sub);line-height:1.6}
+.fl::after{content:'▶';position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:#C3CCDC;font-size:8px;z-index:2}
+.fl:last-child::after{display:none}
+
+.act-row{display:grid;grid-template-columns:58px 1fr 84px;gap:0 12px;align-items:start;
+  border-bottom:1px solid var(--block-ln);padding:6px 2px}
+.act-row:last-child{border-bottom:none}
+.act-row .a-who{font-size:10px;font-weight:800;color:#fff;background:var(--navy);border-radius:5px;padding:2px 0;text-align:center}
+.act-row .a-who.w{background:var(--teal)}
+.act-row .a-who.both{background:var(--label)}
+.act-row .a-t{font-size:11.5px;color:var(--ink-sub);line-height:1.6}
+.act-row .a-t b{color:var(--navy);font-weight:800}
+.act-row .a-d{font-size:9.5px;color:var(--ink-faint);text-align:right;line-height:1.7}
+
+@media print{
+  html,body{background:#fff}
+  .print-hint{display:none}
+  .deck{gap:0;padding:0}
+  .sw{width:auto;height:auto}
+  .slide{transform:none;box-shadow:none;break-after:page;page-break-after:always}
+  @page{size:338.67mm 190.5mm;margin:0}
+}
+
+.chk{list-style:none;margin:0;padding:0}
+.chk li{position:relative;padding:5px 0 5px 24px;font-size:11.5px;line-height:1.6;color:var(--ink-sub);border-bottom:1px dashed var(--block-ln)}
+.chk li:last-child{border-bottom:0}
+.chk li::before{content:'';position:absolute;left:2px;top:8px;width:12px;height:12px;border:1.5px solid var(--teal);border-radius:3px;background:#fff}
+.chk li b{color:var(--navy);font-weight:800}
+.chk .who{display:inline-block;font-size:9px;font-weight:800;color:#fff;background:var(--label);border-radius:4px;padding:1px 6px;margin-left:6px;vertical-align:1px}
+.url{font-size:9.5px;color:var(--teal);word-break:break-all}
+.url a{color:var(--teal)}
+.num{font-size:26px;font-weight:800;color:var(--navy);line-height:1.1}
+.num small{font-size:11px;font-weight:700;color:var(--ink-sub);margin-left:3px}
+.stat{background:var(--block);border:1px solid var(--block-ln);border-radius:9px;padding:10px 12px}
+.stat .s-l{font-size:10px;font-weight:800;color:var(--label);letter-spacing:.06em;margin-bottom:3px}
+.toc{counter-reset:t;list-style:none;margin:0;padding:0}
+.toc li{display:grid;grid-template-columns:34px 210px 1fr 70px;align-items:center;gap:0 12px;padding:8px 4px;border-bottom:1px solid var(--block-ln)}
+.toc li:last-child{border-bottom:0}
+.toc .t-n{font-size:18px;font-weight:800;color:var(--teal)}
+.toc .t-t{font-size:13.5px;font-weight:800;color:var(--navy)}
+.toc .t-d{font-size:11px;color:var(--ink-sub);line-height:1.6}
+.toc .t-m{font-size:10px;color:var(--ink-faint);text-align:right}
+table.sm{font-size:12.5px}
+table.sm th,table.sm td{padding:8px 11px;line-height:1.65}
+table.sm thead th{font-size:11.5px}
+.bl li{font-size:13px;line-height:1.75;margin-bottom:6px}
+.bl li::before{top:9px}
+.blk{padding:14px 16px}
+.blk h4{font-size:14px;margin-bottom:9px}
+.chk li{font-size:14px;padding:9px 0 9px 26px}
+.chk li::before{top:12px;width:14px;height:14px}
+.chk .who{font-size:10px}
+.lbl{font-size:12px}
+.thesis{font-size:15px}
+.band{font-size:13.5px;padding:13px 18px}
+.band .b-lbl{font-size:10.5px}
+.fl .f-t{font-size:13.5px}.fl p{font-size:12px}.fl .f-no{font-size:10.5px}
+.stat .num{font-size:32px}
+.url{font-size:11px}
+</style>
+</head>
+<body>
+<div class="print-hint">16:9（Googleスライドと同じ比率）で作成しています。Cmd+P →「背景のグラフィック」をオンでPDF化できます</div>
+<div class="deck">
+<div class="sw"><section class="slide cover tint">
+  <div class="deco deco-dots d-tl-dots"></div>
+  <div class="deco deco-sq-out d-tr-out"></div>
+  <div class="deco deco-sq-fill d-tr-fill"></div>
+  <div class="deco deco-dots d-br-dots"></div>
+  <div class="eyebrow">MEETING AGENDA</div>
+  <h1>定例ミーティング アジェンダ</h1>
+  <div class="goal-box">
+    <div class="g-label">今日やりたいこと</div>
+    <div class="g-text">10/7の打合せのあとに対応したことを、<b>課題表・ブログ・実績・メンバー紹介</b>の順に共有します。<br>
+    それぞれ「内容」と「デザイン」をプレビューで見ていただき、<b>WordPressへの載せ方（方法案）</b>まで確認したうえで、<br>
+    最後に<b>今日決めたいこと</b>をまとめて決めます。</div>
+  </div>
+  <div class="meta">2026年10月27日（月）21:00〜／ オンライン<br>渡邉さん ／ 高寺<br>前回：2026年10月7日（火）</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">AGENDA</div><div class="s-title">本日の流れ</div></div>
+  <div class="s-body">
+<ul class="toc">
+  <li><span class="t-n">1</span><span class="t-t">前回からの進捗</span><span class="t-d">10/7以降に対応したことの全体像</span><span class="t-m">03</span></li>
+  <li><span class="t-n">2</span><span class="t-t">課題表</span><span class="t-d">39件の状況と、優先度・担当の確認</span><span class="t-m">04–05</span></li>
+  <li><span class="t-n">3</span><span class="t-t">ブログ（コラム）</span><span class="t-d">5本の原稿・デザイン・アイキャッチ、WordPressへの入稿方法</span><span class="t-m">06–07</span></li>
+  <li><span class="t-n">4</span><span class="t-t">実績</span><span class="t-d">記入シート・一覧／詳細のデザイン、掲載の5ステップ</span><span class="t-m">08–10</span></li>
+  <li><span class="t-n">5</span><span class="t-t">メンバー紹介</span><span class="t-d">記入シート・会社概要に載せた状態のデザイン</span><span class="t-m">11–12</span></li>
+  <li><span class="t-n">6</span><span class="t-t">方法案（管理と運用）</span><span class="t-d">メンバー情報の管理方法3案、投稿者・担当メンバーの運用</span><span class="t-m">13</span></li>
+  <li><span class="t-n">7</span><span class="t-t">今日決めたいこと／次回まで</span><span class="t-d">決めることの一覧と、11月の進め方</span><span class="t-m">14–15</span></li>
+</ul>
+<div class="band push"><span class="b-lbl">進め方</span>各パートは<b>プレビュー（実際のサイトに載せた状態）</b>を画面共有しながら見ていただき、気になった点はその場で課題表に追記します。</div>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">02</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">PROGRESS</div><div class="s-title">10/7以降に対応したこと</div></div>
+  <div class="s-body">
+<table class="sm">
+<thead><tr><th style="width:92px">日付</th><th style="width:120px">テーマ</th><th>対応したこと</th><th style="width:150px">状態</th></tr></thead>
+<tbody>
+<tr><td>10/8</td><td>打合せのまとめ</td><td>議事録を作成。<b>課題表</b>（気づいたことを書き溜める場所）と<b>タスク管理表</b>（やると決めたこと）を分けて用意</td><td><span class="tag ok">完了</span></td></tr>
+<tr><td>10/8〜</td><td>計測</td><td>GA4のキーイベント（お問い合わせ）を設定</td><td><span class="tag ok">完了</span>（課題26）</td></tr>
+<tr><td>10/19〜21</td><td>ブログ</td><td>コラム01（問い合わせが来ない原因）と、基礎知識シリーズ05〜08の<b>計5本を執筆</b>。コラム管理表に登録。記事の抜け漏れを見るマトリクスをFigmaで作成</td><td><span class="tag new">確認依頼中</span></td></tr>
+<tr><td>10/21〜23</td><td>ブログ</td><td>WordPress入稿ガイド。<b>アイキャッチ5本</b>とリンク共有時の画像（OGP）。アイキャッチを記事から自動で作る仕組みを導入</td><td><span class="tag ok">完了</span></td></tr>
+<tr><td>10/22〜27</td><td>実績</td><td><b>実績改善シート</b>（記入欄＋記入例）。一覧・詳細のプレビューを実サイトに載せた形で作成し、絞り込み・カード・関連実績まで調整。<b>WordPress掲載ガイド</b>を作成</td><td><span class="tag new">確認依頼中</span></td></tr>
+<tr><td>10/27</td><td>メンバー紹介</td><td><b>記入シート</b>（4名分）と、会社概要に載せた状態のプレビュー、<b>WordPress掲載ガイド</b>を作成</td><td><span class="tag new">本日確認</span></td></tr>
+<tr><td>10/27</td><td>運用の整理</td><td>コラムの「投稿者」と実績の「担当メンバー」でプロフィールに自動表示する運用を、3つのガイドに反映</td><td><span class="tag new">本日確認</span></td></tr>
+</tbody></table>
+<div class="band teal push"><span class="b-lbl">共有URLの置き場所</span>すべて（共有）タスク管理シートの各タブ（コラム管理・実績改善・メンバー紹介新設）の上部にまとめています。</div>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">03</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">課題表 01</div><div class="s-title">課題表の状況（全39件）</div></div>
+  <div class="s-body">
+<div class="g3" style="grid-template-columns:repeat(4,1fr);margin-bottom:12px">
+  <div class="stat"><div class="s-l">完了</div><div class="num">1<small>件</small></div></div>
+  <div class="stat"><div class="s-l">対応中</div><div class="num">6<small>件</small></div></div>
+  <div class="stat"><div class="s-l">ステータス未記入</div><div class="num">25<small>件</small></div></div>
+  <div class="stat"><div class="s-l">対応しない（判断済み）</div><div class="num">7<small>件</small></div></div>
+</div>
+<div class="g2">
+  <div>
+    <p class="lbl">対応中の6件</p>
+    <table class="sm"><tbody>
+      <tr><td style="width:34px"><b>16</b></td><td>実績詳細の見出し・数値・内容の見直し</td><td style="width:44px">高寺</td></tr>
+      <tr><td><b>20</b></td><td>会社概要にメンバー掲載</td><td>高寺</td></tr>
+      <tr><td><b>23</b></td><td>マーケティングの全体像を扱う記事の追加</td><td>高寺</td></tr>
+      <tr><td><b>24</b></td><td>記事に執筆者情報を表示（画像・表示実装が未）</td><td>高寺</td></tr>
+      <tr><td><b>27</b></td><td>.com のGTM設置し直し・Clarity接続</td><td>渡邉</td></tr>
+      <tr><td><b>28</b></td><td>お問い合わせデータを社名程度に加工して共有</td><td>渡邉</td></tr>
+    </tbody></table>
+  </div>
+  <div>
+    <p class="lbl">優先度「高」で、まだ手が付いていないもの</p>
+    <table class="sm"><tbody>
+      <tr><td style="width:34px"><b>13</b></td><td>実績エリアの表記「堺市大阪」→「大阪堺市」</td><td style="width:44px">コーダー</td></tr>
+      <tr><td><b>15</b></td><td>実績数を増やす（実名・非公開のバランス）</td><td>渡邉</td></tr>
+      <tr><td><b>22</b></td><td>コラムのサムネイル → 新規分は作成済み</td><td>両者</td></tr>
+      <tr><td><b>30</b></td><td>フロント商品「AIOレポート」とサービスページ</td><td>渡邉</td></tr>
+      <tr><td><b>31</b></td><td>「初回相談無料」の枠を設ける</td><td>高寺</td></tr>
+    </tbody></table>
+  </div>
+</div>
+<div class="band push"><span class="b-lbl">確認したいこと</span>ステータス未記入の25件は<b>優先度もほぼ未設定</b>です。今日は全件を見るのではなく、次のスライドの分類で<b>「11月に着手するもの」だけ</b>決めたいと考えています。</div>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">04</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">課題表 02</div><div class="s-title">ステータス未記入の課題（残り20件・ページ別）</div></div>
+  <div class="s-body">
+<div class="g3">
+  <div class="blk"><h4>共通・トップ</h4><ul class="bl">
+    <li><b>1</b> 資料ダウンロードの資料が無い</li>
+    <li><b>2</b> イラストのトンマナ統一（AIで一括リメイク）</li>
+    <li><b>3</b> 下層のパンくず重なり・余白（SP）<span class="tag hold">コーダー</span></li>
+    <li><b>4</b> キーコピーを画像からテキストへ</li>
+    <li><b>5</b> キャッチ「“やりたい”を“成果”に変える。」案</li>
+    <li><b>32</b> 無料診断をつくる？</li>
+  </ul></div>
+  <div class="blk"><h4>サービス詳細</h4><ul class="bl">
+    <li><b>6・17・18</b> 余白・文字サイズ・行間・SPの改行（カスタムブロック起因）</li>
+    <li><b>7</b> ASO対策ページへの導線が無い</li>
+    <li><b>8</b> .net に比較表が無い</li>
+    <li><b>9</b> SNSを前面に出す</li>
+    <li><b>10</b> サービス → 関連コラムへの導線（手動6本）</li>
+    <li><b>19</b> エリアページの構成（上位エリアだけサービス別に）</li>
+  </ul></div>
+  <div class="blk"><h4>実績・コラム・分析</h4><ul class="bl">
+    <li><b>11</b> 実績一覧カードの区切り → <b>新デザインで対応済み</b></li>
+    <li><b>12</b> カテゴリタグから絞り込みへ飛ばない → <b>新デザインで対応済み</b></li>
+    <li><b>14</b> 実績の日付 → <b>新デザインで削除済み</b></li>
+    <li><b>21</b> コラム → サービスへの導線 → <b>記事末の関連サービスで対応</b></li>
+    <li><b>25</b> 自社でまとめ記事をつくる</li>
+    <li><b>29</b> .net の不要なGTMコンテナ</li>
+  </ul></div>
+</div>
+<div class="band teal push"><span class="b-lbl">提案</span><b>11・12・14・21は、今回の実績・コラムのデザインで解消</b>しています。本番反映をもって「完了」にしてよいか確認させてください。<br>
+<b>3・13（コーダー対応）</b>は、実績・コラムのコーダー依頼と一緒に出すと1回で済みます。</div>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">05</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">ブログ 01</div><div class="s-title">コラムの内容とデザイン</div></div>
+  <div class="s-body">
+<div class="g2" style="margin-bottom:10px">
+  <div>
+    <p class="lbl">執筆済みの5本（コラム管理表 No.）</p>
+    <table class="sm"><tbody>
+      <tr><td style="width:30px"><b>01</b></td><td>ホームページにお問い合わせが来ない原因とは？</td></tr>
+      <tr><td><b>05</b></td><td>サーチコンソールの使い方</td></tr>
+      <tr><td><b>06</b></td><td>GA4の使い方</td></tr>
+      <tr><td><b>07</b></td><td>検索ワードの調べ方</td></tr>
+      <tr><td><b>08</b></td><td>ホームページに必要なページとは？</td></tr>
+    </tbody></table>
+    <p style="font-size:10.5px;color:var(--ink-sub);margin-top:6px">05〜08 は01から派生した基礎知識シリーズ。02〜04（Web集客方法／ホームページ集客方法／検索順位）は未着手です。</p>
+  </div>
+  <div>
+    <p class="lbl">デザインで工夫したところ</p>
+    <ul class="bl">
+      <li>見出しの直後に<b>「Q → 短い答え」のボックス</b>（AI検索に引用されやすい形）</li>
+      <li>計算式・比較・チェックリストなどを<b>図解</b>にして読み飛ばしを減らす</li>
+      <li>GA4・サーチコンソールは<b>実際の操作画面</b>に番号付きの注釈</li>
+      <li>記事末に<b>関連サービス</b>への導線（課題21）</li>
+      <li>アイキャッチは記事ごとに違う型で作成（シリーズ扱いにしない）</li>
+    </ul>
+  </div>
+</div>
+<div class="blk" style="background:var(--amber-lt);border-color:#E8D4A8"><h4><span class="tag fix">確認したいこと</span></h4>
+<ul class="bl">
+  <li><b>自社データの掲載可否</b>（コラム01）：「フォーム送信1日3〜5件・多くが営業」「技術記事から次へ進むのは約1%」「トップの次は会社概要が多い」</li>
+  <li><b>記事末のボタン文言</b>「無料で相談する」：初回相談無料（課題31）の扱いと合わせて決めたい</li>
+  <li>吹き出しのアイコンを<b>担当者の顔写真</b>にするか（いまはロゴ）／<b>公開の順番と頻度</b>（タスク管理は11/5〜「週1？」）</li>
+</ul></div>
+<p class="push" style="font-size:10px;color:var(--ink-faint)">プレビュー：<span class="url"><a href="https://kanpai-web.github.io/share/opusplan/marketing/column01-inquiry-gxb9qfm9/">https://kanpai-web.github.io/share/opusplan/marketing/column01-inquiry-gxb9qfm9/</a></span>（ほか4本はコラム管理表のテストURL）</p>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">06</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">ブログ 02</div><div class="s-title">コラムをWordPressに載せる方法</div></div>
+  <div class="s-body">
+<div class="flow" style="grid-template-columns:repeat(5,1fr);margin-bottom:12px">
+  <div class="fl"><div class="f-no">STEP 1</div><div class="f-t">CSSを入れてもらう</div><p>コーダーさん・1回だけ</p></div>
+  <div class="fl"><div class="f-no">STEP 2</div><div class="f-t">画像をアップロード</div><p>URLのコピーは不要</p></div>
+  <div class="fl"><div class="f-no">STEP 3</div><div class="f-t">本文を貼る</div><p>テキストタブにコピペ</p></div>
+  <div class="fl"><div class="f-no">STEP 4</div><div class="f-t">設定を入れる</div><p>タイトル・カテゴリ・URL・<b>投稿者</b></p></div>
+  <div class="fl"><div class="f-no">STEP 5</div><div class="f-t">確認して公開</div><p>チェックリスト</p></div>
+</div>
+<div class="g2">
+  <div class="blk"><h4>コーダーさんへの依頼（1回だけ）</h4><ul class="bl">
+    <li>追加CSS（opus-column.css）の読み込み</li>
+    <li>記事の上部にアイキャッチを表示</li>
+    <li>一覧カードのアイキャッチ（いまは全記事が仮画像）</li>
+    <li><b>投稿者欄の追加</b>（いまコラムは投稿者を持たない作り）</li>
+  </ul></div>
+  <div class="blk"><h4>決めてあること</h4><ul class="bl">
+    <li>CSSはテーマ側に置く（記事ごとに貼らない）</li>
+    <li>カテゴリは1つだけ。URLは /blog/カテゴリ/スラッグ/</li>
+    <li>アイキャッチを設定すれば、リンク共有時の画像も自動で出る</li>
+    <li>公開時は<b>投稿者を書いた本人</b>にする（メンバー紹介に自動で並ぶ）</li>
+  </ul></div>
+</div>
+<div class="band push"><span class="b-lbl">決めたいこと</span>コーダーさんへの依頼を<b>コラム・実績・メンバー紹介でまとめて出すか</b>、コラムだけ先に出して公開を始めるか。</div>
+<p style="font-size:10px;color:var(--ink-faint);margin-top:6px">入稿ガイド：<span class="url"><a href="https://kanpai-web.github.io/share/opusplan/marketing/wp-entry-guide-m4ty8qbz/">https://kanpai-web.github.io/share/opusplan/marketing/wp-entry-guide-m4ty8qbz/</a></span></p>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">07</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">実績 01</div><div class="s-title">実績の内容（実績改善シート）</div></div>
+  <div class="s-body">
+<p class="thesis">他社と比べられたときに判断材料が足りるよう、項目を8章に増やしました。記入例をそのまま使える形にしてあります。</p>
+<div class="g2" style="grid-template-columns:1.1fr 1fr">
+  <table class="sm"><thead><tr><th style="width:150px">章</th><th>主な項目</th></tr></thead><tbody>
+    <tr><td><b>1 基本情報</b></td><td>タイトル・事業名・エリア・業種・規模・支援内容（チェック式）・期間</td></tr>
+    <tr><td><b>2 ご相談時の状況</b></td><td>きっかけ・課題・当時の数値・選ばれた理由</td></tr>
+    <tr><td><b>3 実施した施策</b></td><td>方針・行ったこと・フェーズ・工夫・ツール</td></tr>
+    <tr><td><b>4 成果</b> ★</td><td>要約・数値①〜③（Before→After）・定性的な変化</td></tr>
+    <tr><td><b>5 お客様の声</b></td><td>コメント・お名前</td></tr>
+    <tr><td><b>6 今後の展開</b></td><td>継続中の取り組み・次に目指すこと</td></tr>
+    <tr><td><b>7 制作物</b></td><td>デバイス・機能・デザインの意図</td></tr>
+    <tr><td><b>8 社内メモ</b></td><td>掲載許可（実名／業種・エリアのみ／匿名）・注意事項</td></tr>
+  </tbody></table>
+  <div class="blk" style="background:var(--amber-lt);border-color:#E8D4A8"><h4><span class="tag fix">確認したいこと</span></h4>
+  <ul class="bl">
+    <li>シートの<b>確認・FBの状況</b>（タスク管理では10/27まで）</li>
+    <li><b>掲載できる実績の数</b>：実名と非公開のバランス（課題15）。何件まで増やせそうか</li>
+    <li>新しい絞り込み用の<b>業種・成果の分類</b>：案（葬儀・終活／建設・リフォーム／医療…、問い合わせ増／順位改善…）でよいか</li>
+    <li>既存の実績ぶん、<b>見出し・規模／期間・成果の数値</b>を高寺がシートで書き出してよいか</li>
+    <li>各実績の<b>担当メンバー</b>（メンバー紹介に自動表示するため）</li>
+  </ul></div>
+</div>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">08</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">実績 02</div><div class="s-title">実績のデザイン（一覧・詳細）</div></div>
+  <div class="s-body">
+<div class="g2" style="margin-bottom:10px">
+  <div class="blk"><h4>一覧</h4><ul class="bl">
+    <li><b>業種・エリア・サービス・成果</b>の4つの入口から探せる（1軸ずつ絞り込み）</li>
+    <li>スマホは<b>選択メニュー1つ</b>（押す場所が動かない）</li>
+    <li>カードは<b>成果の数字を大きく</b>。タグを押しても絞り込める</li>
+    <li>12件ずつ、既存のページ送りを利用</li>
+  </ul><span class="url"><a href="https://kanpai-web.github.io/share/opusplan/marketing/works-list-k7md2q4p/">一覧プレビュー</a></span></div>
+  <div class="blk"><h4>詳細</h4><ul class="bl">
+    <li>左に<b>サマリー</b>（スクロールに追従）、右に本文</li>
+    <li>ご相談時の課題 → 施策（フェーズの線）→ <b>成果の数字</b> → お客様の声 → 今後</li>
+    <li>上部のタグから、同じサービスの実績一覧へ</li>
+    <li><b>関連実績</b>は同じサービスを優先して横スクロール（ドラッグ・左右ボタン）</li>
+  </ul><span class="url"><a href="https://kanpai-web.github.io/share/opusplan/marketing/works-detail-r3xn8vwe/">詳細プレビュー</a></span></div>
+</div>
+<table class="sm"><thead><tr><th style="width:240px">10/7のご指摘</th><th>今回の対応</th></tr></thead><tbody>
+  <tr><td>カードの区切りが分かりにくい（課題11）</td><td>細い枠と角丸でカードを区切り、画像は端まで。影や浮き上がりは使わない</td></tr>
+  <tr><td>タグを押しても絞り込みに飛ばない（課題12）</td><td>一覧はその場で絞り込み、詳細は該当サービスの一覧ページへ</td></tr>
+  <tr><td>「成果」「概要」に見出しが無く数値も出せない（課題16）</td><td>章ごとに英語＋日本語の見出し。成果は Before→After の大きな数字で表示</td></tr>
+  <tr><td>日付が何の日付か分からない（課題14）</td><td>削除</td></tr>
+</tbody></table>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">09</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">実績 03</div><div class="s-title">実績をWordPressに載せる方法（5ステップ）</div></div>
+  <div class="s-body">
+<div class="flow" style="grid-template-columns:repeat(5,1fr);margin-bottom:12px">
+  <div class="fl"><div class="f-no">STEP 1</div><div class="f-t">CSSと本文の出力</div><p>コーダーさん。いまは本文欄が画面に出ない作り</p></div>
+  <div class="fl"><div class="f-no">STEP 2</div><div class="f-t">情報を増やす</div><p>業種・成果・<b>担当メンバー</b>の分類＋入力欄6つ</p></div>
+  <div class="fl"><div class="f-no">STEP 3</div><div class="f-t">データを入れる</div><p>高寺。シートで揃えてから転記</p></div>
+  <div class="fl"><div class="f-no">STEP 4</div><div class="f-t">一覧を差し替え</div><p>コーダーさん。絞り込み＋新カード</p></div>
+  <div class="fl"><div class="f-no">STEP 5</div><div class="f-t">関連実績</div><p>コーダーさん。横スクロール化</p></div>
+</div>
+<div class="g2">
+  <div class="blk"><h4>分かったこと</h4><ul class="bl">
+    <li>関連実績は<b>すでに自動で出ている</b>ので、仕組みの作り直しは不要</li>
+    <li>いちばん手間がかかるのは<b>データ</b>。業種・成果・見出し・規模／期間・成果の数値が、いまの実績に無い</li>
+    <li>STEP 1 だけで詳細ページは新デザインになるので、<b>先に出すこともできる</b></li>
+  </ul></div>
+  <div class="blk"><h4>コーダーさんに確認すること</h4><ul class="bl">
+    <li>ACF などの<b>入力欄用プラグイン</b>が入っているか</li>
+    <li>関連実績のスライダー（既存）を外してよいか</li>
+    <li>作業量と、11月中に入れられるか</li>
+  </ul></div>
+</div>
+<div class="band push"><span class="b-lbl">決めたいこと</span>STEP 1 だけ先に出すか、5ステップまとめて依頼するか。</div>
+<p style="font-size:10px;color:var(--ink-faint);margin-top:6px">掲載ガイド：<span class="url"><a href="https://kanpai-web.github.io/share/opusplan/marketing/works-wp-guide-rxwcgxrt/">https://kanpai-web.github.io/share/opusplan/marketing/works-wp-guide-rxwcgxrt/</a></span></p>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">10</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">メンバー紹介 01</div><div class="s-title">メンバー紹介の内容（記入シート）</div></div>
+  <div class="s-body">
+<p class="thesis">「人がついている感」を出すのが目的（10/7）。マーケティング会社なので、経験年数や支援社数などの<b>数字</b>を必ず入れる形にしました。</p>
+<div class="g2" style="grid-template-columns:1.1fr 1fr">
+  <table class="sm"><thead><tr><th style="width:150px">区分</th><th>項目</th></tr></thead><tbody>
+    <tr><td><b>1 カード</b></td><td>名前・ローマ字・役職・担当領域（タグ）・キャッチコピー・数字2つ・顔写真・休日のひとこと</td></tr>
+    <tr><td><b>2 プロフィール詳細</b></td><td>経歴・得意な業種・得意な施策・資格・よく受けるご相談・大事にしていること・メッセージ</td></tr>
+    <tr><td><b>3 サイト内のつながり</b></td><td>担当した実績・書いたコラム（公開後は自動表示）</td></tr>
+    <tr><td><b>4 社内メモ</b></td><td>掲載の可否・表示順・備考</td></tr>
+  </tbody></table>
+  <div class="blk" style="background:var(--amber-lt);border-color:#E8D4A8"><h4><span class="tag fix">確認したいこと</span></h4>
+  <ul class="bl">
+    <li><b>掲載する4名の確定</b>（渡邉さん・高寺・コーダーさん・営業の方）。議事録では「4名程度」と聞き取りが不明瞭だった点も</li>
+    <li><b>顔写真</b>を撮れるか、いつ撮るか（背景・服装をそろえる）</li>
+    <li>記入の担当と<b>期限</b></li>
+    <li>「私たちについて」からメンバー紹介への導線を付けるか</li>
+  </ul></div>
+</div>
+<p class="push" style="font-size:10px;color:var(--ink-faint)">他社で多い項目（キャッチコピー・支援社数・得意業種・執筆コラム）を参考にしています。シート下部に参考表あり。</p>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">11</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">メンバー紹介 02</div><div class="s-title">メンバー紹介のデザイン</div></div>
+  <div class="s-body">
+<div class="g2" style="margin-bottom:10px">
+  <div class="blk"><h4>会社概要に載せた状態</h4><ul class="bl">
+    <li>会社情報の下、アクセスの上に<b>「MEMBER／メンバー紹介」</b></li>
+    <li>写真は<b>ポラロイド風</b>に少し傾け、下に手書き風の文字で休日のひとこと</li>
+    <li>役職は丸いラベル、担当領域は #タグ、数字は小さなチップ</li>
+    <li>スマホは1人ずつ横長に並べ、区切り線で分ける</li>
+  </ul></div>
+  <div class="blk"><h4>「プロフィールを見る」で開く小窓</h4><ul class="bl">
+    <li>経歴は時系列の線、続けて<b>「Q. 得意なことは？」などインタビュー形式</b></li>
+    <li>最後は本人の吹き出しでメッセージ</li>
+    <li><b>担当した実績・書いたコラム</b>をタブで切り替え、最新3件だけ小さなカードで（4件目からは一覧へ）</li>
+    <li>ボタンは<b>「まずは気軽に相談する」</b>。指名制に見えないよう「ご相談はチームでお受けしています」を添える</li>
+  </ul></div>
+</div>
+<div class="band teal"><span class="b-lbl">ねらい</span>硬い表組みではなく、<b>中の雰囲気が見えて距離が近く感じられる</b>見せ方にしています。色はサイトのネイビー・ブルー・薄い水色だけを使っています。</div>
+<p class="push" style="font-size:10px;color:var(--ink-faint)">プレビュー（名前・数字はダミー）：<span class="url"><a href="https://kanpai-web.github.io/share/opusplan/marketing/member-sallgebk/">https://kanpai-web.github.io/share/opusplan/marketing/member-sallgebk/</a></span></p>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">12</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">方法案</div><div class="s-title">メンバー情報の管理方法と、日々の運用</div></div>
+  <div class="s-body">
+<table class="sm" style="margin-bottom:10px"><thead><tr><th style="width:70px"></th><th style="width:200px">管理方法</th><th>向いているケース</th><th style="width:300px">気をつけること</th></tr></thead><tbody>
+  <tr><td><b>案A</b></td><td>会社概要のテンプレートに直接書く</td><td>4名程度で、入れ替えや修正がほとんど無い。最初の作業がいちばん少ない</td><td>プロフィールを直すたびに<b>コーダーさんへの依頼</b>が発生する</td></tr>
+  <tr><td><b>案B</b></td><td>WordPressのユーザーのプロフィール欄</td><td>載せる全員がコラムを書く。<b>執筆者情報（課題24）と同じデータ</b>を使える</td><td>記事を書かない人にもアカウントが必要</td></tr>
+  <tr><td><b>案C</b></td><td>カスタム投稿「メンバー」</td><td><b>人数が増える見込みがある場合はこちらを提案</b>。記事と同じ感覚で追加・並べ替えでき、アカウントが無い人も載せられる</td><td>最初の実装が3案でいちばん多い</td></tr>
+</tbody></table>
+<div class="g2">
+  <div class="blk"><h4>どの案でも、公開後の運用はこの2つだけ</h4><ul class="bl">
+    <li><b>コラム公開時</b>：投稿者を書いた本人にする → 「書いたコラム」に自動で並ぶ</li>
+    <li><b>実績公開時</b>：担当メンバーにチェック → 「担当した実績」に自動で並ぶ</li>
+  </ul></div>
+  <div class="blk"><h4>調べて分かったこと</h4><ul class="bl">
+    <li>コラム・実績とも、いまは<b>投稿者を持たない作り</b> → 投稿者欄の追加が必要</li>
+    <li>ユーザー一覧（ログインに使う名前）が<b>外部から見える状態</b> → アカウントを増やす前に非公開に</li>
+  </ul></div>
+</div>
+<p class="push" style="font-size:10px;color:var(--ink-faint)">メンバー紹介の掲載ガイド：<span class="url"><a href="https://kanpai-web.github.io/share/opusplan/marketing/member-wp-guide-7wv4bpo9/">https://kanpai-web.github.io/share/opusplan/marketing/member-wp-guide-7wv4bpo9/</a></span></p>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">13</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">DECISIONS</div><div class="s-title">今日決めたいこと</div></div>
+  <div class="s-body">
+<div class="g2">
+  <div>
+    <p class="lbl">全体・課題表</p>
+    <ul class="chk">
+      <li>11月に着手する課題（優先度の付け直し）<span class="who">両者</span></li>
+      <li>新デザインで解消した課題11・12・14・21を「完了」扱いにするか<span class="who">両者</span></li>
+      <li>コーダーさんへの依頼を<b>まとめて出すか、コラムから先に出すか</b><span class="who">両者</span></li>
+    </ul>
+    <p class="lbl" style="margin-top:12px">ブログ</p>
+    <ul class="chk">
+      <li>コラム01の自社データ掲載可否<span class="who">渡邉</span></li>
+      <li>記事末ボタンの文言と「初回相談無料」の扱い<span class="who">渡邉</span></li>
+      <li>公開の順番・頻度・開始日<span class="who">両者</span></li>
+    </ul>
+  </div>
+  <div>
+    <p class="lbl">実績</p>
+    <ul class="chk">
+      <li>掲載できる実績の数と、公開レベル<span class="who">渡邉</span></li>
+      <li>業種・成果の分類案でよいか<span class="who">渡邉</span></li>
+      <li>STEP 1 だけ先に出すか、まとめて依頼するか<span class="who">両者</span></li>
+    </ul>
+    <p class="lbl" style="margin-top:12px">メンバー紹介・方法案</p>
+    <ul class="chk">
+      <li><b>掲載人数と今後の増減 → 管理方法（案A／B／C）</b><span class="who">渡邉</span></li>
+      <li>記事を書く人／書かない人の内訳<span class="who">渡邉</span></li>
+      <li>顔写真の撮影と、記入シートの期限<span class="who">渡邉</span></li>
+      <li>WordPressのアカウントをだれが作るか<span class="who">渡邉</span></li>
+      <li>ACF の有無（コーダーさんに確認）<span class="who">渡邉</span></li>
+    </ul>
+  </div>
+</div>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">14</div>
+</section></div>
+
+<div class="sw"><section class="slide ">
+  <div class="s-head"><div class="crumb">NEXT</div><div class="s-title">次回までの進め方（案）</div></div>
+  <div class="s-body">
+<table class="sm" style="margin-bottom:10px"><thead><tr><th style="width:120px">時期</th><th style="width:90px">担当</th><th>内容</th></tr></thead><tbody>
+  <tr><td>10/28〜11/4</td><td>コーダー</td><td>コーディング反映（タスク管理の予定枠）。<b>今日決めた範囲で依頼</b>：コラムのCSS・アイキャッチ・投稿者欄／実績 STEP 1〜／課題3・13</td></tr>
+  <tr><td>10/28〜</td><td>渡邉さん</td><td>実績改善シート・メンバー紹介シートの記入、顔写真の手配、お問い合わせデータの加工（課題28）</td></tr>
+  <tr><td>10/28〜</td><td>高寺</td><td>既存実績の5項目をシートで書き出し／コラム02〜04の着手／記入がそろい次第メンバー紹介のプレビューを実データに差し替え</td></tr>
+  <tr><td>11/5〜</td><td>高寺</td><td><b>コラムの公開を開始</b>（頻度は今日決める）。公開時は投稿者を本人に</td></tr>
+  <tr><td>11/13〜</td><td>高寺</td><td>ホームページ制作（.com）も同じ流れで着手</td></tr>
+</tbody></table>
+<div class="band push"><span class="b-lbl">次回の打合せ</span>日程を決めます。コーダー反映後の本番確認と、.com の進め方の共有を予定しています。</div>
+</div>
+  <div class="s-foot">オーパスプラン 定例MTG アジェンダ／2026-10-27</div><div class="s-num">15</div>
+</section></div>
+</div>
+<script>
+(function(){
+  var fit=function(){
+    var s=Math.min(1,(document.documentElement.clientWidth-40)/1280);
+    document.documentElement.style.setProperty('--s', s);
+  };
+  fit(); addEventListener('resize', fit);
+  addEventListener('beforeprint', function(){ document.documentElement.style.setProperty('--s',1); });
+  addEventListener('afterprint', fit);
+})();
+</script>
+
+</body>
+</html>

@@ -1,0 +1,474 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta name="robots" content="noindex, nofollow, noarchive">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>オーパスプラン 定例MTG 議事録 2026-10-07</title>
+<style>
+:root{
+  --navy:#2E467C; --navy-band:#184D86; --navy-dp:#1B3563;
+  --teal:#0097B1; --teal-lt:#E3F3F6; --blue-sq:#E2E8F4;
+  --label:#6E82AA; --block:#F6F7F7; --block-ln:#E8EBEF; --bg-tint:#F4F7FF;
+  --red:#BD4553; --red-lt:#FBEEF0; --amber:#C98A1F; --amber-lt:#FBF3E2;
+  --green:#2E7D5B; --green-lt:#E6F2EC;
+  --ink:#37415A; --ink-sub:#55617A; --ink-faint:#8D96A8;
+  --line:#DFE5F0; --paper:#FFFFFF;
+}
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+html,body{background:#D9DFEA;
+  font-family:'Hiragino Kaku Gothic ProN','Hiragino Sans','Yu Gothic Medium','Yu Gothic','Noto Sans JP',sans-serif;
+  color:var(--ink);-webkit-font-smoothing:antialiased}
+.print-hint{position:sticky;top:0;z-index:10;background:var(--navy-band);color:#fff;
+  text-align:center;font-size:12px;letter-spacing:.02em;padding:9px 12px}
+.deck{display:flex;flex-direction:column;align-items:center;gap:24px;padding:24px 12px 56px}
+.sw{width:calc(1280px * var(--s,1));height:calc(720px * var(--s,1));flex:none}
+
+.slide{width:1280px;height:720px;flex:none;background:var(--paper);transform-origin:top left;
+  transform:scale(var(--s,1));box-shadow:0 6px 28px rgba(30,45,80,.16);padding:38px 52px 32px;
+  display:flex;flex-direction:column;position:relative;overflow:hidden}
+.slide.tint{background:linear-gradient(135deg,#F7FAFF 0%,#EDF2FC 100%)}
+
+.deco{position:absolute;pointer-events:none}
+.deco-dots{background-image:radial-gradient(var(--blue-sq) 1.4px,transparent 1.4px);background-size:13px 13px}
+.deco-sq-out{border:1.3px solid #B9C6E2}
+.deco-sq-fill{background:var(--blue-sq);opacity:.55}
+.d-tl-dots{top:0;left:0;width:118px;height:140px}
+.d-tr-out{top:26px;right:34px;width:72px;height:72px}
+.d-tr-fill{top:52px;right:14px;width:58px;height:58px}
+.d-br-dots{bottom:0;right:0;width:104px;height:112px}
+
+.s-head{margin-bottom:13px;flex:none}
+.crumb{font-size:10.5px;font-weight:800;color:var(--teal);letter-spacing:.12em;margin-bottom:5px}
+.s-title{font-size:23px;font-weight:800;color:var(--navy);line-height:1.36;letter-spacing:.01em;
+  padding-bottom:9px;border-bottom:2.5px solid var(--blue-sq);position:relative}
+.s-title::after{content:'';position:absolute;left:0;bottom:-2.5px;width:86px;height:2.5px;background:var(--teal)}
+.s-body{flex:1;min-height:0;display:flex;flex-direction:column;position:relative;z-index:1}
+.s-foot,.s-num{position:absolute;bottom:16px;font-size:9px;color:var(--ink-faint);letter-spacing:.05em;z-index:2}
+.s-foot{left:52px} .s-num{right:52px;font-weight:700;color:#B4BDCE}
+
+.cover{align-items:center;justify-content:center;text-align:center}
+.cover .eyebrow{font-size:12px;font-weight:700;color:var(--navy);letter-spacing:.34em;margin-bottom:20px}
+.cover h1{font-size:42px;font-weight:800;color:var(--navy);line-height:1.3;letter-spacing:.02em;margin-bottom:20px}
+.goal-box{background:var(--bg-tint);border:1.3px solid #D6DFF2;border-radius:10px;
+  padding:16px 28px;max-width:760px;margin:0 auto 22px}
+.goal-box .g-label{font-size:10px;font-weight:800;color:var(--teal);letter-spacing:.24em;margin-bottom:7px}
+.goal-box .g-text{font-size:13px;color:var(--ink-sub);line-height:1.95}
+.goal-box .g-text b{color:var(--navy);font-weight:800}
+.cover .meta{font-size:11.5px;color:var(--ink-sub);line-height:1.95;letter-spacing:.04em}
+
+.thesis{font-size:13.5px;font-weight:800;color:var(--navy);line-height:1.72;
+  background:var(--bg-tint);border-left:4px solid var(--teal);padding:10px 14px;border-radius:0 6px 6px 0;margin-bottom:11px}
+.band{background:var(--navy);color:#fff;border-radius:8px;padding:11px 16px;font-size:12px;font-weight:700;line-height:1.72}
+.band .b-lbl{display:block;font-size:9.5px;font-weight:800;letter-spacing:.16em;opacity:.82;margin-bottom:3px}
+.band.teal{background:var(--teal)}
+.push{margin-top:auto}
+.lbl{font-size:10.5px;font-weight:800;color:var(--label);letter-spacing:.1em;margin-bottom:6px}
+
+.tag{display:inline-block;font-size:9.5px;font-weight:800;padding:2px 8px;border-radius:5px;white-space:nowrap}
+.tag.ok{background:var(--green-lt);color:var(--green)}
+.tag.fix{background:var(--amber-lt);color:#8A6A1C}
+.tag.new{background:var(--teal-lt);color:#046A7E}
+.tag.hold{background:#F0F2F7;color:#6E7A94}
+.tag.hot{background:var(--red-lt);color:var(--red)}
+
+.bl{list-style:none;margin:0;padding:0}
+.bl li{font-size:11.5px;color:var(--ink-sub);line-height:1.72;padding-left:14px;position:relative;margin-bottom:4px}
+.bl li::before{content:'';position:absolute;left:2px;top:8px;width:4.5px;height:4.5px;border-radius:50%;background:var(--teal)}
+.bl li b{color:var(--navy);font-weight:800}
+
+.g2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.g3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.blk{background:var(--block);border:1px solid var(--block-ln);border-radius:9px;padding:11px 13px}
+.blk h4{font-size:12px;font-weight:800;color:var(--navy);line-height:1.5;margin-bottom:6px;
+  display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+.blk p{font-size:11px;color:var(--ink-sub);line-height:1.72}
+.blk p+p{margin-top:4px}
+.blk b{color:var(--navy);font-weight:800}
+.code{font-family:ui-monospace,Menlo,monospace;font-size:10.5px;background:#fff;
+  border:1px solid var(--line);border-radius:5px;padding:4px 7px;display:inline-block;margin-bottom:5px;color:var(--navy)}
+
+table{width:100%;border-collapse:collapse;font-size:11px}
+th,td{padding:7px 10px;text-align:left;border-bottom:1px solid var(--block-ln);vertical-align:top;line-height:1.66}
+thead th{background:var(--navy);color:#fff;font-size:10px;font-weight:800;letter-spacing:.04em;white-space:nowrap}
+tbody tr:nth-child(even){background:#FAFBFD}
+td b{color:var(--navy);font-weight:800}
+.ct td:first-child{font-weight:800;color:var(--navy);background:#F2F5FA}
+
+.flow{display:grid;grid-template-columns:repeat(4,1fr);gap:0 7px}
+.fl{background:var(--paper);border:1.3px solid var(--line);border-top:3px solid var(--teal);
+  border-radius:8px;padding:9px 10px;position:relative}
+.fl .f-no{font-size:9px;font-weight:800;color:var(--teal);letter-spacing:.12em;margin-bottom:3px}
+.fl .f-t{font-size:11px;font-weight:800;color:var(--navy);line-height:1.45;margin-bottom:3px}
+.fl p{font-size:10px;color:var(--ink-sub);line-height:1.6}
+.fl::after{content:'▶';position:absolute;right:-7px;top:50%;transform:translateY(-50%);color:#C3CCDC;font-size:8px;z-index:2}
+.fl:last-child::after{display:none}
+
+.act-row{display:grid;grid-template-columns:58px 1fr 84px;gap:0 12px;align-items:start;
+  border-bottom:1px solid var(--block-ln);padding:6px 2px}
+.act-row:last-child{border-bottom:none}
+.act-row .a-who{font-size:10px;font-weight:800;color:#fff;background:var(--navy);border-radius:5px;padding:2px 0;text-align:center}
+.act-row .a-who.w{background:var(--teal)}
+.act-row .a-who.both{background:var(--label)}
+.act-row .a-t{font-size:11.5px;color:var(--ink-sub);line-height:1.6}
+.act-row .a-t b{color:var(--navy);font-weight:800}
+.act-row .a-d{font-size:9.5px;color:var(--ink-faint);text-align:right;line-height:1.7}
+
+@media print{
+  html,body{background:#fff}
+  .print-hint{display:none}
+  .deck{gap:0;padding:0}
+  .sw{width:auto;height:auto}
+  .slide{transform:none;box-shadow:none;break-after:page;page-break-after:always}
+  @page{size:338.67mm 190.5mm;margin:0}
+}
+</style>
+</head>
+<body>
+<div class="print-hint">16:9（Googleスライドと同じ比率）で作成しています。Cmd+P →「背景のグラフィック」をオンでPDF化できます</div>
+<div class="deck">
+
+<!-- 01 表紙 -->
+<div class="sw"><section class="slide cover tint">
+  <div class="deco deco-dots d-tl-dots"></div>
+  <div class="deco deco-sq-out d-tr-out"></div>
+  <div class="deco deco-sq-fill d-tr-fill"></div>
+  <div class="deco deco-dots d-br-dots"></div>
+  <div class="eyebrow">MEETING MINUTES</div>
+  <h1>定例ミーティング 議事録</h1>
+  <div class="goal-box">
+    <div class="g-label">この議事録について</div>
+    <div class="g-text">opus-plan.net の分析結果を共有して、次に何をするかを話し合いました。<br>
+    共有した内容がそのまま通ったわけではなく、<b>渡邉さんからの指摘で考え方を入れ替えた部分</b>もあります。<br>
+    あとから経緯を追えるように、<b>「共有事項 → すり合わせ事項 → 決めたこと」</b>の3段でまとめました。</div>
+  </div>
+  <div class="meta">2026年10月7日（火）／ オンライン・約3時間40分<br>
+  渡邉さん ／ 高寺<br>次回：2026年10月27日（月）</div>
+</section></div>
+
+<!-- 02 サマリー -->
+<div class="sw"><section class="slide">
+  <div class="deco deco-dots d-br-dots"></div>
+  <div class="s-head"><div class="crumb">SUMMARY</div><div class="s-title">すり合わせの結果</div></div>
+  <div class="s-body">
+    <p class="thesis">分析の方向性自体は大きくは外れていませんでした。ただ「率で見ていた部分」と「ブログの役割の捉え方」は読み違えていたので、ここは考え方ごと入れ替えています。</p>
+    <div class="g3" style="margin-bottom:10px">
+      <div class="blk" style="background:var(--green-lt);border-color:#BFDDCE">
+        <h4><span class="tag ok">一致したこと</span></h4>
+        <ul class="bl">
+          <li>会社概要にチームメンバーを掲載</li>
+          <li>実績ページの情報を充実させる</li>
+          <li>営業の問い合わせは対策しない</li>
+          <li>スマホからの問い合わせは追わない</li>
+          <li>GA4キーイベントの設定</li>
+        </ul>
+      </div>
+      <div class="blk" style="background:var(--amber-lt);border-color:#E8D4A8">
+        <h4><span class="tag fix">考え直したこと</span></h4>
+        <ul class="bl">
+          <li><b>技術記事の回遊率1.1%</b>　役割が違った</li>
+          <li><b>サービスページのPV 5.6%</b>　率で見るのが誤り</li>
+          <li><b>ブログの方向転換</b>　転換ではなく「追加」</li>
+          <li><b>スマホ対応</b>　導線ではなく見やすさ</li>
+          <li><b>分析の見方</b>　オーガニックに絞る</li>
+        </ul>
+      </div>
+      <div class="blk" style="background:var(--teal-lt);border-color:#B6DEE6">
+        <h4><span class="tag new">新しく出てきたこと</span></h4>
+        <ul class="bl">
+          <li>エリアページの構造の課題</li>
+          <li>サービスページからの回遊導線</li>
+          <li>ターゲットの規模感が明確に</li>
+          <li>フロント商品＝AIOレポート</li>
+          <li>初回相談無料の枠を設ける</li>
+        </ul>
+      </div>
+    </div>
+    <div class="band push"><span class="b-lbl">当面の進め方</span>
+      <b>コラムで集客と評価を積み上げることに7割、サイト改修に3割。</b>順位が取れていた頃は毎月3〜4件の問い合わせがあり、商談まで進めば受注率は7〜8割。課題は「見つけてもらうところ」に集中しているので、まずは流入を戻すことを優先します。</div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">02</div>
+</section></div>
+
+<!-- 03 考え直したこと -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">すり合わせ 01</div><div class="s-title">考え直したこと</div></div>
+  <div class="s-body">
+    <table class="ct">
+      <thead><tr>
+        <th style="width:112px">論点</th><th style="width:290px">共有事項</th>
+        <th style="width:370px">すり合わせ事項</th><th>決めたこと</th>
+      </tr></thead>
+      <tbody>
+        <tr>
+          <td>技術記事の<br>回遊率 1.1%</td>
+          <td>429エラーの記事は90日で274人が読んで、次に進んだのは3人。読み手が技術者中心なので、記事の方向性を変えたほうがいいのでは。</td>
+          <td>記事1本が突出して読まれるのは<b>ごく普通のこと</b>。コラムは検索ボリュームの大きいキーワードで<b>母数を取るのが役割</b>で、この記事からコンバージョンを取りたいわけではない。Web関連の情報を蓄積してサイト全体の信頼性・専門性を上げるために置いている。<b>直帰率が高い＝悪い、ではない。</b></td>
+          <td>技術記事・用語集は<b>このまま継続。</b>方向転換ではなく、マーケティングの進め方を扱う記事を<b>「追加」</b>する。<br>回遊率・直帰率で見るのは<b>コンバージョンにつなげたい記事だけ</b>にして、記事の役割ごとに指標を分ける。</td>
+        </tr>
+        <tr>
+          <td>サービスページの<br>PV 5.6%</td>
+          <td>全PVの5.6%しかない。ブログ＋用語集の48.1%と比べてもったいない。検索も表示63,486回に対しクリック56回。</td>
+          <td>そもそも<b>検索ボリュームが小さい。</b>「SEO対策 大阪」で月590件程度、関連を足しても大阪だけで月1,000あるかどうか。1位でも流入は20%程度と考えると<b>年間630は極端に少なくない。</b>全体に占める率で見るのがミスリード。</td>
+          <td>率ではなく<b>検索ボリュームに対する実数で見る。</b><br>ただし本来は<b>サービスページこそ最も流入が多くないといけない</b>（ユーザーは「サービス × エリア」で業者を選ぶため）。ここは課題として残る。</td>
+        </tr>
+        <tr>
+          <td>分析の見方</td>
+          <td>Directを含めた全体の数字で流入とCVを見ていた。</td>
+          <td>Directには<b>営業やAI経由のアクセスが入る</b>ので、本当にニーズがある人の動きが見えない。</td>
+          <td><b>オーガニックだけに絞って見る。</b>サイト内の回遊はGA4、流入キーワードはSearch Consoleと見る場所も分ける。</td>
+        </tr>
+        <tr>
+          <td>スマホ対応</td>
+          <td>スマホからの送信は12か月で723件中7件。ターゲットが企業の担当者なら自然なので、導線強化は優先度を下げていいのでは。</td>
+          <td>導線強化は不要。ただし<b>スマホでの見栄えは別の話で改善が必要。</b>実績詳細で<b>パンくずとタイトルが重なって押せない</b>、実績の2カラムが区切りを失う、改行位置や行間が不自然、など。</td>
+          <td>「動線強化」ではなく<b>「見やすさ・受け取りやすさの改善」</b>に置き換え。集客施策ではなくサイト改修の一項目として扱う。</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">03</div>
+</section></div>
+
+<!-- 04 一致したこと -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">すり合わせ 02</div><div class="s-title">一致したこと</div></div>
+  <div class="s-body">
+    <div class="g2" style="margin-bottom:10px">
+      <div class="blk" style="background:var(--green-lt);border-color:#BFDDCE">
+        <h4><span class="tag ok">一致</span>会社概要にチームメンバーを掲載</h4>
+        <p>もともと渡邉さんがやりたいこととして挙げていた施策。分析でもトップページからの行き先2位（12か月127人）・問い合わせ直前2位に入っていて、データとも合っています。</p>
+        <p><b>掲載は4名程度。</b>高寺・渡邉さん・コーダーさん・営業で一緒に動く方。「人がついている感」を出すのが目的。</p>
+        <p>マーケティングのサイトなので、<b>集客につなげた実績や経験年数など数字が入るとより効く</b>。「私たちについて」と会社概要の<b>両方から導線</b>を引きます。</p>
+      </div>
+      <div class="blk" style="background:var(--green-lt);border-color:#BFDDCE">
+        <h4><span class="tag ok">一致</span>実績ページの情報を充実させる</h4>
+        <p>いまはAIで仮に作った状態で、空欄や内容の薄い項目があり判断材料になりきれていません。</p>
+        <p>見つかった問題：カテゴリタグを押しても<b>絞り込み一覧に飛ばない</b>／「成果」「概要」に<b>見出しがない</b>／「実績エリア 堺市大阪」が不自然／日付が何の日付か不明。</p>
+        <p><b>数値（何倍など）を入れたいのにテキストでしか入れられない</b>ので、フォーマット自体をデザインから考え直す必要があります。社名を伏せる場合も、業界・規模・課題・結果があれば十分。ただし伏せすぎると信用度が落ちるのでバランスが必要。</p>
+      </div>
+    </div>
+    <div class="g2 push">
+      <div class="blk">
+        <h4><span class="tag ok">一致</span>お問い合わせに混ざる営業の扱い</h4>
+        <p>GA4の記録は1日3.8件。「詳細を知りたいです」の2行だけ、といった送信が最近増えていますが、<b>BtoBのDM自動化は以前からあるもの</b>で件数も許容範囲。本物の相談も埋もれていません。</p>
+        <p><b>reCAPTCHA等の対策は入れません。</b>スプレッドシート連携は実装済みですが個人情報まで含むため、<b>社名程度に加工したもの</b>を共有してもらい、相談内容の傾向分析をかけます。</p>
+      </div>
+      <div class="blk">
+        <h4><span class="tag ok">一致</span>GA4キーイベントの設定</h4>
+        <p>お問い合わせをキーイベントとして設定。<b>タグの追加は不要</b>です。</p>
+        <p><b>渡邉さんからの追加提案：</b>お問い合わせの手前に<b>「会社概要の閲覧」をマイクロコンバージョン</b>として設定する。BtoBは「トップ → サービス → 会社概要 → 問い合わせ」が一般的な流れなので、<b>一歩手前の指標</b>として測れば改善の効果が見えやすくなります。経路探索でも会社概要が行き先2位だったので、数字とも一致しました。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">04</div>
+</section></div>
+
+<!-- 05 構造 -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">新しく分かったこと 01</div><div class="s-title">エリアページの構造と、サービスページからの回遊導線</div></div>
+  <div class="s-body">
+    <div class="g2" style="margin-bottom:10px">
+      <div class="blk" style="border-top:3px solid var(--red)">
+        <h4>エリアページ ／ いまの構成</h4>
+        <span class="code">/area/osaka/sakai/</span>
+        <p><b>地域で1ページ</b>を作り、その中に全サービスを載せている形。「このページは何のページか」と聞かれると<b>「オーパスプランの堺のページ」</b>としか言えず、サービスキーワードで上位に上がりにくい状態です。各エリアの本文もほぼ同内容で、地名だけ差し替えた<b>コピーページに近い構造</b>。</p>
+      </div>
+      <div class="blk" style="border-top:3px solid var(--teal)">
+        <h4>エリアページ ／ 本来の理想形</h4>
+        <span class="code">/seo/osaka/　/ads/osaka/</span>
+        <p><b>サービスのディレクトリ配下にエリアページを置く。</b>これで「SEO対策 ○○」で上位を狙いやすくなります。渡邉さんが普段クライアントに提案している構成で、競合の<b>H-LINK社がまさにこの構造</b>。ただし<b>47都道府県 × サービス数</b>で全件は非現実的。</p>
+      </div>
+    </div>
+    <div class="band teal" style="margin-bottom:10px"><span class="b-lbl">エリアページについて決めたこと</span>
+      <b>すでに検索順位が付いているエリアだけ、部分的にサービス別ページを作ります</b>（愛媛・堺・京都など）。あわせて本文を<b>「商圏規模 × サービス」の切り口</b>でリライト。観光地の紹介ではなく「この地域にはこれだけの事業者がいるので、○○をしないのはもったいない」という書き方にします（H-LINK社が参考）。</div>
+    <div class="g2 push">
+      <div class="blk" style="border-top:3px solid var(--teal)">
+        <h4>サービス紹介ページに回遊導線を足す</h4>
+        <p>言葉遣いそのものは<b>いまのままでいきます</b>（個人事業主は基本ターゲット外で、入口はコラムが担うため）。ただしサービス紹介ページはサービスごとに結構なページ数があるので、<b>その中身に導線を足します。</b></p>
+        <ul class="bl">
+          <li>「<b>○○についてはこちら</b>」で解説記事へ／「<b>おすすめ記事はこちら</b>」で関連コラムへ</li>
+          <li>例：「SEO対策の始め方」「自分でできるSEO対策」など<b>6本程度</b>を並べる</li>
+          <li>コラム側からサービスページへの導線も置いて<b>両方向でつなぐ</b></li>
+        </ul>
+      </div>
+      <div class="blk" style="border-top:3px solid var(--amber)">
+        <h4>実装について</h4>
+        <p>サービスページは<b>カスタム投稿で作っている</b>ため、カテゴリで絞った記事を自動表示させるのは難しそう、という話でした。</p>
+        <p>ただ<b>出したい記事はある程度決まっている</b>ので、<b>手動でリンクを置くだけでも十分</b>という結論に。まずはここから始めます。</p>
+        <p>あわせて、<b>ASO対策ページはあるのにどこからも動線がない</b>ことも分かったので、ここも接続します。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">05</div>
+</section></div>
+
+<!-- 06 ターゲットとサービス -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">新しく分かったこと 02</div><div class="s-title">ターゲットの規模感とサービス構成</div></div>
+  <div class="s-body">
+    <table style="margin-bottom:10px">
+      <thead><tr><th style="width:135px">区分</th><th>内容</th></tr></thead>
+      <tbody>
+        <tr><td><b>規模感</b></td><td>年商500億円以下／従業員 <b>100〜200名以下</b>。ウェブ集客をしている企業なら基本的に対象</td></tr>
+        <tr><td><b>対象外</b></td><td>上場企業など大規模な会社は<b>与信の関係で先方が発注できない</b>。ECサイトは考え方が違うので基本取らない。個人事業主も基本ターゲット外（ただし<b>飲食店など「個人でも企業」は対象</b>）</td></tr>
+        <tr><td><b>商材による違い</b></td><td>SEOは中規模以上、<b>MEO・SNS運用代行はリテラシーの高くない層にも売りたい</b>。商材ごとに刺さる業種が違う</td></tr>
+        <tr><td><b>過去の流入経路</b></td><td>「SEO対策＋地域名」で大阪・京都・和歌山・奈良・三重・名古屋などで<b>1〜2位だった頃の検索流入</b>がほぼすべて。受注は約20件・業種はバラバラ</td></tr>
+      </tbody>
+    </table>
+    <div class="g3 push">
+      <div class="blk" style="border-top:3px solid var(--teal)">
+        <h4><span class="tag new">新</span>フロント商品</h4>
+        <p><b>AIOレポート／1回 5万円〜</b>（プロンプト数に応じた価格）。AIがどのプロンプトで自社を引用するかを可視化し、<b>AIO対策・SEOにつなげる</b>のが狙い。</p>
+        <p>前提として<b>AIOのサービスページを新規作成</b>する必要があります。無料診断（特定プロンプトのみ）も競合がやっているので対応可能。</p>
+      </div>
+      <div class="blk" style="border-top:3px solid var(--teal)">
+        <h4><span class="tag new">新</span>初回相談無料の枠</h4>
+        <p>いまも問い合わせ後に商談へ進めば実質的に無料相談と同じですが、<b>枠として明示すれば入口が広がります。</b></p>
+        <p><b>初回のみ</b>と書いておけば、何度も相談されて無料コンサル化するのも防げます。渡邉さんも「発想がなかったけど、あり」とのこと。</p>
+      </div>
+      <div class="blk">
+        <h4>構成の課題</h4>
+        <p>SNSはSEOの配下に埋もれている。<b>本当は前に出したい</b>が、トップページと各エリアページのデザインを全部触る必要がある。</p>
+        <p><b>.net に比較表がない</b>（.com にはある）。「手を広げている」ではなく<b>「実現するために揃えている」</b>と見せるために入れたい。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">06</div>
+</section></div>
+
+<!-- 07 サイトで気になっている点 -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">新しく分かったこと 03</div><div class="s-title">サイト全体で気になっている点</div></div>
+  <div class="s-body">
+    <div class="g2" style="margin-bottom:10px">
+      <div class="blk" style="border-top:3px solid var(--red)">
+        <h4>トップページ・キービジュアル</h4>
+        <ul class="bl">
+          <li>本来は<b>「デジタルマーケティングの企画から実行までをサポート」をキーコピー</b>にする想定だったが、画像で作られたうえ文字が小さい</li>
+          <li><b>altタグではなくテキストで入れるべき。</b>Googleはテキストを優先して評価するため</li>
+          <li>キービジュアルなのに「キー」がなく<b>何屋か分からない</b>。イラストもウェブらしくない</li>
+          <li><b>CTAが弱い</b>／<b>「資料をダウンロード」があるのに資料が存在しない</b>（送信後に手動対応）</li>
+        </ul>
+      </div>
+      <div class="blk" style="border-top:3px solid var(--amber)">
+        <h4>画像・ページ構成</h4>
+        <ul class="bl">
+          <li>同じイラストが<b>複数箇所で使い回されている</b>（SEO対策ページが顕著）</li>
+          <li>見出しの内容と<b>イラストが合っていない</b>箇所がある（「内製化支援」など）</li>
+          <li>会社概要・私たちについてのメインビジュアルが<b>すべてトップページと同じ画像</b></li>
+          <li>カスタムブロックの組み合わせで作っているため、<b>余白・文字サイズ・行間がページ内でバラバラ</b></li>
+          <li>コラムの<b>サムネイル画像が空</b>のまま</li>
+        </ul>
+      </div>
+    </div>
+    <div class="band" style="margin-bottom:10px"><span class="b-lbl">対応の方向</span>
+      画像まわりは<b>AIでの生成で対応できる</b>ということで一致しました。既存画像をチャットに貼ってトンマナを指定し、内容に合わせて一括で作り直せます。当時は素材を探すかデザイナーに依頼するしかなく着手できなかった領域ですが、<b>いまなら現実的なコストで進められます。</b>コラムのサムネイルも同じやり方でいけます。</div>
+    <div class="blk push">
+      <h4>「本当の武器」についての議論</h4>
+      <p>技術専門の会社には個別領域では勝てない一方、<b>柔軟に要望へ合わせられることが実質的な強み</b>。ただしそれを前面に出すと案件の質が落ち低単価化するというジレンマがあり、<b>会社概要・コンセプトページで伝える</b>のが落としどころ、という整理になりました。</p>
+    </div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">07</div>
+</section></div>
+
+<!-- 08 コラム運用 -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">コラム運用</div><div class="s-title">記事の作り方と執筆の分担</div></div>
+  <div class="s-body">
+    <div class="lbl">SEO用コラム　／　★が特に重要</div>
+    <div class="flow" style="margin-bottom:9px">
+      <div class="fl"><div class="f-no">STEP 1 ★</div><div class="f-t">対策キーワードを決める</div><p>キーワードプランナーで検索ボリュームを見る。その前に「何について書くか」の大元を決める必要がある</p></div>
+      <div class="fl"><div class="f-no">STEP 2</div><div class="f-t">検索意図を特定する</div><p>上位に上がっている記事をまず見て、足りていない内容がないか把握する</p></div>
+      <div class="fl"><div class="f-no">STEP 3</div><div class="f-t">必要な情報を整理</div><p>ユーザーが求めている情報を整理して構成に落とす</p></div>
+      <div class="fl"><div class="f-no">STEP 4 ★</div><div class="f-t">自社ならではの情報を追加</div><p>一般的な情報だけでは差別化できないので、ここで独自性を足す</p></div>
+    </div>
+    <div class="lbl">AIO用コラム</div>
+    <div class="flow" style="margin-bottom:10px">
+      <div class="fl"><div class="f-no">STEP 1</div><div class="f-t">対策テーマを決める</div><p>キーワードではなく<b>AIにどんな質問をするか</b>から逆算。マーケティングファネルで分類</p></div>
+      <div class="fl"><div class="f-no">STEP 2</div><div class="f-t">想定プロンプトを洗い出す</div><p>各フェーズで実際にどう聞かれるかを書き出す</p></div>
+      <div class="fl"><div class="f-no">STEP 3</div><div class="f-t">質問意図でグルーピング</div><p>まとめると<b>グループごとの引用率から強い領域が分かる</b></p></div>
+      <div class="fl"><div class="f-no">STEP 4</div><div class="f-t">現在のAI回答を分析</div><p>実際に叩いてどう引用されるかを確認し論点を整理</p></div>
+    </div>
+    <div class="g2 push">
+      <div class="blk" style="border-top:3px solid var(--teal)">
+        <h4><span class="tag new">高寺</span>SEOにたどり着くまでの記事</h4>
+        <p>「ウェブマーケティングの種類」から入り、<b>数あるチャネルの中でSEOはどんな位置づけか</b>へつなげる。「SEOの記事を書こう」から入ると<b>テクニカル寄りになって初心者に届かない</b>ため。初めての人は「人が集まらない、どうすればいいか」から検索してくる。</p>
+      </div>
+      <div class="blk" style="border-top:3px solid var(--navy)">
+        <h4><span class="tag new">渡邉さん</span>AIOに関する記事</h4>
+        <p>いちばん取りたいのはLINE公式アカウントだがページがまだないため、<b>トレンドが強くSEOにもつながるAIOから着手。</b></p>
+        <p><b>進め方：</b>渡邉さんがキーワードとタイトルを一覧化 → 高寺が見出し作成 → 渡邉さんがダブルチェック → 高寺が記事作成。</p>
+      </div>
+    </div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">08</div>
+</section></div>
+
+<!-- 09 ネクストアクション -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">NEXT ACTION</div><div class="s-title">次回（10月27日）までの進め方</div></div>
+  <div class="s-body">
+    <div class="g2" style="margin-bottom:10px">
+      <div class="blk" style="background:var(--green-lt);border-color:#BFDDCE">
+        <h4><span class="tag ok">完了</span>打ち合わせ中に片付いたこと</h4>
+        <p><b>GTM（.net）の権限付与</b>／<b>ClarityとGTMの接続</b>／<b>Search Consoleは .net・.com とも権限が付いていた</b>ことが判明しアクセス確認済み／<b>誤字脱字チェックの修正は対応完了</b>。</p>
+        <p>打ち合わせ後に<b>コラム管理表</b>と<b>課題表</b>のシートも用意しました。課題表は「気づいたこと・こうなったらやりたいこと」をお互いに書き溜める場所で、タスク管理表（やると決めたこと）とは分けています。</p>
+      </div>
+      <div class="blk">
+        <h4>保留にしたこと</h4>
+        <p><b>GTMコンテナの削除：</b>アナリティクスとの紐づきが読めないので一旦そのまま。</p>
+        <p><b>.com のClarity：</b>GTMを新しく設置し直す方向で、渡邉さんに対応してもらいます。</p>
+      </div>
+    </div>
+    <div>
+      <div class="act-row"><div class="a-who w">高寺</div><div class="a-t">キーワード共有後、<b>見出しを作成</b>してダブルチェックへ回す</div><div class="a-d">共有後すぐ</div></div>
+      <div class="act-row"><div class="a-who w">高寺</div><div class="a-t"><b>WordPressに自分のアカウントを作成</b>（執筆者情報を出すため。表示対応はコーダーさんに依頼）</div><div class="a-d">〜10/27</div></div>
+      <div class="act-row"><div class="a-who w">高寺</div><div class="a-t">チームメンバー掲載に向けて<b>掲載項目の確認シートを送付</b></div><div class="a-d">〜10/27</div></div>
+      <div class="act-row"><div class="a-who w">高寺</div><div class="a-t"><b>GA4キーイベントの設定</b>（お問い合わせ＋会社概要のマイクロコンバージョン）／<b>Search Consoleの検索ワード確認</b></div><div class="a-d">〜10/27</div></div>
+      <div class="act-row"><div class="a-who">渡邉さん</div><div class="a-t"><b>キーワードとタイトルの一覧を共有</b>／<b>AIOに関する記事の執筆</b></div><div class="a-d">10/8以降</div></div>
+      <div class="act-row"><div class="a-who">渡邉さん</div><div class="a-t"><b>.com のGTMを設置し直し、Clarityを接続</b>／お問い合わせのスプレッドシートを<b>社名程度に加工して共有</b></div><div class="a-d">〜10/27</div></div>
+      <div class="act-row"><div class="a-who both">共通</div><div class="a-t">気づいたことを<b>課題表に随時追記</b>していく</div><div class="a-d">継続</div></div>
+    </div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">09</div>
+</section></div>
+
+<!-- 10 進めないこと -->
+<div class="sw"><section class="slide">
+  <div class="s-head"><div class="crumb">記録</div><div class="s-title">今回は進めないと決めたこと</div></div>
+  <div class="s-body">
+    <table style="margin-bottom:10px">
+      <thead><tr><th style="width:200px">項目</th><th style="width:78px">判断</th><th>理由</th></tr></thead>
+      <tbody>
+        <tr><td><b>迷惑送信対策（reCAPTCHA等）</b></td><td><span class="tag hold">不要</span></td><td>BtoBのDM自動化は以前からあるもので、件数も許容範囲。本物の相談も埋もれていない</td></tr>
+        <tr><td><b>スマホからの問い合わせ増加</b></td><td><span class="tag hold">追わない</span></td><td>ターゲットが企業の担当者で、PCで調べながら相談する動きが自然。<b>見やすさの改善は別途実施</b></td></tr>
+        <tr><td><b>サービスページの言葉を平易にする</b></td><td><span class="tag hold">不要</span></td><td>入口はコラムが担うため。かわりに<b>ページ内に回遊導線を足す</b></td></tr>
+        <tr><td><b>エリアページ全件のサービス別化</b></td><td><span class="tag hold">保留</span></td><td>47都道府県 × サービス数で運用が非現実的。<b>順位が付いているエリアのみ部分的に実施</b></td></tr>
+        <tr><td><b>契約1年縛りの見直し</b></td><td><span class="tag hold">そのまま</span></td><td>価格交渉の材料として機能しているため。実際の運用は柔軟に対応している</td></tr>
+        <tr><td><b>セミナーの開催</b></td><td><span class="tag hot">将来</span></td><td>SEO評価の観点では有効（講師＝専門性・信頼性）。ただし渡邉さんがいま名前を出せないため</td></tr>
+        <tr><td><b>書籍の出版</b></td><td><span class="tag hot">将来</span></td><td>評価は高い（Amazon等のリンクが効く）。Kindleのみは販売チャネルが限られ弱そう</td></tr>
+        <tr><td><b>ポータルサイトへの登録</b></td><td><span class="tag hot">将来</span></td><td>ウェブ幹事などには以前掲載。実際の紹介・採用実績が伴うため評価はされる</td></tr>
+        <tr><td><b>SNSをサービスの前面に出す</b></td><td><span class="tag hot">将来</span></td><td>本来やりたいが、トップページと各エリアページのデザインを全面的に触る必要がある</td></tr>
+      </tbody>
+    </table>
+    <div class="band teal push"><span class="b-lbl">ランキング・まとめ記事についての整理</span>
+      Googleはランキング記事の評価を下げる方向という話を共有しましたが、<b>ChatGPT等のAIはランキング・まとめ記事を引用しやすい</b>ため、AI検索の文脈ではまだ有効。ランキングサイトに載りにいくのではなく<b>自社でまとめ記事を作って上位表示させる</b>方向で考えます（まとめ記事は順位の根拠が不要なぶん評価されやすい）。</div>
+  </div>
+  <div class="s-foot">オーパスプラン 定例MTG 議事録／2026-10-07</div><div class="s-num">10</div>
+</section></div>
+
+</div>
+<script>
+(function(){
+  var fit=function(){
+    var s=Math.min(1,(document.documentElement.clientWidth-40)/1280);
+    document.documentElement.style.setProperty('--s', s);
+  };
+  fit(); addEventListener('resize', fit);
+  addEventListener('beforeprint', function(){ document.documentElement.style.setProperty('--s',1); });
+  addEventListener('afterprint', fit);
+})();
+</script>
+</body>
+</html>
