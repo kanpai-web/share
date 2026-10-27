@@ -268,10 +268,8 @@ html,body{overflow-x:clip}
 .ow-rel__track > .owl-card img{pointer-events:none}
 /* 送り戻しのボタン */
 .ow-rel__nav{display:flex;align-items:center;gap:14px;margin-top:12px;padding-right:40px}
-.ow-rel__hint{flex:0 0 auto;margin:0;font-size:12px;color:var(--ink-sub);letter-spacing:.04em}
-.ow-rel__nav::before{content:"";flex:1 1 auto;height:1px;background:var(--line);order:1}
-.ow-rel__hint{order:0}
-.ow-rel__btns{order:2;display:flex;gap:8px}
+.ow-rel__nav::before{content:"";flex:1 1 auto;height:1px;background:var(--line)}
+.ow-rel__btns{display:flex;gap:8px}
 .ow-rel__btn{width:44px;height:44px;display:flex;align-items:center;justify-content:center;
   background:#fff;border:1px solid #c9d2e4;border-radius:4px;color:var(--navy);cursor:pointer;
   padding:0;transition:border-color .14s linear,background-color .14s linear}
@@ -694,7 +692,6 @@ html,body{overflow-x:clip}
           </div>
   </div>
   <div class="ow-rel__nav">
-    <p class="ow-rel__hint">ドラッグでも動かせます</p>
     <div class="ow-rel__btns">
       <button type="button" class="ow-rel__btn" data-rel-prev aria-label="前の実績へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12 15 19" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
       <button type="button" class="ow-rel__btn" data-rel-next aria-label="次の実績へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 16 12 9 19" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
