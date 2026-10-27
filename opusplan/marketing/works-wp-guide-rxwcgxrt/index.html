@@ -114,7 +114,7 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
   <h1>実績ページ WordPress掲載ガイド<br>新しいデザインを本番サイトに載せるまで</h1>
   <p class="sub">実績の一覧ページと詳細ページを、新しいデザインに差し替えるための手順書です。<br>
   コーダーさんにお願いする部分と、管理画面で高寺が行う部分を分けて整理しました。</p>
-  <p class="meta">作成：2026年10月27日　／　高寺　／　対象：opus-plan.net 実績（カスタム投稿タイプ works）</p>
+  <p class="meta">作成：2026年10月27日（同日 担当メンバーの項目を追記）　／　高寺　／　対象：opus-plan.net 実績（カスタム投稿タイプ works）</p>
 </div></header>
 
 <div class="wrap">
@@ -142,6 +142,7 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
  <tr><td>関連実績</td><td>すでに動的。アイキャッチ・サイト種別・会社名・タグを出力しています（スライダーのマークアップ付き）</td></tr>
  <tr><td>既存のタクソノミー</td><td>サービス（<span class="mono">work_category</span>）／エリア（<span class="mono">area_category</span>）／支援内容（<span class="mono">part</span>）／サイト種別（<span class="mono">work_type</span>）／プラン（<span class="mono">work_plan</span>）</td></tr>
  <tr><td>足りないタクソノミー</td><td><b>業種</b>と<b>成果</b>。新しい絞り込みで使うため、新規に作成が必要です</td></tr>
+ <tr><td>担当者の情報</td><td>実績に担当者を表す項目はありません。会社概要のメンバー紹介で「担当した実績」を自動で出すため、<b>担当メンバー</b>（<span class="mono">work_member</span>）の分類を新規に作成します</td></tr>
 </table>
 </section>
 
@@ -166,7 +167,7 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
       <p class="role">毎回・管理画面側</p>
       <ul>
         <li>実績詳細の本文（HTML）を貼る</li>
-        <li>業種・成果のチェックを入れる</li>
+        <li>業種・成果・担当メンバーのチェックを入れる</li>
         <li>見出し・規模／支援期間・成果の数値を入力</li>
         <li>既存の実績ぶんのデータを揃える</li>
       </ul>
@@ -274,6 +275,7 @@ add_action( &#x27;wp_enqueue_scripts&#x27;, function () {
  <tr><td><b>カード見出し</b><br><span class="mono">大阪府堺市 葬儀社｜地域SEO対策で問い合わせ8倍</span></td><td>なし</td><td>カスタムフィールド</td></tr>
  <tr><td><b>規模・支援期間</b><br><span class="mono">従業員15名・年商3億円規模／支援期間 1年6ヶ月</span></td><td>なし</td><td>カスタムフィールド</td></tr>
  <tr><td><b>成果の数値</b><br><span class="mono">お問い合わせ／月1件／8／件</span></td><td>なし</td><td>カスタムフィールド</td></tr>
+ <tr><td><b>担当メンバー</b>（カードには出ない）</td><td>なし</td><td>タクソノミーを新規作成</td></tr>
 </table>
 
 <h3>① 業種・成果のタクソノミーを追加</h3>
@@ -304,6 +306,10 @@ add_action( &#x27;init&#x27;, function () {
   <div><b>成果のターム（案）</b><span>問い合わせが増えた／検索順位が上がった／アクセスが増えた／広告費を抑えられた</span></div>
 </div>
 <p>タームの実際の並びは、既存の実績を見ながら高寺のほうで決めます。まずは上記で作っていただければ大丈夫です。</p>
+<div class="note">
+  <p class="note__t">あわせて「担当メンバー」の分類もお願いします</p>
+  <p>会社概要のメンバー紹介で、メンバーごとに「担当した実績」の最新3件を自動で出すために使います（カードや絞り込みには出しません）。登録コードと表示の仕組みは<a href="https://kanpai-web.github.io/share/opusplan/marketing/member-wp-guide-7wv4bpo9/">メンバー紹介のガイド（STEP 2・STEP 4）</a>にまとめています。</p>
+</div>
 
 <h3>② カスタムフィールドの入力欄を用意</h3>
 <p>本文に決まった書式で書かせる方式は、入力ミスで崩れるため採りません。<b>管理画面に入力欄が並ぶ形</b>にしてください。</p>
@@ -333,9 +339,13 @@ add_action( &#x27;init&#x27;, function () {
   <ol>
     <li>実績改善シートに、実績ごとの「業種・成果・見出し・規模／支援期間・成果の数値」の列を用意する</li>
     <li>既存の実績の本文を読みながら、シート上で全件ぶんを書き出す</li>
-    <li>管理画面で1件ずつ転記する</li>
+    <li>管理画面で1件ずつ転記する。<b>「担当メンバー」に担当した人全員のチェックも入れる</b></li>
   </ol>
   <p>先にシートで揃えてから転記したほうが、言い回しのばらつきが出ません。<b>新しく実績を追加するときは、最初から入力欄を埋めるだけ</b>になります。</p>
+  <div class="note">
+    <p class="note__t">実績を公開するたびに：担当メンバーのチェック</p>
+    <p>チェックを入れた人のプロフィール（会社概要のメンバー紹介）に、その実績が自動で並びます。<b>チェックを忘れると、どのメンバーにも表示されません。</b></p>
+  </div>
   <div class="note">
     <p class="note__t">成果の数値が無い実績</p>
     <p>数値が出せない実績は、無理に埋めずに空のままで構いません。RESULT のブロックごと出ない作りにしてあります。</p>
@@ -532,6 +542,7 @@ if ( $rel-&gt;post_count ) : ?&gt;
     <li>関連実績が横に流れ、左右ボタンで1枚ずつ送れる。端で切れ目なく戻る</li>
     <li>関連実績のカードを<b>ドラッグしたときはリンクが開かず、クリックしたときは開く</b></li>
     <li>成果の数値が入っていない実績で、RESULT の枠だけが残っていない</li>
+    <li>「担当メンバー」に担当した人のチェックが入っている（会社概要のプロフィールに出ている）</li>
   </ul>
   <div class="note">
     <p class="note__t">お渡しするファイル</p>

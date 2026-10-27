@@ -1,0 +1,464 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow, noarchive">
+<title>メンバー紹介 WordPress掲載ガイド｜オーパスプラン</title>
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#1B1464;--teal:#0F7C8C;--orange:#E8720C;--text:#25282F;--grey:#5A6273;
+  --line:#E3E6EC;--bg:#F7F8FA;--pale:#F4F7FD;--paleT:#EDF6F7;--paleO:#FDF3E8;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--text);
+  font-family:"Noto Sans JP",-apple-system,BlinkMacSystemFont,sans-serif;
+  font-size:15px;line-height:1.85;-webkit-font-smoothing:antialiased}
+.wrap{max-width:1000px;margin:0 auto;padding:0 20px 90px}
+header.hd{background:#fff;border-bottom:1px solid var(--line);padding:44px 0 36px;margin-bottom:38px}
+header.hd .wrap{padding-bottom:0}
+.eyebrow{font-size:12px;letter-spacing:.16em;color:var(--teal);font-weight:700;margin:0 0 10px}
+h1{font-size:30px;line-height:1.45;margin:0 0 14px;color:var(--navy);font-weight:700}
+.hd p.sub{margin:0;color:var(--grey);font-size:14.5px}
+.hd .meta{margin-top:18px;font-size:12.5px;color:var(--grey);border-top:1px solid var(--line);padding-top:14px}
+.sec{background:#fff;border:1px solid var(--line);border-radius:10px;padding:34px 36px;margin:0 0 22px}
+.sec__head{display:flex;align-items:center;gap:14px;margin-bottom:14px}
+.sec__no{flex:none;width:30px;height:30px;border-radius:50%;background:var(--navy);color:#fff;
+  font-size:13px;font-weight:700;display:flex;align-items:center;justify-content:center}
+.sec h2{font-size:20px;margin:0;color:var(--navy);font-weight:700;line-height:1.5}
+.sec h3{font-size:15.5px;margin:30px 0 10px;color:var(--navy);font-weight:700;
+  border-left:3px solid var(--teal);padding-left:10px}
+p{margin:0 0 14px}
+.lead{color:var(--grey);font-size:14px;margin-bottom:20px}
+ul,ol{margin:0 0 14px;padding-left:22px}
+li{margin:5px 0}
+b,strong{font-weight:700}
+a{color:var(--teal)}
+.mono{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12.5px}
+.nw{white-space:nowrap}
+
+table{width:100%;border-collapse:collapse;margin:6px 0 16px;font-size:13.5px}
+th,td{border:1px solid var(--line);padding:10px 12px;text-align:left;vertical-align:top}
+th{background:var(--pale);color:var(--navy);font-weight:700;white-space:nowrap}
+
+.note{border:1px solid var(--line);border-left:3px solid var(--teal);background:#FBFCFD;
+  border-radius:4px;padding:16px 18px;margin:14px 0}
+.note__t{font-weight:700;color:var(--teal);margin:0 0 6px;font-size:14px}
+.warn{border:1px solid #F0C9A0;background:var(--paleO);border-radius:4px;padding:16px 18px;margin:14px 0}
+.warn__t{font-weight:700;color:var(--orange);margin:0 0 6px;font-size:14px}
+.note p:last-child,.warn p:last-child,.note ul:last-child,.warn ul:last-child{margin-bottom:0}
+
+.who{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin:6px 0 4px}
+.who--2{grid-template-columns:repeat(2,1fr)}
+.who__c{border:1px solid var(--line);border-radius:8px;padding:18px}
+.who__c h4{margin:0 0 4px;font-size:14.5px;color:var(--navy)}
+.who__c .role{font-size:11.5px;color:var(--teal);font-weight:700;letter-spacing:.08em;margin:0 0 10px}
+.who__c ul{margin:0;padding-left:18px;font-size:13px;color:var(--grey)}
+
+.flow{display:grid;grid-template-columns:repeat(5,1fr);gap:10px;margin:10px 0 4px}
+.flow__s{border:1px solid var(--line);border-radius:8px;padding:16px 14px;position:relative;background:#fff}
+.flow__s.is-coder{border-color:#C9D4F0;background:var(--pale)}
+.flow__n{display:inline-block;font-size:11px;font-weight:700;letter-spacing:.08em;
+  color:#fff;background:var(--navy);border-radius:3px;padding:2px 8px;margin-bottom:8px}
+.flow__s.is-coder .flow__n{background:var(--teal)}
+.flow__t{font-size:13.5px;font-weight:700;margin:0 0 5px;line-height:1.5}
+.flow__d{font-size:11.5px;color:var(--grey);margin:0;line-height:1.65}
+.flow__who{font-size:11px;color:var(--teal);font-weight:700;margin:8px 0 0}
+
+.card{border:1px solid var(--line);border-radius:8px;padding:18px 20px;margin:0 0 12px}
+.card__top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px}
+.card__no{font-size:11.5px;color:var(--teal);font-weight:700;margin:0 0 3px;letter-spacing:.06em}
+.card__title{font-size:15px;font-weight:700;margin:0;line-height:1.55;color:var(--navy)}
+.card__meta{list-style:none;padding:0;margin:12px 0 0;display:flex;flex-wrap:wrap;gap:18px;
+  font-size:12.5px;color:var(--grey);border-top:1px dashed var(--line);padding-top:10px}
+.card__meta li{margin:0}
+
+.btn{flex:none;border:0;background:var(--navy);color:#fff;font-family:inherit;font-size:13px;
+  font-weight:700;border-radius:6px;padding:9px 18px;cursor:pointer;transition:opacity .15s}
+.btn:hover{opacity:.85}
+.btn.is-done{background:var(--teal)}
+.btn--s{font-size:11.5px;padding:5px 12px}
+.btn--out{background:#fff;color:var(--navy);border:1px solid var(--navy)}
+
+.dbox{border:1px solid var(--line);border-radius:6px;padding:12px 14px;margin:0 0 8px;background:#FBFCFD}
+.dbox__h{display:flex;justify-content:space-between;align-items:center;gap:12px;margin-bottom:6px}
+.dbox__h span{font-size:12px;font-weight:700;color:var(--navy)}
+.dbox__t{margin:0;font-size:12.5px;color:var(--grey);line-height:1.75}
+
+pre.code{background:#1C1F27;color:#E8EAF0;border-radius:6px;padding:16px 18px;overflow-x:auto;
+  font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:12px;line-height:1.75;margin:10px 0 14px}
+.codehead{display:flex;justify-content:space-between;align-items:center;margin:16px 0 0}
+.codehead span{font-size:12.5px;font-weight:700;color:var(--navy)}
+
+.chk{list-style:none;padding:0;margin:4px 0 0}
+.chk li{position:relative;padding-left:28px;margin:9px 0;font-size:14px}
+.chk li::before{content:"";position:absolute;left:2px;top:.42em;width:13px;height:8px;
+  border-left:2px solid var(--teal);border-bottom:2px solid var(--teal);transform:rotate(-45deg)}
+
+.parts{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin-top:6px}
+.parts div{border:1px solid var(--line);border-radius:6px;padding:11px 14px;font-size:13px}
+.parts b{color:var(--navy)}
+.parts span{display:block;color:var(--grey);font-size:12px;margin-top:2px}
+
+footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
+@media (max-width:860px){
+  .who,.who--2,.flow,.parts{grid-template-columns:1fr}
+  .sec{padding:26px 20px}
+  h1{font-size:23px}
+  .card__top{flex-direction:column}
+}
+</style>
+</head>
+<body>
+<header class="hd"><div class="wrap">
+  <p class="eyebrow">OPUS PLAN ─ MEMBER</p>
+  <h1>メンバー紹介 WordPress掲載ガイド<br>会社概要ページに載せるまでと、公開後の運用</h1>
+  <p class="sub">会社概要ページにメンバー紹介を新設するための手順書です。<br>
+  アカウントの準備、コーダーさんにお願いする部分、記事・実績を出すたびに行うことを分けて整理しました。</p>
+  <p class="meta">作成：2026年10月27日　／　高寺　／　対象：opus-plan.net 会社概要（/company）・コラム（blog）・実績（works）</p>
+</div></header>
+
+<div class="wrap">
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">1</span><h2>このガイドについて</h2></div>
+  <p class="lead">会社概要ページに「メンバー紹介」を新設します。そのために必要な準備と、公開後に毎回やることをまとめました。</p>
+  <p>完成イメージは、実際の会社概要ページに新しいパーツを差し込んだ形で確認できます（名前・数字はダミーです）。</p>
+  <table>
+   <tr><th style="width:150px">完成イメージ</th><td><a href="https://kanpai-web.github.io/share/opusplan/marketing/member-sallgebk/">https://kanpai-web.github.io/share/opusplan/marketing/member-sallgebk/</a></td></tr>
+   <tr><th>記入シート</th><td>（共有）タスク管理 ＞ メンバー紹介新設タブ</td></tr>
+  </table>
+  <h3>本番サイトを調べて分かったこと</h3>
+  <table>
+   <tr><th style="width:240px">調べたこと</th><th>分かったこと</th></tr>
+   <tr><td>コラム・実績の「投稿者」</td><td><b>どちらも投稿者を持たない作り</b>になっています（REST API の応答に author がありません）。「この人が書いたコラム」を自動で出すには、投稿者欄を有効にする必要があります（STEP 2）</td></tr>
+   <tr><td>実績の「担当者」</td><td>担当を表す項目はありません。<b>「担当メンバー」の分類を新しく作ります</b>（STEP 2）</td></tr>
+   <tr><td>WordPressのユーザー</td><td>現在2アカウント（opusplan／渡邉さん）。メンバーの数だけアカウントを追加します（STEP 1）</td></tr>
+   <tr><td>ユーザー一覧の公開状態</td><td><span class="mono">/wp-json/wp/v2/users</span> で、<b>ログインに使う名前が外部から見える状態</b>です。アカウントを増やす前に、表示しないよう設定するのがおすすめです（STEP 2）</td></tr>
+  </table>
+  <div class="note">
+    <p class="note__t">先に結論</p>
+    <p>見た目のパーツ（CSS・マークアップ）は用意済みです。決める必要があるのは<b>「メンバーの情報をどこで管理するか」</b>の1点で、ここで作業量と今後の運用が変わります（次の章）。</p>
+    <p>どの方法でも、公開後の運用は<b>「コラムの投稿者を本人にする」「実績に担当メンバーのチェックを入れる」</b>の2つだけで、プロフィールの「担当した実績」「書いたコラム」が自動で更新されます。</p>
+  </div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">2</span><h2>メンバー情報の管理方法（打合せで決めること）</h2></div>
+  <p class="lead">3つの方法があります。人数と、今後どれくらい入れ替わるかで選んでください。</p>
+<table>
+ <tr><th style="width:70px"></th><th style="width:190px">方法</th><th>向いているケース</th><th style="width:260px">気をつけること</th></tr>
+ <tr><td><b>案A</b></td><td>会社概要のテンプレートに<b>直接書く</b></td><td>4名程度で、入れ替えや修正がほとんど無い場合。最初の作業がいちばん少なく済みます</td><td><b>プロフィールを直すたびにコーダーさんへの依頼が発生します。</b>いまの人数なら回りますが、人が増える・こまめに直したい場合には向きません</td></tr>
+ <tr><td><b>案B</b></td><td>WordPressの<b>ユーザーのプロフィール欄</b>に持たせる</td><td>載せる全員がコラムを書く場合。コラム末の「執筆者情報」と同じデータを使い回せます</td><td>記事を書かない人（営業の方など）にもアカウントが必要になります</td></tr>
+ <tr><td><b>案C</b></td><td>カスタム投稿<b>「メンバー」</b>を作る</td><td><b>人数が増えることを見込む場合はこちらを提案します。</b>記事一覧と同じ感覚でメンバーを追加・修正・並べ替えでき、アカウントを持たない人も載せられます</td><td>最初の実装が3案の中でいちばん多くなります。執筆者とのひも付けは「WordPressユーザー」を選ぶ欄で行います</td></tr>
+</table>
+<div class="note">
+  <p class="note__t">打合せで確認すること</p>
+  <ul>
+    <li>掲載する人数（いまの4名で固定か、今後増える見込みがあるか）→ 管理方法（案A／B／C）を決める</li>
+    <li>記事を書く人と書かない人の内訳（案Bにするかどうかに関わる）</li>
+    <li>顔写真の撮影可否と、撮影のタイミング</li>
+    <li>WordPressのアカウント作成をだれが行うか（管理者権限を持っている方）</li>
+    <li>ACF などのカスタムフィールド用プラグインが入っているか（コーダーさんに確認）</li>
+  </ul>
+</div>
+<p style="font-size:13px;color:var(--grey)">※ 以降の手順は案B・案Cを前提に書いています。案Aの場合は STEP 2 の入力欄づくりが不要になり、STEP 4 でテンプレートに直接書いてもらう形になります（「担当メンバー」の分類と投稿者欄は、どの案でも必要です）。</p>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">3</span><h2>だれが、何をするか</h2></div>
+  <div class="who who--2">
+  <div class="who__c">
+    <p class="role">最初に1回</p>
+    <h4>コーダーさん</h4>
+    <ul><li>プロフィールの入力欄をつくる</li><li>コラム・実績に「投稿者」「担当メンバー」を追加</li><li>会社概要にメンバー紹介を表示</li></ul>
+  </div>
+  <div class="who__c">
+    <p class="role">最初に1回＋記事ごと</p>
+    <h4>高寺（＋管理者の方）</h4>
+    <ul><li>メンバーのアカウント作成</li><li>プロフィールの入力（シートから転記）</li><li>コラム公開時：投稿者を本人に</li><li>実績公開時：担当メンバーにチェック</li></ul>
+  </div>
+</div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">4</span><h2>公開までの5ステップ</h2></div>
+  <div class="flow">
+    <div class="flow__s">
+      <span class="flow__n">STEP 1</span>
+      <p class="flow__t">アカウントを作る</p>
+      <p class="flow__d">メンバーごとにWordPressのユーザーを追加</p>
+      <p class="flow__who">管理者の方・高寺</p>
+    </div>
+    <div class="flow__s is-coder">
+      <span class="flow__n">STEP 2</span>
+      <p class="flow__t">入力欄と分類を用意</p>
+      <p class="flow__d">プロフィール欄・投稿者欄・担当メンバー</p>
+      <p class="flow__who">コーダーさん・1回だけ</p>
+    </div>
+    <div class="flow__s">
+      <span class="flow__n">STEP 3</span>
+      <p class="flow__t">データを入れる</p>
+      <p class="flow__d">シートの内容を転記。既存の記事・実績にもひも付け</p>
+      <p class="flow__who">高寺</p>
+    </div>
+    <div class="flow__s is-coder">
+      <span class="flow__n">STEP 4</span>
+      <p class="flow__t">会社概要に表示</p>
+      <p class="flow__d">CSS・マークアップ・最新3件の自動表示</p>
+      <p class="flow__who">コーダーさん・1回だけ</p>
+    </div>
+    <div class="flow__s">
+      <span class="flow__n">STEP 5</span>
+      <p class="flow__t">日々の運用</p>
+      <p class="flow__d">コラムは投稿者、実績は担当メンバーを選ぶだけ</p>
+      <p class="flow__who">高寺・記事ごと</p>
+    </div>
+  </div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">5</span><h2>STEP 1　アカウントを作る</h2></div>
+  <p class="lead">管理画面の「ユーザー ＞ 新規追加」から、メンバーごとに1つ作ります。</p>
+<table>
+ <tr><th style="width:210px">項目</th><th>入れるもの</th><th style="width:260px">理由</th></tr>
+ <tr><td>ユーザー名</td><td>ローマ字の名字（例 <span class="mono">yamada</span>）</td><td>あとから変更できません。「担当メンバー」の分類と同じ綴りにそろえます</td></tr>
+ <tr><td>メールアドレス</td><td>本人の業務用アドレス</td><td>パスワード再設定に使います</td></tr>
+ <tr><td>名・姓</td><td>漢字で</td><td></td></tr>
+ <tr><td>ブログ上の表示名</td><td><b>「山田 太郎」</b>（漢字フルネーム）</td><td>コラムの執筆者として表に出る名前です</td></tr>
+ <tr><td>権限グループ</td><td>記事を書く人：<b>投稿者</b><br>書かない人：<b>購読者</b>（案Bのみ）</td><td>必要以上の権限を渡さないため。高寺・渡邉さんは現状どおり</td></tr>
+</table>
+<div class="note">
+  <p class="note__t">案Cの場合</p>
+  <p>アカウントが必要なのは<b>コラムを書く人だけ</b>です。営業の方などはアカウントを作らず、カスタム投稿「メンバー」に1件追加するだけで載せられます。</p>
+</div>
+<div class="note">
+  <p class="note__t">退職・異動のとき</p>
+  <p><b>アカウントは削除しないでください。</b>削除すると、その人が書いたコラムの投稿者を別の人に付け替えるよう求められ、執筆者の情報が失われます。プロフィールの「掲載する」をオフにして、権限を「購読者」に下げる運用にします。</p>
+</div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">6</span><h2>STEP 2　入力欄と分類を用意する（コーダーさん）</h2></div>
+  <p class="lead">4つあります。①〜③はどの案でも必要、④は案B・案Cのときだけです。</p>
+
+<h3>① コラムと実績に「投稿者」欄を追加</h3>
+<p>いまはどちらの編集画面にも投稿者欄がありません。コラムは、これで<b>「書いた人」から自動でプロフィールに並べられる</b>ようになります。</p>
+<div class="codehead"><span>functions.php（投稿者欄の追加）</span><button class="btn btn--s" data-copy="c1">コピー</button></div><pre class="code" id="c1">// functions.php
+// コラム（blog）と実績（works）に「投稿者」欄を追加する
+add_action( &#x27;init&#x27;, function () {
+    add_post_type_support( &#x27;blog&#x27;, &#x27;author&#x27; );
+    add_post_type_support( &#x27;works&#x27;, &#x27;author&#x27; );   // 実績は記録用（表示には担当メンバーを使う）
+}, 20 );
+
+// 投稿者アーカイブ（/author/ユーザー名/）にコラムを含める
+add_action( &#x27;pre_get_posts&#x27;, function ( $q ) {
+    if ( ! is_admin() &amp;&amp; $q-&gt;is_main_query() &amp;&amp; $q-&gt;is_author() ) {
+        $q-&gt;set( &#x27;post_type&#x27;, array( &#x27;blog&#x27; ) );
+    }
+} );</pre>
+
+<h3>② 実績に「担当メンバー」の分類を追加</h3>
+<p>実績は複数人で担当することがあるため、投稿者ではなく<b>チェックで複数選べる分類</b>にします。ターム（選択肢）のスラッグは、STEP 1 のユーザー名と同じ綴りにしてください。</p>
+<div class="codehead"><span>functions.php（担当メンバー）</span><button class="btn btn--s" data-copy="c2">コピー</button></div><pre class="code" id="c2">// functions.php
+// 実績の「担当メンバー」（チェックで複数選択）
+add_action( &#x27;init&#x27;, function () {
+    register_taxonomy( &#x27;work_member&#x27;, &#x27;works&#x27;, array(
+        &#x27;label&#x27;        =&gt; &#x27;担当メンバー&#x27;,
+        &#x27;hierarchical&#x27; =&gt; true,          // チェックボックスで選ばせる
+        &#x27;public&#x27;       =&gt; true,
+        &#x27;rewrite&#x27;      =&gt; array( &#x27;slug&#x27; =&gt; &#x27;works/member&#x27; ),   // /works/member/yamada/ が担当実績の一覧になる
+        &#x27;show_in_rest&#x27; =&gt; true,
+    ) );
+} );</pre>
+<p style="font-size:13px;color:var(--grey)">※ 業種・成果の分類追加（実績ガイドの STEP 2）と同じ場所に書いていただくと管理しやすいです。</p>
+
+<h3>③ ユーザー一覧を外部から見えないようにする</h3>
+<p>アカウントを増やす前に入れておくのがおすすめです。セキュリティ系のプラグインで同じ設定ができる場合は、そちらでも構いません。</p>
+<div class="codehead"><span>functions.php（ユーザー一覧の非公開）</span><button class="btn btn--s" data-copy="c3">コピー</button></div><pre class="code" id="c3">// functions.php
+// ユーザー一覧を外部から見えないようにする（ログインしていない場合）
+add_filter( &#x27;rest_endpoints&#x27;, function ( $endpoints ) {
+    if ( ! is_user_logged_in() ) {
+        unset( $endpoints[&#x27;/wp/v2/users&#x27;], $endpoints[&#x27;/wp/v2/users/(?P&lt;id&gt;[\d]+)&#x27;] );
+    }
+    return $endpoints;
+} );</pre>
+
+<h3>④ プロフィールの入力欄（案B：ユーザー編集画面／案C：カスタム投稿「メンバー」）</h3>
+<p>記入シートの項目と1対1で対応させています。ACF が入っていればそれで、無ければやりやすい方法をご提案ください。</p>
+<table>
+ <tr><th style="width:200px">キー（案）</th><th style="width:170px">ラベル</th><th>形式・例</th></tr>
+ <tr><td class="mono">member_show</td><td>掲載する</td><td>オン／オフ</td></tr>
+ <tr><td class="mono">member_order</td><td>表示順</td><td>数字（1から）</td></tr>
+ <tr><td class="mono">member_photo</td><td>顔写真</td><td>画像（4:5の縦長・800×1000px目安）</td></tr>
+ <tr><td class="mono">member_roman</td><td>ローマ字表記</td><td>Taro Yamada</td></tr>
+ <tr><td class="mono">member_role</td><td>役職・肩書</td><td>代表取締役／Webコンサルタント</td></tr>
+ <tr><td class="mono">member_areas</td><td>担当領域</td><td>3つまで（1行に1つ）。カードに #タグ で出ます</td></tr>
+ <tr><td class="mono">member_catch</td><td>キャッチコピー</td><td>30字前後</td></tr>
+ <tr><td class="mono">member_stat1_label / _value / _unit</td><td>数字①</td><td>Web集客の経験／15／年</td></tr>
+ <tr><td class="mono">member_stat2_label / _value / _unit</td><td>数字②</td><td>支援してきた企業／200／社以上</td></tr>
+ <tr><td class="mono">member_hobby</td><td>休日のひとこと</td><td>15字前後。写真の下に手書き風の文字で出ます</td></tr>
+ <tr><td class="mono">member_career</td><td>経歴</td><td>2〜4行（1行に1つ）</td></tr>
+ <tr><td class="mono">member_industries</td><td>得意な業種</td><td>士業／医療・クリニック</td></tr>
+ <tr><td class="mono">member_skills</td><td>得意な施策</td><td>1〜2行</td></tr>
+ <tr><td class="mono">member_certs</td><td>資格・認定</td><td>空欄可（空なら行ごと出ません）</td></tr>
+ <tr><td class="mono">member_consults</td><td>よく受けるご相談</td><td>3つまで（1行に1つ）</td></tr>
+ <tr><td class="mono">member_value</td><td>仕事で大事にしていること</td><td>1〜2文</td></tr>
+ <tr><td class="mono">member_message</td><td>ひとことメッセージ</td><td>1〜2文。吹き出しで出ます</td></tr>
+ <tr><td class="mono">member_user</td><td>WordPressユーザー（案Cのみ）</td><td>ユーザー選択。書いたコラムを引くために使います</td></tr>
+ <tr><td class="mono">member_term</td><td>担当メンバーのターム（案Cのみ）</td><td>②の分類のターム選択。担当した実績を引くために使います</td></tr>
+</table>
+<div class="note">
+  <p class="note__t">案Bでのひも付け</p>
+  <p>案Bでは、ユーザー名と「担当メンバー」のタームのスラッグをそろえることでひも付けます（例：ユーザー名 <span class="mono">yamada</span> ＝ ターム <span class="mono">yamada</span>）。案Cでは上の2つの選択欄で明示的にひも付けます。</p>
+</div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">7</span><h2>STEP 3　データを入れる（高寺）</h2></div>
+  <p class="lead">記入シートがそろったら、管理画面に転記します。既存の記事・実績のひも付けもここで一度だけ行います。</p>
+  <ol>
+    <li>プロフィール欄に、記入シートの内容を1人ずつ転記する（顔写真も設定）</li>
+    <li>「担当メンバー」の分類に、メンバーぶんのタームを作る（スラッグはユーザー名と同じ）</li>
+    <li><b>既存のコラム</b>：書いた人が分かる記事は、投稿者をその人に変更する。分からない記事は opusplan のままで構いません</li>
+    <li><b>既存の実績</b>：担当した人にチェックを入れる（記入シートの「担当した実績」欄を参照）</li>
+  </ol>
+  <div class="note">
+    <p class="note__t">既存記事の投稿者を一括で変えるとき</p>
+    <p>コラムの一覧画面で記事にチェックを入れ、「一括操作 ＞ 編集」から投稿者をまとめて変更できます（①の投稿者欄が追加されたあとに使えます）。</p>
+  </div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">8</span><h2>STEP 4　会社概要にメンバー紹介を表示する（コーダーさん）</h2></div>
+  <p class="lead">見た目は完成イメージのとおりです。マークアップとCSSはそのまま使えるようにしてあります。</p>
+<h3>渡すもの</h3>
+<table>
+ <tr><th style="width:280px">ファイル</th><th>中身</th></tr>
+ <tr><td class="mono">opus-member.css</td><td>メンバー紹介の追加スタイル（クラス名はすべて <span class="mono">om-</span> 始まり。既存テーマと衝突しません）</td></tr>
+ <tr><td class="mono">メンバー紹介_マークアップ.html</td><td>セクション全体（カード4枚＋プロフィールの小窓）＋開閉・タブ切り替えのスクリプト</td></tr>
+</table>
+<h3>入れる場所</h3>
+<p>会社概要ページの「オーパスプランを知る」ボタンの後、<span class="mono">&lt;div class="l-access"&gt;</span> の直前です。</p>
+<h3>手書き風の文字（フォントの追加）</h3>
+<p>写真の下のひとことと吹き出しに、Google Fonts の <b>Klee One</b> を使っています。会社概要ページの <span class="mono">&lt;head&gt;</span> で読み込んでください。</p>
+<div class="codehead"><span>head に追加</span><button class="btn btn--s" data-copy="c4">コピー</button></div><pre class="code" id="c4">&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css2?family=Klee+One:wght@600&amp;display=swap&quot;&gt;</pre>
+<h3>メンバーの並び</h3>
+<p>「掲載する」がオンの人だけを、「表示順」の小さい順に出してください。</p>
+<h3>「担当した実績」「書いたコラム」の自動表示</h3>
+<p>プロフィールの小窓の下部に、タブで切り替えて<b>最新3件だけ</b>を小さなカードで出します。4件目以降は一覧ページへのリンクにします。</p>
+<div class="codehead"><span>参考実装（最新3件と件数）</span><button class="btn btn--s" data-copy="c5">コピー</button></div><pre class="code" id="c5">// 会社概要テンプレート：メンバー1人ぶんの「担当した実績」「書いたコラム」
+// $user_id … メンバーのWordPressユーザーID／$slug … 担当メンバーのタームのスラッグ
+
+$works = new WP_Query( array(
+    &#x27;post_type&#x27;      =&gt; &#x27;works&#x27;,
+    &#x27;posts_per_page&#x27; =&gt; 3,                      // 最新3件だけ見せる
+    &#x27;tax_query&#x27;      =&gt; array( array(
+        &#x27;taxonomy&#x27; =&gt; &#x27;work_member&#x27;,
+        &#x27;field&#x27;    =&gt; &#x27;slug&#x27;,
+        &#x27;terms&#x27;    =&gt; $slug,
+    ) ),
+) );
+$works_total = $works-&gt;found_posts;             // タブの件数・「すべて見る（◯件）」に使う
+$works_all   = get_term_link( $slug, &#x27;work_member&#x27; );
+
+$columns = new WP_Query( array(
+    &#x27;post_type&#x27;      =&gt; &#x27;blog&#x27;,
+    &#x27;posts_per_page&#x27; =&gt; 3,
+    &#x27;author&#x27;         =&gt; $user_id,
+) );
+$columns_total = $columns-&gt;found_posts;
+$columns_all   = get_author_posts_url( $user_id );
+
+// どちらも0件なら、プロフィール内のこの欄自体を出さない
+// 4件以上あるときだけ「すべて見る（◯件）→」を出す</pre>
+<table>
+ <tr><th style="width:200px">表示する要素</th><th>出どころ</th></tr>
+ <tr><td>カードの画像</td><td>アイキャッチ（コラム・実績とも）</td></tr>
+ <tr><td>カードのタイトル</td><td>実績：カード見出し（<span class="mono">work_card_title</span>、空なら投稿タイトル）／コラム：投稿タイトル</td></tr>
+ <tr><td>タブの件数</td><td><span class="mono">found_posts</span></td></tr>
+ <tr><td>すべて見る のリンク先</td><td>実績：<span class="mono">/works/member/ユーザー名/</span>／コラム：<span class="mono">/author/ユーザー名/</span></td></tr>
+</table>
+<div class="note">
+  <p class="note__t">相談ボタンについて</p>
+  <p>プロフィール最下部のボタンは「まずは気軽に相談する」で、お問い合わせページへの通常のリンクです。<b>指名制ではない</b>ことが伝わるよう、上に「ご相談はチームでお受けしています」の一文を添えています。</p>
+</div>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">9</span><h2>STEP 5　日々の運用（高寺）</h2></div>
+  <p class="lead">公開後は、記事や実績を出すときに1か所選ぶだけです。ここを忘れるとプロフィールに出ません。</p>
+<table>
+ <tr><th style="width:190px">タイミング</th><th>やること</th><th style="width:260px">結果</th></tr>
+ <tr><td><b>コラムを公開するとき</b></td><td>編集画面の「投稿者」を<b>書いた本人</b>にする</td><td>その人のプロフィールの「書いたコラム」に自動で出る</td></tr>
+ <tr><td><b>実績を公開するとき</b></td><td>「担当メンバー」で<b>担当した人全員</b>にチェック</td><td>その人のプロフィールの「担当した実績」に自動で出る</td></tr>
+ <tr><td>メンバーが増えたとき</td><td>STEP 1（アカウント）→ プロフィール入力 → 担当メンバーのターム追加</td><td>案A以外はコーダーさんへの依頼は不要</td></tr>
+ <tr><td>プロフィールを直すとき</td><td>案B・C：管理画面で直すだけ／案A：コーダーさんに依頼</td><td></td></tr>
+ <tr><td>退職・異動のとき</td><td>「掲載する」をオフ、権限を購読者に（アカウントは削除しない）</td><td>メンバー紹介から外れ、書いたコラムの執筆者情報は残る</td></tr>
+</table>
+<p>この2点は、コラムの入稿ガイド（<a href="https://kanpai-web.github.io/share/opusplan/marketing/wp-entry-guide-m4ty8qbz/">STEP 4・5</a>）と実績ガイド（<a href="https://kanpai-web.github.io/share/opusplan/marketing/works-wp-guide-rxwcgxrt/">STEP 3・公開前チェック</a>）にも追記しています。</p>
+</section>
+
+
+<section class="sec">
+  <div class="sec__head"><span class="sec__no">10</span><h2>公開前のチェック</h2></div>
+  <p class="lead">完成イメージと見比べながら確認してください。</p>
+  <ul class="chk">
+    <li>会社概要の会社情報の下・アクセスの上に「MEMBER／メンバー紹介」が出ている</li>
+    <li>「掲載する」がオンの人だけが、表示順どおりに並んでいる</li>
+    <li>写真の下に手書き風の文字でひとことが出ている（Klee One が読み込まれている）</li>
+    <li>カードを押すとプロフィールの小窓が開き、×・背景のクリック・Escキーで閉じる</li>
+    <li>小窓を開いているあいだ、後ろのページがスクロールしない</li>
+    <li>「担当した実績」「書いたコラム」のタブが切り替わり、件数が実際の数と合っている</li>
+    <li>4件以上ある人だけ「すべて見る（◯件）」が出て、一覧ページに遷移する</li>
+    <li>実績もコラムも0件の人は、その欄自体が出ていない</li>
+    <li>資格など空欄の項目は、行ごと出ていない</li>
+    <li>SP幅で、メンバーが1人ずつ1列に並び、区切り線が入っている</li>
+    <li>SP幅で、小窓が全画面になり、写真が中央に出る</li>
+    <li>外部から <span class="mono">/wp-json/wp/v2/users</span> を開いてもユーザー一覧が出ない</li>
+  </ul>
+</section>
+
+</div>
+
+<footer class="ft"><div class="wrap">高寺　／　2026-10-27</div></footer>
+
+<script>
+document.addEventListener('click', function(e){
+  var b = e.target.closest('[data-copy]');
+  if(!b) return;
+  var el = document.getElementById(b.getAttribute('data-copy'));
+  if(!el) return;
+  var text = el.textContent;
+  function ok(){
+    var old = b.dataset.label || b.textContent;
+    b.dataset.label = old;
+    b.textContent = 'コピーしました';
+    b.classList.add('is-done');
+    setTimeout(function(){ b.textContent = old; b.classList.remove('is-done'); }, 1800);
+  }
+  function legacy(){
+    var ta = document.createElement('textarea');
+    ta.value = text; ta.style.position='fixed'; ta.style.opacity='0';
+    document.body.appendChild(ta); ta.focus(); ta.select();
+    var done=false;
+    try { done = document.execCommand('copy'); } catch(err) { done=false; }
+    document.body.removeChild(ta);
+    if(done) ok(); else alert('コピーできませんでした。_入稿用 フォルダのファイルから直接コピーしてください。');
+  }
+  if (navigator.clipboard && window.isSecureContext) {
+    navigator.clipboard.writeText(text).then(ok).catch(legacy);
+  } else {
+    legacy();
+  }
+});
+</script>
+</body>
+</html>

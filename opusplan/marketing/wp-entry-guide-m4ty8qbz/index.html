@@ -147,7 +147,7 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
   <div class="who__c">
     <p class="role">記事ごと</p>
     <h4>高寺</h4>
-    <ul><li>画像のアップロード</li><li>本文の貼り付け</li><li>タイトル・カテゴリ等の設定</li><li>プレビュー確認 → 公開</li></ul>
+    <ul><li>画像のアップロード</li><li>本文の貼り付け</li><li>タイトル・カテゴリ等の設定</li><li>投稿者を書いた本人にする</li><li>プレビュー確認 → 公開</li></ul>
   </div>
 </div>
 <p style="font-size:13px;color:var(--grey);margin:14px 0 0">※ 本文HTML・追加CSS・画像は用意済みです（<span class="mono">_入稿用/</span> フォルダ）。</p>
@@ -178,7 +178,7 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
   <div class="flow__s">
     <span class="flow__n">STEP 4</span>
     <p class="flow__t">設定を入れる</p>
-    <p class="flow__d">タイトル・ディスクリプション・カテゴリ・URL</p>
+    <p class="flow__d">タイトル・ディスクリプション・カテゴリ・URL・投稿者</p>
     <p class="flow__who">高寺</p>
   </div>
   <div class="flow__s">
@@ -1986,6 +1986,12 @@ style.css の末尾に追記でも構いません。やりやすい方法でお�
   <div class="dbox__h"><span>コラム08　ディスクリプション</span><button class="btn btn--s" data-copy="d08">コピー</button></div>
   <p class="dbox__t" id="d08">ホームページにどんなページが必要かを、お客さまが問い合わせに至るまでの4つの段階から整理。段階ごとに用意するページと、自社サイトで足りていない部分の見つけ方を解説します。</p>
 </div>
+<h3>投稿者（書いた人）</h3>
+<p>編集画面の<b>「投稿者」で、記事を書いた本人のアカウントを選んでください</b>。会社概要のメンバー紹介で、その人のプロフィールの「書いたコラム」に自動で並びます。選び忘れると、どのメンバーにも表示されません。</p>
+<div class="note">
+  <p class="note__t">「投稿者」の欄が見当たらないとき</p>
+  <p>いまのコラム（blog）は投稿者を持たない作りのため、<b>コーダーさんに投稿者欄を追加してもらうまでは表示されません</b>。追加の依頼内容はメンバー紹介のガイド（<a href="https://kanpai-web.github.io/share/opusplan/marketing/member-wp-guide-7wv4bpo9/">STEP 2</a>）にまとめています。追加後に、それまでに公開した記事の投稿者もまとめて変更します。</p>
+</div>
 <h3>記事どうしのリンクについて</h3>
 <p>本文の中に、ほかのコラムへのリンクが入っています。リンク先は上の表のURLで書いてあるので、<b>5本すべてを上の設定どおりに公開すれば、そのままつながります</b>。順番はどれからでも構いませんが、全部公開するまでは一部のリンクが404になります。</p>
 </section>
@@ -2004,6 +2010,7 @@ style.css の末尾に追記でも構いません。やりやすい方法でお�
   <li>記事末尾に「関連サービス」が入っている</li>
   <li>スマートフォン幅でも横スクロールが出ない</li>
   <li>カテゴリが1つだけ選ばれている</li>
+  <li>「投稿者」が書いた本人になっている（opusplan のままになっていない）</li>
   <li>URLスラッグが表のとおりになっている</li>
   <li>記事内のリンクがエラーにならない（全記事の公開後）</li>
 </ul>
@@ -2030,10 +2037,11 @@ style.css の末尾に追記でも構いません。やりやすい方法でお�
 <div class="note">
   <p class="note__t">記事の作り方そのもの</p>
   <p>キーワードの決め方から見出しの整理までは、（共有）タスク管理の<b>「コラム作成マニュ」タブ</b>にある手順（SEO用・AIO用）に沿って進めてください。書き上がった記事は<b>「コラム管理」タブ</b>に、ステータス・テストURL・本番URLを記録します。</p>
+  <p>公開するときは、<b>投稿者を書いた本人にする</b>のを忘れないでください（STEP 4）。</p>
 </div>
 </section>
 
-<footer class="ft">高寺　／　2026-10-21</footer>
+<footer class="ft">高寺　／　2026-10-21（2026-10-27 投稿者の設定を追記）</footer>
 </div>
 
 <script>
