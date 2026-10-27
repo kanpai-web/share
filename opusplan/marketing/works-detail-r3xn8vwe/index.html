@@ -259,13 +259,24 @@ html,body{overflow-x:clip}
 .l-results .p-results__items,.l-results .slick-list,.l-results .slick-track{display:contents!important}
 .ow-rel{margin:0;padding:0}
 .ow-rel__track{display:flex;gap:24px;overflow-x:auto;overflow-y:hidden;
-  scroll-snap-type:x proximity;-webkit-overflow-scrolling:touch;
+  -webkit-overflow-scrolling:touch;cursor:grab;
   padding:4px 0 10px;margin:0;scrollbar-width:none;-ms-overflow-style:none}
 .ow-rel__track::-webkit-scrollbar{display:none}
-.ow-rel__track > .owl-card{flex:0 0 300px;width:300px;scroll-snap-align:start;margin:0}
-.ow-rel__hint{display:flex;align-items:center;gap:8px;margin-top:10px;
-  font-size:12px;color:var(--ink-sub);letter-spacing:.04em}
-.ow-rel__hint::after{content:"";flex:1 1 auto;height:1px;background:var(--line)}
+.ow-rel__track.is-drag{cursor:grabbing;user-select:none}
+.ow-rel__track.is-drag a{pointer-events:none}
+.ow-rel__track > .owl-card{flex:0 0 300px;width:300px;margin:0}
+.ow-rel__track > .owl-card img{pointer-events:none}
+/* 送り戻しのボタン */
+.ow-rel__nav{display:flex;align-items:center;gap:14px;margin-top:12px;padding-right:40px}
+.ow-rel__hint{flex:0 0 auto;margin:0;font-size:12px;color:var(--ink-sub);letter-spacing:.04em}
+.ow-rel__nav::before{content:"";flex:1 1 auto;height:1px;background:var(--line);order:1}
+.ow-rel__hint{order:0}
+.ow-rel__btns{order:2;display:flex;gap:8px}
+.ow-rel__btn{width:44px;height:44px;display:flex;align-items:center;justify-content:center;
+  background:#fff;border:1px solid #c9d2e4;border-radius:4px;color:var(--navy);cursor:pointer;
+  padding:0;transition:border-color .14s linear,background-color .14s linear}
+.ow-rel__btn:hover{border-color:var(--navy);background:var(--navy);color:#fff}
+.ow-rel__btn svg{width:15px;height:15px;display:block;fill:none;stroke:currentColor;stroke-width:2}
 .l-results .c-btn{width:300px!important;max-width:100%;margin:30px auto 0!important;float:none}
 .l-results .c-btn > a{width:100%!important}
 @media screen and (max-width:900px){
@@ -682,7 +693,13 @@ html,body{overflow-x:clip}
             </div>
           </div>
   </div>
-  <p class="ow-rel__hint">横にスクロールできます</p>
+  <div class="ow-rel__nav">
+    <p class="ow-rel__hint">ドラッグでも動かせます</p>
+    <div class="ow-rel__btns">
+      <button type="button" class="ow-rel__btn" data-rel-prev aria-label="前の実績へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M15 5 8 12 15 19" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+      <button type="button" class="ow-rel__btn" data-rel-next aria-label="次の実績へ"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M9 5 16 12 9 19" stroke-linecap="square" stroke-linejoin="miter"/></svg></button>
+    </div>
+  </div>
 </div>
 
 
@@ -803,17 +820,73 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
 <script>
 (function(){
   document.querySelectorAll('[data-rel-loop]').forEach(function(t){
-    var lock=false;
-    t.addEventListener('scroll', function(){
-      if(lock) return;
-      var half=t.scrollWidth/2;
-      if(t.scrollLeft>=half){ lock=true; t.scrollLeft-=half; lock=false; }
-      else if(t.scrollLeft<1){ lock=true; t.scrollLeft+=half; lock=false; }
-    }, {passive:true});
-    // ホイールの縦回転でも横に流す
-    t.addEventListener('wheel', function(e){
-      if(Math.abs(e.deltaY)>Math.abs(e.deltaX)){ t.scrollLeft+=e.deltaY; e.preventDefault(); }
-    }, {passive:false});
+    var wrap = t.closest('.ow-rel') || t.parentNode;
+
+    // カード1枚ぶんの送り幅（カード幅＋すき間）
+    function unit(){
+      var c = t.querySelector('.owl-card');
+      if(!c) return 300;
+      var gap = parseFloat(getComputedStyle(t).columnGap || getComputedStyle(t).gap) || 0;
+      return c.getBoundingClientRect().width + gap;
+    }
+    // 2周ぶん並べてあるので、半分を超えたら戻す（見た目は同じカードなので気づかれない）
+    function half(){ return t.scrollWidth / 2; }
+    var animating = false, timer = null;
+    function normalize(){
+      if(animating) return;
+      var h = half();
+      if(t.scrollLeft >= h) t.scrollLeft -= h;
+      else if(t.scrollLeft < 1) t.scrollLeft += h;
+    }
+    t.addEventListener('scroll', normalize, {passive:true});
+
+    // ← → ボタン：1枚ずつ送る
+    function step(dir){
+      var h = half(), u = unit();
+      // 端に当たる直前で、同じ見た目の位置へ飛ばしてから動かす
+      if(dir > 0 && t.scrollLeft + t.clientWidth + u >= t.scrollWidth) t.scrollLeft -= h;
+      else if(dir < 0 && t.scrollLeft - u < 0) t.scrollLeft += h;
+      animating = true;
+      clearTimeout(timer);
+      timer = setTimeout(function(){ animating = false; normalize(); }, 450);
+      t.scrollBy({left: dir * u, behavior: 'smooth'});
+    }
+    var prev = wrap.querySelector('[data-rel-prev]'), next = wrap.querySelector('[data-rel-next]');
+    if(prev) prev.addEventListener('click', function(){ step(-1); });
+    if(next) next.addEventListener('click', function(){ step(1); });
+
+    // マウスで掴んで横に滑らせる
+    // ※ ポインタを掴む（setPointerCapture）のは「5px以上動いたあと」だけにする。
+    //    最初から掴むと click がトラックに付け替えられ、カードのリンクが開けなくなる
+    var down = false, held = false, x0 = 0, s0 = 0, moved = 0, pid = null;
+    t.addEventListener('pointerdown', function(e){
+      if(e.pointerType !== 'mouse' || e.button !== 0) return;   // 指やペンは標準の挙動に任せる
+      down = true; held = false; moved = 0; pid = e.pointerId;
+      x0 = e.clientX; s0 = t.scrollLeft;
+    });
+    window.addEventListener('pointermove', function(e){
+      if(!down || e.pointerId !== pid) return;
+      var d = e.clientX - x0;
+      if(Math.abs(d) > moved) moved = Math.abs(d);
+      if(!held && moved > 5){
+        held = true;
+        try{ t.setPointerCapture(pid); }catch(err){}
+        t.classList.add('is-drag');
+      }
+      if(held){ t.scrollLeft = s0 - d; e.preventDefault(); }
+    });
+    function release(e){
+      if(!down || (e.pointerId !== undefined && e.pointerId !== pid)) return;
+      down = false;
+      if(held){
+        t.classList.remove('is-drag');
+        try{ t.releasePointerCapture(pid); }catch(err){}
+      }
+      held = false; pid = null;
+    }
+    window.addEventListener('pointerup', release);
+    window.addEventListener('pointercancel', release);
+    t.addEventListener('dragstart', function(e){ e.preventDefault(); });
   });
 })();
 </script>
