@@ -207,9 +207,9 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
 
 <h3>渡すもの</h3>
 <table>
- <tr><th style="width:200px">ファイル</th><td class="mono">_入稿用/opus-column.css</td></tr>
- <tr><th>サイズ</th><td>約20KB（ルール212件ほど）</td></tr>
- <tr><th>影響範囲</th><td>すべて <span class="mono">.p-blog__content-dec</span> 配下にスコープ済み。<b>コラム本文以外のページ、既存のコラム記事には影響しません</b></td></tr>
+ <tr><th style="width:200px">ファイル</th><td><span class="mono">opus-column.css</span>（このセクション下部の「CSSをコピー」からも取得できます）</td></tr>
+ <tr><th>サイズ</th><td>約22KB</td></tr>
+ <tr><th>影響範囲</th><td>記事用の部品はすべて新規クラス（<span class="mono">.op-*</span>）で、既存のHTMLには使われていません。ただし<b>本文の行間（1.9）・strong の黄色マーカー・figure / figcaption・見出しの scroll-margin-top はコラム本文全体に効くため、既存コラムにも反映されます</b></td></tr>
  <tr><th>既存ファイルの変更</th><td>なし（style.css / reset.css は触っていません）</td></tr>
 </table>
 
@@ -220,38 +220,16 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
  <tr><td><b>案B</b></td><td><span class="mono">style.css</span> の末尾に貼り付ける</td><td>手早いですが、サイト全体で読み込まれます。コーダーさんのやりやすい方で構いません</td></tr>
 </table>
 
-<div class="codehead"><span>依頼文のテンプレート</span><button class="btn btn--s btn--out" data-copy="req">コピー</button></div>
-<pre class="code" id="req">お世話になっております。オーパスプランのコラム記事について、3点ご対応をお願いできますでしょうか。
-
-■ 1. 追加CSSの読み込み
-opus-column.css（約20KB）をお渡しします。
-コラム（カスタム投稿タイプ blog）の詳細ページで読み込まれるようにしてください。
-themes/opusplan_theme/src/css/ 配下に置いて詳細テンプレートで読み込む形を想定していますが、
-style.css の末尾に追記でも構いません。やりやすい方法でお願いします。
-
-・セレクタはすべて .p-blog__content-dec 配下にスコープしてあります。
-　コラム本文以外のページ、および既存のコラム記事の表示には影響しません。
-・既存の style.css / reset.css は変更していません。
-・今後コラムを追加しても、このCSSの再対応は不要です。
-
-■ 2. 記事上部へのアイキャッチ表示
-コラム詳細テンプレートの p-blog__content-last の直後、p-blog__content-dec の直前に
-下記を追加してください。アイキャッチ未設定の記事では何も出ません。
-
-&lt;?php if ( has_post_thumbnail() ) : ?&gt;
+<h3>2番：追加するコード</h3>
+<p>コラム詳細テンプレートの <span class="mono">p-blog__content-last</span> の直後、<span class="mono">p-blog__content-dec</span> の直前に入れます。<span class="mono">p-blog__content-eyecatch</span> のCSSは <span class="mono">opus-column.css</span> に含まれています。</p>
+<div class="codehead"><span>PHP</span><button class="btn btn--s btn--out" data-copy="eyecatch-code">コピー</button></div>
+<pre class="code" id="eyecatch-code">&lt;?php if ( has_post_thumbnail() ) : ?&gt;
   &lt;?php the_post_thumbnail( &#x27;large&#x27;, array( &#x27;class&#x27; =&gt; &#x27;img p-blog__content-eyecatch&#x27; ) ); ?&gt;
-&lt;?php endif; ?&gt;
+&lt;?php endif; ?&gt;</pre>
 
-・p-blog__content-eyecatch のCSSは 1. のファイルに含めてあります。
+<h3>3番：一覧カードの表示</h3>
+<p>いまは全記事がテーマの <span class="mono">dummy1.png</span> で表示されています。アイキャッチを設定したときに反映されない場合は、アイキャッチがあればそれを、無ければ従来どおり <span class="mono">dummy1.png</span> を表示する形にします。表示サイズが小さいので、<span class="mono">medium_large</span> など軽いサイズでの出力が適しています。</p>
 
-■ 3. コラム一覧カードのアイキャッチ（要確認）
-現在、コラム一覧のサムネイルは全記事がテーマの dummy1.png で出ています。
-アイキャッチを設定したときに一覧カードへ反映されるかをご確認いただき、
-反映されない場合は、アイキャッチがあればそれを、無ければ従来どおり dummy1.png を出す形に
-変更をお願いできますでしょうか。
-表示サイズが小さいため、medium_large など軽いサイズでの出力が望ましいです。
-
-よろしくお願いいたします。</pre>
 
 <div class="codehead"><span>CSSの中身（ファイルで渡す場合は不要）</span><button class="btn btn--s btn--out" data-copy="css">CSSをコピー</button></div>
 <script type="text/plain" id="css">@charset "UTF-8";
@@ -260,8 +238,11 @@ style.css の末尾に追記でも構いません。やりやすい方法でお�
    対象：コラム（カスタム投稿タイプ blog）の本文
    作成：2026-10-21 ／ 高寺
    ------------------------------------------------------------
-   ・すべて .p-blog__content-dec 配下にスコープしています。
-     コラム本文以外のページには影響しません。
+   ・記事用の部品はすべて新規クラス（.op-*）です。既存のHTMLには
+     使われていないため、既存ページの表示には影響しません。
+   ・次のルールはコラム本文全体に効くため、既存コラムにも反映されます。
+     .p-blog__content-dec の行間（1.9）／strong の黄色マーカー／
+     figure・figcaption の余白と文字／見出しの scroll-margin-top
    ・既存の style.css は変更していません。このファイルを
      追加で読み込むか、style.css の末尾に貼り付けてください。
    ・色は下の :root で一括変更できます。
