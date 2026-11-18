@@ -225,10 +225,10 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
   <p class="lead">管理画面の「ユーザー ＞ 新規追加」から、メンバーごとに1つ作ります。</p>
 <table>
  <tr><th style="width:210px">項目</th><th>入れるもの</th><th style="width:260px">理由</th></tr>
- <tr><td>ユーザー名</td><td>ローマ字の名字（例 <span class="mono">yamada</span>）</td><td>あとから変更できません。「担当メンバー」の分類と同じ綴りにそろえます</td></tr>
+ <tr><td>ユーザー名</td><td>イニシャルの小文字（例 <span class="mono">ty</span>）</td><td>あとから変更できません。「担当メンバー」の分類と同じ綴りにそろえます。<b>名前は出さない方針</b>のため、名字は使いません（ユーザー名はコラム一覧などのURLに出ます）</td></tr>
  <tr><td>メールアドレス</td><td>本人の業務用アドレス</td><td>パスワード再設定に使います</td></tr>
- <tr><td>名・姓</td><td>漢字で</td><td></td></tr>
- <tr><td>ブログ上の表示名</td><td><b>「山田 太郎」</b>（漢字フルネーム）</td><td>コラムの執筆者として表に出る名前です</td></tr>
+ <tr><td>名・姓</td><td>空欄</td><td>名前は出さない方針のため入力しません</td></tr>
+ <tr><td>ブログ上の表示名</td><td><b>「T.Y」</b>（イニシャル）</td><td>コラムの執筆者として表に出る名前です。メンバー紹介と同じイニシャル表記にそろえます</td></tr>
  <tr><td>権限グループ</td><td>記事を書く人：<b>投稿者</b><br>書かない人：<b>購読者</b>（案Bのみ）</td><td>必要以上の権限を渡さないため。高寺・渡邉さんは現状どおり</td></tr>
 </table>
 <div class="note">
@@ -271,7 +271,7 @@ add_action( &#x27;init&#x27;, function () {
         &#x27;label&#x27;        =&gt; &#x27;担当メンバー&#x27;,
         &#x27;hierarchical&#x27; =&gt; true,          // チェックボックスで選ばせる
         &#x27;public&#x27;       =&gt; true,
-        &#x27;rewrite&#x27;      =&gt; array( &#x27;slug&#x27; =&gt; &#x27;works/member&#x27; ),   // /works/member/yamada/ が担当実績の一覧になる
+        &#x27;rewrite&#x27;      =&gt; array( &#x27;slug&#x27; =&gt; &#x27;works/member&#x27; ),   // /works/member/ty/ が担当実績の一覧になる
         &#x27;show_in_rest&#x27; =&gt; true,
     ) );
 } );</pre>
@@ -295,7 +295,6 @@ add_filter( &#x27;rest_endpoints&#x27;, function ( $endpoints ) {
  <tr><td class="mono">member_show</td><td>掲載する</td><td>オン／オフ</td></tr>
  <tr><td class="mono">member_order</td><td>表示順</td><td>数字（1から）</td></tr>
  <tr><td class="mono">member_photo</td><td>顔写真</td><td>画像（4:5の縦長・800×1000px目安）</td></tr>
- <tr><td class="mono">member_roman</td><td>ローマ字表記</td><td>Taro Yamada</td></tr>
  <tr><td class="mono">member_role</td><td>役職・肩書</td><td>代表取締役／Webコンサルタント</td></tr>
  <tr><td class="mono">member_areas</td><td>担当領域</td><td>3つまで（1行に1つ）。カードに #タグ で出ます</td></tr>
  <tr><td class="mono">member_catch</td><td>キャッチコピー</td><td>30字前後</td></tr>
@@ -314,7 +313,7 @@ add_filter( &#x27;rest_endpoints&#x27;, function ( $endpoints ) {
 </table>
 <div class="note">
   <p class="note__t">案Bでのひも付け</p>
-  <p>案Bでは、ユーザー名と「担当メンバー」のタームのスラッグをそろえることでひも付けます（例：ユーザー名 <span class="mono">yamada</span> ＝ ターム <span class="mono">yamada</span>）。案Cでは上の2つの選択欄で明示的にひも付けます。</p>
+  <p>案Bでは、ユーザー名と「担当メンバー」のタームのスラッグをそろえることでひも付けます（例：ユーザー名 <span class="mono">ty</span> ＝ ターム <span class="mono">ty</span>）。案Cでは上の2つの選択欄で明示的にひも付けます。</p>
 </div>
 </section>
 
