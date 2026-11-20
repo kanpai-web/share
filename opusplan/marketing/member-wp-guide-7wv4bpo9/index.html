@@ -225,7 +225,7 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
   <p class="lead">管理画面の「ユーザー ＞ 新規追加」から、メンバーごとに1つ作ります。</p>
 <table>
  <tr><th style="width:210px">項目</th><th>入れるもの</th><th style="width:260px">理由</th></tr>
- <tr><td>ユーザー名</td><td>イニシャルの小文字（例 <span class="mono">ty</span>）</td><td>あとから変更できません。「担当メンバー」の分類と同じ綴りにそろえます。<b>名前は出さない方針</b>のため、名字は使いません（ユーザー名はコラム一覧などのURLに出ます）</td></tr>
+ <tr><td>ユーザー名</td><td>イニシャルの大文字（例 <span class="mono">TY</span>）</td><td>あとから変更できません。URLでは自動で小文字（ty）になります。「担当メンバー」の分類と同じ綴りにそろえます。<b>名前は出さない方針</b>のため、名字は使いません（ユーザー名はコラム一覧などのURLに出ます）</td></tr>
  <tr><td>メールアドレス</td><td>本人の業務用アドレス</td><td>パスワード再設定に使います</td></tr>
  <tr><td>名・姓</td><td>空欄</td><td>名前は出さない方針のため入力しません</td></tr>
  <tr><td>ブログ上の表示名</td><td><b>「T.Y」</b>（イニシャル）</td><td>コラムの執筆者として表に出る名前です。メンバー紹介と同じイニシャル表記にそろえます</td></tr>
@@ -313,7 +313,7 @@ add_filter( &#x27;rest_endpoints&#x27;, function ( $endpoints ) {
 </table>
 <div class="note">
   <p class="note__t">案Bでのひも付け</p>
-  <p>案Bでは、ユーザー名と「担当メンバー」のタームのスラッグをそろえることでひも付けます（例：ユーザー名 <span class="mono">ty</span> ＝ ターム <span class="mono">ty</span>）。案Cでは上の2つの選択欄で明示的にひも付けます。</p>
+  <p>案Bでは、ユーザー名と「担当メンバー」のタームのスラッグをそろえることでひも付けます（例：ユーザー名 <span class="mono">TY</span> ＝ ターム <span class="mono">ty</span>。スラッグは自動で小文字になるため、大文字・小文字の違いは気にしなくて大丈夫です）。案Cでは上の2つの選択欄で明示的にひも付けます。</p>
 </div>
 </section>
 

@@ -98,7 +98,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 /* ===== メンバー紹介（わたしたちについてページ）・会社概要の導線ボタン om- ===== */
 .l-member{--navy:#000080;--navy-dp:#1b1464;--blue:#2b95ff;--tint:#eefaff;--ink:#363636;--ink-sub:#6b6b6b;--ink-faint:#9a9a9a;--line:#e1e8ee;--photo:#e2e7ea;
   --hand:"Klee One","Noto Sans JP",sans-serif;
-  padding:0 0 130px;color:var(--ink);scroll-margin-top:110px}
+  padding:0 0 130px;color:var(--ink);scroll-margin-top:144px}
 .l-member .om-lead{font-size:15px;line-height:2;margin:26px 0 56px}
 .om-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:56px 34px;margin:0;padding:0;list-style:none}
 .om-card{display:flex;margin:0;padding:0;list-style:none}
@@ -944,6 +944,17 @@ var e="script#wp-emoji-settings",t=document.querySelector(e);if(!(t instanceof H
       });
     });
   });
+  // 会社概要の「メンバー紹介」ボタンから来たとき（#member）、読み込み完了後に固定ヘッダーの高さ分ずらして見出しを合わせる
+  //（画像やスライダーの読み込みでページの高さが変わり、ブラウザ標準の位置合わせだと行きすぎるため）
+  if(location.hash==='#member'){
+    window.addEventListener('load',function(){
+      setTimeout(function(){
+        var t=document.getElementById('member'); if(!t) return;
+        var h=document.querySelector('header'), off=(h?h.getBoundingClientRect().height:0)+24;
+        window.scrollTo(0, t.getBoundingClientRect().top+window.pageYOffset-off);
+      },100);
+    });
+  }
 })();
 </script>
 </body>
