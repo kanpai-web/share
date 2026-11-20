@@ -228,7 +228,7 @@ footer.ft{text-align:center;color:var(--grey);font-size:12px;padding:30px 0 0}
  <tr><td>ユーザー名</td><td>イニシャルの大文字（例 <span class="mono">TY</span>）</td><td>あとから変更できません。URLでは自動で小文字（ty）になります。「担当メンバー」の分類と同じ綴りにそろえます。<b>名前は出さない方針</b>のため、名字は使いません（ユーザー名はコラム一覧などのURLに出ます）</td></tr>
  <tr><td>メールアドレス</td><td>本人の業務用アドレス</td><td>パスワード再設定に使います</td></tr>
  <tr><td>名・姓</td><td>空欄</td><td>名前は出さない方針のため入力しません</td></tr>
- <tr><td>ブログ上の表示名</td><td><b>「Ｔ.Ｙ」</b>（全角のイニシャル）</td><td>コラムの執筆者として表に出る名前です。メンバー紹介と同じ全角のイニシャル表記にそろえます（ユーザー名は半角のみ使えるため TY のまま）</td></tr>
+ <tr><td>ブログ上の表示名</td><td><b>「Ｔ.Ｙ」</b>（英字は全角・間の点は半角）</td><td>コラムの執筆者として表に出る名前です。メンバー紹介と同じイニシャル表記にそろえます（ユーザー名は半角のみ使えるため TY のまま）</td></tr>
  <tr><td>権限グループ</td><td>記事を書く人：<b>投稿者</b><br>書かない人：<b>購読者</b>（案Bのみ）</td><td>必要以上の権限を渡さないため。高寺・渡邉さんは現状どおり</td></tr>
 </table>
 <div class="note">
@@ -341,11 +341,11 @@ add_filter( &#x27;rest_endpoints&#x27;, function ( $endpoints ) {
 <table>
  <tr><th style="width:280px">ファイル</th><th>中身</th></tr>
  <tr><td class="mono">opus-member.css</td><td>メンバー紹介の追加スタイル（クラス名はすべて <span class="mono">om-</span> 始まり。既存テーマと衝突しません）</td></tr>
- <tr><td class="mono">メンバー紹介_マークアップ.html</td><td>セクション全体（カード4枚＋プロフィールの小窓）＋開閉・タブ切り替えのスクリプト</td></tr>
+ <tr><td class="mono">メンバー紹介_マークアップ.html</td><td>セクション全体（カード4枚＋プロフィールの小窓）＋開閉・タブ切り替えのスクリプト。会社概要のボタンから飛んできたとき、見出しが固定ヘッダーに隠れないよう位置を合わせ直す処理も入っています（画像の読み込みでページの高さが変わり、ブラウザ任せだと行きすぎるため）</td></tr>
  <tr><td class="mono">会社概要_メンバー紹介ボタン_マークアップ.html</td><td>会社概要ページの「オーパスプランを知る」の横に並べる「メンバー紹介」ボタン</td></tr>
 </table>
 <h3>入れる場所</h3>
-<p>「わたしたちについて」ページの代表メッセージ（<span class="mono">&lt;section class="l-message"&gt;</span>）の直後、お問い合わせ（<span class="mono">&lt;section class="l-contact"&gt;</span>）の手前です。<span class="mono">id="member"</span> は会社概要のボタンの飛び先なので変えないでください。</p>
+<p>「わたしたちについて」ページの代表メッセージ（<span class="mono">&lt;section class="l-message"&gt;</span>）の直後、お問い合わせ（<span class="mono">&lt;section class="l-contact"&gt;</span>）の手前です。<span class="mono">id="member"</span> は会社概要のボタンの飛び先なので変えないでください。名前はマークアップ内で「Ｔ.Ｙ」の形（英字は全角・間の点は半角）になっています。</p>
 <h3>会社概要ページのボタン</h3>
 <p>「オーパスプランを知る」ボタンを、2つ並びのマークアップ（<span class="mono">.om-btns</span>）に置き換えます。「メンバー紹介」は <span class="mono">/aboutus#member</span> へ飛びます。スマホでは縦に並びます。</p>
 <h3>手書き風の文字（フォントの追加）</h3>
